@@ -1,1 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agro Forte & Sustentável</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+    <div id="auth-container" class="container">
+        <header>
+            <h1>AgroForte</h1>
+            <p>O futuro sustentável do campo</p>
+        </header>
+
+        <section class="card" id="login-card">
+            <h2>Crie seu Acesso</h2>
+            <form id="agro-form">
+                <div class="input-group">
+                    <label>Nome de Usuário</label>
+                    <input type="text" id="username" placeholder="Ex: agro_lider" required>
+                </div>
+                <div class="input-group">
+                    <label>E-mail</label>
+                    <input type="email" id="email" placeholder="seu@email.com" required>
+                </div>
+                <div class="input-group">
+                    <label>Crie uma Senha</label>
+                    <input type="password" id="password" placeholder="No mínimo 6 caracteres" required>
+                </div>
+                <button type="submit" class="btn-main">Entrar no Portal</button>
+            </form>
+        </section>
+    </div>
+
+    <div id="main-content" class="container hidden">
+        <header>
+            <h1>Painel Agro Sustentável</h1>
+            <p>Bem-vindo, <strong id="user-display"></strong>!</p>
+        </header>
+
+        <section class="dashboard">
+            <div class="banner">
+                <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=1000&q=80" alt="Plantação de soja sustentável">
+                <div class="banner-text">Equilíbrio: Produção & Natureza</div>
+            </div>
+
+            <div class="content-grid">
+                <div class="card-info">
+                    <h3>Aulas e Capacitação</h3>
+                    <p>Acesse conteúdos educativos exclusivos.</p>
+                    <a href="https://www.youtube.com/results?search_query=agro+sustentavel+aulas" target="_blank" class="btn-link youtube">Assistir Aulas no YouTube</a>
+                </div>
+
+                <div class="card-info">
+                    <h3>Portais Nacionais</h3>
+                    <p>Links oficiais do setor no Brasil.</p>
+                    <div class="links-list">
+                        <a href="https://www.embrapa.br" target="_blank">Embrapa - Pesquisa Agro</a>
+                        <a href="https://www.gov.br/agricultura/pt-br" target="_blank">Ministério da Agricultura</a>
+                        <a href="https://www.cnabrasil.org.br" target="_blank">CNA Brasil</a>
+                    </div>
+                </div>
+            </div>
+
+            <button onclick="logout()" class="btn-exit">Sair do Sistema</button>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
