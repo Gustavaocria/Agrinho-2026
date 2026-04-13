@@ -1,34 +1,16 @@
+}
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <title>Login - Agro Forte</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>Agro Forte</title>
+<link rel="stylesheet" href="style.css">
 </head>
-<body class="login-body">
 
-<div class="login-box">
-  <h2>🌱 Agro Forte</h2>
-  <input type="text" id="user" placeholder="Usuário">
-  <input type="password" id="pass" placeholder="Senha">
-  <button onclick="login()">Entrar</button>
-  <p id="erro"></p>
-</div>
-
-<script src="script.js"></script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <title>Agro Forte - Futuro Sustentável</title>
-  <link rel="stylesheet" href="style.css">
-</head>
 <body>
 
 <header>
-  <h1>🌾 Agro Forte</h1>
+  <h1>🌱 Agro Forte</h1>
   <nav>
     <a href="#sobre">Sobre</a>
     <a href="#videos">Vídeos</a>
@@ -37,19 +19,28 @@
   </nav>
 </header>
 
-<section class="banner">
-  <h2>Futuro Sustentável 🌱</h2>
-  <p>Equilíbrio entre produção e meio ambiente</p>
+<section class="hero">
+  <h2>Futuro Sustentável</h2>
+  <p>Produção com respeito ao meio ambiente 🌍</p>
+  <button onclick="mostrarInfo()">Saiba mais</button>
+
+  <div id="info">
+    <p>A agricultura sustentável preserva o solo, a água e garante o futuro 🌱</p>
+  </div>
 </section>
 
-<section id="sobre">
-  <h2>Sobre o Projeto</h2>
-  <p>O Agrinho promove educação e consciência sobre o agro sustentável, incentivando práticas que respeitam o meio ambiente.</p>
-  <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6" alt="Agro">
+<section id="sobre" class="grid">
+  <div>
+    <h2>🌾 Sobre o Projeto</h2>
+    <p>O Agrinho promove educação e sustentabilidade no campo, incentivando práticas conscientes.</p>
+  </div>
+
+  <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399">
 </section>
 
 <section id="videos">
   <h2>🎥 Vídeos Educativos</h2>
+
   <div class="cards">
     <a href="https://www.youtube.com/watch?v=2Vv-BfVoq4g" target="_blank">Sustentabilidade no Agro</a>
     <a href="https://www.youtube.com/watch?v=1N5wozYfU5M" target="_blank">Agricultura Moderna</a>
@@ -57,27 +48,27 @@
 </section>
 
 <section id="materiais">
-  <h2>📚 Materiais de Estudo</h2>
+  <h2>📚 Materiais</h2>
   <ul>
     <li><a href="https://www.embrapa.br" target="_blank">Embrapa</a></li>
-    <li><a href="https://www.agricultura.pr.gov.br" target="_blank">Secretaria Agricultura PR</a></li>
+    <li><a href="https://www.agricultura.pr.gov.br" target="_blank">Agricultura PR</a></li>
   </ul>
 </section>
 
 <section id="contato">
-  <h2>📩 Reclamações / Sugestões</h2>
+  <h2>📩 Reclamações</h2>
   <form onsubmit="enviarMensagem(event)">
     <input type="text" placeholder="Seu nome" required>
-    <textarea placeholder="Digite sua mensagem..." required></textarea>
-    <button type="submit">Enviar</button>
+    <textarea placeholder="Mensagem..." required></textarea>
+    <button>Enviar</button>
   </form>
   <p id="msg"></p>
 </section>
 
 <footer>
-  <p>© 2026 Agro Forte - Agrinho Paraná</p>
+  <p>🌿 Agro Forte | Agrinho Paraná 2026</p>
 </footer>
 
 <script src="script.js"></script>
 </body>
-</html>
+</html
