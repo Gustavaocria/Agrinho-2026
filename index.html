@@ -11,56 +11,45 @@
     <!-- Tela de Login -->
     <div id="loginPage" class="login-page">
         <h2>Bem-vindo ao Agro Forte</h2>
-        <p>Faça login para continuar explorando!</p>
+        <p>Entre para explorar o futuro sustentável da agricultura!</p>
         <form id="loginForm">
             <input type="text" id="username" placeholder="Nome de usuário" required><br>
             <input type="password" id="password" placeholder="Senha" required><br>
             <button type="submit">Entrar</button>
         </form>
-        <p id="loginError" style="color: red; display: none;">Login realizado com sucesso!</p>
+        <p id="loginError" style="color: green; display: none;">Login realizado com sucesso!</p>
     </div>
 
     <!-- Conteúdo Principal -->
     <div id="mainContent" class="main-content" style="display: none;">
         <header>
             <h1>Agro Forte, Futuro Sustentável</h1>
-            <p>Equilíbrio entre Produção e Meio Ambiente</p>
+            <p>Produção e Meio Ambiente em Harmonia</p>
         </header>
-        
-        <nav>
-            <ul>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#objetivos">Objetivos</a></li>
-                <li><a href="#destaques">Destaques</a></li>
-            </ul>
-        </nav>
 
+        <div class="intro">
+            <h2>O Agro Forte é o futuro</h2>
+            <p>Com práticas sustentáveis, podemos garantir que as gerações futuras também possam se beneficiar do nosso trabalho agrícola sem prejudicar o meio ambiente. Vamos caminhar juntos para um futuro mais verde!</p>
+            <button id="startLearningBtn">Comece a aprender agora!</button>
+        </div>
+
+        <!-- Seções -->
         <section id="sobre">
             <h2>O que é Agro Forte?</h2>
-            <p>Agro Forte busca promover a produção agrícola de maneira sustentável, equilibrando crescimento econômico e preservação ambiental.</p>
+            <p>Agro Forte é a união entre práticas agrícolas modernas e sustentabilidade, promovendo o uso consciente dos recursos naturais, preservando a biodiversidade e aumentando a produtividade.</p>
             <button id="showMoreBtn">Saiba mais</button>
             <div id="moreInfo" style="display: none;">
-                <p>Práticas sustentáveis incluem rotação de culturas, uso eficiente de recursos e tecnologias verdes.</p>
-                <a href="https://www.mma.gov.br" target="_blank">Clique aqui para aprender mais sobre práticas sustentáveis no Brasil.</a>
+                <p>A agricultura sustentável utiliza novas tecnologias para aumentar a produtividade sem prejudicar o meio ambiente. Essas práticas ajudam a reduzir o uso de pesticidas, a conservar a água e a aumentar a biodiversidade.</p>
             </div>
         </section>
 
-        <section id="objetivos">
-            <h2>Objetivos do Agro Forte</h2>
-            <ul>
-                <li>Reduzir o impacto ambiental</li>
-                <li>Aumentar a produtividade de forma sustentável</li>
-                <li>Preservar a biodiversidade</li>
-            </ul>
-            <p>Leia mais sobre o futuro da agricultura sustentável em <a href="https://www.fao.org/sustainable-development-goals" target="_blank">FAO - Objetivos de Desenvolvimento Sustentável</a>.</p>
-        </section>
-
-        <section id="destaques">
-            <h2>Destaques do Agro Forte</h2>
-            <div id="highlightContent">
-                <p>O Agro Forte está transformando a agricultura com novas tecnologias e práticas que favorecem tanto a produção quanto o meio ambiente.</p>
+        <!-- Contador de Sustentabilidade -->
+        <section id="counterSection">
+            <h2>Impacto Positivo</h2>
+            <div class="counter" id="counterDiv">
+                <p>Árvores plantadas: <span id="treeCounter">0</span></p>
+                <p>Águas economizadas: <span id="waterCounter">0</span> Litros</p>
             </div>
-            <a href="https://www.greenpeace.org/brasil/como-agir/agronegocio-sustentavel/" target="_blank">Leia sobre práticas agrícolas sustentáveis no Greenpeace.</a>
         </section>
 
         <footer>
