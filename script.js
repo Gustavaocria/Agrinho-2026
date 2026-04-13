@@ -1,20 +1,11 @@
-// Informações de login fictícias
-const validUsername = "usuario";
-const validPassword = "senha123";
-
-// Função para login
+// Função de login com qualquer nome de usuário e senha
 document.getElementById("loginForm").addEventListener("submit", function(event) {
     event.preventDefault();
 
-    const username = document.getElementById("username").value;
-    const password = document.getElementById("password").value;
-
-    if (username === validUsername && password === validPassword) {
-        document.getElementById("loginPage").style.display = "none"; // Oculta a tela de login
-        document.getElementById("mainContent").style.display = "block"; // Exibe o conteúdo principal
-    } else {
-        document.getElementById("loginError").style.display = "block"; // Mostra erro de login
-    }
+    // Apenas exibe o conteúdo principal sem verificar o nome de usuário ou senha
+    document.getElementById("loginPage").style.display = "none"; // Oculta a tela de login
+    document.getElementById("mainContent").style.display = "block"; // Exibe o conteúdo principal
+    document.getElementById("loginError").style.display = "none"; // Esconde qualquer mensagem de erro
 });
 
 // Manipula a exibição do texto extra ao clicar no botão
