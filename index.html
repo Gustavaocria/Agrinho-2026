@@ -1,1 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Login Agro Forte</title>
+<link rel="stylesheet" href="style.css">
+</head>
 
+<body class="login-body">
+
+<div class="login-box">
+  <h2>🌱 Agro Forte</h2>
+  <p>Futuro Sustentável</p>
+
+  <input type="text" id="user" placeholder="Usuário">
+  <input type="password" id="pass" placeholder="Senha">
+
+  <button onclick="login()">Entrar</button>
+  <p id="erro"></p>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Agro Forte</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>🌾 Agro Forte</h1>
+
+  <nav>
+    <a href="#sobre">Sobre</a>
+    <a href="#videos">Vídeos</a>
+    <a href="#calculadora">Impacto</a>
+    <a href="#contato">Contato</a>
+  </nav>
+
+  <button onclick="toggleDarkMode()">🌙</button>
+</header>
+
+<section class="hero">
+  <h2>Futuro Sustentável</h2>
+  <p>Produção com equilíbrio ambiental 🌱</p>
+</section>
+
+<section id="sobre" class="grid">
+  <div>
+    <h2>Sobre o Projeto</h2>
+    <p>O Agrinho promove consciência ambiental e práticas agrícolas sustentáveis para garantir o futuro.</p>
+  </div>
+
+  <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399">
+</section>
+
+<section id="videos">
+  <h2>🎬 Educação no Agro</h2>
+
+  <iframe width="300" height="200"
+    src="https://www.youtube.com/embed/2Vv-BfVoq4g">
+  </iframe>
+</section>
+
+<section id="calculadora">
+  <h2>🌍 Calculadora Ambiental</h2>
+
+  <input type="number" id="agua" placeholder="Litros de água/dia">
+  <input type="number" id="energia" placeholder="Horas de energia/dia">
+  <input type="number" id="lixo" placeholder="Kg de lixo/semana">
+
+  <button onclick="calcularImpacto()">Calcular</button>
+
+  <div class="barra">
+    <div id="nivel"></div>
+  </div>
+
+  <h3 id="resultado"></h3>
+</section>
+
+<section id="contato">
+  <h2>📩 Contato</h2>
+
+  <form onsubmit="enviarMensagem(event)">
+    <input type="text" placeholder="Seu nome" required>
+    <textarea placeholder="Mensagem..." required></textarea>
+    <button>Enviar</button>
+  </form>
+
+  <p id="msg"></p>
+</section>
+
+<footer>
+  <p>🌿 Agrinho Paraná 2026</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
