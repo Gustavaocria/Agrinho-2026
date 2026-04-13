@@ -1,9 +1,70 @@
-# Projeto Agro Forte Sustentável 🌾
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agro Forte, Futuro Sustentável</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="loginPage" class="page">
+        <h2>Bem-vindo ao Agro Forte</h2>
+        <p>Faça login para continuar</p>
+        <form id="loginForm">
+            <input type="text" id="username" placeholder="Nome de usuário" required><br>
+            <input type="password" id="password" placeholder="Senha" required><br>
+            <button type="submit">Entrar</button>
+        </form>
+        <p id="loginError" style="color: red; display: none;">Nome de usuário ou senha incorretos!</p>
+    </div>
 
-Site desenvolvido para unir tecnologia e conscientização sobre o agronegócio moderno.
+    <div id="mainContent" class="page" style="display: none;">
+        <header>
+            <h1>Agro Forte, Futuro Sustentável</h1>
+            <p>Equilíbrio entre Produção e Meio Ambiente</p>
+        </header>
+        
+        <nav>
+            <ul>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#objetivos">Objetivos</a></li>
+                <li><a href="#destaques">Destaques</a></li>
+            </ul>
+        </nav>
 
-### Funcionalidades:
-- **Login Seguro:** Validação de formulário via JavaScript.
-- **Responsivo:** Funciona em celulares e computadores.
-- **Educação:** Links diretos para aulas de agroecologia e órgãos nacionais (Embrapa).
-- **Design:** Focado na experiência do usuário e na temática ambiental.
+        <section id="sobre">
+            <h2>O que é Agro Forte?</h2>
+            <p>O Agro Forte é uma abordagem que busca promover a produção agrícola de maneira sustentável, equilibrando a necessidade de crescimento econômico com a preservação ambiental.</p>
+            <button id="showMoreBtn">Saiba mais</button>
+            <div id="moreInfo" style="display: none;">
+                <p>É essencial que os produtores adotem práticas que minimizem os impactos ambientais, como a rotação de culturas, uso eficiente da água e tecnologias verdes.</p>
+                <a href="https://www.mma.gov.br" target="_blank">Clique aqui para aprender mais sobre práticas sustentáveis no Brasil.</a>
+            </div>
+        </section>
+
+        <section id="objetivos">
+            <h2>Objetivos do Agro Forte</h2>
+            <ul>
+                <li>Reduzir o impacto ambiental</li>
+                <li>Aumentar a produtividade de forma sustentável</li>
+                <li>Preservar a biodiversidade</li>
+            </ul>
+            <p>Leia mais sobre o futuro da agricultura sustentável em <a href="https://www.fao.org/sustainable-development-goals" target="_blank">FAO - Objetivos de Desenvolvimento Sustentável</a>.</p>
+        </section>
+
+        <section id="destaques">
+            <h2>Destaques do Agro Forte</h2>
+            <div id="highlightContent">
+                <p>Agro Forte está transformando a agricultura com novas tecnologias e práticas que favorecem tanto a produção quanto o meio ambiente.</p>
+            </div>
+            <a href="https://www.greenpeace.org/brasil/como-agir/agronegocio-sustentavel/" target="_blank">Leia sobre práticas agrícolas sustentáveis no Greenpeace.</a>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 Agro Forte. Todos os direitos reservados.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
