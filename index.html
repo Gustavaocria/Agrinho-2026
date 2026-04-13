@@ -10,42 +10,42 @@
 <body>
     <!-- Tela de Login -->
     <div id="loginPage" class="login-page">
-        <h2>Bem-vindo ao Agro Forte</h2>
-        <p>Entre para explorar o futuro sustentável da agricultura!</p>
-        <form id="loginForm">
-            <input type="text" id="username" placeholder="Nome de usuário" required><br>
-            <input type="password" id="password" placeholder="Senha" required><br>
-            <button type="submit">Entrar</button>
-        </form>
-        <p id="loginError" style="color: green; display: none;">Login realizado com sucesso!</p>
+        <div class="login-container">
+            <h2>Bem-vindo ao Agro Forte</h2>
+            <p>Junte-se à revolução verde!</p>
+            <form id="loginForm">
+                <input type="text" id="username" placeholder="Nome de usuário" required><br>
+                <input type="password" id="password" placeholder="Senha" required><br>
+                <button type="submit">Entrar</button>
+            </form>
+            <p id="loginError" style="color: green; display: none;">Login realizado com sucesso!</p>
+        </div>
     </div>
 
     <!-- Conteúdo Principal -->
     <div id="mainContent" class="main-content" style="display: none;">
         <header>
             <h1>Agro Forte, Futuro Sustentável</h1>
-            <p>Produção e Meio Ambiente em Harmonia</p>
+            <p>Unindo Tecnologia e Sustentabilidade na Agricultura</p>
         </header>
 
         <div class="intro">
             <h2>O Agro Forte é o futuro</h2>
-            <p>Com práticas sustentáveis, podemos garantir que as gerações futuras também possam se beneficiar do nosso trabalho agrícola sem prejudicar o meio ambiente. Vamos caminhar juntos para um futuro mais verde!</p>
+            <p>Com práticas agrícolas sustentáveis, podemos proteger nosso planeta e garantir um futuro próspero para todos.</p>
             <button id="startLearningBtn">Comece a aprender agora!</button>
         </div>
 
-        <!-- Seções -->
         <section id="sobre">
             <h2>O que é Agro Forte?</h2>
-            <p>Agro Forte é a união entre práticas agrícolas modernas e sustentabilidade, promovendo o uso consciente dos recursos naturais, preservando a biodiversidade e aumentando a produtividade.</p>
+            <p>Agro Forte une as mais recentes inovações tecnológicas à agricultura sustentável, favorecendo a produção responsável e preservando os recursos naturais para as futuras gerações.</p>
             <button id="showMoreBtn">Saiba mais</button>
             <div id="moreInfo" style="display: none;">
-                <p>A agricultura sustentável utiliza novas tecnologias para aumentar a produtividade sem prejudicar o meio ambiente. Essas práticas ajudam a reduzir o uso de pesticidas, a conservar a água e a aumentar a biodiversidade.</p>
+                <p>A agricultura sustentável envolve práticas como o uso inteligente da água, rotação de culturas e conservação do solo. O Agro Forte promove essas práticas para garantir um equilíbrio entre produção e preservação ambiental.</p>
             </div>
         </section>
 
-        <!-- Contador de Sustentabilidade -->
         <section id="counterSection">
-            <h2>Impacto Positivo</h2>
+            <h2>Impacto Sustentável</h2>
             <div class="counter" id="counterDiv">
                 <p>Árvores plantadas: <span id="treeCounter">0</span></p>
                 <p>Águas economizadas: <span id="waterCounter">0</span> Litros</p>
