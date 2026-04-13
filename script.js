@@ -1,14 +1,16 @@
-// Função de login com qualquer nome de usuário e senha
+// Função de login: Qualquer nome de usuário e senha são aceitos
 document.getElementById("loginForm").addEventListener("submit", function(event) {
     event.preventDefault();
+    
+    // Esconde a tela de login e exibe o conteúdo principal
+    document.getElementById("loginPage").style.display = "none"; 
+    document.getElementById("mainContent").style.display = "block"; 
 
-    // Apenas exibe o conteúdo principal sem verificar o nome de usuário ou senha
-    document.getElementById("loginPage").style.display = "none"; // Oculta a tela de login
-    document.getElementById("mainContent").style.display = "block"; // Exibe o conteúdo principal
-    document.getElementById("loginError").style.display = "none"; // Esconde qualquer mensagem de erro
+    // Exibe uma mensagem de login bem-sucedido
+    document.getElementById("loginError").style.display = "block";
 });
 
-// Manipula a exibição do texto extra ao clicar no botão
+// Função para exibir mais informações sobre práticas sustentáveis
 document.getElementById('showMoreBtn').addEventListener('click', function() {
     const moreInfo = document.getElementById('moreInfo');
     if (moreInfo.style.display === 'none') {
@@ -18,12 +20,12 @@ document.getElementById('showMoreBtn').addEventListener('click', function() {
     }
 });
 
-// Alterna entre mostrar e esconder os destaques
-setInterval(function() {
-    const highlightContent = document.getElementById('highlightContent');
-    if (highlightContent.style.color === 'red') {
-        highlightContent.style.color = 'green';
-    } else {
-        highlightContent.style.color = 'red';
-    }
-}, 3000);
+// Função para o contador de sustentabilidade
+let treeCounter = 0;
+let waterCounter = 0;
+
+function updateCounters() {
+    treeCounter += 5; // Adiciona 5 árvores a cada 1 segundo
+    waterCounter += 10; // Adiciona 10 litros de água economizada a cada 1 segundo
+
+    document.getElement
