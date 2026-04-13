@@ -1,24 +1,38 @@
-document.getElementById('agro-form').addEventListener('submit', function(event) {
-    event.preventDefault(); // Impede a página de recarregar
+// Informações de login fictícias
+const validUsername = "usuario";
+const validPassword = "senha123";
 
-    // Coleta os valores
-    const user = document.getElementById('username').value;
-    const pass = document.getElementById('password').value;
+// Função para login
+document.getElementById("loginForm").addEventListener("submit", function(event) {
+    event.preventDefault();
 
-    // Validação simples de segurança
-    if (pass.length < 6) {
-        alert("A senha precisa ter pelo menos 6 caracteres para ser segura!");
-        return;
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+
+    if (username === validUsername && password === validPassword) {
+        document.getElementById("loginPage").style.display = "none"; // Oculta a tela de login
+        document.getElementById("mainContent").style.display = "block"; // Exibe o conteúdo principal
+    } else {
+        document.getElementById("loginError").style.display = "block"; // Mostra erro de login
     }
-
-    // Sucesso: Troca de tela
-    document.getElementById('user-display').innerText = user;
-    document.getElementById('auth-container').classList.add('hidden');
-    document.getElementById('main-content').classList.remove('hidden');
-    
-    console.log("Usuário logado com sucesso!");
 });
 
-function logout() {
-    window.location.reload(); // Volta para a tela inicial
-}
+// Manipula a exibição do texto extra ao clicar no botão
+document.getElementById('showMoreBtn').addEventListener('click', function() {
+    const moreInfo = document.getElementById('moreInfo');
+    if (moreInfo.style.display === 'none') {
+        moreInfo.style.display = 'block';
+    } else {
+        moreInfo.style.display = 'none';
+    }
+});
+
+// Alterna entre mostrar e esconder os destaques
+setInterval(function() {
+    const highlightContent = document.getElementById('highlightContent');
+    if (highlightContent.style.color === 'red') {
+        highlightContent.style.color = 'green';
+    } else {
+        highlightContent.style.color = 'red';
+    }
+}, 3000);
