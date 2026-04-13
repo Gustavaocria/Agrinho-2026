@@ -3,69 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agro Forte & Sustentável</title>
+    <title>Agro Forte, Futuro Sustentável</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <div id="auth-container" class="container">
-        <header>
-            <h1>AgroForte</h1>
-            <p>O futuro sustentável do campo</p>
-        </header>
-
-        <section class="card" id="login-card">
-            <h2>Crie seu Acesso</h2>
-            <form id="agro-form">
-                <div class="input-group">
-                    <label>Nome de Usuário</label>
-                    <input type="text" id="username" placeholder="Ex: agro_lider" required>
-                </div>
-                <div class="input-group">
-                    <label>E-mail</label>
-                    <input type="email" id="email" placeholder="seu@email.com" required>
-                </div>
-                <div class="input-group">
-                    <label>Crie uma Senha</label>
-                    <input type="password" id="password" placeholder="No mínimo 6 caracteres" required>
-                </div>
-                <button type="submit" class="btn-main">Entrar no Portal</button>
-            </form>
-        </section>
+    <div id="loginPage" class="page">
+        <h2>Bem-vindo ao Agro Forte</h2>
+        <p>Faça login para continuar</p>
+        <form id="loginForm">
+            <input type="text" id="username" placeholder="Nome de usuário" required><br>
+            <input type="password" id="password" placeholder="Senha" required><br>
+            <button type="submit">Entrar</button>
+        </form>
+        <p id="loginError" style="color: red; display: none;">Nome de usuário ou senha incorretos!</p>
     </div>
 
-    <div id="main-content" class="container hidden">
+    <div id="mainContent" class="page" style="display: none;">
         <header>
-            <h1>Painel Agro Sustentável</h1>
-            <p>Bem-vindo, <strong id="user-display"></strong>!</p>
+            <h1>Agro Forte, Futuro Sustentável</h1>
+            <p>Equilíbrio entre Produção e Meio Ambiente</p>
         </header>
+        
+        <nav>
+            <ul>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#objetivos">Objetivos</a></li>
+                <li><a href="#destaques">Destaques</a></li>
+            </ul>
+        </nav>
 
-        <section class="dashboard">
-            <div class="banner">
-                <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=1000&q=80" alt="Plantação de soja sustentável">
-                <div class="banner-text">Equilíbrio: Produção & Natureza</div>
+        <section id="sobre">
+            <h2>O que é Agro Forte?</h2>
+            <p>O Agro Forte é uma abordagem que busca promover a produção agrícola de maneira sustentável, equilibrando a necessidade de crescimento econômico com a preservação ambiental.</p>
+            <button id="showMoreBtn">Saiba mais</button>
+            <div id="moreInfo" style="display: none;">
+                <p>É essencial que os produtores adotem práticas que minimizem os impactos ambientais, como a rotação de culturas, uso eficiente da água e tecnologias verdes.</p>
+                <a href="https://www.mma.gov.br" target="_blank">Clique aqui para aprender mais sobre práticas sustentáveis no Brasil.</a>
             </div>
-
-            <div class="content-grid">
-                <div class="card-info">
-                    <h3>Aulas e Capacitação</h3>
-                    <p>Acesse conteúdos educativos exclusivos.</p>
-                    <a href="https://www.youtube.com/results?search_query=agro+sustentavel+aulas" target="_blank" class="btn-link youtube">Assistir Aulas no YouTube</a>
-                </div>
-
-                <div class="card-info">
-                    <h3>Portais Nacionais</h3>
-                    <p>Links oficiais do setor no Brasil.</p>
-                    <div class="links-list">
-                        <a href="https://www.embrapa.br" target="_blank">Embrapa - Pesquisa Agro</a>
-                        <a href="https://www.gov.br/agricultura/pt-br" target="_blank">Ministério da Agricultura</a>
-                        <a href="https://www.cnabrasil.org.br" target="_blank">CNA Brasil</a>
-                    </div>
-                </div>
-            </div>
-
-            <button onclick="logout()" class="btn-exit">Sair do Sistema</button>
         </section>
+
+        <section id="objetivos">
+            <h2>Objetivos do Agro Forte</h2>
+            <ul>
+                <li>Reduzir o impacto ambiental</li>
+                <li>Aumentar a produtividade de forma sustentável</li>
+                <li>Preservar a biodiversidade</li>
+            </ul>
+            <p>Leia mais sobre o futuro da agricultura sustentável em <a href="https://www.fao.org/sustainable-development-goals" target="_blank">FAO - Objetivos de Desenvolvimento Sustentável</a>.</p>
+        </section>
+
+        <section id="destaques">
+            <h2>Destaques do Agro Forte</h2>
+            <div id="highlightContent">
+                <p>Agro Forte está transformando a agricultura com novas tecnologias e práticas que favorecem tanto a produção quanto o meio ambiente.</p>
+            </div>
+            <a href="https://www.greenpeace.org/brasil/como-agir/agronegocio-sustentavel/" target="_blank">Leia sobre práticas agrícolas sustentáveis no Greenpeace.</a>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 Agro Forte. Todos os direitos reservados.</p>
+        </footer>
     </div>
 
     <script src="script.js"></script>
