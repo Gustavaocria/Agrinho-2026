@@ -1,1 +1,89 @@
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #eef5ec;
+  transition: 0.3s;
+}
 
+/* DARK MODE /
+.dark {
+  background: #121212;
+  color: white;
+}
+
+/ HEADER /
+header {
+  display: flex;
+  justify-content: space-between;
+  background: linear-gradient(90deg,#2e7d32,#66bb6a);
+  color: white;
+  padding: 15px;
+}
+
+nav a {
+  color: white;
+  margin: 10px;
+}
+
+/ HERO /
+.hero {
+  text-align: center;
+  padding: 80px;
+  background: url('https://images.unsplash.com/photo-1500382017468-9049fed747ef') center/cover;
+  color: white;
+}
+
+/ GRID /
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 40px;
+}
+
+/ CALCULADORA /
+#calculadora {
+  text-align: center;
+  background: #dcedc8;
+  padding: 40px;
+}
+
+.barra {
+  width: 80%;
+  height: 20px;
+  background: #ccc;
+  margin: 20px auto;
+}
+
+#nivel {
+  height: 100%;
+  width: 0%;
+  background: green;
+}
+
+/ LOGIN /
+.login-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-box {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+/ FORM */
+input, textarea {
+  width: 80%;
+  padding: 10px;
+  margin: 10px;
+}
+
+button {
+  padding: 10px;
+  background: #2e7d32;
+  color: white;
+  border: none;
+}
