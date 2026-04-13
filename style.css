@@ -1,14 +1,17 @@
+}
 body {
-  font-family: Arial;
   margin: 0;
-  background: #f4f4f4;
+  font-family: Arial;
+  background: #eef5ec;
 }
 
+/* HEADER /
 header {
-  background: #2e7d32;
+  background: linear-gradient(90deg, #2e7d32, #66bb6a);
   color: white;
-  padding: 15px;
-  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 30px;
 }
 
 nav a {
@@ -17,58 +20,60 @@ nav a {
   text-decoration: none;
 }
 
-.banner {
-  background: url('https://images.unsplash.com/photo-1500382017468-9049fed747ef') no-repeat center/cover;
+/ HERO /
+.hero {
+  text-align: center;
+  padding: 80px;
+  background: url('https://images.unsplash.com/photo-1500382017468-9049fed747ef') center/cover;
   color: white;
-  text-align: center;
-  padding: 100px 20px;
 }
 
-section {
-  padding: 30px;
-  text-align: center;
+.hero button {
+  background: #1b5e20;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  margin-top: 20px;
 }
 
-img {
-  width: 80%;
-  max-width: 400px;
+#info {
+  display: none;
+  margin-top: 20px;
+}
+
+/ GRID /
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 40px;
+  align-items: center;
+}
+
+.grid img {
+  width: 100%;
   border-radius: 10px;
 }
 
+/ CARDS /
 .cards a {
   display: block;
-  background: #4caf50;
-  margin: 10px;
-  padding: 15px;
+  background: #43a047;
   color: white;
+  padding: 15px;
+  margin: 10px;
   border-radius: 8px;
   text-decoration: none;
+  transition: 0.3s;
 }
 
-footer {
+.cards a:hover {
   background: #2e7d32;
-  color: white;
-  text-align: center;
-  padding: 10px;
+  transform: scale(1.05);
 }
 
-/* LOGIN */
-.login-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-.login-box {
-  background: white;
-  padding: 30px;
-  border-radius: 10px;
-  text-align: center;
-}
-
+/ FORM /
 input, textarea {
-  width: 90%;
+  width: 80%;
   padding: 10px;
   margin: 10px;
 }
@@ -79,3 +84,10 @@ button {
   border: none;
   padding: 10px 20px;
 }
+
+/ FOOTER */
+footer {
+  background: #1b5e20;
+  color: white;
+  text-align: center;
+  padding: 15px;
