@@ -1,15 +1,14 @@
-function login() {
-  let user = document.getElementById("user").value;
-  let pass = document.getElementById("pass").value;
+"}
+function mostrarInfo() {
+  let info = document.getElementById("info");
 
-  if (user === "admin" && pass === "1234") {
-    window.location.href = "index.html";
+  if (info.style.display === "block") {
+    info.style.display = "none";
   } else {
-    document.getElementById("erro").innerText = "Login inválido!";
+    info.style.display = "block";
   }
 }
 
 function enviarMensagem(e) {
   e.preventDefault();
   document.getElementById("msg").innerText = "Mensagem enviada com sucesso!";
-}
