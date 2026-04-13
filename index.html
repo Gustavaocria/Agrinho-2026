@@ -3,102 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Agro Forte</title>
 
-<!-- Fonte bonita -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-
-<style>
-body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: #f1f8f4;
-  color: #2e2e2e;
-}
-
-/* HEADER /
-header {
-  background: #1b5e20;
-  color: white;
-  padding: 15px;
-  display: flex;
-  justify-content: space-between;
-}
-
-nav a {
-  color: white;
-  margin: 10px;
-  text-decoration: none;
-}
-
-/ HERO /
-.hero {
-  text-align: center;
-  padding: 100px 20px;
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-  url('https://images.unsplash.com/photo-1500382017468-9049fed747ef');
-  color: white;
-}
-
-/ SEÇÕES /
-section {
-  padding: 40px;
-  max-width: 900px;
-  margin: auto;
-}
-
-/ BOTÕES /
-button {
-  background: #2e7d32;
-  color: white;
-  padding: 10px;
-  border: none;
-  border-radius: 8px;
-}
-
-/ INPUT /
-input, textarea {
-  width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-}
-
-/ CALCULADORA /
-.barra {
-  width: 100%;
-  height: 20px;
-  background: #ccc;
-}
-
-#nivel {
-  height: 100%;
-  width: 0%;
-  background: green;
-}
-
-/ LOGIN /
-#login {
-  text-align: center;
-  padding: 100px;
-}
-
-.hidden {
-  display: none;
-}
-
-/ DARK MODE /
-.dark {
-  background: #121212;
-  color: white;
-}
-
-footer {
-  background: #1b5e20;
-  color: white;
-  text-align: center;
-  padding: 10px;
-}
-</style>
+<!-- CONEXÃO COM CSS -->
+<link rel="stylesheet" href="style.css">
 
 </head>
 
@@ -133,8 +42,8 @@ footer {
 </section>
 
 <section id="sobre">
-  <h2>Sobre</h2>
-  <p>O Agrinho promove educação e práticas sustentáveis no campo.</p>
+  <h2>Sobre o Projeto</h2>
+  <p>O Agrinho promove educação e sustentabilidade no campo, incentivando práticas responsáveis.</p>
 </section>
 
 <section id="videos">
@@ -177,54 +86,8 @@ footer {
 
 </div>
 
-<script>
-function login() {
-  let u = document.getElementById("user").value;
-  let p = document.getElementById("pass").value;
-
-  if (u === "admin" && p === "1234") {
-    document.getElementById("login").style.display = "none";
-    document.getElementById("site").classList.remove("hidden");
-  } else {
-    document.getElementById("erro").innerText = "Login incorreto!";
-  }
-}
-
-function dark() {
-  document.body.classList.toggle("dark");
-}
-
-function calc() {
-  let a = document.getElementById("agua").value;
-  let e = document.getElementById("energia").value;
-  let l = document.getElementById("lixo").value;
-
-  let r = (a0.3)+(e0.5)+(l2);
-
-  let barra = document.getElementById("nivel");
-  let res = document.getElementById("res");
-
-  if (r > 100) r = 100;
-
-  barra.style.width = r + "%";
-
-  if (r < 50) {
-    res.innerText = "🌱 Impacto baixo!";
-    barra.style.background = "green";
-  } else if (r < 100) {
-    res.innerText = "⚠️ Impacto médio!";
-    barra.style.background = "orange";
-  } else {
-    res.innerText = "🚨 Impacto alto!";
-    barra.style.background = "red";
-  }
-}
-
-function msg(e) {
-  e.preventDefault();
-  document.getElementById("ok").innerText = "Mensagem enviada!";
-}
-</script>
+<!-- CONEXÃO COM JS -->
+<script src="script.js"></script>
 
 </body>
 </html>
