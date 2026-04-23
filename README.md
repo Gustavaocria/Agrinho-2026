@@ -1,23 +1,24 @@
 # Agro Forte - Sustentabilidade e Tecnologia
 
-Agro Forte é um site informativo e interativo que promove o equilíbrio entre **produção agrícola e preservação ambiental**, com foco em **tecnologia e inovação**.
+Agro Forte é um **site informativo e interativo** que promove o equilíbrio entre produção agrícola e preservação ambiental, utilizando **tecnologia moderna** para uma agricultura mais eficiente e sustentável.
 
 ## Funcionalidades
 
-### Estrutura do Site
-- Header fixo com menu e botão de **modo escuro**
-- Banner rotativo de imagens do agro
-- Seções:
-  - Sobre
-  - Galeria de fotos interativa
-  - Vídeos educativos incorporados do YouTube
-  - Últimas notícias do setor agro
-  - Links úteis externos
+- **Banner rotativo** com imagens de agricultura, mudando automaticamente a cada 5 segundos.
+- **Modo Escuro**: alterna entre modo claro e escuro com um botão.
+- **Seção Sobre**: cards interativos com animação de hover.
+- **Contador de cliques**: registra o número de vezes que os cards foram clicados.
+- **Galeria de fotos**: grid responsivo que pode ser mostrado ou escondido com um botão.
+- **Vídeos educativos**: vídeos incorporados do YouTube.
+- **Notícias e Links úteis**: seções informativas com estilo institucional.
+- **Scroll suave**: navegação entre seções da página de forma agradável.
+- **Layout responsivo**: funciona bem em desktop, tablets e celulares.
 
-### JavaScript e Manipulação do DOM
-- **Modo Escuro:** altera aparência do site e texto do botão dinamicamente
-- **Mostrar/Esconder Galeria:** oculta ou mostra fotos ao clicar
-- **Contador de Cliques nos Cards:** mostra quantos cards o usuário clicou
-- **Alteração de Texto Dinâmica:** título principal muda após alguns segundos
-- **Scroll Suave:** navegação entre seções
-- **Banner
+## Tecnologias Utilizadas
+
+- **HTML5**: Estrutura semântica do site.
+- **CSS3**: Estilização moderna, responsiva e modo escuro.
+- **JavaScript**: Interatividade e manipulação do DOM.
+- **Git/GitHub**: Controle de versão e publicação.
+
+## Estrutura de Arquivos
