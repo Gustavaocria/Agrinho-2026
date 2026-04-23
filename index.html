@@ -3,125 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agro Forte - Tecnologia e Sustentabilidade</title>
+    <title>Agro Forte 2.0 - Sustentabilidade e Tecnologia</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Header com Menu Fixo e Dropdown -->
+    <!-- Header -->
     <header>
-        <div class="logo">Agro Forte</div>
+        <div class="logo">Agro Forte 2.0</div>
         <nav>
             <ul>
-                <li><a href="#sobre">Sobre</a></li>
-                <li class="dropdown">
-                    <a href="#galeria">Galeria</a>
-                    <ul class="dropdown-content">
-                        <li><a href="#galeria-fotos">Fotos</a></li>
-                        <li><a href="#galeria-videos">Vídeos</a></li>
-                    </ul>
-                </li>
-                <li><a href="#noticias">Notícias</a></li>
-                <li><a href="#links">Links</a></li>
+                <li><a href="#banner">Início</a></li>
+                <li><a href="#destaques">Destaques</a></li>
+                <li><a href="#galeria">Galeria</a></li>
+                <li><a href="#videos">Vídeos</a></li>
+                <li><a href="#contato">Contato</a></li>
             </ul>
             <button id="darkModeBtn">Modo Escuro</button>
         </nav>
     </header>
 
-    <!-- Banner Rotativo Avançado -->
+    <!-- Banner Horizontal + Fade -->
     <section id="banner">
         <div class="carousel">
             <div class="slide active">
-                <img src="https://source.unsplash.com/1200x500/?farm,agriculture" alt="Campo agrícola">
-                <div class="caption">Produção sustentável com tecnologia moderna</div>
+                <img src="https://source.unsplash.com/1200x500/?agriculture,field" alt="Agro 1">
+                <div class="caption">Produção inteligente e sustentável</div>
             </div>
             <div class="slide">
-                <img src="https://source.unsplash.com/1200x500/?tractor,field" alt="Trator">
-                <div class="caption">Máquinas de ponta para agricultura eficiente</div>
+                <img src="https://source.unsplash.com/1200x500/?tractor,farm" alt="Agro 2">
+                <div class="caption">Tecnologia de ponta no campo</div>
             </div>
             <div class="slide">
-                <img src="https://source.unsplash.com/1200x500/?sustainable,farming" alt="Sustentabilidade">
-                <div class="caption">Equilíbrio entre produção e meio ambiente</div>
+                <img src="https://source.unsplash.com/1200x500/?sustainable,farming" alt="Agro 3">
+                <div class="caption">Equilíbrio com o meio ambiente</div>
             </div>
-            <div class="carousel-indicators"></div>
+            <button class="prev">&#10094;</button>
+            <button class="next">&#10095;</button>
         </div>
     </section>
 
-    <!-- Seção Sobre -->
-    <section id="sobre">
+    <!-- Seção Destaques com Cards Flip -->
+    <section id="destaques">
         <div class="container">
-            <h1>Agro Forte: Inovação e Sustentabilidade</h1>
-            <p>Nosso compromisso é promover o equilíbrio entre agricultura produtiva e preservação ambiental, usando tecnologias avançadas e práticas sustentáveis.</p>
-            <div class="cards">
+            <h2>Destaques Agro</h2>
+            <div class="cards-flip">
                 <div class="card">
-                    <img src="https://source.unsplash.com/400x250/?farm,field" alt="Produção Sustentável">
-                    <div class="card-info">
-                        <h3>Produção Sustentável</h3>
-                        <p>Técnicas de cultivo que respeitam o meio ambiente.</p>
-                        <button class="card-btn">Clique aqui</button>
+                    <div class="front">
+                        <img src="https://source.unsplash.com/400x250/?farm,field" alt="Sustentabilidade">
+                        <h3>Sustentabilidade</h3>
+                    </div>
+                    <div class="back">
+                        <p>Técnicas que preservam o solo e a biodiversidade.</p>
                     </div>
                 </div>
                 <div class="card">
-                    <img src="https://source.unsplash.com/400x250/?tractor,farm" alt="Tecnologia Agrícola">
-                    <div class="card-info">
-                        <h3>Tecnologia Agrícola</h3>
-                        <p>Monitoramento digital e equipamentos modernos.</p>
-                        <button class="card-btn">Clique aqui</button>
+                    <div class="front">
+                        <img src="https://source.unsplash.com/400x250/?tractor" alt="Tecnologia">
+                        <h3>Tecnologia</h3>
+                    </div>
+                    <div class="back">
+                        <p>Equipamentos modernos aumentam eficiência e produtividade.</p>
                     </div>
                 </div>
                 <div class="card">
-                    <img src="https://source.unsplash.com/400x250/?forest,nature" alt="Preservação Ambiental">
-                    <div class="card-info">
-                        <h3>Preservação Ambiental</h3>
-                        <p>Projetos que incentivam a biodiversidade e proteção do solo.</p>
-                        <button class="card-btn">Clique aqui</button>
+                    <div class="front">
+                        <img src="https://source.unsplash.com/400x250/?forest" alt="Preservação">
+                        <h3>Preservação</h3>
+                    </div>
+                    <div class="back">
+                        <p>Projetos de reflorestamento e proteção ambiental.</p>
                     </div>
                 </div>
             </div>
-            <div id="contadorCards">Você clicou em 0 cards.</div>
         </div>
     </section>
 
-    <!-- Galeria de Fotos -->
-    <section id="galeria-fotos">
+    <!-- Galeria Modal -->
+    <section id="galeria">
         <div class="container">
-            <h2>Galeria de Fotos</h2>
-            <button id="toggleGalleryBtn">Mostrar/Esconder Galeria</button>
+            <h2>Galeria</h2>
             <div class="gallery">
-                <img src="https://source.unsplash.com/300x200/?agriculture" alt="Agro 1">
-                <img src="https://source.unsplash.com/300x200/?farm" alt="Agro 2">
-                <img src="https://source.unsplash.com/300x200/?tractor" alt="Agro 3">
-                <img src="https://source.unsplash.com/300x200/?crops" alt="Agro 4">
+                <img src="https://source.unsplash.com/300x200/?agriculture" alt="Foto 1">
+                <img src="https://source.unsplash.com/300x200/?farm" alt="Foto 2">
+                <img src="https://source.unsplash.com/300x200/?tractor" alt="Foto 3">
+                <img src="https://source.unsplash.com/300x200/?crops" alt="Foto 4">
             </div>
         </div>
     </section>
 
-    <!-- Seção Vídeos -->
-    <section id="galeria-videos">
+    <!-- Vídeos -->
+    <section id="videos">
         <div class="container">
             <h2>Vídeos Educativos</h2>
-            <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/6j6cCw4VogQ" allowfullscreen></iframe>
-            </div>
-            <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/bv6MQZxx2sA" allowfullscreen></iframe>
+            <div class="video-grid">
+                <div class="video-card">
+                    <iframe src="https://www.youtube.com/embed/6j6cCw4VogQ" allowfullscreen></iframe>
+                    <p>Como cultivar de forma sustentável</p>
+                </div>
+                <div class="video-card">
+                    <iframe src="https://www.youtube.com/embed/bv6MQZxx2sA" allowfullscreen></iframe>
+                    <p>Uso de tecnologia no campo</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Notícias -->
-    <section id="noticias">
-        <div class="container">
-            <h2>Últimas Notícias do Agro</h2>
-            <ul class="news-list">
-                <li><strong>01/04/2026:</strong> Nova tecnologia reduz uso de água na irrigação em 30%.</li>
-                <li><strong>15/04/2026:</strong> Projeto de reflorestamento promove biodiversidade em áreas agrícolas.</li>
-                <li><strong>20/04/2026:</strong> Startup desenvolve sensor inteligente para monitoramento de colheitas.</li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- Links Úteis -->
-    <section id="links">
+    <!-- Contato / Links úteis -->
+    <section id="contato">
         <div class="container">
             <h2>Links Úteis</h2>
             <ul>
@@ -135,11 +123,10 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>© 2026 Agro Forte | Equilíbrio entre produção e meio ambiente</p>
+            <p>© 2026 Agro Forte 2.0 | Tecnologia e Sustentabilidade</p>
         </div>
     </footer>
 
-    <!-- Script -->
     <script src="script.js"></script>
 </body>
 </html>
