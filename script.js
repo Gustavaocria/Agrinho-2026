@@ -1,55 +1,60 @@
-// Modo escuro
+// Modo Escuro
 const darkModeBtn = document.getElementById('darkModeBtn');
 darkModeBtn.addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
     darkModeBtn.textContent = document.body.classList.contains('dark-mode') ? 'Modo Claro' : 'Modo Escuro';
 });
 
-// Scroll suave
-document.querySelectorAll('nav ul li a').forEach(anchor => {
-    anchor.addEventListener('click', function(e){
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        target.scrollIntoView({ behavior: 'smooth' });
+// Banner rotativo automático
+const slides = document.querySelectorAll('.carousel .slide');
+let currentSlide = 0;
+
+function showSlide(index) {
+    slides.forEach((slide, i) => {
+        slide.classList.remove('active');
+        if(i === index) slide.classList.add('active');
+    });
+}
+
+function nextSlide() {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+}
+
+setInterval(nextSlide, 5000); // Troca a cada 5 segundos
+
+// Contador de cliques nos cards
+const cardButtons = document.querySelectorAll('.card-btn');
+let clickCount = 0;
+const contador = document.getElementById('contadorCards');
+
+cardButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        clickCount++;
+        contador.textContent = `Você clicou em ${clickCount} cards.`;
     });
 });
 
 // Mostrar/Esconder Galeria
 const toggleGalleryBtn = document.getElementById('toggleGalleryBtn');
-const galleryContainer = document.querySelector('.gallery');
+const gallery = document.querySelector('.gallery');
+
 toggleGalleryBtn.addEventListener('click', () => {
-    galleryContainer.style.display = galleryContainer.style.display === 'none' ? 'grid' : 'none';
+    if(gallery.style.display === 'none') {
+        gallery.style.display = 'grid';
+        toggleGalleryBtn.textContent = 'Esconder Galeria';
+    } else {
+        gallery.style.display = 'none';
+        toggleGalleryBtn.textContent = 'Mostrar Galeria';
+    }
 });
 
-// Contador de cliques nos cards
-const cards = document.querySelectorAll('.card');
-const contadorDiv = document.createElement('div');
-contadorDiv.style.margin = '20px 0';
-contadorDiv.style.fontWeight = 'bold';
-contadorDiv.textContent = 'Você clicou em 0 cards.';
-document.querySelector('#sobre .container').appendChild(contadorDiv);
-
-let contador = 0;
-cards.forEach(card => {
-    card.addEventListener('click', () => {
-        contador++;
-        contadorDiv.textContent = `Você clicou em ${contador} cards.`;
+// Scroll suave para links internos
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e){
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
     });
 });
-
-// Alterar dinamicamente título principal
-const tituloPrincipal = document.querySelector('#sobre h1');
-setTimeout(() => {
-    tituloPrincipal.textContent = 'Agro Forte - Inovação e Sustentabilidade!';
-}, 5000);
-
-// Banner rotativo automático
-const slides = document.querySelectorAll('#banner .slide');
-let currentSlide = 0;
-function showSlide(index){
-    slides.forEach((slide, i) => slide.classList.toggle('active', i === index));
-}
-setInterval(() => {
-    currentSlide = (currentSlide + 1) % slides.length;
-    showSlide(currentSlide);
-}, 5000);
