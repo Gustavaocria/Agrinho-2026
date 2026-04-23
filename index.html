@@ -3,17 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agro Forte - Sustentabilidade e Tecnologia</title>
+    <title>Agro Forte - Tecnologia e Sustentabilidade</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Header com Menu Fixo e Dropdown -->
     <header>
         <div class="logo">Agro Forte</div>
         <nav>
             <ul>
                 <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#galeria">Galeria</a></li>
-                <li><a href="#videos">Vídeos</a></li>
+                <li class="dropdown">
+                    <a href="#galeria">Galeria</a>
+                    <ul class="dropdown-content">
+                        <li><a href="#galeria-fotos">Fotos</a></li>
+                        <li><a href="#galeria-videos">Vídeos</a></li>
+                    </ul>
+                </li>
                 <li><a href="#noticias">Notícias</a></li>
                 <li><a href="#links">Links</a></li>
             </ul>
@@ -21,103 +27,119 @@
         </nav>
     </header>
 
-    <main>
-        <!-- Banner Rotativo -->
-        <section id="banner">
-            <div class="carousel">
-                <img src="https://source.unsplash.com/1200x400/?farm,agriculture" class="slide active" alt="Agricultura 1">
-                <img src="https://source.unsplash.com/1200x400/?tractor,field" class="slide" alt="Agricultura 2">
-                <img src="https://source.unsplash.com/1200x400/?sustainable,farming" class="slide" alt="Agricultura 3">
+    <!-- Banner Rotativo Avançado -->
+    <section id="banner">
+        <div class="carousel">
+            <div class="slide active">
+                <img src="https://source.unsplash.com/1200x500/?farm,agriculture" alt="Campo agrícola">
+                <div class="caption">Produção sustentável com tecnologia moderna</div>
             </div>
-        </section>
+            <div class="slide">
+                <img src="https://source.unsplash.com/1200x500/?tractor,field" alt="Trator">
+                <div class="caption">Máquinas de ponta para agricultura eficiente</div>
+            </div>
+            <div class="slide">
+                <img src="https://source.unsplash.com/1200x500/?sustainable,farming" alt="Sustentabilidade">
+                <div class="caption">Equilíbrio entre produção e meio ambiente</div>
+            </div>
+            <div class="carousel-indicators"></div>
+        </div>
+    </section>
 
-        <!-- Sobre -->
-        <section id="sobre">
-            <div class="container">
-                <h1>Bem-vindo ao Agro Forte</h1>
-                <p>Nosso objetivo é promover o equilíbrio entre produção agrícola e preservação ambiental com tecnologia e inovação.</p>
-                <div class="cards">
-                    <div class="card">
-                        <img src="https://source.unsplash.com/400x250/?farm,field" alt="Plantação">
-                        <div class="card-info">
-                            <h3>Produção Sustentável</h3>
-                            <p>Técnicas modernas de cultivo respeitando a natureza.</p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img src="https://source.unsplash.com/400x250/?tractor,farm" alt="Trator">
-                        <div class="card-info">
-                            <h3>Tecnologia Agrícola</h3>
-                            <p>Equipamentos de ponta e monitoramento digital.</p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img src="https://source.unsplash.com/400x250/?forest,nature" alt="Meio ambiente">
-                        <div class="card-info">
-                            <h3>Preservação Ambiental</h3>
-                            <p>Respeito ao ecossistema e incentivo à biodiversidade.</p>
-                        </div>
+    <!-- Seção Sobre -->
+    <section id="sobre">
+        <div class="container">
+            <h1>Agro Forte: Inovação e Sustentabilidade</h1>
+            <p>Nosso compromisso é promover o equilíbrio entre agricultura produtiva e preservação ambiental, usando tecnologias avançadas e práticas sustentáveis.</p>
+            <div class="cards">
+                <div class="card">
+                    <img src="https://source.unsplash.com/400x250/?farm,field" alt="Produção Sustentável">
+                    <div class="card-info">
+                        <h3>Produção Sustentável</h3>
+                        <p>Técnicas de cultivo que respeitam o meio ambiente.</p>
+                        <button class="card-btn">Clique aqui</button>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <!-- Galeria -->
-        <section id="galeria">
-            <div class="container">
-                <h2>Galeria de Fotos</h2>
-                <button id="toggleGalleryBtn">Mostrar/Esconder Galeria</button>
-                <div class="gallery">
-                    <img src="https://source.unsplash.com/300x200/?agriculture" alt="Agro 1">
-                    <img src="https://source.unsplash.com/300x200/?farm" alt="Agro 2">
-                    <img src="https://source.unsplash.com/300x200/?tractor" alt="Agro 3">
-                    <img src="https://source.unsplash.com/300x200/?crops" alt="Agro 4">
+                <div class="card">
+                    <img src="https://source.unsplash.com/400x250/?tractor,farm" alt="Tecnologia Agrícola">
+                    <div class="card-info">
+                        <h3>Tecnologia Agrícola</h3>
+                        <p>Monitoramento digital e equipamentos modernos.</p>
+                        <button class="card-btn">Clique aqui</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://source.unsplash.com/400x250/?forest,nature" alt="Preservação Ambiental">
+                    <div class="card-info">
+                        <h3>Preservação Ambiental</h3>
+                        <p>Projetos que incentivam a biodiversidade e proteção do solo.</p>
+                        <button class="card-btn">Clique aqui</button>
+                    </div>
                 </div>
             </div>
-        </section>
+            <div id="contadorCards">Você clicou em 0 cards.</div>
+        </div>
+    </section>
 
-        <!-- Vídeos -->
-        <section id="videos">
-            <div class="container">
-                <h2>Vídeos Educativos</h2>
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/6j6cCw4VogQ" allowfullscreen></iframe>
-                </div>
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/bv6MQZxx2sA" allowfullscreen></iframe>
-                </div>
+    <!-- Galeria de Fotos -->
+    <section id="galeria-fotos">
+        <div class="container">
+            <h2>Galeria de Fotos</h2>
+            <button id="toggleGalleryBtn">Mostrar/Esconder Galeria</button>
+            <div class="gallery">
+                <img src="https://source.unsplash.com/300x200/?agriculture" alt="Agro 1">
+                <img src="https://source.unsplash.com/300x200/?farm" alt="Agro 2">
+                <img src="https://source.unsplash.com/300x200/?tractor" alt="Agro 3">
+                <img src="https://source.unsplash.com/300x200/?crops" alt="Agro 4">
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Notícias -->
-        <section id="noticias">
-            <div class="container">
-                <h2>Últimas Notícias do Agro</h2>
-                <ul class="news-list">
-                    <li><strong>01/04/2026:</strong> Nova tecnologia reduz uso de água na irrigação em 30%.</li>
-                    <li><strong>15/04/2026:</strong> Projeto de reflorestamento promove biodiversidade em áreas agrícolas.</li>
-                    <li><strong>20/04/2026:</strong> Startup desenvolve sensor inteligente para monitoramento de colheitas.</li>
-                </ul>
+    <!-- Seção Vídeos -->
+    <section id="galeria-videos">
+        <div class="container">
+            <h2>Vídeos Educativos</h2>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/6j6cCw4VogQ" allowfullscreen></iframe>
             </div>
-        </section>
-
-        <!-- Links -->
-        <section id="links">
-            <div class="container">
-                <h2>Links Úteis</h2>
-                <ul>
-                    <li><a href="https://www.agricultura.gov.br/" target="_blank">Ministério da Agricultura</a></li>
-                    <li><a href="https://www.embrapa.br/" target="_blank">Embrapa</a></li>
-                    <li><a href="https://www.senars.org.br/" target="_blank">SENAR</a></li>
-                </ul>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/bv6MQZxx2sA" allowfullscreen></iframe>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
+    <!-- Notícias -->
+    <section id="noticias">
+        <div class="container">
+            <h2>Últimas Notícias do Agro</h2>
+            <ul class="news-list">
+                <li><strong>01/04/2026:</strong> Nova tecnologia reduz uso de água na irrigação em 30%.</li>
+                <li><strong>15/04/2026:</strong> Projeto de reflorestamento promove biodiversidade em áreas agrícolas.</li>
+                <li><strong>20/04/2026:</strong> Startup desenvolve sensor inteligente para monitoramento de colheitas.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Links Úteis -->
+    <section id="links">
+        <div class="container">
+            <h2>Links Úteis</h2>
+            <ul>
+                <li><a href="https://www.agricultura.gov.br/" target="_blank">Ministério da Agricultura</a></li>
+                <li><a href="https://www.embrapa.br/" target="_blank">Embrapa</a></li>
+                <li><a href="https://www.senars.org.br/" target="_blank">SENAR</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
-        <p>© 2026 Agro Forte | Equilíbrio entre produção e meio ambiente</p>
+        <div class="container">
+            <p>© 2026 Agro Forte | Equilíbrio entre produção e meio ambiente</p>
+        </div>
     </footer>
 
+    <!-- Script -->
     <script src="script.js"></script>
 </body>
 </html>
