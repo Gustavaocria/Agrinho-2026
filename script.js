@@ -2,12 +2,7 @@
 const darkModeBtn = document.getElementById('darkModeBtn');
 darkModeBtn.addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
-    // Alterar o texto do botão dinamicamente
-    if (document.body.classList.contains('dark-mode')) {
-        darkModeBtn.textContent = 'Modo Claro';
-    } else {
-        darkModeBtn.textContent = 'Modo Escuro';
-    }
+    darkModeBtn.textContent = document.body.classList.contains('dark-mode') ? 'Modo Claro' : 'Modo Escuro';
 });
 
 // Scroll suave
@@ -20,21 +15,10 @@ document.querySelectorAll('nav ul li a').forEach(anchor => {
 });
 
 // Mostrar/Esconder Galeria
-const galeria = document.getElementById('galeria');
-const toggleGalleryBtn = document.createElement('button');
-toggleGalleryBtn.textContent = 'Mostrar/Esconder Galeria';
-toggleGalleryBtn.style.margin = '10px 0';
-toggleGalleryBtn.style.padding = '8px 15px';
-toggleGalleryBtn.style.cursor = 'pointer';
-galeria.prepend(toggleGalleryBtn);
-
+const toggleGalleryBtn = document.getElementById('toggleGalleryBtn');
+const galleryContainer = document.querySelector('.gallery');
 toggleGalleryBtn.addEventListener('click', () => {
-    const galleryContainer = galeria.querySelector('.gallery');
-    if (galleryContainer.style.display === 'none') {
-        galleryContainer.style.display = 'grid';
-    } else {
-        galleryContainer.style.display = 'none';
-    }
+    galleryContainer.style.display = galleryContainer.style.display === 'none' ? 'grid' : 'none';
 });
 
 // Contador de cliques nos cards
@@ -53,8 +37,19 @@ cards.forEach(card => {
     });
 });
 
-// Alterar dinamicamente texto do título
+// Alterar dinamicamente título principal
 const tituloPrincipal = document.querySelector('#sobre h1');
 setTimeout(() => {
     tituloPrincipal.textContent = 'Agro Forte - Inovação e Sustentabilidade!';
+}, 5000);
+
+// Banner rotativo automático
+const slides = document.querySelectorAll('#banner .slide');
+let currentSlide = 0;
+function showSlide(index){
+    slides.forEach((slide, i) => slide.classList.toggle('active', i === index));
+}
+setInterval(() => {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
 }, 5000);
