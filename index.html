@@ -1,1 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agro Forte - Futuro Sustentável</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <h1>Agro Forte</h1>
+            <p>Futuro Sustentável do Paraná</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#noticias">Notícias</a></li>
+                <li><a href="#interativo">Interativo</a></li>
+                <li><a href="#links">Links</a></li>
+                <li><a href="#contato">Contato</a></li>
+                <li><button id="darkModeToggle">🌙</button></li>
+            </ul>
+        </nav>
+    </header>
 
+    <!-- Hero -->
+    <section class="hero">
+        <h2>Produção Sustentável, Crescimento Inteligente</h2>
+        <p>Equilibrando agricultura e meio ambiente para um Paraná mais forte</p>
+        <a href="#projetos" class="btn">Conheça nossos projetos</a>
+    </section>
+
+    <!-- Sobre -->
+    <section id="sobre">
+        <h2>Sobre o Programa</h2>
+        <p>O Agro Forte apoia produtores rurais, promovendo técnicas sustentáveis e preservação ambiental.</p>
+        <div class="cards">
+            <div class="card">
+                <h3>Produção Sustentável</h3>
+                <p>Práticas agrícolas que respeitam o solo e a água.</p>
+            </div>
+            <div class="card">
+                <h3>Inovação Tecnológica</h3>
+                <p>Uso de tecnologia para eficiência e sustentabilidade.</p>
+            </div>
+            <div class="card">
+                <h3>Educação e Capacitação</h3>
+                <p>Formação de produtores e comunidade.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projetos -->
+    <section id="projetos">
+        <h2>Projetos em Destaque</h2>
+        <ul>
+            <li><a href="https://www.agricultura.pr.gov.br/" target="_blank">Programa Estadual de Agricultura</a></li>
+            <li><a href="https://www.sema.pr.gov.br/" target="_blank">Secretaria do Meio Ambiente</a></li>
+            <li><a href="https://www.emater.pr.gov.br/" target="_blank">EMATER Paraná</a></li>
+        </ul>
+    </section>
+
+    <!-- Notícias -->
+    <section id="noticias">
+        <h2>Últimas Notícias</h2>
+        <div class="news-cards">
+            <div class="news-card">
+                <h3>Agro Paranaense cresce 10% em produção sustentável</h3>
+                <p>O estado incentiva práticas que aumentam produtividade e respeitam o meio ambiente.</p>
+                <a href="#">Leia mais</a>
+            </div>
+            <div class="news-card">
+                <h3>Seminário de Inovação Agrícola</h3>
+                <p>Produtores participam de palestras e workshops sobre tecnologia agrícola.</p>
+                <a href="#">Leia mais</a>
+            </div>
+            <div class="news-card">
+                <h3>Programa de Capacitação Rural</h3>
+                <p>Mais de 500 produtores já foram capacitados em práticas sustentáveis.</p>
+                <a href="#">Leia mais</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interativo -->
+    <section id="interativo">
+        <h2>Interatividade</h2>
+        <p id="contadorText">Você já clicou <span id="contador">0</span> vezes!</p>
+        <button id="incrementBtn">Registrar Visita</button>
+        <button id="toggleInfoBtn">Mostrar/Ocultar Dica Sustentável</button>
+        <div id="dica" style="display:none; margin-top:10px;">
+            <p>🌱 Dica: Use plantio direto para conservar o solo e reduzir erosão.</p>
+        </div>
+        <button id="changeTextBtn">Clique para mudar o slogan</button>
+        <p id="sloganText">Produção Sustentável, Crescimento Inteligente</p>
+    </section>
+
+    <!-- Links úteis -->
+    <section id="links">
+        <h2>Links Úteis</h2>
+        <ul>
+            <li><a href="https://www.gov.br/pt-br" target="_blank">Portal do Governo Federal</a></li>
+            <li><a href="https://www.agro.gov.br/" target="_blank">Ministério da Agricultura</a></li>
+        </ul>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato">
+        <h2>Contato</h2>
+        <form id="contactForm">
+            <input type="text" name="nome" placeholder="Seu nome" required>
+            <input type="email" name="email" placeholder="Seu email" required>
+            <textarea name="mensagem" placeholder="Sua mensagem" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+        <p id="status"></p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Agro Forte Paraná. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
