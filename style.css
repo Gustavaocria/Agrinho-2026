@@ -1,8 +1,13 @@
+/* Reset de Estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 /* Body */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f9f9f9;
-    color: #333;
     line-height: 1.6;
     transition: background-color 0.3s, color 0.3s;
 }
@@ -13,45 +18,37 @@ body.light-mode {
     color: #333;
 }
 
+/* Modo Escuro */
 body.dark-mode {
     background-color: #121212;
     color: #f9f9f9;
 }
 
-/* Animações de Fade-in */
-.fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 1s ease-out, transform 1s ease-out;
-}
-
-.fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Seções */
-.hero {
-    background: url('assets/images/imagem1.jpg') no-repeat center center/cover;
-    color: white;
+/* Header */
+header {
+    background-color: #4CAF50;
+    padding: 20px;
     text-align: center;
-    padding: 100px 20px;
-    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
 }
 
-/* Outros estilos... */
-/* Reset de estilos e transições */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* Navegação */
+.nav-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    list-style-type: none;
 }
 
-/* Estilo do Body */
-body {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
-    transition: background-color 0.3s, color 0.3s;
+.nav-list a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
 }
 
-/
+/* Botão de Alternância */
+.mode-toggle {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1
