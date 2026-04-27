@@ -1,85 +1,84 @@
 // script.js
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Alternar entre o modo claro e escuro
+    // Inicializa o tema baseado na preferência do usuário
     initializeTheme();
 
     // Carregar os vídeos dinamicamente
     loadVideos();
 
-    // Tornar a FAQ interativa (mostrar/esconder respostas)
+    // Inicializar a interatividade da FAQ
     initializeFAQ();
 });
 
 // Função para inicializar o tema (claro/escuro)
 function initializeTheme() {
     const toggleModeButton = document.getElementById('toggleMode');
-    const savedTheme = localStorage.getItem('theme') || 'light'; // Salvar tema no localStorage
+    const savedTheme = localStorage.getItem('theme') || 'light'; // Pega a preferência de tema salva
     
-    // Ajustar o tema inicial
     if (savedTheme === 'dark') {
         document.body.classList.add('dark-mode');
-        toggleModeButton.textContent = '🌞'; // Exibir ícone de sol no modo escuro
+        toggleModeButton.textContent = '🌞'; // Exibe o ícone de sol
     } else {
         document.body.classList.add('light-mode');
-        toggleModeButton.textContent = '🌙'; // Exibir ícone de lua no modo claro
+        toggleModeButton.textContent = '🌙'; // Exibe o ícone de lua
     }
 
-    // Evento de troca de tema
     toggleModeButton.addEventListener('click', () => {
         toggleTheme(toggleModeButton);
     });
 }
 
-// Função para alternar entre os temas
+// Função para alternar entre os modos claro e escuro
 function toggleTheme(button) {
     const isDarkMode = document.body.classList.contains('dark-mode');
-    
+
     if (isDarkMode) {
         document.body.classList.remove('dark-mode');
         document.body.classList.add('light-mode');
-        button.textContent = '🌙'; // Ícone de lua
-        localStorage.setItem('theme', 'light'); // Salvar preferência
+        button.textContent = '🌙'; // Ícone de lua no modo claro
+        localStorage.setItem('theme', 'light');
     } else {
         document.body.classList.remove('light-mode');
         document.body.classList.add('dark-mode');
-        button.textContent = '🌞'; // Ícone de sol
-        localStorage.setItem('theme', 'dark'); // Salvar preferência
+        button.textContent = '🌞'; // Ícone de sol no modo escuro
+        localStorage.setItem('theme', 'dark');
     }
 }
 
 // Função para carregar vídeos dinamicamente
 function loadVideos() {
     const videoGallery = document.getElementById('videoGallery');
-
+    
     const videos = [
         { 
             title: 'Agricultura Sustentável', 
             url: 'https://www.youtube.com/embed/xFqfP-bGBZ8', 
-            description: 'Entenda como práticas sustentáveis podem melhorar a produtividade e proteger o meio ambiente.' 
+            description: 'Práticas sustentáveis para o futuro da agricultura.'
         },
         { 
             title: 'Tecnologia no Agro', 
             url: 'https://www.youtube.com/embed/dBaZdOZbWqg', 
-            description: 'Como a tecnologia está transformando a agricultura e garantindo mais eficiência.' 
+            description: 'Como a tecnologia transforma a agricultura.'
         },
         { 
             title: 'Futuro do Agro', 
             url: 'https://www.youtube.com/embed/JuZhYXY7oT4', 
-            description: 'O que podemos esperar para o futuro da agricultura com inovações tecnológicas.' 
+            description: 'Visão para o futuro da agricultura sustentável.'
         }
     ];
 
+    // Criação e adição dos vídeos à galeria
     videos.forEach(video => {
         const videoContainer = createVideoElement(video);
         videoGallery.appendChild(videoContainer);
     });
 }
 
-// Função para criar o HTML de cada vídeo
+// Função que cria o HTML de cada vídeo
 function createVideoElement(video) {
-    const videoContainer = document.createElement('div');
-    videoContainer.classList.add('video-item');
+    const container = document.createElement('div');
+    container.classList.add('video-item');
     
     const iframe = document.createElement('iframe');
     iframe.src = video.url;
@@ -93,17 +92,17 @@ function createVideoElement(video) {
     const description = document.createElement('p');
     description.textContent = video.description;
 
-    videoContainer.appendChild(title);
-    videoContainer.appendChild(iframe);
-    videoContainer.appendChild(description);
+    container.appendChild(title);
+    container.appendChild(iframe);
+    container.appendChild(description);
 
-    return videoContainer;
+    return container;
 }
 
-// Função para inicializar a interatividade na FAQ
+// Função para inicializar a FAQ interativa (mostrar/esconder respostas)
 function initializeFAQ() {
     const faqItems = document.querySelectorAll('.faq-item h3');
-    
+
     faqItems.forEach(item => {
         item.addEventListener('click', () => {
             toggleFAQAnswer(item);
@@ -111,14 +110,16 @@ function initializeFAQ() {
     });
 }
 
-// Função para mostrar/esconder a resposta da FAQ
+// Função para mostrar/esconder as respostas da FAQ
 function toggleFAQAnswer(question) {
     const answer = question.nextElementSibling;
 
     // Alterna a visibilidade da resposta
     if (answer.style.display === 'block') {
         answer.style.display = 'none';
+        question.parentElement.classList.remove('open');
     } else {
         answer.style.display = 'block';
+        question.parentElement.classList.add('open');
     }
 }
