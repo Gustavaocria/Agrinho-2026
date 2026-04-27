@@ -5,7 +5,7 @@
     box-sizing: border-box;
 }
 
-/* Body */
+/* Modo Claro e Escuro */
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
@@ -31,7 +31,6 @@ header {
     text-align: center;
 }
 
-/* Navegação */
 .nav-list {
     display: flex;
     justify-content: center;
@@ -46,7 +45,6 @@ header {
     font-size: 1.2rem;
 }
 
-/* Botão de Alternância */
 .mode-toggle {
     background: none;
     border: none;
@@ -55,7 +53,7 @@ header {
     cursor: pointer;
 }
 
-/* Conteúdo Principal */
+/* Seções */
 .container {
     padding: 20px;
 }
@@ -76,4 +74,20 @@ header {
 
 /* Animações de Fade-in */
 .fade-in {
-    opacity:
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.fade-in.visible {
+    opacity: 1;
+}
+
+/* Formulário */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+form input, form textarea {
+    padding: 10
