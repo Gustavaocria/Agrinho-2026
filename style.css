@@ -40,3 +40,18 @@ body.dark-mode {
 }
 
 /* Outros estilos... */
+/* Reset de estilos e transições */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo do Body */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/
