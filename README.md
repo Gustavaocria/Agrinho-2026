@@ -1,33 +1,89 @@
-# Agro Forte - Futuro Sustentável
+// script.js
 
-## Descrição
+document.addEventListener('DOMContentLoaded', () => {
+    // Alternar entre o modo escuro e claro
+    const toggleModeButton = document.getElementById('toggleMode');
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    
+    if (currentTheme === 'dark') {
+        document.body.classList.add('dark-mode');
+        toggleModeButton.textContent = '🌞'; // Exibe ícone de sol no modo escuro
+    } else {
+        document.body.classList.add('light-mode');
+        toggleModeButton.textContent = '🌙'; // Exibe ícone de lua no modo claro
+    }
 
-O "Agro Forte - Futuro Sustentável" é um site dedicado à promoção da agricultura sustentável e inovação no setor agropecuário. Ele oferece informações sobre práticas agrícolas sustentáveis, uso de tecnologias inovadoras e a importância do cuidado com o meio ambiente. O site também proporciona uma plataforma educativa com vídeos, depoimentos de produtores rurais e práticas sustentáveis no campo.
+    toggleModeButton.addEventListener('click', () => {
+        const isDarkMode = document.body.classList.contains('dark-mode');
+        
+        if (isDarkMode) {
+            document.body.classList.remove('dark-mode');
+            document.body.classList.add('light-mode');
+            toggleModeButton.textContent = '🌙';
+            localStorage.setItem('theme', 'light');
+        } else {
+            document.body.classList.remove('light-mode');
+            document.body.classList.add('dark-mode');
+            toggleModeButton.textContent = '🌞';
+            localStorage.setItem('theme', 'dark');
+        }
+    });
 
-### Funcionalidades:
-- **Modo Claro/Modo Escuro**: Alternância de temas para melhorar a experiência de leitura.
-- **Seções Educativas**: Informações sobre o futuro da agricultura sustentável, com vídeos e artigos interativos.
-- **Depoimentos**: Testemunhos de produtores rurais sobre suas experiências com práticas sustentáveis.
-- **Tecnologia no Agro**: Como inovações tecnológicas estão moldando o futuro da agricultura.
+    // Carregar vídeos dinamicamente
+    loadVideos();
 
-## Tecnologias Utilizadas
+    // Interatividade da FAQ (exibir/ocultar respostas)
+    const faqItems = document.querySelectorAll('.faq-item h3');
+    faqItems.forEach(item => {
+        item.addEventListener('click', () => {
+            const answer = item.nextElementSibling;
+            answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+        });
+    });
+});
 
-- **HTML5**: Para estruturar o conteúdo e as seções do site.
-- **CSS3**: Para estilizar o site, incluindo transições e animações para o modo claro/escuro.
-- **JavaScript**: Para alternância de modo claro e escuro e funcionalidades interativas.
-- **Imagens e Vídeos**: Para ilustrar o conteúdo e fornecer uma experiência mais rica.
+// Função para carregar vídeos dinamicamente
+function loadVideos() {
+    const videoGallery = document.getElementById('videoGallery');
+    
+    const videos = [
+        { 
+            title: 'Agricultura Sustentável', 
+            url: 'https://www.youtube.com/embed/xFqfP-bGBZ8', 
+            description: 'Entenda como práticas sustentáveis podem melhorar a produtividade e proteger o meio ambiente.' 
+        },
+        { 
+            title: 'Tecnologia no Agro', 
+            url: 'https://www.youtube.com/embed/dBaZdOZbWqg', 
+            description: 'Como a tecnologia está transformando a agricultura e garantindo mais eficiência.' 
+        },
+        { 
+            title: 'Futuro do Agro', 
+            url: 'https://www.youtube.com/embed/JuZhYXY7oT4', 
+            description: 'O que podemos esperar para o futuro da agricultura com inovações tecnológicas.' 
+        }
+    ];
 
-## Estrutura do Projeto
+    videos.forEach(video => {
+        const videoContainer = document.createElement('div');
+        videoContainer.classList.add('video-item');
+        
+        const iframe = document.createElement('iframe');
+        iframe.src = video.url;
+        iframe.frameborder = "0";
+        iframe.allow = "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture";
+        iframe.allowfullscreen = true;
 
-- **index.html**: O arquivo principal que estrutura o conteúdo do site.
-- **style.css**: O arquivo de estilos que define o design do site, incluindo o modo claro/escuro.
-- **script.js**: Scripts para interatividade, incluindo a alternância de modo claro/escuro.
-- **assets/**:
-  - **images/**: Contém imagens utilizadas no site.
-  - **videos/**: Contém os vídeos usados para ilustrar práticas sustentáveis e tecnologias no agro.
+        const title = document.createElement('h3');
+        title.textContent = video.title;
 
-## Como Rodar o Projeto
+        const description = document.createElement('p');
+        description.textContent = video.description;
 
-1. **Clone o repositório** para o seu ambiente local:
-   ```bash
-   git clone https://github.com/seu-usuario/meu-site-agro.git
+        videoContainer.appendChild(title);
+        videoContainer.appendChild(iframe);
+        videoContainer.appendChild(description);
+
+        videoGallery.appendChild(videoContainer);
+    });
+}
