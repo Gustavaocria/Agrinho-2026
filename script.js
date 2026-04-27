@@ -1,108 +1,113 @@
-/* Alternância de Modo Claro e Escuro */
-document.addEventListener("DOMContentLoaded", function() {
-    const toggleButton = document.getElementById('toggleMode');
-    const currentMode = localStorage.getItem('mode') || 'light'; // Verifica o modo armazenado no localStorage
+// JavaScript para alternar entre modo claro e escuro
+document.addEventListener('DOMContentLoaded', () => {
+    const toggleModeButton = document.getElementById('toggleMode');
+    const currentTheme = localStorage.getItem('theme') || 'light';
 
-    // Define o modo inicial
-    document.body.classList.add(currentMode + '-mode');
+    // Define o tema carregado
+    if (currentTheme === 'dark') {
+        document.body.classList.add('dark-mode');
+        toggleModeButton.textContent = '🌞';  // Mostra ícone de sol no modo escuro
+    } else {
+        document.body.classList.add('light-mode');
+        toggleModeButton.textContent = '🌙';  // Mostra ícone de lua no modo claro
+    }
 
-    // Alterna entre modos e armazena a preferência no localStorage
-    toggleButton.addEventListener('click', function() {
-        if (document.body.classList.contains('light-mode')) {
-            document.body.classList.remove('light-mode');
-            document.body.classList.add('dark-mode');
-            localStorage.setItem('mode', 'dark'); // Salva o modo escuro
-        } else {
+    // Alterna o modo e salva a preferência no localStorage
+    toggleModeButton.addEventListener('click', () => {
+        const isDarkMode = document.body.classList.contains('dark-mode');
+        
+        if (isDarkMode) {
             document.body.classList.remove('dark-mode');
             document.body.classList.add('light-mode');
-            localStorage.setItem('mode', 'light'); // Salva o modo claro
+            toggleModeButton.textContent = '🌙';  // Mostra lua
+            localStorage.setItem('theme', 'light');
+        } else {
+            document.body.classList.remove('light-mode');
+            document.body.classList.add('dark-mode');
+            toggleModeButton.textContent = '🌞';  // Mostra sol
+            localStorage.setItem('theme', 'dark');
+        }
+    });
+
+    // Carrega os vídeos dinamicamente na seção de vídeos
+    loadVideos();
+});
+
+// Função para carregar vídeos dinamicamente
+function loadVideos() {
+    const videoGallery = document.getElementById('videoGallery');
+    
+    const videos = [
+        { 
+            title: 'Agricultura Sustentável', 
+            url: 'https://www.youtube.com/embed/xFqfP-bGBZ8', 
+            description: 'Entenda como práticas sustentáveis podem melhorar a produtividade e proteger o meio ambiente.' 
+        },
+        { 
+            title: 'Tecnologia no Agro', 
+            url: 'https://www.youtube.com/embed/dBaZdOZbWqg', 
+            description: 'Como a tecnologia está transformando a agricultura e garantindo mais eficiência.' 
+        },
+        { 
+            title: 'Futuro do Agro', 
+            url: 'https://www.youtube.com/embed/JuZhYXY7oT4', 
+            description: 'O que podemos esperar para o futuro da agricultura com inovações tecnológicas.' 
+        }
+    ];
+
+    videos.forEach(video => {
+        const videoContainer = document.createElement('div');
+        videoContainer.classList.add('video-item');
+        
+        const iframe = document.createElement('iframe');
+        iframe.src = video.url;
+        iframe.frameborder = "0";
+        iframe.allow = "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture";
+        iframe.allowfullscreen = true;
+
+        const title = document.createElement('h3');
+        title.textContent = video.title;
+
+        const description = document.createElement('p');
+        description.textContent = video.description;
+
+        videoContainer.appendChild(title);
+        videoContainer.appendChild(iframe);
+        videoContainer.appendChild(description);
+
+        videoGallery.appendChild(videoContainer);
+    });
+}
+
+// Mostrar/Ocultar FAQ com interatividade
+const faqItems = document.querySelectorAll('.faq-item h3');
+faqItems.forEach(item => {
+    item.addEventListener('click', () => {
+        const answer = item.nextElementSibling;
+        if (answer.style.display === "block") {
+            answer.style.display = "none";
+        } else {
+            answer.style.display = "block";
         }
     });
 });
 
-/* Rolagem suave para as seções */
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-        });
-    });
-});
-
-/* Efeito de transição nas seções */
-const sections = document.querySelectorAll('section');
-const observerOptions = {
-    root: null,
-    rootMargin: "0px",
-    threshold: 0.5 // Ativa quando 50% da seção estiver visível
+// Animação de fade-in nas seções quando rolar a página
+const sections = document.querySelectorAll('.fade-in');
+const options = {
+    threshold: 0.3
 };
 
 const observer = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.classList.add('in-view');
+            entry.target.classList.add('visible');
         } else {
-            entry.target.classList.remove('in-view');
+            entry.target.classList.remove('visible');
         }
     });
-}, observerOptions);
+}, options);
 
 sections.forEach(section => {
     observer.observe(section);
-});
-
-/* Carregamento dinâmico de conteúdo (Exemplo para Vídeos) */
-document.addEventListener('DOMContentLoaded', () => {
-    const videoSection = document.getElementById('videos');
-    const videoData = [
-        {
-            title: "Agricultura Sustentável em Ação",
-            url: "assets/videos/video1.mp4",
-        },
-        {
-            title: "Tecnologia e Inovação no Agro",
-            url: "assets/videos/video2.mp4",
-        }
-    ];
-
-    const videoGallery = videoSection.querySelector('.video-gallery');
-    videoData.forEach(video => {
-        const videoItem = document.createElement('div');
-        videoItem.classList.add('video-item');
-        videoItem.innerHTML = `
-            <h4>${video.title}</h4>
-            <video controls>
-                <source src="${video.url}" type="video/mp4">
-                Seu navegador não suporta este vídeo.
-            </video>
-        `;
-        videoGallery.appendChild(videoItem);
-    });
-});
-
-/* Efeito de rolagem para o fundo (parallax) nas seções */
-const parallaxSections = document.querySelectorAll('.hero, .sustentabilidade');
-parallaxSections.forEach(section => {
-    window.addEventListener('scroll', () => {
-        const scrollPosition = window.pageYOffset;
-        section.style.backgroundPosition = `center ${scrollPosition * 0.5}px`;
-    });
-});
-
-/* Animação no carregamento das seções */
-const fadeInSections = document.querySelectorAll('.fade-in');
-window.addEventListener('scroll', () => {
-    fadeInSections.forEach(section => {
-        const sectionTop = section.getBoundingClientRect().top;
-        const windowHeight = window.innerHeight;
-
-        if (sectionTop <= windowHeight - 100) {
-            section.classList.add('visible');
-        } else {
-            section.classList.remove('visible');
-        }
-    });
 });
