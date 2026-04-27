@@ -1,48 +1,68 @@
-/* Reset de Estilos */
+/* Reset de Estilos para Consistência */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Modo Claro e Escuro */
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
-    transition: background-color 0.3s, color 0.3s;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Modo Claro */
 body.light-mode {
-    background-color: #f9f9f9;
+    background-color: #f4f7fa;
     color: #333;
 }
 
 /* Modo Escuro */
 body.dark-mode {
-    background-color: #121212;
-    color: #f9f9f9;
+    background-color: #1a1a1a;
+    color: #f4f7fa;
 }
 
-/* Header */
+/* Header e Navegação */
 header {
     background-color: #4CAF50;
     padding: 20px;
     text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .nav-list {
     display: flex;
     justify-content: center;
-    gap: 20px;
-    list-style-type: none;
+    gap: 30px;
+    list-style: none;
+}
+
+.nav-list li {
+    transition: transform 0.3s ease;
 }
 
 .nav-list a {
     color: white;
     text-decoration: none;
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-list a:hover {
+    color: #fff5b2;
+}
+
+.nav-list li:hover {
+    transform: scale(1.1);
 }
 
 .mode-toggle {
@@ -51,43 +71,240 @@ header {
     color: white;
     font-size: 1.5rem;
     cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+/* Botões */
+.btn-primary {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #45a049;
 }
 
 /* Seções */
-.container {
+section {
+    padding: 60px 20px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+section h2 {
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    color: #333;
+}
+
+section p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, rgba(34, 193, 195, 0.8), rgba(253, 187, 45, 0.8));
+    color: white;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-bottom: 5px solid #fff;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+}
+
+.hero-content .btn-primary {
+    font-size: 1.2rem;
+    padding: 10px 25px;
+}
+
+/* Seção Sobre */
+.sobre {
+    background-color: #e1f7e1;
+}
+
+.sobre-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.sobre-content img {
+    width: 50%;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.sobre-content p {
+    width: 45%;
+    font-size: 1.2rem;
+    color: #444;
+    text-align: left;
+}
+
+/* Seção Sustentabilidade */
+.sustentabilidade {
+    background-color: #f2f9f2;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.content article {
+    background-color: #fff;
     padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
 
-/* Imagens Responsivas */
-.img-responsive {
-    max-width: 100%;
-    height: auto;
-    margin: 20px 0;
+.content article:hover {
+    transform: translateY(-10px);
 }
 
-/* Vídeos */
+.content img {
+    width: 100%;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+/* Seção Tecnologia */
+.tecnologia {
+    background-color: #f9f9f9;
+}
+
+.tech-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.tech-item {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.tech-item:hover {
+    transform: translateY(-5px);
+}
+
+.tech-item h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+/* Seção Vídeos */
+.videos {
+    background-color: #fafafa;
+}
+
+.video-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+}
+
 .video-gallery iframe {
     width: 100%;
     height: 315px;
-    margin: 20px 0;
+    border-radius: 10px;
 }
 
-/* Animações de Fade-in */
-.fade-in {
-    opacity: 0;
-    transition: opacity 1s;
+/* Seção FAQ */
+.faq {
+    background-color: #e3f5e3;
 }
 
-.fade-in.visible {
-    opacity: 1;
+.faq-item h3 {
+    cursor: pointer;
+    color: #4CAF50;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
 }
 
-/* Formulário */
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+.faq-item h3:hover {
+    color: #388e3c;
+}
+
+.faq-item p {
+    display: none;
+    padding-left: 20px;
+    font-size: 1.1rem;
+    color: #555;
+    margin-top: 10px;
+}
+
+/* Contato */
+.contato {
+    background-color: #f1f1f1;
+    padding: 50px 20px;
 }
 
 form input, form textarea {
-    padding: 10
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+form button {
+    padding: 12px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #45a049;
+}
+
+/* Responsividade */
+@media screen and (max-width: 768px) {
+    .nav-list {
+        flex-direction: column;
+    }
+
+    .sobre-content {
+        flex-direction: column;
+    }
+
+    .sustentabilidade .content, .tecnologia .tech-items {
+        grid-template-columns: 1fr;
+    }
+}
