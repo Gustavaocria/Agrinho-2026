@@ -1,24 +1,48 @@
-// Validação simples de formulário
-document.getElementById('contact-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
+// Modo Escuro / Claro
+const toggleButton = document.createElement('button');
+toggleButton.innerText = 'Alternar Modo Claro / Escuro';
+toggleButton.id = 'toggle-mode';
+document.body.appendChild(toggleButton);
 
-    if(name && email) {
-        alert(`Obrigado, ${name}! Recebemos sua mensagem e entraremos em contato em breve.`);
-        this.reset();
+toggleButton.addEventListener('click', () => {
+    // Alternar entre modos
+    const currentMode = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
+
+    if (currentMode === 'light') {
+        document.body.classList.add('dark-mode');
+        document.body.classList.remove('light-mode');
+        toggleButton.innerText = 'Alternar Modo Claro';
     } else {
-        alert('Por favor, preencha todos os campos obrigatórios.');
+        document.body.classList.add('light-mode');
+        document.body.classList.remove('dark-mode');
+        toggleButton.innerText = 'Alternar Modo Escuro';
     }
 });
 
-// Efeito de transparência no header ao rolar
-window.addEventListener('scroll', function() {
-    const header = document.getElementById('header');
-    if (window.scrollY > 50) {
-        header.style.opacity = '0.95';
-    } else {
-        header.style.opacity = '1';
-    }
+// Exemplo de manipulação de texto no DOM
+const textChangeButton = document.createElement('button');
+textChangeButton.innerText = 'Clique para Alterar Texto';
+textChangeButton.id = 'change-text-button';
+document.body.appendChild(textChangeButton);
+
+const aboutText = document.querySelector('#about .text p'); // Pegando o parágrafo da seção "Sobre"
+
+textChangeButton.addEventListener('click', () => {
+    aboutText.innerText = 'Agora você está vendo o texto alterado dinamicamente pelo JavaScript!';
+});
+
+// Exemplo de contador de visualizações de vídeo
+let videoViews = 0;
+const viewCounter = document.createElement('div');
+viewCounter.id = 'view-counter';
+viewCounter.innerText = `Número de visualizações: ${videoViews}`;
+document.body.appendChild(viewCounter);
+
+const videoElements = document.querySelectorAll('iframe'); // Todos os vídeos incorporados
+
+videoElements.forEach((video) => {
+    video.addEventListener('click', () => {
+        videoViews++;
+        viewCounter.innerText = `Número de visualizações: ${videoViews}`;
+    });
 });
