@@ -5,8 +5,8 @@ document.addEventListener("DOMContentLoaded", function () {
     // Função para alternar entre o modo claro e escuro
     const toggleTheme = () => {
         body.classList.toggle('dark-mode');
-
-        // Armazenar a preferência do usuário no localStorage
+        
+        // Armazenar a preferência de tema no localStorage
         if (body.classList.contains('dark-mode')) {
             localStorage.setItem('theme', 'dark');
             themeToggleButton.textContent = 'Modo Claro';
@@ -28,15 +28,6 @@ document.addEventListener("DOMContentLoaded", function () {
     // Alternar o tema ao clicar no botão
     themeToggleButton.addEventListener('click', toggleTheme);
 
-    // Animação de carregamento para o botão
-    themeToggleButton.addEventListener('mouseenter', function () {
-        themeToggleButton.style.transform = "scale(1.1)";
-    });
-
-    themeToggleButton.addEventListener('mouseleave', function () {
-        themeToggleButton.style.transform = "scale(1)";
-    });
-
     // Efeito de rolagem suave para links internos
     const linksInternos = document.querySelectorAll('a[href^="#"]');
     linksInternos.forEach(link => {
@@ -51,5 +42,14 @@ document.addEventListener("DOMContentLoaded", function () {
                 block: 'start'
             });
         });
+    });
+
+    // Animação no botão de alternância de tema
+    themeToggleButton.addEventListener('mouseenter', function () {
+        themeToggleButton.style.transform = "scale(1.1)";
+    });
+
+    themeToggleButton.addEventListener('mouseleave', function () {
+        themeToggleButton.style.transform = "scale(1)";
     });
 });
