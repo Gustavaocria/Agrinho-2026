@@ -1,161 +1,32 @@
-/* Configurações Gerais */
+/* Resetando o estilo */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
+    font-family: 'Arial', sans-serif;
     line-height: 1.6;
-    color: #333;
-    scroll-behavior: smooth;
-}
-
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: auto;
-    overflow: hidden;
+    background-color: #121212; /* Fundo escuro */
+    color: #eaeaea; /* Texto claro */
+    transition: background-color 0.3s ease;
 }
 
 /* Cabeçalho */
-#header {
-    background: #2d5a27;
-    color: #fff;
-    padding: 1rem 0;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+header {
+    background-color: #1a1a1a; /* Escuro para cabeçalho */
+    color: #eaeaea;
+    padding: 20px;
 }
 
-#header .container {
+header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-nav ul {
-    display: flex;
-    list-style: none;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    transition: 0.3s;
-}
-
-nav ul li a:hover {
-    color: #a8e063;
-}
-
-/* Hero Section */
-#hero {
-    height: 80vh;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1600&q=80'); /* Imagem de fallback */
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: #fff;
-}
-
-.cta-button {
-    display: inline-block;
-    padding: 1rem 2rem;
-    background: #56ab2f;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 1.5rem;
-    transition: 0.3s;
-}
-
-.cta-button:hover {
-    background: #a8e063;
-    transform: translateY(-3px);
-}
-
-/* Seções */
-.section {
-    padding: 4rem 0;
-}
-
-h2 {
-    text-align: center;
-    margin-bottom: 2rem;
-    color: #2d5a27;
-}
-
-/* Cards de Inovação */
-.cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-}
-
-.card {
-    background: #f4f4f4;
-    padding: 2rem;
-    border-radius: 8px;
-    text-align: center;
-    transition: 0.3s;
-}
-
-.card:hover {
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-}
-
-/* Vídeos e Imagens */
-.video-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
-
-iframe {
-    max-width: 100%;
-    border-radius: 8px;
-}
-
-img {
-    max-width: 100%;
-    border-radius: 8px;
-}
-
-/* Formulário */
-#contact-form {
-    max-width: 600px;
-    margin: auto;
-}
-
-.form-group {
-    margin-bottom: 1rem;
-}
-
-input, textarea {
-    width: 100%;
-    padding: 0.8rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-/* Rodapé */
-footer {
-    background: #222;
-    color: #fff;
-    text-align: center;
-    padding: 2rem 0;
-}
-
-.social-links a {
-    color: #a8e063;
-    margin: 0 10px;
-    text-decoration: none;
-}
+header .logo h1 {
+    font-size: 2.5rem
