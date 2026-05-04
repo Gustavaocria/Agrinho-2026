@@ -9,6 +9,7 @@
     --button-text: white;
     --link-color: #2c6a2f;
     --link-hover-color: #ffa500;
+    --background-img: url('images/agro-background.jpg');
 }
 
 /* Reset Básico */
@@ -23,12 +24,15 @@ body {
     background-color: var(--background-light);
     color: var(--text-light);
     line-height: 1.6;
+    background-image: var(--background-img);
+    background-size: cover;
+    background-position: center;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Cabeçalho */
 header {
-    background-color: var(--accent-color);
+    background-color: rgba(44, 106, 47, 0.8); /* Semi-transparente para permitir ver a imagem de fundo */
     color: white;
     padding: 20px;
     text-align: center;
@@ -82,7 +86,7 @@ h1, h2 {
 
 #sobre {
     padding: 40px 20px;
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.9); /* Fundo semitransparente */
     margin: 20px auto;
     max-width: 1200px;
     border-radius: 8px;
