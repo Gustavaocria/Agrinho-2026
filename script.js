@@ -1,46 +1,55 @@
-// Modo Claro e Escuro
-const toggleButton = document.getElementById('toggleMode');
+document.addEventListener("DOMContentLoaded", function () {
+    const themeToggleButton = document.getElementById('theme-toggle');
+    const body = document.body;
+    
+    // Função para alternar entre o modo claro e escuro
+    const toggleTheme = () => {
+        body.classList.toggle('dark-mode');
 
-// Verifica o tema atual e altera ao clicar no botão
-toggleButton.addEventListener('click', () => {
-    const currentMode = document.body.classList.contains('light-mode') ? 'light' : 'dark';
-    if (currentMode === 'light') {
-        document.body.classList.remove('light-mode');
-        document.body.classList.add('dark-mode');
-        toggleButton.innerHTML = '☀️';  // Ícone para Modo Claro
-    } else {
-        document.body.classList.remove('dark-mode');
-        document.body.classList.add('light-mode');
-        toggleButton.innerHTML = '🌙';  // Ícone para Modo Escuro
-    }
-});
-
-// FAQ - Mostrar e esconder respostas
-const faqItems = document.querySelectorAll('.faq-item h3');
-
-faqItems.forEach(item => {
-    item.addEventListener('click', () => {
-        const answer = item.nextElementSibling;
-        answer.style.display = (answer.style.display === 'none' || answer.style.display === '') ? 'block' : 'none';
-    });
-});
-
-// Efeito de "fade-in" nas seções à medida que o usuário rola a página
-const sections = document.querySelectorAll('section');
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('fade-in');
+        // Armazenar a preferência do usuário no localStorage
+        if (body.classList.contains('dark-mode')) {
+            localStorage.setItem('theme', 'dark');
+            themeToggleButton.textContent = 'Modo Claro';
         } else {
-            entry.target.classList.remove('fade-in');
+            localStorage.setItem('theme', 'light');
+            themeToggleButton.textContent = 'Modo Escuro';
         }
-    });
-}, {
-    threshold: 0.2  // Define que a seção deve estar 20% visível para o efeito ocorrer
-});
+    };
 
-// Observa todas as seções para aplicar o efeito de "fade-in"
-sections.forEach(section => {
-    observer.observe(section);
+    // Verificar a preferência de tema do usuário
+    if (localStorage.getItem('theme') === 'dark') {
+        body.classList.add('dark-mode');
+        themeToggleButton.textContent = 'Modo Claro';
+    } else {
+        body.classList.remove('dark-mode');
+        themeToggleButton.textContent = 'Modo Escuro';
+    }
+
+    // Alternar o tema ao clicar no botão
+    themeToggleButton.addEventListener('click', toggleTheme);
+
+    // Animação de carregamento para o botão
+    themeToggleButton.addEventListener('mouseenter', function () {
+        themeToggleButton.style.transform = "scale(1.1)";
+    });
+
+    themeToggleButton.addEventListener('mouseleave', function () {
+        themeToggleButton.style.transform = "scale(1)";
+    });
+
+    // Efeito de rolagem suave para links internos
+    const linksInternos = document.querySelectorAll('a[href^="#"]');
+    linksInternos.forEach(link => {
+        link.addEventListener('click', function (event) {
+            event.preventDefault();
+
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+            
+            targetElement.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        });
+    });
 });
