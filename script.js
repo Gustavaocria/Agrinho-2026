@@ -27,29 +27,4 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Alternar o tema ao clicar no botão
     themeToggleButton.addEventListener('click', toggleTheme);
-
-    // Efeito de rolagem suave para links internos
-    const linksInternos = document.querySelectorAll('a[href^="#"]');
-    linksInternos.forEach(link => {
-        link.addEventListener('click', function (event) {
-            event.preventDefault();
-
-            const targetId = this.getAttribute('href').substring(1);
-            const targetElement = document.getElementById(targetId);
-            
-            targetElement.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        });
-    });
-
-    // Animação no botão de alternância de tema
-    themeToggleButton.addEventListener('mouseenter', function () {
-        themeToggleButton.style.transform = "scale(1.1)";
-    });
-
-    themeToggleButton.addEventListener('mouseleave', function () {
-        themeToggleButton.style.transform = "scale(1)";
-    });
 });
