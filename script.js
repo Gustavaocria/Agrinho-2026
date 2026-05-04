@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function() {
     const themeToggleButton = document.getElementById('theme-toggle');
     const body = document.body;
     
@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const toggleTheme = () => {
         body.classList.toggle('dark-mode');
         
-        // Armazenar a preferência de tema no localStorage
+        // Armazenar a preferência no localStorage
         if (body.classList.contains('dark-mode')) {
             localStorage.setItem('theme', 'dark');
             themeToggleButton.textContent = 'Modo Claro';
@@ -21,10 +21,9 @@ document.addEventListener("DOMContentLoaded", function () {
         body.classList.add('dark-mode');
         themeToggleButton.textContent = 'Modo Claro';
     } else {
-        body.classList.remove('dark-mode');
         themeToggleButton.textContent = 'Modo Escuro';
     }
 
-    // Alternar o tema ao clicar no botão
+    // Aplicar a função de alternância do tema
     themeToggleButton.addEventListener('click', toggleTheme);
 });
