@@ -1,29 +1,24 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const themeToggleButton = document.getElementById('theme-toggle');
-    const body = document.body;
+// Validação simples de formulário
+document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
     
-    // Função para alternar entre o modo claro e escuro
-    const toggleTheme = () => {
-        body.classList.toggle('dark-mode');
-        
-        // Armazenar a preferência no localStorage
-        if (body.classList.contains('dark-mode')) {
-            localStorage.setItem('theme', 'dark');
-            themeToggleButton.textContent = 'Modo Claro';
-        } else {
-            localStorage.setItem('theme', 'light');
-            themeToggleButton.textContent = 'Modo Escuro';
-        }
-    };
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
 
-    // Verificar a preferência de tema do usuário
-    if (localStorage.getItem('theme') === 'dark') {
-        body.classList.add('dark-mode');
-        themeToggleButton.textContent = 'Modo Claro';
+    if(name && email) {
+        alert(`Obrigado, ${name}! Recebemos sua mensagem e entraremos em contato em breve.`);
+        this.reset();
     } else {
-        themeToggleButton.textContent = 'Modo Escuro';
+        alert('Por favor, preencha todos os campos obrigatórios.');
     }
+});
 
-    // Aplicar a função de alternância do tema
-    themeToggleButton.addEventListener('click', toggleTheme);
+// Efeito de transparência no header ao rolar
+window.addEventListener('scroll', function() {
+    const header = document.getElementById('header');
+    if (window.scrollY > 50) {
+        header.style.opacity = '0.95';
+    } else {
+        header.style.opacity = '1';
+    }
 });
