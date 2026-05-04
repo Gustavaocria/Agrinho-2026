@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Agro Forte: Futuro Sustentável para o Brasil">
+    <meta name="description" content="Agro Forte: O Futuro Sustentável da Agricultura">
     <meta name="author" content="Agro Forte">
-    <meta name="keywords" content="agro, agricultura, sustentabilidade, futuro sustentável, Brasil">
+    <meta name="keywords" content="agro, sustentabilidade, tecnologia, futuro, inovação">
     <meta property="og:title" content="Agro Forte: O Futuro Sustentável">
-    <meta property="og:description" content="A agricultura brasileira no caminho da sustentabilidade.">
-    <meta property="og:image" content="images/agro-1.jpg">
+    <meta property="og:description" content="Transformação do setor agrícola brasileiro com inovação e sustentabilidade">
+    <meta property="og:image" content="images/agro1.jpg">
     <meta property="og:url" content="https://agrofortefuturo.com">
-    <title>Agro Forte: Futuro Sustentável</title>
+    <title>Agro Forte: O Futuro Sustentável</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -19,30 +19,34 @@
         <div class="logo">
             <h1>Agro Forte: O Futuro Sustentável</h1>
         </div>
-        <button id="theme-toggle" class="theme-toggle" aria-label="Alternar tema">Modo Escuro</button>
+        <button id="theme-toggle" class="theme-toggle">Modo Escuro</button>
         <nav>
             <ul>
                 <li><a href="#sobre">Sobre</a></li>
                 <li><a href="#video">Vídeos</a></li>
                 <li><a href="#links">Links Úteis</a></li>
                 <li><a href="#contato">Contato</a></li>
-                <li><a href="https://www.seab.pr.gov.br" target="_blank" rel="noopener noreferrer">Secretaria da Agricultura do Paraná</a></li>
+                <li><a href="https://www.seab.pr.gov.br" target="_blank">Agricultura PR</a></li>
             </ul>
         </nav>
     </header>
 
     <!-- Seção Sobre -->
     <section id="sobre">
-        <h2>O Agro e o Futuro Sustentável</h2>
-        <p>O setor agropecuário é um dos pilares da economia brasileira, e seu futuro está cada vez mais ligado à sustentabilidade e à inovação. Aqui, falamos sobre como a agricultura moderna está ajudando a construir um Brasil mais forte e sustentável.</p>
+        <div class="section-title">
+            <h2>O Agro e o Futuro Sustentável</h2>
+        </div>
+        <p>A agricultura moderna é fundamental para o futuro do Brasil. Sustentabilidade, inovação tecnológica e produtividade são os pilares do Agro do amanhã.</p>
         <div class="imagem-container">
-            <img src="images/agro-1.jpg" alt="Imagem de agricultura sustentável" class="imagem-sobre">
+            <img src="images/agro2.jpg" alt="Imagem de Agricultura Sustentável" />
         </div>
     </section>
 
     <!-- Seção de Vídeos -->
     <section id="video">
-        <h2>Vídeos Educacionais</h2>
+        <div class="section-title">
+            <h2>Vídeos Educacionais</h2>
+        </div>
         <div class="video-container">
             <video controls>
                 <source src="videos/agro-video.mp4" type="video/mp4">
@@ -51,23 +55,40 @@
         </div>
     </section>
 
-    <!-- Seção de Links Úteis -->
+    <!-- Links Úteis -->
     <section id="links">
-        <h2>Links Úteis</h2>
+        <div class="section-title">
+            <h2>Links Importantes</h2>
+        </div>
         <ul>
-            <li><a href="https://www.agricultura.gov.br" target="_blank" rel="noopener noreferrer">Ministério da Agricultura</a></li>
-            <li><a href="https://www.sustentabilidade.agro.br" target="_blank" rel="noopener noreferrer">Agro Sustentável</a></li>
-            <li><a href="https://www.abc.org.br" target="_blank" rel="noopener noreferrer">ABC - Agricultura Brasileira Consciente</a></li>
+            <li><a href="https://www.agricultura.gov.br" target="_blank">Ministério da Agricultura</a></li>
+            <li><a href="https://www.sustentabilidade.agro.br" target="_blank">Agro Sustentável</a></li>
+            <li><a href="https://www.abc.org.br" target="_blank">Agro Consciente</a></li>
         </ul>
+    </section>
+
+    <!-- Formulário de Contato -->
+    <section id="contato">
+        <div class="section-title">
+            <h2>Contato</h2>
+        </div>
+        <form action="#" method="POST">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
     </section>
 
     <!-- Rodapé -->
     <footer>
-        <h3>Contato</h3>
-        <p>Entre em contato conosco através do email: <a href="mailto:contato@agrofortefuturo.com">contato@agrofortefuturo.com</a></p>
+        <h3>Agro Forte</h3>
+        <p>&copy; 2026 Agro Forte - Todos os direitos reservados.</p>
     </footer>
 
-    <!-- Inclusão do arquivo JS -->
     <script src="script.js"></script>
 </body>
 </html>
