@@ -1,153 +1,94 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Agro Forte - Revolucionando o Agro com Sustentabilidade e Inovação">
-    <meta name="author" content="Agro Forte">
-    <meta name="keywords" content="agricultura, inovação, sustentabilidade, futuro">
-    <title>Agro Forte - Revolução Sustentável no Agro</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Agro Forte - Futuro Sustentável</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-
 <body>
-    <!-- Cabeçalho com navegação -->
-    <header id="header">
-        <div class="container">
-            <div class="logo">
-                <h1>Agro Forte</h1>
-                <p>Sustentabilidade e Inovação no Campo</p>
+    <!-- Sidebar -->
+    <aside id="sidebar">
+        <h2>Agro Forte</h2>
+        <nav>
+            <ul>
+                <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#sobre"><i class="fas fa-seedling"></i> Sobre</a></li>
+                <li><a href="#projetos"><i class="fas fa-leaf"></i> Projetos</a></li>
+                <li><a href="#galeria"><i class="fas fa-image"></i> Galeria</a></li>
+                <li><a href="#links"><i class="fas fa-link"></i> Links Úteis</a></li>
+            </ul>
+        </nav>
+        <button id="toggleTheme">🌙 Modo Escuro</button>
+    </aside>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Banner Carousel -->
+        <section id="home" class="carousel">
+            <div class="slides">
+                <img src="img/banner1.jpg" alt="Banner 1">
+                <img src="img/banner2.jpg" alt="Banner 2">
+                <img src="img/banner3.jpg" alt="Banner 3">
             </div>
-            <nav>
-                <ul>
-                    <li><a href="#about">Sobre</a></li>
-                    <li><a href="#innovation">Inovação</a></li>
-                    <li><a href="#sustainability">Sustentabilidade</a></li>
-                    <li><a href="#videos">Vídeos</a></li>
-                    <li><a href="#contact">Contato</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+        </section>
 
-    <!-- Seção Inicial com imagem e call to action -->
-    <section id="hero">
-        <div class="hero-content">
-            <h2>Transformando o Futuro da Agricultura</h2>
-            <p>Com inovação tecnológica e práticas sustentáveis, a Agro Forte lidera a revolução no agro.</p>
-            <a href="#about" class="cta-button">Saiba Mais</a>
-        </div>
-    </section>
+        <!-- Sobre -->
+        <section id="sobre">
+            <h2>Sobre o Agro Forte</h2>
+            <p>O Agro Forte é um movimento voltado para promover uma agricultura sustentável, integrando inovação tecnológica, preservação ambiental e desenvolvimento social no campo.</p>
+        </section>
 
-    <!-- Seção Sobre -->
-    <section id="about" class="section">
-        <div class="container">
-            <h2>Quem Somos</h2>
-            <div class="about-content">
-                <div class="text">
-                    <p>Somos uma empresa que visa transformar o agronegócio por meio de práticas sustentáveis e tecnologias inovadoras. Acreditamos em um agro mais verde, mais eficiente e mais produtivo para o futuro das próximas gerações.</p>
-                </div>
-                <div class="image">
-                    <img src="images/agro-1.jpg" alt="Agricultura Sustentável">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Seção Inovação -->
-    <section id="innovation" class="section">
-        <div class="container">
-            <h2>Inovações no Agro</h2>
+        <!-- Projetos -->
+        <section id="projetos">
+            <h2>Projetos Sustentáveis</h2>
             <div class="cards">
                 <div class="card">
-                    <h3>Automação Agrícola</h3>
-                    <p>Automatizando processos agrícolas para aumentar a produtividade e reduzir custos.</p>
+                    <img src="img/projeto1.jpg" alt="Projeto 1">
+                    <h3>Tecnologia de Precisão</h3>
+                    <p>Uso de sensores e drones para otimizar a produção e reduzir desperdícios.</p>
                 </div>
                 <div class="card">
-                    <h3>Inteligência Artificial</h3>
-                    <p>Usando IA para otimizar as operações e prever necessidades em tempo real.</p>
+                    <img src="img/projeto2.jpg" alt="Projeto 2">
+                    <h3>Energia Renovável</h3>
+                    <p>Implementação de painéis solares e biogás no campo.</p>
                 </div>
                 <div class="card">
-                    <h3>Big Data</h3>
-                    <p>Analisando grandes volumes de dados para melhorar a gestão da produção agrícola.</p>
+                    <img src="img/projeto3.jpg" alt="Projeto 3">
+                    <h3>Conservação do Solo</h3>
+                    <p>Práticas de plantio direto e rotação de culturas para preservação ambiental.</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Seção Sustentabilidade -->
-    <section id="sustainability" class="section">
-        <div class="container">
-            <h2>Sustentabilidade</h2>
-            <div class="sustainability-content">
-                <p>A sustentabilidade é o núcleo do nosso trabalho. Trabalhamos com tecnologias que garantem a preservação ambiental enquanto aumentamos a produtividade. Nossas práticas incluem o uso responsável de recursos naturais e o desenvolvimento de soluções para a recuperação de áreas degradadas.</p>
-                <img src="images/sustentabilidade.jpg" alt="Práticas Sustentáveis">
+        <!-- Galeria -->
+        <section id="galeria">
+            <h2>Galeria de Imagens</h2>
+            <div class="gallery">
+                <img src="img/projeto1.jpg" alt="Campo sustentável">
+                <img src="img/projeto2.jpg" alt="Agricultura moderna">
+                <img src="img/projeto3.jpg" alt="Energia solar no campo">
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Seção Vídeos -->
-    <section id="videos" class="section">
-        <div class="container">
-            <h2>Vídeos Educacionais</h2>
-            <div class="video-container">
-                <!-- Vídeo 1 - Youtube (Exemplo de vídeo do agro) -->
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/U2zq9i-i1pY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                
-                <!-- Vídeo 2 - Outro vídeo sobre tecnologia no agro -->
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/QoXWwM2q0z8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-        </div>
-    </section>
-
-    <!-- Links Externos Relevantes -->
-    <section id="external-links" class="section">
-        <div class="container">
-            <h2>Links Relevantes sobre Sustentabilidade e Inovação no Agro</h2>
+        <!-- Links úteis -->
+        <section id="links">
+            <h2>Links Úteis</h2>
+            <button id="toggleLinks">Ocultar Links Úteis</button>
             <ul>
-                <li><a href="https://www.embrapa.br" target="_blank">Embrapa - Empresa Brasileira de Pesquisa Agropecuária</a></li>
-                <li><a href="https://www.agricultura.gov.br" target="_blank">Ministério da Agricultura</a></li>
-                <li><a href="https://www.agrorevenda.com.br" target="_blank">AgroRevenda - Portal Agro</a></li>
-                <li><a href="https://www.sustentabilidadeagro.com.br" target="_blank">Sustentabilidade Agro</a></li>
+                <li><a href="https://www.agricultura.pr.gov.br" target="_blank">Agricultura Paraná</a></li>
+                <li><a href="https://www.embrapa.br" target="_blank">Embrapa</a></li>
+                <li><a href="https://www.agroportal.com.br" target="_blank">AgroPortal</a></li>
             </ul>
-        </div>
-    </section>
+            <p>Você acessou esta página <span id="contador">0</span> vezes nesta sessão.</p>
+        </section>
 
-    <!-- Seção Contato -->
-    <section id="contact" class="section">
-        <div class="container">
-            <h2>Contato</h2>
-            <form id="contact-form">
-                <div class="form-group">
-                    <label for="name">Nome</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">E-mail</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">Mensagem</label>
-                    <textarea id="message" name="message" rows="4" required></textarea>
-                </div>
-                <button type="submit" class="cta-button">Enviar</button>
-            </form>
-        </div>
-    </section>
+        <footer>
+            <p>© 2026 Agro Forte - Futuro Sustentável</p>
+        </footer>
+    </main>
 
-    <!-- Rodapé -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 Agro Forte. Todos os direitos reservados.</p>
-            <div class="social-links">
-                <a href="https://www.instagram.com/agroforte" target="_blank">Instagram</a>
-                <a href="https://www.linkedin.com/company/agroforte" target="_blank">LinkedIn</a>
-            </div>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 </body>
-
 </html>
