@@ -1,48 +1,38 @@
-// Modo Escuro / Claro
-const toggleButton = document.createElement('button');
-toggleButton.innerText = 'Alternar Modo Claro / Escuro';
-toggleButton.id = 'toggle-mode';
-document.body.appendChild(toggleButton);
+// Modo Claro/Escuro
+const toggleButton = document.getElementById('toggleTheme');
+const body = document.body;
 
 toggleButton.addEventListener('click', () => {
-    // Alternar entre modos
-    const currentMode = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
+    body.classList.toggle('dark-mode');
+    toggleButton.textContent = body.classList.contains('dark-mode') ? '☀️ Modo Claro' : '🌙 Modo Escuro';
+});
 
-    if (currentMode === 'light') {
-        document.body.classList.add('dark-mode');
-        document.body.classList.remove('light-mode');
-        toggleButton.innerText = 'Alternar Modo Claro';
+// Carousel automático
+const slides = document.querySelectorAll('.carousel .slides img');
+let index = 0;
+
+setInterval(() => {
+    slides.forEach((slide, i) => slide.style.display = i === index ? 'block' : 'none');
+    index = (index + 1) % slides.length;
+}, 3000);
+
+// Mostrar/Ocultar Links Úteis
+const toggleLinksBtn = document.getElementById('toggleLinks');
+const linksSection = document.getElementById('links');
+
+toggleLinksBtn.addEventListener('click', () => {
+    const list = linksSection.querySelector('ul');
+    if (list.style.display === 'none' || list.style.display === '') {
+        list.style.display = 'block';
+        toggleLinksBtn.textContent = 'Ocultar Links Úteis';
     } else {
-        document.body.classList.add('light-mode');
-        document.body.classList.remove('dark-mode');
-        toggleButton.innerText = 'Alternar Modo Escuro';
+        list.style.display = 'none';
+        toggleLinksBtn.textContent = 'Mostrar Links Úteis';
     }
 });
 
-// Exemplo de manipulação de texto no DOM
-const textChangeButton = document.createElement('button');
-textChangeButton.innerText = 'Clique para Alterar Texto';
-textChangeButton.id = 'change-text-button';
-document.body.appendChild(textChangeButton);
-
-const aboutText = document.querySelector('#about .text p'); // Pegando o parágrafo da seção "Sobre"
-
-textChangeButton.addEventListener('click', () => {
-    aboutText.innerText = 'Agora você está vendo o texto alterado dinamicamente pelo JavaScript!';
-});
-
-// Exemplo de contador de visualizações de vídeo
-let videoViews = 0;
-const viewCounter = document.createElement('div');
-viewCounter.id = 'view-counter';
-viewCounter.innerText = `Número de visualizações: ${videoViews}`;
-document.body.appendChild(viewCounter);
-
-const videoElements = document.querySelectorAll('iframe'); // Todos os vídeos incorporados
-
-videoElements.forEach((video) => {
-    video.addEventListener('click', () => {
-        videoViews++;
-        viewCounter.innerText = `Número de visualizações: ${videoViews}`;
-    });
-});
+// Contador de visitas na sessão
+let contador = sessionStorage.getItem('contador') || 0;
+contador++;
+sessionStorage.setItem('contador', contador);
+document.getElementById('contador').textContent = contador;
