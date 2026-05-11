@@ -1,95 +1,263 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+"<!DOCTYPE html>
+<html lang=\"pt-BR\">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Agro Forte - Futuro Sustentável</title>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset=\"UTF-8\" />
+  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />
+  <title>Agro Forte — Futuro Sustentável</title>
+  <meta name=\"description\" content=\"Agro Forte: tecnologia e sustentabilidade para o futuro do agronegócio.\" />
+  <link rel=\"stylesheet\" href=\"style.css\" />
+  <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">
+  <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>
+  <link href=\"https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;700&display=swap\" rel=\"stylesheet\">
 </head>
 <body>
-    <aside id="sidebar">
-        <h2>Agro Forte</h2>
-        <nav>
-            <ul>
-                <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
-                <li><a href="#sobre"><i class="fas fa-seedling"></i> Sobre</a></li>
-                <li><a href="#projetos"><i class="fas fa-leaf"></i> Projetos</a></li>
-                <li><a href="#galeria"><i class="fas fa-image"></i> Galeria</a></li>
-                <li><a href="#links"><i class="fas fa-link"></i> Links Úteis</a></li>
-            </ul>
-        </nav>
-        <button id="toggleTheme">🌙 Modo Escuro</button>
-    </aside>
+  <!-- HEADER / NAV -->
+  <header class=\"navbar\">
+    <div class=\"nav-container\">
+      <a href=\"#home\" class=\"logo\">
+        <span class=\"logo-bracket\">[</span>
+        <span class=\"logo-text\">agro<span class=\"logo-accent\">.forte</span></span>
+        <span class=\"logo-bracket\">]</span>
+      </a>
+      <nav class=\"nav-links\">
+        <a href=\"#home\">Início</a>
+        <a href=\"#sobre\">Sobre</a>
+        <a href=\"#praticas\">Práticas</a>
+        <a href=\"#stats\">Dados</a>
+        <a href=\"#faq\">FAQ</a>
+        <a href=\"#contato\">Contato</a>
+      </nav>
+      <button id=\"themeToggle\" class=\"theme-toggle\" aria-label=\"Alternar tema\">
+        <span class=\"theme-icon-dark\">◐</span>
+        <span class=\"theme-icon-light\">◑</span>
+        <span class=\"theme-label\">tema</span>
+      </button>
+    </div>
+  </header>
 
-    <main>
-        <!-- Carousel -->
-        <section id="home" class="carousel">
-            <div class="slides">
-                <img src="img/banner1.jpg" alt="Banner 1" class="active">
-                <img src="img/banner2.jpg" alt="Banner 2">
-                <img src="img/banner3.jpg" alt="Banner 3">
-            </div>
-            <button class="prev">&#10094;</button>
-            <button class="next">&#10095;</button>
-        </section>
+  <!-- HERO -->
+  <section id=\"home\" class=\"hero\">
+    <div class=\"hero-grid-bg\"></div>
+    <div class=\"hero-content\">
+      <div class=\"hero-tag\">// futuro_sustentável.init()</div>
+      <h1 class=\"hero-title\">
+        Agro <span class=\"accent\">Forte</span>.<br/>
+        Plantando o <span class=\"accent-glow\">amanhã</span>.
+      </h1>
+      <p class=\"hero-subtitle\">
+        Conectamos tecnologia, dados e regeneração de solo para construir um agronegócio
+        mais inteligente, resiliente e em equilíbrio com o planeta.
+      </p>
+      <div class=\"hero-cta\">
+        <a href=\"#praticas\" class=\"btn btn-primary\">Explorar práticas →</a>
+        <a href=\"#stats\" class=\"btn btn-ghost\">Ver impacto</a>
+      </div>
+      <div class=\"hero-stats-mini\">
+        <div><span class=\"mini-num\">98%</span><span class=\"mini-lbl\">água reciclada</span></div>
+        <div><span class=\"mini-num\">0</span><span class=\"mini-lbl\">emissão líquida</span></div>
+        <div><span class=\"mini-num\">24/7</span><span class=\"mini-lbl\">monitoramento</span></div>
+      </div>
+    </div>
+  </section>
 
-        <!-- Sobre -->
-        <section id="sobre">
-            <h2>Sobre o Agro Forte</h2>
-            <p>O Agro Forte promove uma agricultura sustentável com tecnologia, preservação ambiental e desenvolvimento social. Trabalhamos para um futuro mais verde e eficiente no campo.</p>
-        </section>
+  <!-- SOBRE -->
+  <section id=\"sobre\" class=\"section\">
+    <div class=\"section-head\">
+      <span class=\"section-num\">01</span>
+      <h2>Sobre o projeto</h2>
+    </div>
+    <div class=\"about-grid\">
+      <div class=\"about-text\">
+        <p>
+          <strong>Agro Forte</strong> é uma iniciativa que une <em>agricultura de precisão</em>,
+          práticas regenerativas e energia limpa para transformar o campo em um ecossistema
+          digital, produtivo e ambientalmente responsável.
+        </p>
+        <p>
+          Nossa missão é provar que produzir mais e preservar mais não são caminhos opostos —
+          são o mesmo caminho, percorrido com ciência e respeito pela terra.
+        </p>
+      </div>
+      <div class=\"about-card\">
+        <div class=\"about-card-header\">// manifesto.txt</div>
+        <ul class=\"about-list\">
+          <li><span class=\"bullet\">▸</span> Solo vivo, produção viva.</li>
+          <li><span class=\"bullet\">▸</span> Dados como ferramenta, terra como casa.</li>
+          <li><span class=\"bullet\">▸</span> Energia limpa em cada hectare.</li>
+          <li><span class=\"bullet\">▸</span> Comunidade rural fortalecida.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-        <!-- Projetos -->
-        <section id="projetos">
-            <h2>Projetos Sustentáveis</h2>
-            <div class="cards">
-                <div class="card">
-                    <img src="img/projeto1.jpg" alt="Projeto 1">
-                    <h3>Tecnologia de Precisão</h3>
-                    <p>Sensores e drones otimizam a produção e reduzem desperdícios.</p>
-                </div>
-                <div class="card">
-                    <img src="img/projeto2.jpg" alt="Projeto 2">
-                    <h3>Energia Renovável</h3>
-                    <p>Painéis solares e biogás ajudam a reduzir impactos ambientais.</p>
-                </div>
-                <div class="card">
-                    <img src="img/projeto3.jpg" alt="Projeto 3">
-                    <h3>Conservação do Solo</h3>
-                    <p>Práticas de plantio direto e rotação de culturas preservam a fertilidade.</p>
-                </div>
-            </div>
-        </section>
+  <!-- PRÁTICAS -->
+  <section id=\"praticas\" class=\"section section-alt\">
+    <div class=\"section-head\">
+      <span class=\"section-num\">02</span>
+      <h2>Práticas Sustentáveis</h2>
+    </div>
+    <div class=\"cards-grid\">
+      <article class=\"card\">
+        <div class=\"card-num\">/01</div>
+        <h3>Rotação de Culturas</h3>
+        <p>Quebra ciclos de pragas, regenera nutrientes e mantém o solo fértil sem químicos pesados.</p>
+      </article>
+      <article class=\"card\">
+        <div class=\"card-num\">/02</div>
+        <h3>Irrigação Inteligente</h3>
+        <p>Sensores IoT medem umidade em tempo real e economizam até 60% de água por safra.</p>
+      </article>
+      <article class=\"card\">
+        <div class=\"card-num\">/03</div>
+        <h3>Energia Solar</h3>
+        <p>Painéis fotovoltaicos alimentam bombas, sensores e drones de monitoramento da plantação.</p>
+      </article>
+      <article class=\"card\">
+        <div class=\"card-num\">/04</div>
+        <h3>Compostagem</h3>
+        <p>Resíduos orgânicos viram adubo de alta qualidade — fechando o ciclo dentro da fazenda.</p>
+      </article>
+      <article class=\"card\">
+        <div class=\"card-num\">/05</div>
+        <h3>Plantio Direto</h3>
+        <p>Sem revolver o solo, preservamos microbiota, retemos carbono e evitamos erosão.</p>
+      </article>
+      <article class=\"card\">
+        <div class=\"card-num\">/06</div>
+        <h3>Agrofloresta</h3>
+        <p>Árvores nativas convivem com cultivos, recompondo a biodiversidade e gerando renda extra.</p>
+      </article>
+    </div>
+  </section>
 
-        <!-- Galeria -->
-        <section id="galeria">
-            <h2>Galeria de Imagens</h2>
-            <div class="gallery">
-                <img src="img/projeto1.jpg" alt="Campo sustentável">
-                <img src="img/projeto2.jpg" alt="Agricultura moderna">
-                <img src="img/projeto3.jpg" alt="Energia solar no campo">
-            </div>
-        </section>
+  <!-- ESTATÍSTICAS (contador animado) -->
+  <section id=\"stats\" class=\"section\">
+    <div class=\"section-head\">
+      <span class=\"section-num\">03</span>
+      <h2>Impacto em números</h2>
+    </div>
+    <p class=\"section-lead\">
+      Resultados projetados após 3 anos de adoção das práticas Agro Forte em uma propriedade média.
+      <button id=\"resetCounters\" class=\"link-btn\" data-testid=\"reset-counters-btn\">↻ reiniciar contagem</button>
+    </p>
+    <div class=\"stats-grid\" data-testid=\"stats-grid\">
+      <div class=\"stat-box\">
+        <div class=\"stat-number\" data-target=\"60\" data-suffix=\"%\" data-testid=\"stat-water\">0</div>
+        <div class=\"stat-label\">Economia de água</div>
+      </div>
+      <div class=\"stat-box\">
+        <div class=\"stat-number\" data-target=\"45\" data-suffix=\"%\" data-testid=\"stat-emissions\">0</div>
+        <div class=\"stat-label\">Redução de emissões</div>
+      </div>
+      <div class=\"stat-box\">
+        <div class=\"stat-number\" data-target=\"120\" data-suffix=\"t\" data-testid=\"stat-carbon\">0</div>
+        <div class=\"stat-label\">Carbono sequestrado / ano</div>
+      </div>
+      <div class=\"stat-box\">
+        <div class=\"stat-number\" data-target=\"3\" data-suffix=\"x\" data-testid=\"stat-biodiversity\">0</div>
+        <div class=\"stat-label\">Mais biodiversidade</div>
+      </div>
+    </div>
+  </section>
 
-        <!-- Links úteis -->
-        <section id="links">
-            <h2>Links Úteis</h2>
-            <button id="toggleLinks">Ocultar Links Úteis</button>
-            <ul>
-                <li><a href="https://www.agricultura.pr.gov.br" target="_blank">Agricultura Paraná</a></li>
-                <li><a href="https://www.embrapa.br" target="_blank">Embrapa</a></li>
-                <li><a href="https://www.agroportal.com.br" target="_blank">AgroPortal</a></li>
-            </ul>
-            <p>Você acessou esta página <span id="contador">0</span> vezes nesta sessão.</p>
-        </section>
+  <!-- FAQ (mostrar/esconder div) -->
+  <section id=\"faq\" class=\"section section-alt\">
+    <div class=\"section-head\">
+      <span class=\"section-num\">04</span>
+      <h2>Perguntas frequentes</h2>
+    </div>
+    <div class=\"faq-list\" data-testid=\"faq-list\">
+      <div class=\"faq-item\">
+        <button class=\"faq-question\" data-testid=\"faq-toggle-1\">
+          <span>O agro sustentável produz menos?</span>
+          <span class=\"faq-icon\">+</span>
+        </button>
+        <div class=\"faq-answer\" data-testid=\"faq-answer-1\" hidden>
+          <p>Não. Estudos mostram que após o período de transição (2–4 anos), propriedades regenerativas
+          mantêm ou superam a produtividade convencional — com custos menores no longo prazo.</p>
+        </div>
+      </div>
+      <div class=\"faq-item\">
+        <button class=\"faq-question\" data-testid=\"faq-toggle-2\">
+          <span>Preciso de muita tecnologia para começar?</span>
+          <span class=\"faq-icon\">+</span>
+        </button>
+        <div class=\"faq-answer\" data-testid=\"faq-answer-2\" hidden>
+          <p>Não. Comece com práticas básicas (rotação, compostagem, plantio direto) e adicione
+          sensores e automação gradualmente, conforme o retorno financeiro permite.</p>
+        </div>
+      </div>
+      <div class=\"faq-item\">
+        <button class=\"faq-question\" data-testid=\"faq-toggle-3\">
+          <span>Como o carbono é sequestrado?</span>
+          <span class=\"faq-icon\">+</span>
+        </button>
+        <div class=\"faq-answer\" data-testid=\"faq-answer-3\" hidden>
+          <p>Plantas capturam CO₂ da atmosfera e parte desse carbono é fixada no solo através das
+          raízes e da matéria orgânica. Solo saudável = carbono guardado.</p>
+        </div>
+      </div>
+      <div class=\"faq-item\">
+        <button class=\"faq-question\" data-testid=\"faq-toggle-4\">
+          <span>Existe apoio financeiro para fazer essa transição?</span>
+          <span class=\"faq-icon\">+</span>
+        </button>
+        <div class=\"faq-answer\" data-testid=\"faq-answer-4\" hidden>
+          <p>Sim. Programas como o Plano ABC+, linhas de crédito verde de bancos públicos e
+          certificações de carbono oferecem suporte financeiro para produtores sustentáveis.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <footer>
-            <p>© 2026 Agro Forte - Futuro Sustentável</p>
-        </footer>
-    </main>
+  <!-- CONTATO -->
+  <section id=\"contato\" class=\"section\">
+    <div class=\"section-head\">
+      <span class=\"section-num\">05</span>
+      <h2>Conecte-se</h2>
+    </div>
+    <div class=\"contact-grid\">
+      <div class=\"contact-info\">
+        <p>Quer levar o Agro Forte para sua propriedade ou comunidade? Vamos conversar.</p>
+        <ul class=\"contact-list\">
+          <li><span class=\"ct-key\">email</span><span class=\"ct-val\">contato@agroforte.dev</span></li>
+          <li><span class=\"ct-key\">tel</span><span class=\"ct-val\">+55 (00) 9 0000-0000</span></li>
+          <li><span class=\"ct-key\">loc</span><span class=\"ct-val\">Brasil — atuação nacional</span></li>
+        </ul>
+      </div>
+      <form class=\"contact-form\" id=\"contactForm\" data-testid=\"contact-form\">
+        <label>
+          <span>Nome</span>
+          <input type=\"text\" name=\"nome\" required data-testid=\"contact-name\" />
+        </label>
+        <label>
+          <span>E-mail</span>
+          <input type=\"email\" name=\"email\" required data-testid=\"contact-email\" />
+        </label>
+        <label>
+          <span>Mensagem</span>
+          <textarea name=\"mensagem\" rows=\"4\" required data-testid=\"contact-message\"></textarea>
+        </label>
+        <button type=\"submit\" class=\"btn btn-primary\" data-testid=\"contact-submit\">Enviar mensagem →</button>
+        <p class=\"form-status\" id=\"formStatus\" data-testid=\"form-status\"></p>
+      </form>
+    </div>
+  </section>
 
-    <script src="js/script.js"></script>
+  <!-- FOOTER -->
+  <footer class=\"footer\">
+    <div class=\"footer-inner\">
+      <div>
+        <strong>agro.forte</strong> — futuro sustentável<br/>
+        <small>© <span id=\"year\"></span> · feito com raízes e código.</small>
+      </div>
+      <div class=\"footer-links\">
+        <a href=\"#home\">topo ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src=\"script.js\"></script>
 </body>
 </html>
+"
