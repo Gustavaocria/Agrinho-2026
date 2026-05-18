@@ -1,86 +1,138 @@
-// Valores de mercado por hectare (exemplo realista)
-const culturas = {
-    soja: {
-        sementes: 250,       // R$/ha
-        fertilizantes: 400,
-        defensivos: 300,
-        combustivel: 150,
-        manutencao: 100,
-        maquinas: ['Trator 150cv', 'Plantadeira', 'Pulverizador']
-    },
-    milho: {
-        sementes: 220,
-        fertilizantes: 380,
-        defensivos: 280,
-        combustivel: 180,
-        manutencao: 120,
-        maquinas: ['Trator 180cv', 'Plantadeira', 'Colheitadeira']
-    },
-    trigo: {
-        sementes: 180,
-        fertilizantes: 350,
-        defensivos: 250,
-        combustivel: 130,
-        manutencao: 90,
-        maquinas: ['Trator 140cv', 'Arado', 'Colheitadeira']
-    }
+/* ==========================================================
+   SIMULADOR AGROTECH PARANÁ - JS COMPLETO
+   Funcionalidades:
+   - Modo claro/escuro
+   - Cálculo automático de custos por hectare
+   - Cálculo do total do plantio
+   - Sugestão de máquinas por cultura
+   - Manipulação dinâmica do DOM
+   - Formatação de valores em Real
+========================================================== */
+
+// ============================
+// VARIÁVEIS GLOBAIS
+// ============================
+const btnTema = document.getElementById('btn-tema');
+const body = document.body;
+const placeholderRes = document.getElementById('placeholder-res');
+const conteudoRes = document.getElementById('conteudo-res');
+const resCultura = document.getElementById('res-cultura');
+const resHecLabel = document.getElementById('res-hec-label');
+const resTotal = document.getElementById('res-total');
+const tabelaCategorias = {
+    'sementes': { unidade: document.getElementById('td-sem-un'), total: document.getElementById('td-sem-tot') },
+    'fertilizante': { unidade: document.getElementById('td-fer-un'), total: document.getElementById('td-fer-tot') },
+    'defensivo': { unidade: document.getElementById('td-def-un'), total: document.getElementById('td-def-tot') },
+    'combustivel': { unidade: document.getElementById('td-com-un'), total: document.getElementById('td-com-tot') },
+    'manutencao': { unidade: document.getElementById('td-man-un'), total: document.getElementById('td-man-tot') }
 };
 
-// Função para calcular custos
-function calcularTudo() {
-    const hectares = parseFloat(document.getElementById('hectares').value);
-    const cultura = document.getElementById('cultura').value;
-    const dados = culturas[cultura];
+// ============================
+// FUNÇÃO 1: ALTERNAR MODO CLARO/ESCURO
+// ============================
+function alternarTema() {
+    if(body.getAttribute('data-theme') === 'light') {
+        body.setAttribute('data-theme','dark');
+        btnTema.innerHTML = '☀️ Modo Claro';
+    } else {
+        body.setAttribute('data-theme','light');
+        btnTema.innerHTML = '🌙 Modo Escuro';
+    }
+}
 
-    if (!hectares || hectares <= 0) {
-        alert('Informe uma área válida!');
+// ============================
+// FUNÇÃO 2: SUGESTÃO DE MÁQUINAS POR CULTURA
+// ============================
+function sugerirMaquinas(cultura) {
+    // Objeto com máquinas recomendadas
+    const maquinas = {
+        'soja': ['Trator 150HP', 'Plantadeira de soja 10 linhas', 'Pulverizador autopropelido', 'Colheitadeira de grãos'],
+        'milho': ['Trator 180HP', 'Plantadeira de milho 12 linhas', 'Distribuidor de fertilizante', 'Colheitadeira de milho'],
+        'trigo': ['Trator 120HP', 'Semeadora de trigo', 'Pulverizador tratorizado', 'Ceifadeira de trigo']
+    };
+    return maquinas[cultura] || [];
+}
+
+// ============================
+// FUNÇÃO 3: FORMATAR VALORES EM REAIS
+// ============================
+function formatarBRL(valor) {
+    return valor.toLocaleString('pt-BR', { style:'currency', currency:'BRL' });
+}
+
+// ============================
+// FUNÇÃO 4: CÁLCULO DE CUSTOS
+// ============================
+function calcularCustos() {
+
+    // Captura os valores do formulário
+    const hectares = parseFloat(document.getElementById('hectares').value) || 0;
+    const cultura = document.getElementById('cultura').value;
+    const semente = 450; // Valores de mercado padrão
+    const fertilizante = 1200;
+    const defensivo = 800;
+    const combustivel = 350;
+    const manutencao = 200;
+
+    // Validação
+    if(hectares <= 0) {
+        alert('Insira uma quantidade de hectares válida!');
         return;
     }
 
-    // Cálculos unitários e totais
-    const sementes_tot = dados.sementes * hectares;
-    const fertilizantes_tot = dados.fertilizantes * hectares;
-    const defensivos_tot = dados.defensivos * hectares;
-    const combustivel_tot = dados.combustivel * hectares;
-    const manutencao_tot = dados.manutencao * hectares;
+    // =========================
+    // CÁLCULO UNITÁRIO E TOTAL
+    // =========================
+    const custos = {
+        sementes: { unidade: semente, total: semente*hectares },
+        fertilizante: { unidade: fertilizante, total: fertilizante*hectares },
+        defensivo: { unidade: defensivo, total: defensivo*hectares },
+        combustivel: { unidade: combustivel, total: combustivel*hectares },
+        manutencao: { unidade: manutencao, total: manutencao*hectares }
+    };
 
-    const total_geral = sementes_tot + fertilizantes_tot + defensivos_tot + combustivel_tot + manutencao_tot;
+    const custoTotalGeral = Object.values(custos).reduce((acc, cat) => acc + cat.total, 0);
 
-    // Atualizar HTML
-    document.getElementById('res-cultura').innerText = cultura.charAt(0).toUpperCase() + cultura.slice(1);
-    document.getElementById('res-hec').innerText = hectares;
+    // =========================
+    // ATUALIZAÇÃO DO DOM
+    // =========================
+    placeholderRes.style.display = 'none';
+    conteudoRes.style.display = 'flex';
 
-    document.getElementById('td-sem-un').innerText = `R$ ${dados.sementes.toLocaleString('pt-BR', {minimumFractionDigits:2})}`;
-    document.getElementById('td-sem-tot').innerText = `R$ ${sementes_tot.toLocaleString('pt-BR', {minimumFractionDigits:2})}`;
+    resCultura.innerText = cultura.toUpperCase();
+    resHecLabel.innerText = hectares;
+    resTotal.innerText = formatarBRL(custoTotalGeral);
 
-    document.getElementById('td-fer-un').innerText = `R$ ${dados.fertilizantes.toLocaleString('pt-BR', {minimumFractionDigits:2})}`;
-    document.getElementById('td-fer-tot').innerText = `R$ ${fertilizantes_tot.toLocaleString('pt-BR', {minimumFractionDigits:2})}`;
-
-    document.getElementById('td-def-un').innerText = `R$ ${dados.defensivos.toLocaleString('pt-BR', {minimumFractionDigits:2})}`;
-    document.getElementById('td-def-tot').innerText = `R$ ${defensivos_tot.toLocaleString('pt-BR', {minimumFractionDigits:2})}`;
-
-    document.getElementById('td-com-un').innerText = `R$ ${dados.combustivel.toLocaleString('pt-BR', {minimumFractionDigits:2})}`;
-    document.getElementById('td-com-tot').innerText = `R$ ${combustivel_tot.toLocaleString('pt-BR', {minimumFractionDigits:2})}`;
-
-    document.getElementById('td-man-un').innerText = `R$ ${dados.manutencao.toLocaleString('pt-BR', {minimumFractionDigits:2})}`;
-    document.getElementById('td-man-tot').innerText = `R$ ${manutencao_tot.toLocaleString('pt-BR', {minimumFractionDigits:2})}`;
-
-    document.getElementById('td-machinery').innerText = dados.maquinas.join(', ');
-
-    document.getElementById('res-total').innerText = `R$ ${total_geral.toLocaleString('pt-BR', {minimumFractionDigits:2})}`;
-
-    document.getElementById('placeholder-res').style.display = 'none';
-    document.getElementById('conteudo-res').style.display = 'block';
-}
-
-// Tema claro/escuro
-function alternarTema() {
-    const body = document.body;
-    if(body.getAttribute('data-theme') === 'light') {
-        body.setAttribute('data-theme', 'dark');
-        document.getElementById('btn-tema').innerText = '☀️ Modo Claro';
-    } else {
-        body.setAttribute('data-theme', 'light');
-        document.getElementById('btn-tema').innerText = '🌙 Modo Escuro';
+    // Atualizar tabela
+    for(let key in custos){
+        tabelaCategorias[key].unidade.innerText = formatarBRL(custos[key].unidade);
+        tabelaCategorias[key].total.innerText = formatarBRL(custos[key].total);
     }
+
+    // =========================
+    // SUGESTÃO DE MÁQUINAS
+    // =========================
+    const maquinas = sugerirMaquinas(cultura);
+    let maquinasBox = document.querySelector('.maquinas-box');
+    if(!maquinasBox){
+        maquinasBox = document.createElement('div');
+        maquinasBox.classList.add('maquinas-box');
+        conteudoRes.appendChild(maquinasBox);
+    }
+    maquinasBox.innerHTML = `<h4>🚜 Máquinas Recomendadas</h4>`;
+    const ul = document.createElement('ul');
+    maquinas.forEach(m => {
+        const li = document.createElement('li');
+        li.innerText = m;
+        ul.appendChild(li);
+    });
+    maquinasBox.appendChild(ul);
 }
+
+// ============================
+// EVENT LISTENER
+// ============================
+document.addEventListener('DOMContentLoaded', () => {
+    btnTema.addEventListener('click', alternarTema);
+    document.querySelector('.btn-calcular').addEventListener('click', calcularCustos);
+});
