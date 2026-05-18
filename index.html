@@ -1,1 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AgroTech Paraná - Simulador Inteligente de Custos</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body data-theme="light">
 
+<header>
+    <div class="logo-area">
+        <h1>AgroTech <span>Paraná</span></h1>
+    </div>
+    <button class="theme-toggle" id="btn-tema" onclick="alternarTema()">🌙 Modo Escuro</button>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+        <h2>🌱 Simulador Inteligente de Plantio</h2>
+        <p>Descubra automaticamente os custos do plantio, insumos necessários e máquinas ideais para a sua área.</p>
+        <a href="#simulador" class="btn-hero">Iniciar Simulação</a>
+    </div>
+    <div class="hero-image">
+        <img src="https://cdn-icons-png.flaticon.com/512/4140/4140353.png" alt="Ilustração tecnológica Agro">
+    </div>
+</section>
+
+<section id="simulador" class="simulador">
+    <h2>📊 Configuração do Plantio</h2>
+    <p>Informe a área e escolha a cultura para gerar o relatório completo com custos, insumos e máquinas recomendadas.</p>
+
+    <div class="grid-simulador">
+        <!-- FORMULÁRIO -->
+        <div class="card-form">
+            <h3>Dados da Propriedade</h3>
+            <div class="form-group">
+                <label for="hectares">Área Total (ha)</label>
+                <input type="number" id="hectares" min="1" value="10">
+            </div>
+            <div class="form-group">
+                <label for="cultura">Cultura</label>
+                <select id="cultura">
+                    <option value="soja">Soja</option>
+                    <option value="milho">Milho</option>
+                    <option value="trigo">Trigo</option>
+                </select>
+            </div>
+
+            <button class="btn-calcular" onclick="calcularTudo()">Calcular Custos</button>
+        </div>
+
+        <!-- RESULTADOS -->
+        <div class="card-result">
+            <div id="placeholder-res" class="placeholder">
+                <p>Insira a área e selecione a cultura para gerar o relatório completo automaticamente.</p>
+            </div>
+
+            <div id="conteudo-res" class="resultado" style="display:none;">
+                <h3>📋 Relatório de Custos e Máquinas</h3>
+                <p>Cultura: <strong id="res-cultura">--</strong> | Área: <span id="res-hec">0</span> ha</p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Categoria</th>
+                            <th>Custo / ha</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Sementes</td>
+                            <td id="td-sem-un">R$ 0,00</td>
+                            <td id="td-sem-tot">R$ 0,00</td>
+                        </tr>
+                        <tr>
+                            <td>Fertilizantes</td>
+                            <td id="td-fer-un">R$ 0,00</td>
+                            <td id="td-fer-tot">R$ 0,00</td>
+                        </tr>
+                        <tr>
+                            <td>Defensivos</td>
+                            <td id="td-def-un">R$ 0,00</td>
+                            <td id="td-def-tot">R$ 0,00</td>
+                        </tr>
+                        <tr>
+                            <td>Combustível</td>
+                            <td id="td-com-un">R$ 0,00</td>
+                            <td id="td-com-tot">R$ 0,00</td>
+                        </tr>
+                        <tr>
+                            <td>Manutenção</td>
+                            <td id="td-man-un">R$ 0,00</td>
+                            <td id="td-man-tot">R$ 0,00</td>
+                        </tr>
+                        <tr>
+                            <td>Máquinas Sugeridas</td>
+                            <td colspan="2" id="td-machinery">--</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="total-box">
+                    <span>Investimento Total Estimado</span>
+                    <h4 id="res-total">R$ 0,00</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 AgroTech Paraná - Calculadora de Custos e Máquinas Inteligente</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
