@@ -3,116 +3,125 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AgroTech Paraná - Simulador Inteligente de Custos</title>
+<title>AgroTech Paraná - Simulador Inteligente de Plantio</title>
 <link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
 </head>
 <body data-theme="light">
 
-<header>
-    <div class="logo-area">
+<!-- HEADER -->
+<header class="header">
+    <div class="logo">
         <h1>AgroTech <span>Paraná</span></h1>
     </div>
-    <button class="theme-toggle" id="btn-tema" onclick="alternarTema()">🌙 Modo Escuro</button>
+    <div class="header-actions">
+        <button id="btn-tema" onclick="alternarTema()">🌙 Modo Escuro</button>
+    </div>
 </header>
 
+<!-- HERO -->
 <section class="hero">
     <div class="hero-content">
-        <h2>🌱 Simulador Inteligente de Plantio</h2>
-        <p>Descubra automaticamente os custos do plantio, insumos necessários e máquinas ideais para a sua área.</p>
-        <a href="#simulador" class="btn-hero">Iniciar Simulação</a>
+        <h2>Simulador Inteligente de Custos Agrícolas</h2>
+        <p>Planeje seu plantio de forma automatizada. Calcule insumos, maquinários e custos com dados atualizados do Paraná.</p>
+        <a href="#simulador" class="btn-hero">Começar</a>
     </div>
-    <div class="hero-image">
-        <img src="https://cdn-icons-png.flaticon.com/512/4140/4140353.png" alt="Ilustração tecnológica Agro">
+    <div class="hero-visual">
+        <img src="https://images.unsplash.com/photo-1581091215366-d4c36db17aa7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NjIzNzR8MHwxfHNlYXJjaHwxfHxmaWVsZHN8ZW58MHx8fHwxNjA5NjY3ODI3&ixlib=rb-4.0.3&q=80&w=400" alt="Plantio Tecnológico">
     </div>
 </section>
 
+<!-- SIMULADOR -->
 <section id="simulador" class="simulador">
-    <h2>📊 Configuração do Plantio</h2>
-    <p>Informe a área e escolha a cultura para gerar o relatório completo com custos, insumos e máquinas recomendadas.</p>
+<div class="grid-simulador">
 
-    <div class="grid-simulador">
-        <!-- FORMULÁRIO -->
-        <div class="card-form">
-            <h3>Dados da Propriedade</h3>
-            <div class="form-group">
-                <label for="hectares">Área Total (ha)</label>
-                <input type="number" id="hectares" min="1" value="10">
-            </div>
-            <div class="form-group">
-                <label for="cultura">Cultura</label>
-                <select id="cultura">
-                    <option value="soja">Soja</option>
-                    <option value="milho">Milho</option>
-                    <option value="trigo">Trigo</option>
-                </select>
-            </div>
+    <!-- FORMULÁRIO DE DADOS -->
+    <div class="card card-form">
+        <h3>🌾 Dados da Propriedade</h3>
+        <div class="form-group">
+            <label for="hectares">Área Total (Hectares)</label>
+            <input type="number" id="hectares" min="1" value="10" placeholder="Ex: 50">
+        </div>
+        <div class="form-group">
+            <label for="cultura">Cultura Principal</label>
+            <select id="cultura">
+                <option value="soja">Soja</option>
+                <option value="milho">Milho</option>
+                <option value="trigo">Trigo</option>
+                <option value="feijao">Feijão</option>
+                <option value="algodao">Algodão</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="nivel-tecnologia">Nível de Tecnologia Aplicada</label>
+            <select id="nivel-tecnologia">
+                <option value="basico">Básico</option>
+                <option value="intermediario">Intermediário</option>
+                <option value="avancado">Avançado</option>
+            </select>
+        </div>
+        <button class="btn-calcular" onclick="calcularTudo()">Calcular Custos</button>
+    </div>
 
-            <button class="btn-calcular" onclick="calcularTudo()">Calcular Custos</button>
+    <!-- PAINEL DE RESULTADOS -->
+    <div class="card card-result">
+        <div id="placeholder-res" class="placeholder-res">
+            <p>Insira os dados acima e clique em "Calcular Custos" para gerar o relatório detalhado.</p>
         </div>
 
-        <!-- RESULTADOS -->
-        <div class="card-result">
-            <div id="placeholder-res" class="placeholder">
-                <p>Insira a área e selecione a cultura para gerar o relatório completo automaticamente.</p>
+        <div id="conteudo-res" class="conteudo-res">
+            <div class="resultado-header">
+                <h3>📋 Relatório de Custos</h3>
+                <p>Cultura: <strong id="res-cultura"></strong> | Área: <strong id="res-hec"></strong> ha | Tecnologia: <strong id="res-tec"></strong></p>
             </div>
 
-            <div id="conteudo-res" class="resultado" style="display:none;">
-                <h3>📋 Relatório de Custos e Máquinas</h3>
-                <p>Cultura: <strong id="res-cultura">--</strong> | Área: <span id="res-hec">0</span> ha</p>
-
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Categoria</th>
-                            <th>Custo / ha</th>
-                            <th>Total</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Sementes</td>
-                            <td id="td-sem-un">R$ 0,00</td>
-                            <td id="td-sem-tot">R$ 0,00</td>
-                        </tr>
-                        <tr>
-                            <td>Fertilizantes</td>
-                            <td id="td-fer-un">R$ 0,00</td>
-                            <td id="td-fer-tot">R$ 0,00</td>
-                        </tr>
-                        <tr>
-                            <td>Defensivos</td>
-                            <td id="td-def-un">R$ 0,00</td>
-                            <td id="td-def-tot">R$ 0,00</td>
-                        </tr>
-                        <tr>
-                            <td>Combustível</td>
-                            <td id="td-com-un">R$ 0,00</td>
-                            <td id="td-com-tot">R$ 0,00</td>
-                        </tr>
-                        <tr>
-                            <td>Manutenção</td>
-                            <td id="td-man-un">R$ 0,00</td>
-                            <td id="td-man-tot">R$ 0,00</td>
-                        </tr>
-                        <tr>
-                            <td>Máquinas Sugeridas</td>
-                            <td colspan="2" id="td-machinery">--</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <div class="total-box">
-                    <span>Investimento Total Estimado</span>
-                    <h4 id="res-total">R$ 0,00</h4>
+            <div class="cards-resultado">
+                <div class="card-resultado-item">
+                    <h4>Sementes</h4>
+                    <p>R$ <span id="td-sem-un"></span> / ha</p>
+                    <p>Total: R$ <span id="td-sem-tot"></span></p>
+                </div>
+                <div class="card-resultado-item">
+                    <h4>Fertilizantes</h4>
+                    <p>R$ <span id="td-fer-un"></span> / ha</p>
+                    <p>Total: R$ <span id="td-fer-tot"></span></p>
+                </div>
+                <div class="card-resultado-item">
+                    <h4>Defensivos</h4>
+                    <p>R$ <span id="td-def-un"></span> / ha</p>
+                    <p>Total: R$ <span id="td-def-tot"></span></p>
+                </div>
+                <div class="card-resultado-item">
+                    <h4>Combustível</h4>
+                    <p>R$ <span id="td-com-un"></span> / ha</p>
+                    <p>Total: R$ <span id="td-com-tot"></span></p>
+                </div>
+                <div class="card-resultado-item">
+                    <h4>Manutenção</h4>
+                    <p>R$ <span id="td-man-un"></span> / ha</p>
+                    <p>Total: R$ <span id="td-man-tot"></span></p>
                 </div>
             </div>
+
+            <div class="total-box">
+                <span>Investimento Total Estimado</span>
+                <h4 id="res-total"></h4>
+            </div>
+
+            <div class="maquinas-box">
+                <span>Máquinas Recomendadas:</span>
+                <ul id="td-machinery"></ul>
+            </div>
         </div>
     </div>
+</div>
 </section>
 
-<footer>
-    <p>© 2026 AgroTech Paraná - Calculadora de Custos e Máquinas Inteligente</p>
+<!-- FOOTER -->
+<footer class="footer">
+    <p>© 2026 AgroTech Paraná - Simulador Inteligente de Custos Agrícolas. Desenvolvido para fins educacionais e tecnológicos.</p>
 </footer>
 
 <script src="script.js"></script>
