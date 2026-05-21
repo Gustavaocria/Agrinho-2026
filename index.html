@@ -1,134 +1,320 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AgroTech Paraná - Simulador Inteligente</title>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AgroFuturo | Tecnologia Agrícola</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
-<body data-theme="light">
+<body>
 
-    <!-- =============================
-         HEADER
-    ============================== -->
-    <header class="header">
-        <div class="logo-area">
-            <h1>AgroTech <span>Paraná</span></h1>
-        </div>
-        <button id="btn-tema" class="theme-toggle">🌙 Modo Escuro</button>
-    </header>
+  <!-- HEADER -->
+  <header class="hero">
+    <div class="overlay"></div>
 
-    <!-- =============================
-         HERO BANNER
-    ============================== -->
-    <section class="hero">
-        <div class="hero-content">
-            <h2>Simulador de Custos Inteligente</h2>
-            <p>Planeje do preparo do solo à colheita. O sistema calcula automaticamente insumos, maquinários e custo total para a cultura escolhida, considerando valores de mercado atualizados.</p>
+    <nav class="navbar">
+      <div class="logo">Agro<span>Futuro</span></div>
+
+      <ul class="menu">
+        <li><a href="#conteudo">Conteúdo</a></li>
+        <li><a href="#beneficios">Benefícios</a></li>
+        <li><a href="#seminario">Seminário</a></li>
+        <li><a href="#comentarios">Comentários</a></li>
+      </ul>
+    </nav>
+
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1>
+          Tecnologia Agrícola reforça o papel do Brasil no futuro sustentável
+        </h1>
+
+        <p>
+          Inteligência Artificial, automação e inovação no campo estão transformando a agricultura brasileira em referência global de produtividade, sustentabilidade e eficiência.
+        </p>
+
+        <a href="#seminario" class="btn-primary">
+          Conheça o Seminário
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main>
+
+    <!-- CONTEÚDO -->
+    <section class="content-section" id="conteudo">
+
+      <div class="section-title">
+        <h2>O Brasil como protagonista da inovação agrícola</h2>
+        <p>
+          Sustentabilidade, ciência e tecnologia conectando o campo ao futuro.
+        </p>
+      </div>
+
+      <div class="content-grid">
+
+        <div class="left-content">
+
+          <!-- IMAGEM 1 -->
+          <div class="imagem">
+            <img src="Foto1.png" alt="Tecnologia aplicada no campo">
+          </div>
+
+          <div class="card">
+            <h3>Transformação no Campo</h3>
+
+            <p>
+              A agricultura sustentável ganha destaque mundial em um cenário de pressão sobre custos, segurança alimentar e mudanças climáticas.
+              O Brasil passa a ocupar posição estratégica ao unir
+              <span>produtividade</span>,
+              <span>inovação</span> e
+              <span>capacidade de adaptação</span>.
+            </p>
+
+            <p>
+              O uso de microrganismos capazes de substituir fertilizantes químicos demonstra como a ciência brasileira pode revolucionar a produção agrícola global.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Reconhecimento Internacional</h3>
+
+            <p>
+              O trabalho da microbiologista
+              <span>Mariangela Hungria</span>
+              recebeu reconhecimento internacional após décadas dedicadas ao desenvolvimento de bactérias capazes de capturar nitrogênio do ar e transferi-lo para as plantas.
+            </p>
+
+            <p>
+              O destaque veio com o
+              <span>World Food Prize</span>,
+              considerado o “Nobel da Agricultura”.
+            </p>
+          </div>
+
+          <!-- ACCORDION -->
+          <div class="accordion-container">
+
+            <div class="accordion-item">
+              <button class="accordion-header">
+                Inteligência Artificial no Campo
+                <span>+</span>
+              </button>
+
+              <div class="accordion-content">
+                <p>
+                  A Inteligência Artificial permite automatizar processos complexos, aumentar a eficiência produtiva e otimizar o uso de recursos naturais na agricultura.
+                </p>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <button class="accordion-header">
+                Sustentabilidade e Eficiência
+                <span>+</span>
+              </button>
+
+              <div class="accordion-content">
+                <p>
+                  A aplicação inteligente de água, fertilizantes e defensivos agrícolas reduz desperdícios, diminui impactos ambientais e melhora a produtividade.
+                </p>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <button class="accordion-header">
+                Automação e Monitoramento
+                <span>+</span>
+              </button>
+
+              <div class="accordion-content">
+                <p>
+                  Sensores, drones e máquinas autônomas ajudam no monitoramento das culturas, detectando problemas rapidamente e permitindo decisões estratégicas mais precisas.
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- IMAGEM 2 -->
+          <div class="imagem">
+            <img src="Foto2.png" alt="Drones monitorando plantações">
+          </div>
+
         </div>
-        <div class="hero-image">
-            <img src="https://cdn-icons-png.flaticon.com/512/427/427735.png" alt="Agricultura Tecnológica">
-        </div>
+
+        <!-- FORMULÁRIO -->
+        <aside class="form-side" id="seminario">
+
+          <div class="form-card">
+
+            <h3>
+              Venha conhecer melhor como a IA pode ser uma aliada do Campo.
+            </h3>
+
+            <p>
+              Inscreva-se no nosso seminário on-line.
+            </p>
+
+            <form id="seminarioForm">
+
+              <div class="input-group">
+                <input type="text" placeholder="Nome" required>
+              </div>
+
+              <div class="input-group">
+                <input type="email" placeholder="E-mail" required>
+              </div>
+
+              <div class="input-group">
+                <input type="text" placeholder="Cidade" required>
+              </div>
+
+              <div class="input-group">
+                <input type="text" placeholder="Estado" required>
+              </div>
+
+              <div class="input-group">
+                <input type="text" placeholder="País" required>
+              </div>
+
+              <button type="submit" class="btn-primary full">
+                Inscrever-se
+              </button>
+
+            </form>
+
+            <div id="formMessage"></div>
+
+          </div>
+
+        </aside>
+
+      </div>
     </section>
 
-    <!-- =============================
-         SIMULADOR
-    ============================== -->
-    <main class="main-content">
-        <div class="grid-simulador">
-            <!-- FORMULÁRIO -->
-            <div class="painel-input">
-                <h3>🌾 Dados do Plantio</h3>
-                <div class="form-group">
-                    <label for="hectares">Área total (ha)</label>
-                    <input type="number" id="hectares" placeholder="Ex: 50" min="1">
-                </div>
-                <div class="form-group">
-                    <label for="cultura">Cultura</label>
-                    <select id="cultura">
-                        <option value="soja">Soja</option>
-                        <option value="milho">Milho</option>
-                        <option value="trigo">Trigo</option>
-                    </select>
-                </div>
-                <button class="btn-calcular">Calcular Custos</button>
-            </div>
+    <!-- BENEFÍCIOS -->
+    <section class="benefits-section" id="beneficios">
 
-            <!-- RESULTADOS -->
-            <div class="painel-resultado" id="painel-resultado">
-                <div id="placeholder-res" class="placeholder-resultado">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M19,3H5C3.89,3 3,3.89 3,4V20A2,2 0 0,0 5,22H19A2,2 0 0,0 21,20V4C21,2.89 20.1,3 19,3M19,20H5V4H19V20M11,6H13V9H16V11H13V14H11V11H8V9H11V6Z"/>
-                    </svg>
-                    <p>Informe a área e a cultura desejada, clique em calcular para gerar um relatório completo de custos e maquinário.</p>
-                </div>
+      <div class="section-title">
+        <h2>Benefícios da IA na Agricultura</h2>
+        <p>
+          Tecnologias inteligentes impulsionando produtividade e sustentabilidade.
+        </p>
+      </div>
 
-                <div id="conteudo-res" class="resultado-conteudo">
-                    <div class="resultado-header">
-                        <h3>📋 Relatório de Custos</h3>
-                        <p>Cultura: <strong id="res-cultura">--</strong></p>
-                        <p>Área: <span id="res-hec-label">0</span> ha</p>
-                    </div>
+      <div class="benefits-grid">
 
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Categoria</th>
-                                <th>Custo/Hectare</th>
-                                <th>Total</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Sementes e Genética</td>
-                                <td id="td-sem-un">R$ 0,00</td>
-                                <td id="td-sem-tot">R$ 0,00</td>
-                            </tr>
-                            <tr>
-                                <td>Fertilizantes</td>
-                                <td id="td-fer-un">R$ 0,00</td>
-                                <td id="td-fer-tot">R$ 0,00</td>
-                            </tr>
-                            <tr>
-                                <td>Defensivos</td>
-                                <td id="td-def-un">R$ 0,00</td>
-                                <td id="td-def-tot">R$ 0,00</td>
-                            </tr>
-                            <tr>
-                                <td>Combustível</td>
-                                <td id="td-com-un">R$ 0,00</td>
-                                <td id="td-com-tot">R$ 0,00</td>
-                            </tr>
-                            <tr>
-                                <td>Manutenção e Maquinário</td>
-                                <td id="td-man-un">R$ 0,00</td>
-                                <td id="td-man-tot">R$ 0,00</td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <div class="total-box">
-                        <span>Investimento Estimado Total</span>
-                        <h4 id="res-total">R$ 0,00</h4>
-                    </div>
-
-                    <div class="maquinas-box"></div>
-                </div>
-            </div>
+        <div class="benefit-card">
+          <h3>Otimização de Recursos</h3>
+          <p>
+            Sistemas inteligentes monitoram solo e irrigação para reduzir desperdícios e melhorar o uso da água.
+          </p>
         </div>
-    </main>
 
-    <!-- =============================
-         FOOTER
-    ============================== -->
-    <footer class="footer">
-        <p>© 2026 AgroTech Paraná - Sistema desenvolvido para estudos e simulação de custos agrícolas.</p>
-    </footer>
+        <div class="benefit-card">
+          <h3>Monitoramento de Culturas</h3>
+          <p>
+            Drones e sensores analisam grandes áreas agrícolas identificando doenças, falhas e ervas daninhas.
+          </p>
+        </div>
 
-    <!-- JS -->
-    <script src="script.js"></script>
+        <div class="benefit-card">
+          <h3>Previsibilidade</h3>
+          <p>
+            Dados climáticos e históricos permitem prever colheitas e minimizar perdas.
+          </p>
+        </div>
+
+        <div class="benefit-card">
+          <h3>Automação</h3>
+          <p>
+            Máquinas agrícolas autônomas aumentam a eficiência operacional no plantio e colheita.
+          </p>
+        </div>
+
+        <div class="benefit-card">
+          <h3>Qualidade dos Produtos</h3>
+          <p>
+            A rastreabilidade garante maior controle da cadeia produtiva até o consumidor final.
+          </p>
+        </div>
+
+        <div class="benefit-card">
+          <h3>Sustentabilidade</h3>
+          <p>
+            Aplicações inteligentes reduzem impactos ambientais e promovem agricultura mais sustentável.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- IMAGEM 3 -->
+      <div class="imagem image-large">
+        <img src="Foto3.png" alt="Agricultura moderna e sustentável">
+      </div>
+
+    </section>
+
+    <!-- COMENTÁRIOS -->
+    <section class="comments-section" id="comentarios">
+
+      <div class="section-title">
+        <h2>Interação com o Leitor</h2>
+        <p>
+          Compartilhe sua opinião sobre inovação agrícola e IA no campo.
+        </p>
+      </div>
+
+      <div class="comment-box">
+
+        <textarea
+          id="commentInput"
+          placeholder="Digite seu comentário aqui..."
+        ></textarea>
+
+        <button id="commentBtn" class="btn-primary">
+          Enviar Comentário
+        </button>
+
+      </div>
+
+      <div id="commentsList" class="comments-list"></div>
+
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+
+    <div class="footer-content">
+
+      <div>
+        <h4>Referências Utilizadas</h4>
+
+        <p>
+          Conteúdo baseado em estudos sobre agricultura sustentável, Inteligência Artificial no campo e inovação agrícola brasileira.
+        </p>
+      </div>
+
+      <div>
+        <h4>AgroFuturo 2026</h4>
+
+        <p>
+          Conectando a inteligência tecnologia à terra de forma sustentável.
+        </p>
+      </div>
+
+    </div>
+
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
