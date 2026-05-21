@@ -1,4 +1,20 @@
 /* =========================
+SIDEBAR
+========================= */
+
+const sidebar =
+document.getElementById("sidebar");
+
+const sidebarToggle =
+document.getElementById("sidebarToggle");
+
+sidebarToggle.addEventListener("click", () => {
+
+  sidebar.classList.toggle("hidden");
+
+});
+
+/* =========================
 ACCORDION
 ========================= */
 
@@ -42,7 +58,7 @@ document.getElementById("seminarioForm");
 const formMessage =
 document.getElementById("formMessage");
 
-form.addEventListener("submit", (e)=>{
+form.addEventListener("submit", (e) => {
 
   e.preventDefault();
 
@@ -73,7 +89,7 @@ document.getElementById("commentInput");
 const commentsList =
 document.getElementById("commentsList");
 
-commentBtn.addEventListener("click", ()=>{
+commentBtn.addEventListener("click", () => {
 
   const text =
   commentInput.value.trim();
@@ -100,7 +116,7 @@ commentBtn.addEventListener("click", ()=>{
 });
 
 /* =========================
-ACESSIBILIDADE
+FONTE
 ========================= */
 
 const increaseBtn =
@@ -109,23 +125,22 @@ document.getElementById("increase-font");
 const decreaseBtn =
 document.getElementById("decrease-font");
 
-const toggleThemeBtn =
-document.getElementById("toggle-theme");
-
 let currentFontSize = 16;
 
-increaseBtn.addEventListener("click", ()=>{
+increaseBtn.addEventListener("click", () => {
 
   currentFontSize += 1;
 
   document.documentElement
   .style
-  .setProperty("--font-size",
-  currentFontSize + "px");
+  .setProperty(
+    "--font-size",
+    currentFontSize + "px"
+  );
 
 });
 
-decreaseBtn.addEventListener("click", ()=>{
+decreaseBtn.addEventListener("click", () => {
 
   currentFontSize -= 1;
 
@@ -135,16 +150,21 @@ decreaseBtn.addEventListener("click", ()=>{
 
   document.documentElement
   .style
-  .setProperty("--font-size",
-  currentFontSize + "px");
+  .setProperty(
+    "--font-size",
+    currentFontSize + "px"
+  );
 
 });
 
 /* =========================
-MODO ESCURO / CLARO
+MODO CLARO / ESCURO
 ========================= */
 
-toggleThemeBtn.addEventListener("click", ()=>{
+const toggleTheme =
+document.getElementById("toggle-theme");
+
+toggleTheme.addEventListener("click", () => {
 
   document.body.classList.toggle("light-mode");
 
@@ -154,24 +174,24 @@ toggleThemeBtn.addEventListener("click", ()=>{
 LEITURA POR VOZ
 ========================= */
 
-const startReadingBtn =
+const startReading =
 document.getElementById("start-reading");
 
-const stopReadingBtn =
+const stopReading =
 document.getElementById("stop-reading");
 
 let speech = null;
 
-startReadingBtn.addEventListener("click", ()=>{
+startReading.addEventListener("click", () => {
 
   window.speechSynthesis.cancel();
 
-  const mainContent =
+  const content =
   document.getElementById("main-content")
   .innerText;
 
   speech =
-  new SpeechSynthesisUtterance(mainContent);
+  new SpeechSynthesisUtterance(content);
 
   speech.lang = "pt-BR";
 
@@ -183,7 +203,7 @@ startReadingBtn.addEventListener("click", ()=>{
 
 });
 
-stopReadingBtn.addEventListener("click", ()=>{
+stopReading.addEventListener("click", () => {
 
   window.speechSynthesis.cancel();
 
