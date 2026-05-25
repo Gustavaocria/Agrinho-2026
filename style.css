@@ -1,7 +1,3 @@
-/* =========================
-RESET
-========================= */
-
 *{
   margin:0;
   padding:0;
@@ -9,26 +5,18 @@ RESET
 }
 
 :root{
-
   --bg:#07111f;
   --bg-secondary:#102235;
-
   --blue:#0ea5ff;
   --sky:#7dd3fc;
   --green:#00ff9d;
   --gold:#ffd700;
   --white:#ffffff;
   --black:#000000;
-
   --text:#d7e6f5;
-
   --radius:24px;
-
-  --shadow:
-  0 10px 35px rgba(0,0,0,.35);
-
+  --shadow:0 10px 35px rgba(0,0,0,.35);
   --transition:.3s ease;
-
   --font-size:16px;
 }
 
@@ -46,10 +34,6 @@ body{
   transition:var(--transition);
 }
 
-/* =========================
-LIGHT MODE
-========================= */
-
 body.light-mode{
   background:#f5f7fb;
   color:#111827;
@@ -58,8 +42,7 @@ body.light-mode{
 body.light-mode .card,
 body.light-mode .form-card,
 body.light-mode .benefit-card,
-body.light-mode .comment-box,
-body.light-mode .accordion-item{
+body.light-mode .comment-box{
   background:#ffffff;
   color:#111827;
 }
@@ -68,28 +51,26 @@ body.light-mode p{
   color:#374151;
 }
 
-/* =========================
-SIDEBAR
-========================= */
+.container{
+  width:min(1200px,90%);
+  margin-inline:auto;
+}
+
+img{
+  width:100%;
+  display:block;
+}
 
 .sidebar{
-
   position:fixed;
   top:0;
   right:0;
-
   height:100vh;
-
   width:280px;
-
   background:rgba(7,17,31,.96);
-
   border-left:1px solid rgba(255,255,255,.1);
-
   z-index:9999;
-
   transform:translateX(0);
-
   transition:var(--transition);
 }
 
@@ -98,33 +79,27 @@ SIDEBAR
 }
 
 .sidebar-toggle{
-
   position:absolute;
   left:-55px;
   top:25px;
-
   width:55px;
   height:55px;
-
   border:none;
-
   border-radius:15px 0 0 15px;
-
   background:linear-gradient(
     135deg,
     var(--blue),
     var(--green)
   );
-
   color:#031018;
-
   font-size:1.4rem;
-
   cursor:pointer;
 }
 
 .sidebar-content{
   padding:90px 20px 20px;
+  display:flex;
+  flex-direction:column;
 }
 
 .sidebar-content h3{
@@ -133,23 +108,14 @@ SIDEBAR
 }
 
 .sidebar-content button{
-
   width:100%;
-
   padding:14px;
-
   margin-bottom:12px;
-
   border:none;
-
   border-radius:14px;
-
   background:rgba(255,255,255,.08);
-
   color:var(--white);
-
   cursor:pointer;
-
   transition:var(--transition);
 }
 
@@ -158,18 +124,10 @@ SIDEBAR
   color:#031018;
 }
 
-/* =========================
-HERO
-========================= */
-
 .hero{
-
   position:relative;
-
   min-height:100vh;
-
   padding:30px 6vw;
-
   background:
   linear-gradient(
     rgba(0,0,0,.72),
@@ -183,17 +141,14 @@ HERO
 }
 
 .hero-overlay{
-
   position:absolute;
   inset:0;
-
   background:
   radial-gradient(
     circle at top right,
     rgba(0,255,170,.12),
     transparent 35%
   ),
-
   radial-gradient(
     circle at bottom left,
     rgba(14,165,255,.15),
@@ -202,14 +157,11 @@ HERO
 }
 
 .navbar{
-
   position:relative;
   z-index:5;
-
   display:flex;
   justify-content:space-between;
   align-items:center;
-
   margin-bottom:60px;
 }
 
@@ -239,92 +191,57 @@ HERO
 }
 
 .hero-content{
-
   position:relative;
   z-index:2;
-
   display:grid;
-
   grid-template-columns:
   repeat(auto-fit,minmax(320px,1fr));
-
   gap:50px;
-
   align-items:center;
-
   min-height:75vh;
 }
 
 .tag{
-
   display:inline-block;
-
   margin-bottom:20px;
-
   padding:10px 18px;
-
   border-radius:999px;
-
   background:rgba(255,255,255,.08);
-
   color:var(--green);
 }
 
 .hero h1{
-
   font-size:
   clamp(2.5rem,6vw,5.5rem);
-
   line-height:1.1;
-
   margin-bottom:20px;
 }
 
 .hero p{
-
   max-width:650px;
-
   margin-bottom:30px;
-
   color:var(--text);
-
   font-size:1.1rem;
 }
 
-/* =========================
-BOTÕES
-========================= */
-
 .btn-primary{
-
   display:inline-flex;
-
   align-items:center;
   justify-content:center;
-
   padding:16px 30px;
-
   border:none;
-
   border-radius:999px;
-
   background:
   linear-gradient(
     135deg,
     var(--blue),
     var(--green)
   );
-
   color:#031018;
-
   text-decoration:none;
-
   font-weight:700;
-
   cursor:pointer;
-
   transition:var(--transition);
-
   box-shadow:var(--shadow);
 }
 
@@ -336,10 +253,6 @@ BOTÕES
   width:100%;
 }
 
-/* =========================
-SECTIONS
-========================= */
-
 section{
   padding:100px 6vw;
 }
@@ -350,10 +263,8 @@ section{
 }
 
 .section-title h2{
-
   font-size:
   clamp(2rem,4vw,3.5rem);
-
   margin-bottom:15px;
 }
 
@@ -361,18 +272,11 @@ section{
   color:#cbd5e1;
 }
 
-/* =========================
-CONTENT GRID
-========================= */
-
 .content-grid{
-
   display:grid;
-
   grid-template-columns:
   minmax(0,2fr)
   minmax(320px,1fr);
-
   gap:35px;
 }
 
@@ -382,24 +286,15 @@ CONTENT GRID
   gap:30px;
 }
 
-/* =========================
-CARDS
-========================= */
-
 .card,
 .form-card,
 .benefit-card,
 .comment-box,
 .accordion-item{
-
   background:rgba(255,255,255,.04);
-
   border:1px solid rgba(255,255,255,.08);
-
   border-radius:var(--radius);
-
   backdrop-filter:blur(10px);
-
   box-shadow:var(--shadow);
 }
 
@@ -412,32 +307,25 @@ CARDS
   color:var(--green);
 }
 
+.card p{
+  color:var(--text);
+}
+
 .card span{
   color:var(--gold);
   font-weight:700;
 }
-
-/* =========================
-IMAGENS
-========================= */
 
 .imagem{
   width:100%;
 }
 
 .imagem img{
-
   width:100%;
-  display:block;
-
   object-fit:cover;
-
   border-radius:28px;
-
   box-shadow:var(--shadow);
-
   border:2px solid rgba(255,255,255,.06);
-
   transition:var(--transition);
 }
 
@@ -445,15 +333,9 @@ IMAGENS
   transform:scale(1.02);
 }
 
-/* =========================
-FORM
-========================= */
-
 .form-card{
-
   position:sticky;
   top:30px;
-
   padding:35px;
 }
 
@@ -471,25 +353,18 @@ FORM
 }
 
 .input-group input{
-
   width:100%;
-
   padding:16px;
-
   border:none;
-
   border-radius:16px;
-
   outline:none;
-
   background:rgba(255,255,255,.08);
-
   color:var(--white);
 }
 
-/* =========================
-ACCORDION
-========================= */
+.input-group input::placeholder{
+  color:#cbd5e1;
+}
 
 .accordion-container{
   display:flex;
@@ -498,58 +373,41 @@ ACCORDION
 }
 
 .accordion-header{
-
   width:100%;
-
   display:flex;
   justify-content:space-between;
-
   padding:20px;
-
   background:transparent;
-
   border:none;
-
   color:var(--white);
-
   font-size:1rem;
-
   font-weight:600;
-
   cursor:pointer;
 }
 
 .accordion-content{
-
   max-height:0;
-
   overflow:hidden;
-
   transition:max-height .4s ease;
+}
+
+.accordion-content.active{
+  max-height:200px;
 }
 
 .accordion-content p{
   padding:0 20px 20px;
 }
 
-/* =========================
-BENEFITS
-========================= */
-
 .benefits-grid{
-
   display:grid;
-
   grid-template-columns:
   repeat(auto-fit,minmax(250px,1fr));
-
   gap:25px;
 }
 
 .benefit-card{
-
   padding:30px;
-
   transition:var(--transition);
 }
 
@@ -562,35 +420,25 @@ BENEFITS
   color:var(--gold);
 }
 
-/* =========================
-COMMENTS
-========================= */
-
 .comment-box{
   padding:30px;
 }
 
 .comment-box textarea{
-
   width:100%;
-
   min-height:160px;
-
   padding:20px;
-
   border:none;
-
   border-radius:20px;
-
   background:rgba(255,255,255,.08);
-
   color:var(--white);
-
   resize:vertical;
-
   outline:none;
-
   margin-bottom:20px;
+}
+
+.comment-box textarea::placeholder{
+  color:#cbd5e1;
 }
 
 .comments-list{
@@ -598,21 +446,12 @@ COMMENTS
 }
 
 .comment{
-
   padding:20px;
-
   border-left:4px solid var(--green);
-
   border-radius:18px;
-
   background:rgba(255,255,255,.04);
-
   margin-bottom:15px;
 }
-
-/* =========================
-FOOTER
-========================= */
 
 .footer{
   padding:60px 6vw;
@@ -620,21 +459,15 @@ FOOTER
 }
 
 .footer-grid{
-
   display:grid;
-
   grid-template-columns:
   repeat(auto-fit,minmax(280px,1fr));
-
   gap:25px;
 }
 
 .footer-box{
-
   padding:30px;
-
   border-radius:20px;
-
   background:rgba(255,255,255,.03);
 }
 
@@ -642,10 +475,6 @@ FOOTER
   margin-bottom:15px;
   color:var(--gold);
 }
-
-/* =========================
-RESPONSIVO
-========================= */
 
 @media(max-width:1100px){
 
@@ -657,6 +486,7 @@ RESPONSIVO
     position:relative;
     top:0;
   }
+
 }
 
 @media(max-width:768px){
@@ -678,6 +508,7 @@ RESPONSIVO
   .sidebar.hidden{
     transform:translateX(200px);
   }
+
 }
 
 @media(max-width:480px){
@@ -689,4 +520,5 @@ RESPONSIVO
   .btn-primary{
     width:100%;
   }
+
 }
