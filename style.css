@@ -8,34 +8,60 @@ font-family:Poppins;
 body{
 background:#0b1220;
 color:#fff;
-transition:.3s;
+transition:.4s ease;
+font-size:16px;
 }
 
-/* 🔝 TOOLBAR */
-.tools{
+/* 🌗 LIGHT MODE REAL */
+.dark{
+background:#f5f7fb;
+color:#111;
+}
+
+.dark .card{
+background:#fff;
+color:#111;
+border:1px solid #ddd;
+}
+
+.dark .nav{
+background:rgba(255,255,255,.8);
+}
+
+.dark .menu a{
+color:#111;
+}
+
+/* ⚙️ PAINEL */
+.access-panel{
 position:fixed;
-top:15px;
-right:15px;
+top:20px;
+right:20px;
 display:flex;
-gap:8px;
+gap:10px;
 z-index:9999;
+background:rgba(0,0,0,.4);
+padding:10px;
+border-radius:14px;
+backdrop-filter:blur(10px);
 }
 
-.tools button{
-padding:8px 10px;
+.access-panel button{
+width:42px;
+height:42px;
 border:none;
-background:#00ff9d;
-border-radius:8px;
+border-radius:10px;
 cursor:pointer;
+background:linear-gradient(135deg,#00ff9d,#00c2ff);
 font-weight:bold;
 }
 
-/* 🏛️ HEADER */
-.header{
+/* 🏛️ HERO */
+.hero{
 min-height:100vh;
-background:linear-gradient(135deg,#0b1220,#123a4a);
 display:flex;
 flex-direction:column;
+background:linear-gradient(135deg,#0b1220,#123a4a);
 }
 
 .nav{
@@ -44,6 +70,8 @@ justify-content:space-between;
 padding:20px 40px;
 background:rgba(0,0,0,.4);
 backdrop-filter:blur(10px);
+position:sticky;
+top:0;
 }
 
 .logo span{color:#00ff9d;}
@@ -54,8 +82,7 @@ color:#fff;
 text-decoration:none;
 }
 
-/* HERO FORTE */
-.hero{
+.hero-content{
 flex:1;
 display:flex;
 flex-direction:column;
@@ -99,43 +126,44 @@ margin-bottom:40px;
 font-size:2rem;
 }
 
-/* GRID LIMPO */
+/* 📊 GRID */
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:20px;
 }
 
-/* CARD PREMIUM */
+/* 🧱 CARD */
 .card{
 background:rgba(255,255,255,.06);
 padding:25px;
-border-radius:15px;
+border-radius:16px;
 border:1px solid rgba(255,255,255,.1);
 transition:.3s;
 }
 
 .card:hover{
 transform:translateY(-6px);
+border-color:#00ff9d;
 }
 
-/* IMAGEM ESTILO PORTAL */
-.image-block{
-margin-top:30px;
+.highlight{
+border-left:4px solid #00ff9d;
 }
 
-.image-block img{
+/* 🖼️ IMAGEM */
+.image-box img{
 width:100%;
 border-radius:18px;
+margin-top:30px;
 box-shadow:0 10px 30px rgba(0,0,0,.4);
 }
 
-/* MAPA */
+/* 🗺️ MAPA */
 .map{
 display:grid;
 grid-template-columns:repeat(4,1fr);
 gap:10px;
-margin-bottom:20px;
 }
 
 .map div{
@@ -152,7 +180,7 @@ background:#00ff9d;
 color:#000;
 }
 
-/* COMENTÁRIOS */
+/* 💬 */
 textarea{
 width:100%;
 height:120px;
@@ -172,8 +200,10 @@ cursor:pointer;
 font-weight:bold;
 }
 
-/* DARK MODE (opcional depois JS) */
-.dark{
-background:#f4f7f5;
-color:#111;
+/* FOOTER */
+.footer{
+text-align:center;
+padding:50px;
+background:#050a12;
+margin-top:50px;
 }
