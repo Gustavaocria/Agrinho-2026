@@ -1,156 +1,76 @@
-const sidebar =
-document.getElementById("sidebar");
+const sidebar = document.getElementById("sidebar");
 
-const toggleSidebar =
-document.getElementById("toggle");
-
-const fontUp =
-document.getElementById("fontUp");
-
-const fontDown =
-document.getElementById("fontDown");
-
-const themeBtn =
-document.getElementById("theme");
-
-const readBtn =
-document.getElementById("read");
-
-const stopBtn =
-document.getElementById("stop");
-
-const sendBtn =
-document.getElementById("send");
-
-const input =
-document.getElementById("input");
-
-const list =
-document.getElementById("list");
-
-let fontSize = 16;
-
-let speech =
-null;
-
-/* SIDEBAR */
-toggleSidebar.addEventListener("click",()=>{
+document.getElementById("toggleSidebar")
+.addEventListener("click",()=>{
 
 sidebar.classList.toggle("hidden");
 
 });
 
 /* FONTE */
-fontUp.addEventListener("click",()=>{
+let font = 16;
 
-fontSize++;
+document.getElementById("fontUp")
+.addEventListener("click",()=>{
 
-document.documentElement.style.setProperty(
-"--font-size",
-fontSize + "px"
-);
+font++;
+
+document.documentElement.style.setProperty("--font", font + "px");
 
 });
 
-fontDown.addEventListener("click",()=>{
+document.getElementById("fontDown")
+.addEventListener("click",()=>{
 
-fontSize = Math.max(12,fontSize-1);
+font = Math.max(12, font-1);
 
-document.documentElement.style.setProperty(
-"--font-size",
-fontSize + "px"
-);
+document.documentElement.style.setProperty("--font", font + "px");
 
 });
 
 /* TEMA */
-themeBtn.addEventListener("click",()=>{
+document.getElementById("theme")
+.addEventListener("click",()=>{
 
 document.body.classList.toggle("dark");
 
 });
 
-/* LEITURA POR VOZ */
-readBtn.addEventListener("click",()=>{
+/* LEITURA */
+document.getElementById("read")
+.addEventListener("click",()=>{
 
-window.speechSynthesis.cancel();
+const text = document.body.innerText;
 
-const text =
-document.body.innerText;
-
-speech =
-new SpeechSynthesisUtterance(text);
-
+const speech = new SpeechSynthesisUtterance(text);
 speech.lang = "pt-BR";
-speech.rate = 1;
 
 window.speechSynthesis.speak(speech);
 
 });
 
-stopBtn.addEventListener("click",()=>{
+document.getElementById("stop")
+.addEventListener("click",()=>{
 
 window.speechSynthesis.cancel();
 
 });
 
 /* COMENTÁRIOS */
-sendBtn.addEventListener("click",()=>{
+document.getElementById("enviar")
+.addEventListener("click",()=>{
 
-const value =
-input.value.trim();
+const input = document.getElementById("comentario");
+const list = document.getElementById("listaComentarios");
 
-if(value==="")return;
+if(input.value.trim() === "") return;
 
-const div =
-document.createElement("div");
-
-div.classList.add("comment");
-
-div.textContent = value;
+const div = document.createElement("div");
+div.classList.add("comentario");
+div.textContent = input.value;
 
 list.prepend(div);
 
-input.value="";
-
-});
-
-/* ENTER no comentário */
-input.addEventListener("keypress",(e)=>{
-
-if(e.key==="Enter"){
-
-e.preventDefault();
-
-sendBtn.click();
-
-}
-
-});
-
-/* salvar tema simples */
-window.addEventListener("load",()=>{
-
-const saved =
-localStorage.getItem("theme");
-
-if(saved==="dark"){
-
-document.body.classList.add("dark");
-
-}
-
-});
-
-/* persistência simples */
-themeBtn.addEventListener("click",()=>{
-
-const isDark =
-document.body.classList.contains("dark");
-
-localStorage.setItem(
-"theme",
-isDark ? "dark" : "light"
-);
+input.value = "";
 
 });
