@@ -9,16 +9,10 @@ body{
 background:#0b1220;
 color:#fff;
 transition:.3s;
-font-size:16px;
 }
 
-.dark{
-background:#f4f7f5;
-color:#111;
-}
-
-/* ⚙️ ACESSIBILIDADE */
-.accessibility{
+/* 🔝 TOOLBAR */
+.tools{
 position:fixed;
 top:15px;
 right:15px;
@@ -27,11 +21,11 @@ gap:8px;
 z-index:9999;
 }
 
-.accessibility button{
+.tools button{
 padding:8px 10px;
 border:none;
-border-radius:8px;
 background:#00ff9d;
+border-radius:8px;
 cursor:pointer;
 font-weight:bold;
 }
@@ -48,18 +42,19 @@ flex-direction:column;
 display:flex;
 justify-content:space-between;
 padding:20px 40px;
-background:rgba(0,0,0,.3);
+background:rgba(0,0,0,.4);
 backdrop-filter:blur(10px);
 }
 
 .logo span{color:#00ff9d;}
 
 .menu a{
-margin-left:15px;
+margin-left:20px;
 color:#fff;
 text-decoration:none;
 }
 
+/* HERO FORTE */
 .hero{
 flex:1;
 display:flex;
@@ -72,66 +67,75 @@ padding:40px;
 
 .hero h1{
 font-size:clamp(2rem,5vw,3.5rem);
+max-width:900px;
 }
 
 .hero p{
 max-width:700px;
-margin-top:15px;
+margin-top:20px;
 color:#ddd;
 }
 
 .btn{
-margin-top:20px;
+margin-top:25px;
 padding:12px 25px;
 background:#00ff9d;
 color:#000;
 border-radius:30px;
 text-decoration:none;
+font-weight:bold;
 }
 
 /* 📦 SEÇÕES */
 .section{
-padding:80px 20px;
-max-width:1100px;
+padding:90px 20px;
+max-width:1200px;
 margin:auto;
 }
 
 .section h2{
 text-align:center;
 margin-bottom:40px;
+font-size:2rem;
 }
 
-/* 📊 GRID */
+/* GRID LIMPO */
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:20px;
 }
 
-/* 🧱 CARD */
+/* CARD PREMIUM */
 .card{
 background:rgba(255,255,255,.06);
-padding:20px;
+padding:25px;
 border-radius:15px;
 border:1px solid rgba(255,255,255,.1);
+transition:.3s;
 }
 
-/* 🖼️ IMAGEM */
-.image-box{
+.card:hover{
+transform:translateY(-6px);
+}
+
+/* IMAGEM ESTILO PORTAL */
+.image-block{
 margin-top:30px;
 }
 
-.image-box img{
+.image-block img{
 width:100%;
-border-radius:20px;
-box-shadow:0 10px 30px rgba(0,0,0,.3);
+border-radius:18px;
+box-shadow:0 10px 30px rgba(0,0,0,.4);
 }
 
-/* 🗺️ MAPA */
+/* MAPA */
 .map{
 display:grid;
 grid-template-columns:repeat(4,1fr);
 gap:10px;
+margin-bottom:20px;
 }
 
 .map div{
@@ -140,6 +144,7 @@ background:#1a2a35;
 text-align:center;
 border-radius:10px;
 cursor:pointer;
+transition:.3s;
 }
 
 .map div:hover{
@@ -147,14 +152,14 @@ background:#00ff9d;
 color:#000;
 }
 
-/* 💬 */
+/* COMENTÁRIOS */
 textarea{
 width:100%;
 height:120px;
-padding:10px;
+padding:12px;
 border-radius:10px;
-margin-bottom:10px;
 border:none;
+margin-bottom:10px;
 }
 
 button{
@@ -164,4 +169,11 @@ background:#00ff9d;
 border:none;
 border-radius:10px;
 cursor:pointer;
+font-weight:bold;
+}
+
+/* DARK MODE (opcional depois JS) */
+.dark{
+background:#f4f7f5;
+color:#111;
 }
