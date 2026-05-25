@@ -1,47 +1,52 @@
-const access = document.getElementById("access");
+// GRÁFICO
+const ctx = document.getElementById('chart');
 
-document.getElementById("toggleAccess").onclick = () => {
-access.classList.toggle("hidden");
-};
+new Chart(ctx, {
+type: 'bar',
+data: {
+labels: ['Soja', 'Milho', 'Café', 'Trigo'],
+datasets: [{
+label: 'Produção',
+data: [80, 65, 50, 40],
+backgroundColor: '#2d6a4f'
+}]
+}
+});
 
-let font = 16;
+// MAPA
+function regionInfo(name){
+alert("Região selecionada: " + name);
+}
 
-document.getElementById("fontUp").onclick = () => {
-font++;
-document.documentElement.style.setProperty("--font", font + "px");
-};
+// MODAL
+function openService(name){
+document.getElementById("modal").style.display = "flex";
+document.getElementById("modalTitle").innerText = name;
+}
 
-document.getElementById("fontDown").onclick = () => {
-font = Math.max(12,font-1);
-document.documentElement.style.setProperty("--font", font + "px");
-};
+function closeModal(){
+document.getElementById("modal").style.display = "none";
+}
 
-document.getElementById("theme").onclick = () => {
-document.body.classList.toggle("dark");
-};
+// BUSCA
+document.getElementById("filter").addEventListener("input", function(){
 
-document.getElementById("read").onclick = () => {
+let value = this.value.toLowerCase();
+
+document.querySelectorAll(".news").forEach(item => {
+
+item.style.display = item.innerText.toLowerCase().includes(value)
+? "block"
+: "none";
+
+});
+
+});
+
+// LEITURA DE VOZ
+function readPage(){
 const text = document.body.innerText;
 const speech = new SpeechSynthesisUtterance(text);
 speech.lang = "pt-BR";
 window.speechSynthesis.speak(speech);
-};
-
-document.getElementById("stop").onclick = () => {
-window.speechSynthesis.cancel();
-};
-
-document.getElementById("send").onclick = () => {
-const input = document.getElementById("input");
-const list = document.getElementById("list");
-
-if(input.value.trim() === "") return;
-
-const div = document.createElement("div");
-div.className = "comment";
-div.textContent = input.value;
-
-list.prepend(div);
-
-input.value = "";
-};
+}
