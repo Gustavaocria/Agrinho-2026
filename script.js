@@ -1,88 +1,24 @@
-const commentInput = document.getElementById("comentario");
-const commentList = document.getElementById("listaComentarios");
+let fontSize = 16;
+let speech;
 
-function addComment(){
-
-const value = commentInput.value.trim();
-
-if(!value){
-alert("Digite um comentário.");
-return;
+function setFont(size){
+fontSize = Math.max(12, Math.min(24, size));
+document.body.style.fontSize = fontSize + "px";
 }
 
-const item = document.createElement("div");
-item.className = "card";
-
-item.innerHTML = `
-<p>${escapeHtml(value)}</p>
-<small>${new Date().toLocaleString("pt-BR")}</small>
-`;
-
-commentList.prepend(item);
-
-saveComment(value);
-
-commentInput.value = "";
+function fontUp(){
+setFont(fontSize + 1);
 }
 
-function escapeHtml(text){
-return text
-.replaceAll("&","&amp;")
-.replaceAll("<","&lt;")
-.replaceAll(">","&gt;");
+function fontDown(){
+setFont(fontSize - 1);
 }
-
-/* ===== LOCAL STORAGE (parece sistema real) ===== */
-
-function saveComment(text){
-let data = JSON.parse(localStorage.getItem("comments") || "[]");
-data.unshift({
-text,
-date:new Date().toISOString()
-});
-localStorage.setItem("comments", JSON.stringify(data));
-}
-
-function loadComments(){
-let data = JSON.parse(localStorage.getItem("comments") || "[]");
-
-data.forEach(c=>{
-const item = document.createElement("div");
-item.className = "card";
-
-item.innerHTML = `
-<p>${escapeHtml(c.text)}</p>
-<small>${new Date(c.date).toLocaleString("pt-BR")}</small>
-`;
-
-commentList.appendChild(item);
-});
-}
-
-loadComments();
-
-/* ===== ACESSIBILIDADE ===== */
-
-let font = 16;
-
-function setFont(v){
-font = Math.max(12, Math.min(24, v));
-document.documentElement.style.fontSize = font + "px";
-}
-
-function fontUp(){ setFont(font + 1); }
-function fontDown(){ setFont(font - 1); }
-
-/* ===== TEMA ===== */
 
 function toggleTheme(){
 document.body.classList.toggle("dark");
 }
 
-/* ===== LEITURA ===== */
-
-let speech;
-
+/* 🔊 LEITURA POR VOZ */
 function readAll(){
 window.speechSynthesis.cancel();
 
@@ -100,10 +36,37 @@ function stopRead(){
 window.speechSynthesis.cancel();
 }
 
-/* ===== MICRO INTERAÇÃO ===== */
+/* 🗺️ MAPA INTERATIVO */
+function region(name){
 
-document.addEventListener("keydown", (e)=>{
-if(e.key === "Escape"){
-stopRead();
+const data = {
+"Norte":"Região com forte expansão agrícola e tecnologia crescente.",
+"Oeste":"Alta produção e cooperativas fortes no agronegócio.",
+"Sul":"Agricultura diversificada e sustentável.",
+"Centro":"Integração entre tecnologia e produção rural."
+};
+
+document.getElementById("mapInfo").innerHTML =
+"<strong>" + name + "</strong><br>" + data[name];
 }
-});
+
+/* 💬 COMENTÁRIOS */
+function addComment(){
+
+const input = document.getElementById("commentInput");
+const container = document.getElementById("comments");
+
+if(!input.value.trim()) return;
+
+const div = document.createElement("div");
+div.className = "card";
+
+div.innerHTML =
+input.value + "<br><small>" +
+new Date().toLocaleString("pt-BR") +
+"</small>";
+
+container.prepend(div);
+
+input.value = "";
+}
