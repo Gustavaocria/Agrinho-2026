@@ -2,14 +2,13 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Poppins, sans-serif;
+font-family:Poppins;
 }
 
 body{
 background:#0b1220;
 color:#fff;
 transition:.3s;
-line-height:1.6;
 font-size:16px;
 }
 
@@ -18,8 +17,8 @@ background:#f4f7f5;
 color:#111;
 }
 
-/* 🔝 ACESSIBILIDADE */
-.access-panel{
+/* ⚙️ ACESSIBILIDADE */
+.accessibility{
 position:fixed;
 top:15px;
 right:15px;
@@ -28,52 +27,37 @@ gap:8px;
 z-index:9999;
 }
 
-.access-panel button{
+.accessibility button{
 padding:8px 10px;
 border:none;
 border-radius:8px;
-cursor:pointer;
 background:#00ff9d;
+cursor:pointer;
 font-weight:bold;
 }
 
 /* 🏛️ HEADER */
 .header{
 min-height:100vh;
+background:linear-gradient(135deg,#0b1220,#123a4a);
 display:flex;
 flex-direction:column;
-background:linear-gradient(135deg,#0b1220,#123a4a);
 }
 
 .nav{
 display:flex;
 justify-content:space-between;
-align-items:center;
 padding:20px 40px;
 background:rgba(0,0,0,.3);
 backdrop-filter:blur(10px);
-position:sticky;
-top:0;
 }
 
-.logo{
-font-size:1.4rem;
-font-weight:700;
-}
-
-.logo span{
-color:#00ff9d;
-}
+.logo span{color:#00ff9d;}
 
 .menu a{
+margin-left:15px;
 color:#fff;
-margin-left:20px;
 text-decoration:none;
-transition:.3s;
-}
-
-.menu a:hover{
-color:#00ff9d;
 }
 
 .hero{
@@ -88,32 +72,26 @@ padding:40px;
 
 .hero h1{
 font-size:clamp(2rem,5vw,3.5rem);
-margin-bottom:20px;
 }
 
 .hero p{
 max-width:700px;
+margin-top:15px;
 color:#ddd;
-margin-bottom:25px;
 }
 
 .btn{
+margin-top:20px;
 padding:12px 25px;
 background:#00ff9d;
 color:#000;
-text-decoration:none;
 border-radius:30px;
-font-weight:bold;
-transition:.3s;
-}
-
-.btn:hover{
-transform:translateY(-4px);
+text-decoration:none;
 }
 
 /* 📦 SEÇÕES */
 .section{
-padding:90px 20px;
+padding:80px 20px;
 max-width:1100px;
 margin:auto;
 }
@@ -121,13 +99,12 @@ margin:auto;
 .section h2{
 text-align:center;
 margin-bottom:40px;
-font-size:2rem;
 }
 
 /* 📊 GRID */
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:20px;
 }
 
@@ -135,22 +112,19 @@ gap:20px;
 .card{
 background:rgba(255,255,255,.06);
 padding:20px;
-border-radius:16px;
+border-radius:15px;
 border:1px solid rgba(255,255,255,.1);
-transition:.3s;
 }
 
-.card:hover{
-transform:translateY(-5px);
+/* 🖼️ IMAGEM */
+.image-box{
+margin-top:30px;
 }
 
-.highlight{
-border:1px solid #00ff9d;
-}
-
-/* 🌙 SEÇÃO ESCURA */
-.dark{
-background:#0f1720;
+.image-box img{
+width:100%;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,.3);
 }
 
 /* 🗺️ MAPA */
@@ -158,16 +132,14 @@ background:#0f1720;
 display:grid;
 grid-template-columns:repeat(4,1fr);
 gap:10px;
-margin-bottom:20px;
 }
 
 .map div{
-background:#1a2a35;
 padding:15px;
+background:#1a2a35;
 text-align:center;
 border-radius:10px;
 cursor:pointer;
-transition:.3s;
 }
 
 .map div:hover{
@@ -175,14 +147,14 @@ background:#00ff9d;
 color:#000;
 }
 
-/* 💬 COMENTÁRIOS */
+/* 💬 */
 textarea{
 width:100%;
 height:120px;
-padding:12px;
+padding:10px;
 border-radius:10px;
-border:none;
 margin-bottom:10px;
+border:none;
 }
 
 button{
@@ -192,18 +164,4 @@ background:#00ff9d;
 border:none;
 border-radius:10px;
 cursor:pointer;
-font-weight:bold;
-margin-bottom:10px;
-}
-
-#comments .card{
-margin-top:10px;
-}
-
-/* 🦶 FOOTER */
-.footer{
-text-align:center;
-padding:50px 20px;
-background:#050a12;
-margin-top:50px;
 }
