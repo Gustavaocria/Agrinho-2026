@@ -5,508 +5,196 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Agro Paraná • Sistema Oficial do Campo</title>
+<title>Agro Paraná • Sistema Estadual do Campo</title>
+
+<link rel="stylesheet" href="style.css">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-:root{
---bg:#f5f7f6;
---text:#1a2a1d;
---muted:#5a6a5f;
---card:#ffffff;
---green:#2e6b3f;
---green-soft:#e8f3eb;
---blue:#1e6fb8;
---shadow:0 10px 25px rgba(0,0,0,.08);
---radius:14px;
---font-size:16px;
-}
-
-body{
-font-family:'Poppins',sans-serif;
-background:var(--bg);
-color:var(--text);
-font-size:var(--font-size);
-line-height:1.6;
-transition:.3s;
-}
-
-body.dark{
-background:#0e1511;
-color:#e8f2ea;
-}
-
-.container{
-width:min(1150px,92%);
-margin:auto;
-}
-
-/* SIDEBAR */
-.sidebar{
-position:fixed;
-right:0;
-top:0;
-width:260px;
-height:100vh;
-background:white;
-box-shadow:var(--shadow);
-padding:20px;
-z-index:999;
-transition:.3s;
-}
-
-body.dark .sidebar{
-background:#18231b;
-}
-
-.sidebar.hidden{
-transform:translateX(230px);
-}
-
-.sidebar button{
-width:100%;
-padding:10px;
-margin-bottom:10px;
-border:none;
-border-radius:10px;
-background:var(--green-soft);
-cursor:pointer;
-}
-
-body.dark .sidebar button{
-background:#223126;
-color:white;
-}
-
-.toggle{
-position:absolute;
-left:-45px;
-top:20px;
-background:var(--green);
-color:white;
-border:none;
-padding:10px;
-border-radius:8px 0 0 8px;
-cursor:pointer;
-}
-
-/* NAV */
-nav{
-position:sticky;
-top:0;
-background:white;
-box-shadow:0 2px 10px rgba(0,0,0,.05);
-z-index:10;
-}
-
-body.dark nav{
-background:#18231b;
-}
-
-.nav-inner{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:15px 0;
-}
-
-.logo{
-font-weight:700;
-color:var(--green);
-}
-
-.menu{
-display:flex;
-gap:18px;
-list-style:none;
-}
-
-.menu a{
-text-decoration:none;
-color:inherit;
-font-size:14px;
-}
-
-/* HERO */
-.hero{
-padding:80px 0 40px;
-}
-
-.hero h1{
-font-size:clamp(1.8rem,4vw,2.6rem);
-margin-bottom:10px;
-}
-
-.hero p{
-color:var(--muted);
-max-width:650px;
-}
-
-.btn{
-display:inline-block;
-margin-top:20px;
-background:var(--green);
-color:white;
-padding:10px 18px;
-border-radius:10px;
-border:none;
-cursor:pointer;
-}
-
-/* SEÇÕES */
-section{
-padding:60px 0;
-}
-
-h2{
-margin-bottom:20px;
-font-size:22px;
-}
-
-/* CARDS */
-.card{
-background:var(--card);
-padding:18px;
-border-radius:var(--radius);
-box-shadow:var(--shadow);
-margin-bottom:15px;
-}
-
-body.dark .card{
-background:#18231b;
-}
-
-/* GRID */
-.grid{
-display:grid;
-grid-template-columns:2fr 1fr;
-gap:20px;
-}
-
-@media(max-width:900px){
-.grid{grid-template-columns:1fr;}
-.menu{display:none;}
-}
-
-/* INDICADORES */
-.kpi-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:15px;
-}
-
-.kpi{
-background:white;
-padding:15px;
-border-radius:12px;
-box-shadow:var(--shadow);
-text-align:center;
-}
-
-body.dark .kpi{
-background:#18231b;
-}
-
-.kpi h3{
-color:var(--green);
-font-size:20px;
-}
-
-/* MAPA */
-.map{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:10px;
-}
-
-.region{
-background:var(--green-soft);
-padding:15px;
-border-radius:10px;
-text-align:center;
-cursor:pointer;
-transition:.2s;
-}
-
-.region:hover{
-transform:scale(1.03);
-}
-
-body.dark .region{
-background:#223126;
-}
-
-/* NOTÍCIAS */
-.news-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-gap:15px;
-}
-
-.news{
-background:white;
-padding:15px;
-border-radius:12px;
-box-shadow:var(--shadow);
-}
-
-body.dark .news{
-background:#18231b;
-}
-
-/* GRAFICO SIMPLES */
-.bar{
-height:12px;
-background:#ddd;
-border-radius:10px;
-overflow:hidden;
-margin-bottom:10px;
-}
-
-.bar span{
-display:block;
-height:100%;
-background:var(--green);
-}
-
-/* COMENTÁRIOS */
-textarea{
-width:100%;
-padding:10px;
-border-radius:10px;
-border:1px solid #ddd;
-}
-
-.comment{
-background:var(--green-soft);
-padding:10px;
-border-radius:10px;
-margin-top:10px;
-}
-
-body.dark .comment{
-background:#223126;
-}
-
-</style>
 
 </head>
 
 <body>
 
-<div class="sidebar" id="sidebar">
+<!-- BARRA DE ACESSIBILIDADE -->
+<aside class="access" id="access">
 
-<button class="toggle" id="toggle">☰</button>
+<button id="toggleAccess">☰</button>
 
 <h3>Acessibilidade</h3>
 
-<button id="fontUp">A+</button>
-<button id="fontDown">A-</button>
-<button id="theme">Tema</button>
-<button id="read">Leitura</button>
-<button id="stop">Parar</button>
+<button id="fontUp">Aumentar texto</button>
+<button id="fontDown">Diminuir texto</button>
+<button id="theme">Tema claro/escuro</button>
+<button id="read">Leitura de página</button>
+<button id="stop">Parar leitura</button>
 
-</div>
+</aside>
 
-<nav>
+<!-- NAV -->
+<header class="nav">
+
 <div class="container nav-inner">
 
 <div class="logo">Agro Paraná</div>
 
-<ul class="menu">
-<li><a href="#kpi">Indicadores</a></li>
-<li><a href="#mapa">Regiões</a></li>
-<li><a href="#noticias">Notícias</a></li>
-<li><a href="#produtores">Produtores</a></li>
-</ul>
-
-</div>
+<nav>
+<a href="#painel">Painel</a>
+<a href="#dados">Dados</a>
+<a href="#regioes">Regiões</a>
+<a href="#noticias">Notícias</a>
+<a href="#servicos">Serviços</a>
 </nav>
 
-<header class="hero container">
-
-<h1>Portal Oficial do Agro Paranaense</h1>
-
-<p>Monitoramento, tecnologia e apoio ao produtor rural.</p>
-
-<a class="btn" href="#kpi">Acessar dados</a>
+</div>
 
 </header>
 
-<section id="kpi" class="container">
+<!-- HERO -->
+<section class="hero">
 
-<h2>Indicadores do Agro</h2>
+<div class="container">
 
-<div class="kpi-grid">
+<h1>Gestão inteligente do agro paranaense</h1>
 
-<div class="kpi">
-<h3>+38%</h3>
-<p>Produção de soja</p>
+<p>
+Monitoramento agrícola, dados oficiais, apoio ao produtor e inovação no campo.
+</p>
+
+<a href="#painel" class="btn">Acessar painel</a>
+
 </div>
 
-<div class="kpi">
-<h3>+22%</h3>
-<p>Exportações</p>
+</section>
+
+<!-- PAINEL -->
+<section id="painel" class="section">
+
+<div class="container">
+
+<h2>Painel Geral do Agro</h2>
+
+<div class="grid">
+
+<div class="card big">
+<h3>Produção Estadual</h3>
+<p>O Paraná mantém liderança em soja, milho e proteína animal.</p>
 </div>
 
-<div class="kpi">
-<h3>1.2M</h3>
-<p>Produtores ativos</p>
+<div class="card">
+<h3>Clima</h3>
+<p>Condições favoráveis para safra atual.</p>
+</div>
+
+<div class="card">
+<h3>Exportação</h3>
+<p>Crescimento constante em mercados internacionais.</p>
+</div>
+
 </div>
 
 </div>
 
 </section>
 
-<section id="mapa" class="container">
+<!-- DADOS -->
+<section id="dados" class="section">
 
-<h2>Regiões do Paraná</h2>
+<div class="container">
+
+<h2>Indicadores</h2>
+
+<div class="stats">
+
+<div class="stat">+42% Soja</div>
+<div class="stat">+18% Milho</div>
+<div class="stat">+31% Exportação</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- REGIÕES -->
+<section id="regioes" class="section">
+
+<div class="container">
+
+<h2>Regiões agrícolas</h2>
 
 <div class="map">
 
-<div class="region">Norte</div>
+<div class="region">Norte Pioneiro</div>
 <div class="region">Oeste</div>
-<div class="region">Sul</div>
+<div class="region">Sudoeste</div>
 <div class="region">Centro</div>
 <div class="region">Leste</div>
-<div class="region">Sudoeste</div>
+<div class="region">Noroeste</div>
+
+</div>
 
 </div>
 
 </section>
 
-<section id="noticias" class="container">
+<!-- NOTÍCIAS -->
+<section id="noticias" class="section">
 
-<h2>Boletim do Campo</h2>
+<div class="container">
+
+<h2>Boletim oficial</h2>
 
 <div class="news-grid">
 
-<div class="news">Clima favorece safra de verão.</div>
-<div class="news">Tecnologia reduz custos no campo.</div>
-<div class="news">Cooperativas ampliam produção.</div>
+<div class="news">Safra 2026 inicia com alta produtividade.</div>
+<div class="news">Tecnologia reduz uso de fertilizantes.</div>
+<div class="news">Cooperativas ampliam exportações.</div>
+<div class="news">Clima estabiliza produção regional.</div>
+
+</div>
 
 </div>
 
 </section>
 
-<section id="produtores" class="container">
+<!-- SERVIÇOS -->
+<section id="servicos" class="section">
 
-<h2>Produtor Rural</h2>
+<div class="container">
 
-<div class="card">Cadastro de assistência técnica disponível em todo o estado.</div>
-<div class="card">Programas de incentivo à agricultura familiar.</div>
+<h2>Serviços ao produtor</h2>
 
-<div class="card">
+<div class="grid">
 
-<h3>Produção de referência</h3>
+<div class="card">Cadastro rural digital</div>
+<div class="card">Assistência técnica</div>
+<div class="card">Crédito agrícola</div>
+<div class="card">Relatórios climáticos</div>
 
-<p>Soja</p>
-<div class="bar"><span style="width:85%"></span></div>
-
-<p>Milho</p>
-<div class="bar"><span style="width:70%"></span></div>
-
-<p>Café</p>
-<div class="bar"><span style="width:55%"></span></div>
+</div>
 
 </div>
 
 </section>
 
-<section class="container">
+<!-- COMENTÁRIOS -->
+<section class="section">
 
-<h2>Comunidade</h2>
+<div class="container">
+
+<h2>Comunidade rural</h2>
 
 <textarea id="input"></textarea>
-<button class="btn" id="send">Enviar</button>
+
+<button class="btn" id="send">Enviar comentário</button>
 
 <div id="list"></div>
 
+</div>
+
 </section>
 
-<script>
-
-const sidebar=document.getElementById("sidebar");
-
-document.getElementById("toggle")
-.addEventListener("click",()=>{
-
-sidebar.classList.toggle("hidden");
-
-});
-
-let font=16;
-
-document.getElementById("fontUp")
-.addEventListener("click",()=>{
-
-font++;
-
-document.documentElement.style.setProperty("--font-size",font+"px");
-
-});
-
-document.getElementById("fontDown")
-.addEventListener("click",()=>{
-
-font=Math.max(12,font-1);
-
-document.documentElement.style.setProperty("--font-size",font+"px");
-
-});
-
-document.getElementById("theme")
-.addEventListener("click",()=>{
-
-document.body.classList.toggle("dark");
-
-});
-
-document.getElementById("read")
-.addEventListener("click",()=>{
-
-const text=document.body.innerText;
-
-const speech=new SpeechSynthesisUtterance(text);
-speech.lang="pt-BR";
-
-window.speechSynthesis.speak(speech);
-
-});
-
-document.getElementById("stop")
-.addEventListener("click",()=>{
-
-window.speechSynthesis.cancel();
-
-});
-
-document.getElementById("send")
-.addEventListener("click",()=>{
-
-const input=document.getElementById("input");
-
-if(input.value.trim()==="")return;
-
-const div=document.createElement("div");
-div.classList.add("comment");
-div.innerText=input.value;
-
-document.getElementById("list").prepend(div);
-
-input.value="";
-
-});
-
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
