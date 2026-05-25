@@ -1,526 +1,1188 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-  <title>Agro Forte • Futuro Sustentável</title>
+<title>AgroFuturo • Tecnologia e Sustentabilidade</title>
 
-  <link rel="stylesheet" href="style.css"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet"
+/>
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  >
+<style>
+
+/* =========================
+RESET
+========================= */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:'Poppins',sans-serif;
+  background:#0f1720;
+  color:#f5f5f5;
+  overflow-x:hidden;
+}
+
+/* =========================
+VARIABLES
+========================= */
+
+:root{
+  --green-1:#2d8a4e;
+  --green-2:#49b36b;
+
+  --bg:#0f1720;
+  --card:#17212b;
+
+  --white:#fff;
+  --gray:#cfcfcf;
+
+  --radius:20px;
+  --shadow:0 10px 30px rgba(0,0,0,.25);
+}
+
+/* =========================
+GLOBAL
+========================= */
+
+.container{
+  width:min(1200px,90%);
+  margin-inline:auto;
+}
+
+img{
+  width:100%;
+  display:block;
+}
+
+section{
+  padding:100px 0;
+}
+
+.section-title{
+  text-align:center;
+  margin-bottom:60px;
+}
+
+.section-title h2{
+  font-size:clamp(2rem,5vw,3rem);
+  margin-bottom:15px;
+}
+
+.section-title p{
+  color:var(--gray);
+  max-width:700px;
+  margin:auto;
+}
+
+.btn-primary{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+
+  padding:1rem 2rem;
+
+  background:linear-gradient(
+    135deg,
+    var(--green-1),
+    var(--green-2)
+  );
+
+  color:white;
+  text-decoration:none;
+
+  border:none;
+  border-radius:14px;
+
+  font-weight:600;
+  cursor:pointer;
+
+  transition:.3s;
+}
+
+.btn-primary:hover{
+  transform:translateY(-4px);
+  filter:brightness(1.1);
+}
+
+/* =========================
+NAVBAR
+========================= */
+
+.navbar{
+  position:fixed;
+  top:0;
+  width:100%;
+  z-index:999;
+
+  backdrop-filter:blur(10px);
+  background:rgba(15,23,32,.7);
+
+  border-bottom:1px solid rgba(255,255,255,.05);
+}
+
+.nav-container{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  padding:20px 0;
+}
+
+.logo{
+  font-size:1.7rem;
+  font-weight:800;
+}
+
+.logo span{
+  color:var(--green-2);
+}
+
+.menu{
+  display:flex;
+  gap:30px;
+  list-style:none;
+}
+
+.menu a{
+  color:white;
+  text-decoration:none;
+  transition:.3s;
+}
+
+.menu a:hover{
+  color:var(--green-2);
+}
+
+/* =========================
+HERO
+========================= */
+
+.hero{
+  min-height:100vh;
+
+  display:flex;
+  align-items:center;
+
+  position:relative;
+
+  overflow:hidden;
+}
+
+.hero::before{
+  content:"";
+
+  position:absolute;
+  inset:0;
+
+  background:
+  linear-gradient(
+    rgba(0,0,0,.5),
+    rgba(0,0,0,.7)
+  ),
+
+  url("https://images.unsplash.com/photo-1500937386664-56d1dfef3854?q=80&w=1600&auto=format&fit=crop")
+  center/cover;
+
+  z-index:-2;
+}
+
+.hero-overlay{
+  position:absolute;
+  inset:0;
+
+  background:
+  radial-gradient(
+    circle at top right,
+    rgba(73,179,107,.25),
+    transparent 40%
+  );
+
+  z-index:-1;
+}
+
+.hero-content{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+  align-items:center;
+}
+
+.tag{
+  display:inline-block;
+
+  background:rgba(255,255,255,.08);
+
+  padding:10px 18px;
+
+  border-radius:999px;
+
+  margin-bottom:25px;
+
+  backdrop-filter:blur(10px);
+}
+
+.hero-text h1{
+  font-size:clamp(2.5rem,6vw,5rem);
+  line-height:1.1;
+  margin-bottom:25px;
+}
+
+.hero-text p{
+  font-size:1.1rem;
+  color:#ddd;
+  margin-bottom:35px;
+  max-width:600px;
+}
+
+.hero-image img{
+  border-radius:30px;
+  box-shadow:var(--shadow);
+}
+
+/* =========================
+CARDS
+========================= */
+
+.content-grid{
+  display:grid;
+  grid-template-columns:2fr 1fr;
+  gap:40px;
+}
+
+.card,
+.form-card,
+.benefit-card,
+.comment-box{
+  background:rgba(255,255,255,.05);
+
+  backdrop-filter:blur(10px);
+
+  border:1px solid rgba(255,255,255,.08);
+
+  border-radius:var(--radius);
+
+  padding:30px;
+
+  box-shadow:var(--shadow);
+
+  transition:.3s;
+}
+
+.card:hover,
+.benefit-card:hover{
+  transform:translateY(-5px);
+}
+
+.card{
+  margin-bottom:30px;
+}
+
+.card h3{
+  margin-bottom:15px;
+  font-size:1.5rem;
+}
+
+.card p{
+  color:#d5d5d5;
+  margin-bottom:15px;
+}
+
+.card span{
+  color:var(--green-2);
+  font-weight:600;
+}
+
+.imagem{
+  margin:30px 0;
+}
+
+.imagem img{
+  border-radius:20px;
+}
+
+/* =========================
+ACCORDION
+========================= */
+
+.accordion-item{
+  margin-bottom:15px;
+}
+
+.accordion-header{
+  width:100%;
+
+  background:#1d2a35;
+
+  color:white;
+
+  border:none;
+
+  padding:20px;
+
+  border-radius:14px;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  cursor:pointer;
+
+  font-size:1rem;
+  font-weight:600;
+}
+
+.accordion-content{
+  background:#17212b;
+
+  border-radius:14px;
+
+  margin-top:10px;
+
+  padding:0 20px;
+
+  max-height:0;
+  overflow:hidden;
+
+  transition:.4s ease;
+}
+
+.accordion-content.active{
+  padding:20px;
+  max-height:200px;
+}
+
+/* =========================
+FORM
+========================= */
+
+.form-card{
+  position:sticky;
+  top:120px;
+}
+
+.form-card h3{
+  margin-bottom:15px;
+}
+
+.form-card p{
+  color:#ccc;
+  margin-bottom:25px;
+}
+
+.input-group{
+  margin-bottom:20px;
+}
+
+.input-group input{
+  width:100%;
+
+  padding:16px;
+
+  border:none;
+
+  border-radius:14px;
+
+  background:#fff;
+
+  font-size:1rem;
+}
+
+.input-group input:focus{
+  outline:none;
+  box-shadow:0 0 0 4px rgba(73,179,107,.25);
+}
+
+/* =========================
+BENEFITS
+========================= */
+
+.benefits-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:25px;
+}
+
+.benefit-card h3{
+  margin-bottom:15px;
+}
+
+/* =========================
+COMMENTS
+========================= */
+
+.comment-box textarea{
+  width:100%;
+  height:150px;
+
+  resize:none;
+
+  border:none;
+
+  border-radius:15px;
+
+  padding:20px;
+
+  margin-bottom:20px;
+
+  font-family:inherit;
+}
+
+.comments-list{
+  margin-top:30px;
+}
+
+.comment{
+  background:#17212b;
+  padding:20px;
+  border-radius:15px;
+  margin-bottom:20px;
+}
+
+/* =========================
+FOOTER
+========================= */
+
+.footer{
+  background:#081018;
+  padding:70px 0;
+}
+
+.footer-grid{
+  width:min(1200px,90%);
+  margin:auto;
+
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+}
+
+.footer-box h3{
+  margin-bottom:15px;
+}
+
+/* =========================
+SIDEBAR
+========================= */
+
+.sidebar{
+  position:fixed;
+  left:20px;
+  top:50%;
+  transform:translateY(-50%);
+
+  z-index:1000;
+}
+
+.sidebar-toggle{
+  width:60px;
+  height:60px;
+
+  border:none;
+
+  border-radius:50%;
+
+  background:var(--green-1);
+
+  color:white;
+
+  font-size:1.5rem;
+
+  cursor:pointer;
+
+  box-shadow:var(--shadow);
+}
+
+.sidebar-content{
+  margin-top:15px;
+
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+
+  background:#17212b;
+
+  padding:20px;
+
+  border-radius:20px;
+
+  display:none;
+}
+
+.sidebar-content.active{
+  display:flex;
+}
+
+.sidebar-content button{
+  padding:12px;
+  border:none;
+  border-radius:10px;
+  cursor:pointer;
+}
+
+/* =========================
+ANIMATION
+========================= */
+
+.fade-up{
+  animation:fadeUp .8s ease;
+}
+
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(40px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+/* =========================
+RESPONSIVE
+========================= */
+
+@media(max-width:900px){
+
+  .hero-content,
+  .content-grid,
+  .benefits-grid,
+  .footer-grid{
+    grid-template-columns:1fr;
+  }
+
+  .menu{
+    display:none;
+  }
+
+  .hero{
+    padding-top:120px;
+  }
+
+}
+
+</style>
 </head>
 
 <body>
 
-  <!-- =========================
-  BARRA LATERAL DE ACESSIBILIDADE
-  ========================== -->
+<!-- =========================
+SIDEBAR
+========================= -->
 
-  <aside class="sidebar" id="sidebar">
+<aside class="sidebar">
 
-    <button
-      class="sidebar-toggle"
-      id="sidebarToggle"
-      aria-label="Mostrar ou esconder menu de acessibilidade"
-    >
-      ☰
-    </button>
+<button class="sidebar-toggle" id="sidebarToggle">
+☰
+</button>
 
-    <div class="sidebar-content">
+<div class="sidebar-content" id="sidebarContent">
 
-      <h3>Acessibilidade</h3>
+<button id="increaseFont">
+A+
+</button>
 
-      <button id="increase-font">
-        Aumentar Fonte
-      </button>
+<button id="decreaseFont">
+A-
+</button>
 
-      <button id="decrease-font">
-        Diminuir Fonte
-      </button>
+<button id="toggleTheme">
+🌙
+</button>
 
-      <button id="toggle-theme">
-        Modo Claro / Escuro
-      </button>
+<button id="startReading">
+🔊
+</button>
 
-      <button id="start-reading">
-        Leitura por Voz
-      </button>
+<button id="stopReading">
+⛔
+</button>
 
-      <button id="stop-reading">
-        Parar Leitura
-      </button>
+</div>
 
-    </div>
+</aside>
 
-  </aside>
+<!-- =========================
+NAVBAR
+========================= -->
 
-  <!-- =========================
-  HERO
-  ========================== -->
+<nav class="navbar">
 
-  <header class="hero">
+<div class="container nav-container">
 
-    <div class="hero-overlay"></div>
+<div class="logo">
+Agro<span>Futuro</span>
+</div>
 
-    <!-- NAVBAR -->
+<ul class="menu">
+<li><a href="#conteudo">Conteúdo</a></li>
+<li><a href="#beneficios">Benefícios</a></li>
+<li><a href="#seminario">Seminário</a></li>
+<li><a href="#comentarios">Comentários</a></li>
+</ul>
 
-    <nav class="navbar">
+</div>
 
-      <div class="logo">
-        Agro<span>Futuro</span>
-      </div>
+</nav>
 
-      <ul class="menu">
+<!-- =========================
+HERO
+========================= -->
 
-        <li><a href="#conteudo">Conteúdo</a></li>
-        <li><a href="#beneficios">Benefícios</a></li>
-        <li><a href="#seminario">Seminário</a></li>
-        <li><a href="#comentarios">Comentários</a></li>
+<header class="hero">
 
-      </ul>
+<div class="hero-overlay"></div>
 
-    </nav>
+<div class="container hero-content fade-up">
 
-    <!-- HERO CONTENT -->
+<div class="hero-text">
 
-    <div class="hero-content">
+<span class="tag">
+Agro • IA • Sustentabilidade
+</span>
 
-      <div class="hero-text">
+<h1>
+Tecnologia e Inteligência Artificial no Campo
+</h1>
 
-        <span class="tag">
-          Agro • Inteligência Artificial • Sustentabilidade
-        </span>
+<p>
+O Brasil fortalece o agro moderno através da inovação,
+automação, sustentabilidade e inteligência agrícola.
+</p>
 
-        <h1>
-          Agro forte:
-          futuro sustentável e tecnologia no campo
-        </h1>
+<a href="#seminario" class="btn-primary">
+Participar do Seminário
+</a>
 
-        <p>
-          O Brasil fortalece seu protagonismo global ao unir
-          inovação agrícola, Inteligência Artificial,
-          produtividade e preservação ambiental.
-        </p>
+</div>
 
-        <a href="#seminario" class="btn-primary">
-          Conhecer Seminário
-        </a>
+<div class="hero-image">
 
-      </div>
+<img
+src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?q=80&w=1200&auto=format&fit=crop"
+alt="Agricultura moderna"
+/>
 
-      <!-- HERO IMAGE -->
+</div>
 
-      <div class="hero-image">
+</div>
 
-        <div class="imagem">
-          <img
-            src="Foto1.jpg"
-            alt="Agricultura tecnológica sustentável"
-          >
-        </div>
+</header>
 
-      </div>
+<!-- =========================
+MAIN
+========================= -->
 
-    </div>
+<main>
 
-  </header>
+<!-- =========================
+CONTENT
+========================= -->
 
-  <!-- =========================
-  MAIN
-  ========================== -->
+<section id="conteudo">
 
-  <main id="main-content">
+<div class="container">
 
-    <!-- =========================
-    CONTEÚDO
-    ========================== -->
+<div class="section-title">
 
-    <section class="content-section" id="conteudo">
+<h2>
+Tecnologia agrícola reforça o papel do Brasil
+</h2>
 
-      <div class="section-title">
+<p>
+O agro moderno une ciência, automação e sustentabilidade.
+</p>
 
-        <h2>
-          Tecnologia agrícola reforça o papel do Brasil
-        </h2>
+</div>
 
-        <p>
-          O agro moderno combina ciência, sustentabilidade,
-          automação e Inteligência Artificial.
-        </p>
+<div class="content-grid">
 
-      </div>
+<div>
 
-      <div class="content-grid">
+<div class="card fade-up">
 
-        <!-- ESQUERDA -->
+<h3>
+Brasil em destaque mundial
+</h3>
 
-        <div class="content-left">
+<p>
+A agricultura sustentável ganha força diante das
+mudanças climáticas e da necessidade de inovação.
+</p>
 
-          <article class="card">
+<p>
+O Brasil se destaca por unir produtividade,
+ciência e tecnologia aplicada ao campo.
+</p>
 
-            <h3>
-              Brasil em destaque mundial
-            </h3>
+</div>
 
-            <p>
-              A agricultura sustentável ganha espaço no debate global
-              em um momento marcado por
-              <span>mudanças climáticas</span>,
-              <span>segurança alimentar</span> e
-              <span>inovação tecnológica</span>.
-            </p>
+<div class="imagem">
+<img
+src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200&auto=format&fit=crop"
+alt=""
+>
+</div>
 
-            <p>
-              O Brasil se fortalece ao unir produtividade,
-              ciência, adaptação e tecnologia aplicada ao campo.
-            </p>
+<div class="card fade-up">
 
-          </article>
+<h3>
+Microrganismos e sustentabilidade
+</h3>
 
-          <!-- IMAGEM 2 -->
+<p>
+Pesquisas brasileiras revolucionam a produtividade
+agrícola com redução de fertilizantes químicos.
+</p>
 
-          <div class="imagem">
+</div>
 
-            <img
-              src="Foto2.jpg"
-              alt="Drone realizando monitoramento agrícola"
-            >
+<!-- ACCORDION -->
 
-          </div>
+<div class="accordion-container">
 
-          <article class="card">
+<div class="accordion-item">
 
-            <h3>
-              Microrganismos e sustentabilidade
-            </h3>
+<button class="accordion-header">
+Inteligência Artificial no Campo
+<span>+</span>
+</button>
 
-            <p>
-              O trabalho da microbiologista
-              <span>Mariangela Hungria</span>
-              revolucionou o uso de bactérias capazes de reduzir
-              fertilizantes químicos nas lavouras.
-            </p>
+<div class="accordion-content">
+<p>
+A IA automatiza processos agrícolas,
+reduz desperdícios e amplia a eficiência.
+</p>
+</div>
 
-            <p>
-              A inovação brasileira se tornou referência mundial
-              em produtividade sustentável.
-            </p>
+</div>
 
-          </article>
+<div class="accordion-item">
 
-          <!-- ACCORDION -->
+<button class="accordion-header">
+Monitoramento Inteligente
+<span>+</span>
+</button>
 
-          <div class="accordion-container">
+<div class="accordion-content">
+<p>
+Sensores e drones ajudam no controle
+das culturas e prevenção de doenças.
+</p>
+</div>
 
-            <!-- ITEM -->
+</div>
 
-            <div class="accordion-item">
+<div class="accordion-item">
 
-              <button class="accordion-header">
+<button class="accordion-header">
+Sustentabilidade no Agro
+<span>+</span>
+</button>
 
-                Inteligência Artificial no Campo
+<div class="accordion-content">
+<p>
+Tecnologias inteligentes promovem produção
+agrícola sustentável e eficiente.
+</p>
+</div>
 
-                <span>+</span>
+</div>
 
-              </button>
+</div>
 
-              <div class="accordion-content">
+</div>
 
-                <p>
-                  A IA permite automatizar processos agrícolas,
-                  reduzir desperdícios e ampliar a eficiência produtiva.
-                </p>
+<!-- FORM -->
 
-              </div>
+<aside id="seminario">
 
-            </div>
+<div class="form-card fade-up">
 
-            <!-- ITEM -->
+<h3>
+Participe do seminário online
+</h3>
 
-            <div class="accordion-item">
+<p>
+Descubra como a IA pode revolucionar o agro.
+</p>
 
-              <button class="accordion-header">
+<form id="seminarioForm">
 
-                Monitoramento Inteligente
+<div class="input-group">
+<input type="text" placeholder="Nome" required>
+</div>
 
-                <span>+</span>
+<div class="input-group">
+<input type="email" placeholder="E-mail" required>
+</div>
 
-              </button>
+<div class="input-group">
+<input type="text" placeholder="Cidade" required>
+</div>
 
-              <div class="accordion-content">
+<div class="input-group">
+<input type="text" placeholder="Estado" required>
+</div>
 
-                <p>
-                  Sensores e drones ajudam a monitorar culturas,
-                  detectar doenças e otimizar o uso de recursos.
-                </p>
+<div class="input-group">
+<input type="text" placeholder="País" required>
+</div>
 
-              </div>
+<button class="btn-primary" type="submit">
+Fazer Inscrição
+</button>
 
-            </div>
+</form>
 
-            <!-- ITEM -->
+<div id="formMessage"></div>
 
-            <div class="accordion-item">
+</div>
 
-              <button class="accordion-header">
+</aside>
 
-                Sustentabilidade no Agro
+</div>
 
-                <span>+</span>
+</div>
 
-              </button>
+</section>
 
-              <div class="accordion-content">
+<!-- =========================
+BENEFITS
+========================= -->
 
-                <p>
-                  Tecnologias inteligentes reduzem impactos ambientais
-                  e promovem produção agrícola sustentável.
-                </p>
+<section id="beneficios">
 
-              </div>
+<div class="container">
 
-            </div>
+<div class="section-title">
 
-          </div>
+<h2>
+Benefícios da IA na Agricultura
+</h2>
 
-          <!-- IMAGEM 3 -->
+<p>
+Mais produtividade, eficiência e sustentabilidade.
+</p>
 
-          <div class="imagem">
+</div>
 
-            <img
-              src="Foto3.jpg"
-              alt="Agricultura futurista sustentável"
-            >
+<div class="benefits-grid">
 
-          </div>
+<div class="benefit-card">
+<h3>Otimização</h3>
+<p>Redução de desperdícios de recursos.</p>
+</div>
 
-        </div>
+<div class="benefit-card">
+<h3>Automação</h3>
+<p>Máquinas inteligentes aumentam eficiência.</p>
+</div>
 
-        <!-- DIREITA -->
+<div class="benefit-card">
+<h3>Monitoramento</h3>
+<p>Sensores detectam falhas rapidamente.</p>
+</div>
 
-        <aside class="content-right" id="seminario">
+<div class="benefit-card">
+<h3>Previsibilidade</h3>
+<p>Dados climáticos ajudam na gestão agrícola.</p>
+</div>
 
-          <!-- FORM -->
+</div>
 
-          <div class="form-card">
+</div>
 
-            <h3>
-              Venha conhecer melhor como a IA pode ser uma aliada do Campo.
-            </h3>
+</section>
 
-            <p>
-              Inscreva-se no nosso seminário on-line.
-            </p>
+<!-- =========================
+COMMENTS
+========================= -->
 
-            <form id="seminarioForm">
+<section id="comentarios">
 
-              <div class="input-group">
-                <input
-                  type="text"
-                  placeholder="Nome"
-                  required
-                >
-              </div>
+<div class="container">
 
-              <div class="input-group">
-                <input
-                  type="email"
-                  placeholder="E-mail"
-                  required
-                >
-              </div>
+<div class="section-title">
 
-              <div class="input-group">
-                <input
-                  type="text"
-                  placeholder="Cidade"
-                  required
-                >
-              </div>
+<h2>
+Comentários
+</h2>
 
-              <div class="input-group">
-                <input
-                  type="text"
-                  placeholder="Estado"
-                  required
-                >
-              </div>
+<p>
+Compartilhe sua opinião sobre inovação agrícola.
+</p>
 
-              <div class="input-group">
-                <input
-                  type="text"
-                  placeholder="País"
-                  required
-                >
-              </div>
+</div>
 
-              <button
-                type="submit"
-                class="btn-primary full-btn"
-              >
-                Fazer Inscrição
-              </button>
+<div class="comment-box">
 
-            </form>
+<textarea
+id="commentInput"
+placeholder="Digite seu comentário..."
+></textarea>
 
-            <div id="formMessage"></div>
+<button id="commentBtn" class="btn-primary">
+Enviar Comentário
+</button>
 
-          </div>
+</div>
 
-        </aside>
+<div class="comments-list" id="commentsList"></div>
 
-      </div>
+</div>
 
-    </section>
+</section>
 
-    <!-- =========================
-    BENEFÍCIOS
-    ========================== -->
+</main>
 
-    <section class="benefits-section" id="beneficios">
+<!-- =========================
+FOOTER
+========================= -->
 
-      <div class="section-title">
+<footer class="footer">
 
-        <h2>
-          Benefícios da IA na Agricultura
-        </h2>
+<div class="footer-grid">
 
-        <p>
-          Inteligência Artificial impulsionando produtividade,
-          sustentabilidade e eficiência no campo.
-        </p>
+<div class="footer-box">
 
-      </div>
+<h3>
+Referências
+</h3>
 
-      <div class="benefits-grid">
+<p>Bem Agro • Inteligência Artificial</p>
+<p>AgroLink • Campo Conectado</p>
 
-        <div class="benefit-card">
-          <h3>Otimização de Recursos</h3>
-          <p>
-            Redução de desperdícios de água, fertilizantes e energia.
-          </p>
-        </div>
+</div>
 
-        <div class="benefit-card">
-          <h3>Automação</h3>
-          <p>
-            Máquinas autônomas aumentam eficiência operacional.
-          </p>
-        </div>
+<div class="footer-box">
 
-        <div class="benefit-card">
-          <h3>Monitoramento</h3>
-          <p>
-            Sensores inteligentes detectam falhas rapidamente.
-          </p>
-        </div>
+<h3>
+AgroFuturo 2026
+</h3>
 
-        <div class="benefit-card">
-          <h3>Previsibilidade</h3>
-          <p>
-            Dados climáticos ajudam na gestão de riscos agrícolas.
-          </p>
-        </div>
+<p>
+Conectando tecnologia e sustentabilidade ao campo.
+</p>
 
-      </div>
+</div>
 
-    </section>
+</div>
 
-    <!-- =========================
-    COMENTÁRIOS
-    ========================== -->
+</footer>
 
-    <section
-      class="comments-section"
-      id="comentarios"
-    >
+<!-- =========================
+SCRIPT
+========================= -->
 
-      <div class="section-title">
+<script>
 
-        <h2>
-          Interação com o Leitor
-        </h2>
+/* =========================
+SIDEBAR
+========================= */
 
-        <p>
-          Compartilhe sua opinião sobre inovação agrícola.
-        </p>
+const sidebarToggle =
+document.getElementById("sidebarToggle");
 
-      </div>
+const sidebarContent =
+document.getElementById("sidebarContent");
 
-      <div class="comment-box">
+sidebarToggle.addEventListener("click",()=>{
 
-        <textarea
-          id="commentInput"
-          placeholder="Digite seu comentário..."
-        ></textarea>
+sidebarContent.classList.toggle("active");
 
-        <button
-          id="commentBtn"
-          class="btn-primary"
-        >
-          Enviar Comentário
-        </button>
+});
 
-      </div>
+/* =========================
+FONT SIZE
+========================= */
 
-      <div
-        class="comments-list"
-        id="commentsList"
-      ></div>
+let fontSize = 100;
 
-    </section>
+document
+.getElementById("increaseFont")
+.addEventListener("click",()=>{
 
-  </main>
+fontSize += 10;
 
-  <!-- =========================
-  FOOTER
-  ========================== -->
+document.body.style.fontSize =
+fontSize + "%";
 
-  <footer class="footer">
+});
 
-    <div class="footer-grid">
+document
+.getElementById("decreaseFont")
+.addEventListener("click",()=>{
 
-      <div class="footer-box">
+fontSize -= 10;
 
-        <h3>
-          Referências utilizadas
-        </h3>
+document.body.style.fontSize =
+fontSize + "%";
 
-        <p>
-          Bem Agro • Inteligência Artificial no Campo
-        </p>
+});
 
-        <p>
-          AgroLink • O Campo Conectado
-        </p>
+/* =========================
+DARK MODE
+========================= */
 
-      </div>
+let dark = true;
 
-      <div class="footer-box">
+document
+.getElementById("toggleTheme")
+.addEventListener("click",()=>{
 
-        <h3>
-          AgroFuturo 2026
-        </h3>
+dark = !dark;
 
-        <p>
-          Conectando a inteligência tecnologia
-          à terra de forma sustentável.
-        </p>
+if(dark){
 
-      </div>
+document.body.style.background =
+"#0f1720";
 
-    </div>
+document.body.style.color =
+"#fff";
 
-  </footer>
+}else{
 
-  <script src="script.js"></script>
+document.body.style.background =
+"#f5f5f5";
+
+document.body.style.color =
+"#111";
+
+}
+
+});
+
+/* =========================
+TEXT TO SPEECH
+========================= */
+
+let speech;
+
+document
+.getElementById("startReading")
+.addEventListener("click",()=>{
+
+speech = new SpeechSynthesisUtterance(
+document.body.innerText
+);
+
+speech.lang = "pt-BR";
+
+window.speechSynthesis.speak(speech);
+
+});
+
+document
+.getElementById("stopReading")
+.addEventListener("click",()=>{
+
+window.speechSynthesis.cancel();
+
+});
+
+/* =========================
+ACCORDION
+========================= */
+
+const accordionHeaders =
+document.querySelectorAll(".accordion-header");
+
+accordionHeaders.forEach(header=>{
+
+header.addEventListener("click",()=>{
+
+const content =
+header.nextElementSibling;
+
+content.classList.toggle("active");
+
+});
+
+});
+
+/* =========================
+FORM
+========================= */
+
+const form =
+document.getElementById("seminarioForm");
+
+const formMessage =
+document.getElementById("formMessage");
+
+form.addEventListener("submit",(e)=>{
+
+e.preventDefault();
+
+formMessage.innerHTML = `
+<p style="
+margin-top:20px;
+color:#49b36b;
+font-weight:600;
+">
+Inscrição realizada com sucesso!
+</p>
+`;
+
+form.reset();
+
+});
+
+/* =========================
+COMMENTS
+========================= */
+
+const commentBtn =
+document.getElementById("commentBtn");
+
+const commentInput =
+document.getElementById("commentInput");
+
+const commentsList =
+document.getElementById("commentsList");
+
+commentBtn.addEventListener("click",()=>{
+
+const text =
+commentInput.value.trim();
+
+if(text !== ""){
+
+const comment =
+document.createElement("div");
+
+comment.classList.add("comment");
+
+comment.innerHTML = `
+<p>${text}</p>
+`;
+
+commentsList.prepend(comment);
+
+commentInput.value = "";
+
+}
+
+});
+
+</script>
 
 </body>
 </html>
