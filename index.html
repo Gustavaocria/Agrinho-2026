@@ -4,146 +4,150 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>AgroForte Paraná • Futuro Sustentável</title>
+<title>AgroForte • Futuro Sustentável</title>
 
 <link rel="stylesheet" href="style.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
 
-<!-- ACCESSIBILITY BAR -->
-<div class="a11y">
-<button onclick="fontUp()">A+</button>
-<button onclick="fontDown()">A-</button>
-<button onclick="toggleTheme()">🌗</button>
-<button onclick="readAll()">🔊</button>
-<button onclick="stopRead()">⛔</button>
-</div>
+<header class="hero">
 
-<!-- HEADER -->
-<header class="header">
-<div class="container">
+<div class="overlay"></div>
 
-<div class="logo">Agro<span>Forte</span> Paraná</div>
-
-<nav>
-<a href="#painel">Painel</a>
-<a href="#dados">Dados</a>
-<a href="#mapa">Mapa</a>
-<a href="#noticias">Notícias</a>
+<nav class="navbar">
+<div class="logo">Agro<span>Forte</span></div>
+<a href="#conteudo">Conteúdo</a>
+<a href="#seminario">Seminário</a>
+<a href="#comentarios">Comunidade</a>
 </nav>
+
+<div class="hero-content">
+
+<h1>Tecnologia agrícola e Inteligência Artificial no campo</h1>
+
+<p>
+O Brasil fortalece sua posição global unindo inovação, sustentabilidade,
+ciência e inteligência artificial no agronegócio moderno.
+</p>
+
+<a class="btn" href="#seminario">Participar do Seminário</a>
 
 </div>
 </header>
 
-<!-- HERO -->
-<section class="hero">
-<div class="container">
-<h1>O futuro sustentável do agro no Paraná</h1>
-<p>Dados, inovação e decisões inteligentes para fortalecer o campo brasileiro.</p>
+<main>
+
+<section id="conteudo" class="section">
+
+<h2>Tecnologia agrícola reforça o papel do Brasil</h2>
+
+<div class="grid">
+
+<div class="card">
+<p><strong>O cenário global</strong> da agricultura sustentável cresce diante das pressões climáticas, energéticas e alimentares.</p>
+<p>O Brasil se destaca por unir produtividade e inovação no campo, fortalecendo sua posição estratégica mundial.</p>
 </div>
+
+<div class="card">
+<p><strong>Microrganismos agrícolas</strong> desenvolvidos por cientistas brasileiros reduzem a dependência de fertilizantes químicos.</p>
+<p>Essas soluções aumentam eficiência e sustentabilidade na produção agrícola.</p>
+</div>
+
+<div class="card">
+<p><strong>Reconhecimento internacional</strong> reforça o protagonismo brasileiro na agricultura moderna e tecnológica.</p>
+</div>
+
+</div>
+
+<div class="images">
+
+<div class="imagem">
+<img src="Foto1.png" alt="Agro tecnologia">
+</div>
+
+<div class="imagem">
+<img src="Foto2.png" alt="Drones no campo">
+</div>
+
+<div class="imagem">
+<img src="Foto3.png" alt="Agricultura sustentável">
+</div>
+
+</div>
+
 </section>
 
-<!-- DASHBOARD -->
-<section id="painel" class="section">
-<div class="container">
-
-<div class="kpis">
-
-<div class="kpi">
-<h3>+38%</h3>
-<p>Produtividade soja</p>
-</div>
-
-<div class="kpi">
-<h3>+27%</h3>
-<p>Eficiência agrícola</p>
-</div>
-
-<div class="kpi">
-<h3>−18%</h3>
-<p>Desperdício de recursos</p>
-</div>
-
-</div>
-
-</div>
-</section>
-
-<!-- GRÁFICOS -->
-<section id="dados" class="section dark">
-<div class="container">
-
-<h2>Indicadores agrícolas</h2>
-
-<div class="charts">
-
-<canvas id="chart1"></canvas>
-<canvas id="chart2"></canvas>
-
-</div>
-
-</div>
-</section>
-
-<!-- MAPA INTERATIVO -->
-<section id="mapa" class="section">
-<div class="container">
-
-<h2>Mapa produtivo do Paraná</h2>
-
-<div class="map">
-
-<div class="region" onmouseover="region('Norte')">Norte</div>
-<div class="region" onmouseover="region('Oeste')">Oeste</div>
-<div class="region" onmouseover="region('Sul')">Sul</div>
-<div class="region" onmouseover="region('Centro')">Centro</div>
-
-</div>
-
-<div id="regionInfo" class="infoBox">
-Passe o mouse sobre uma região
-</div>
-
-</div>
-</section>
-
-<!-- NOTÍCIAS -->
-<section id="noticias" class="section">
-<div class="container">
-
-<h2>Notícias do Agro</h2>
-
-<input id="search" placeholder="Buscar notícia...">
-
-<div class="news">
-
-<div class="card" data-cat="tecnologia">IA melhora produção agrícola no Paraná</div>
-<div class="card" data-cat="clima">Clima favorece nova safra</div>
-<div class="card" data-cat="economia">Exportações do agro crescem</div>
-<div class="card" data-cat="tecnologia">Drones ajudam monitoramento rural</div>
-
-</div>
-
-</div>
-</section>
-
-<!-- FEEDBACK -->
 <section class="section">
-<div class="container">
 
-<h2>Comunidade rural</h2>
+<h2>Benefícios da Inteligência Artificial no campo</h2>
 
-<textarea id="comment"></textarea>
+<div class="grid">
+
+<div class="card"><strong>Otimização</strong> de recursos naturais e redução de desperdícios.</div>
+<div class="card"><strong>Monitoramento</strong> inteligente de culturas e solo.</div>
+<div class="card"><strong>Automação</strong> de processos agrícolas complexos.</div>
+<div class="card"><strong>Previsibilidade</strong> climática e produtividade.</div>
+<div class="card"><strong>Sustentabilidade</strong> e menor impacto ambiental.</div>
+<div class="card"><strong>Qualidade</strong> superior na produção de alimentos.</div>
+
+</div>
+
+</section>
+
+<section id="seminario" class="section form-section">
+
+<div class="form-box">
+
+<h2>Seminário Online</h2>
+
+<p>
+Venha conhecer melhor como a IA pode ser uma aliada do campo.
+</p>
+
+<form>
+
+<input type="text" placeholder="Nome" required>
+<input type="email" placeholder="E-mail" required>
+<input type="text" placeholder="Cidade" required>
+<input type="text" placeholder="Estado" required>
+<input type="text" placeholder="País" required>
+
+<button type="submit">Inscrever-se</button>
+
+</form>
+
+</div>
+
+</section>
+
+<section id="comentarios" class="section">
+
+<h2>Interação com o leitor</h2>
+
+<div class="comment-box">
+
+<textarea id="comentario" placeholder="Digite seu comentário..."></textarea>
 <button onclick="addComment()">Enviar</button>
 
-<div id="comments"></div>
+<div id="listaComentarios"></div>
 
 </div>
+
 </section>
 
+</main>
+
+<footer>
+
+<p><strong>Referências utilizadas:</strong> estudos agrícolas e inteligência artificial aplicada ao campo.</p>
+
+<p>AgroFuturo 2026 • Conectando a inteligência tecnologia à terra de forma sustentável</p>
+
+</footer>
+
 <script src="script.js"></script>
+
 </body>
 </html>
