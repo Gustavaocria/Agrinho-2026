@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>AgroFuturo • Tecnologia e Sustentabilidade</title>
 
@@ -12,568 +12,287 @@
 <link
 href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
 rel="stylesheet"
-/>
+>
 
 <style>
 
-/* =========================
-RESET
-========================= */
-
 *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 html{
-  scroll-behavior:smooth;
+scroll-behavior:smooth;
 }
 
 body{
-  font-family:'Poppins',sans-serif;
-  background:#0f1720;
-  color:#f5f5f5;
-  overflow-x:hidden;
+font-family:'Poppins',sans-serif;
+background:#0f1720;
+color:#f5f5f5;
+overflow-x:hidden;
 }
-
-/* =========================
-VARIABLES
-========================= */
 
 :root{
-  --green-1:#2d8a4e;
-  --green-2:#49b36b;
-
-  --bg:#0f1720;
-  --card:#17212b;
-
-  --white:#fff;
-  --gray:#cfcfcf;
-
-  --radius:20px;
-  --shadow:0 10px 30px rgba(0,0,0,.25);
+--green-1:#2d8a4e;
+--green-2:#49b36b;
+--bg:#0f1720;
+--card:#17212b;
+--white:#fff;
+--gray:#cfcfcf;
+--radius:20px;
+--shadow:0 10px 30px rgba(0,0,0,.25);
 }
 
-/* =========================
-GLOBAL
-========================= */
-
 .container{
-  width:min(1200px,90%);
-  margin-inline:auto;
+width:min(1200px,90%);
+margin-inline:auto;
 }
 
 img{
-  width:100%;
-  display:block;
+width:100%;
+display:block;
 }
 
 section{
-  padding:100px 0;
+padding:100px 0;
 }
 
 .section-title{
-  text-align:center;
-  margin-bottom:60px;
+text-align:center;
+margin-bottom:60px;
 }
 
 .section-title h2{
-  font-size:clamp(2rem,5vw,3rem);
-  margin-bottom:15px;
+font-size:clamp(2rem,5vw,3rem);
+margin-bottom:15px;
 }
 
 .section-title p{
-  color:var(--gray);
-  max-width:700px;
-  margin:auto;
+color:var(--gray);
+max-width:700px;
+margin:auto;
 }
 
 .btn-primary{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-
-  padding:1rem 2rem;
-
-  background:linear-gradient(
-    135deg,
-    var(--green-1),
-    var(--green-2)
-  );
-
-  color:white;
-  text-decoration:none;
-
-  border:none;
-  border-radius:14px;
-
-  font-weight:600;
-  cursor:pointer;
-
-  transition:.3s;
+display:inline-flex;
+align-items:center;
+justify-content:center;
+padding:1rem 2rem;
+background:linear-gradient(
+135deg,
+var(--green-1),
+var(--green-2)
+);
+color:white;
+text-decoration:none;
+border:none;
+border-radius:14px;
+font-weight:600;
+cursor:pointer;
+transition:.3s;
 }
 
 .btn-primary:hover{
-  transform:translateY(-4px);
-  filter:brightness(1.1);
+transform:translateY(-4px);
+filter:brightness(1.1);
 }
 
-/* =========================
-NAVBAR
-========================= */
-
 .navbar{
-  position:fixed;
-  top:0;
-  width:100%;
-  z-index:999;
-
-  backdrop-filter:blur(10px);
-  background:rgba(15,23,32,.7);
-
-  border-bottom:1px solid rgba(255,255,255,.05);
+position:fixed;
+top:0;
+width:100%;
+z-index:999;
+backdrop-filter:blur(10px);
+background:rgba(15,23,32,.7);
+border-bottom:1px solid rgba(255,255,255,.05);
 }
 
 .nav-container{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-
-  padding:20px 0;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:20px 0;
 }
 
 .logo{
-  font-size:1.7rem;
-  font-weight:800;
+font-size:1.7rem;
+font-weight:800;
 }
 
 .logo span{
-  color:var(--green-2);
+color:var(--green-2);
 }
 
 .menu{
-  display:flex;
-  gap:30px;
-  list-style:none;
+display:flex;
+gap:30px;
+list-style:none;
 }
 
 .menu a{
-  color:white;
-  text-decoration:none;
-  transition:.3s;
+color:white;
+text-decoration:none;
+transition:.3s;
 }
 
 .menu a:hover{
-  color:var(--green-2);
+color:var(--green-2);
 }
 
-/* =========================
-HERO
-========================= */
-
 .hero{
-  min-height:100vh;
-
-  display:flex;
-  align-items:center;
-
-  position:relative;
-
-  overflow:hidden;
+min-height:100vh;
+display:flex;
+align-items:center;
+position:relative;
+overflow:hidden;
 }
 
 .hero::before{
-  content:"";
-
-  position:absolute;
-  inset:0;
-
-  background:
-  linear-gradient(
-    rgba(0,0,0,.5),
-    rgba(0,0,0,.7)
-  ),
-
-  url("https://images.unsplash.com/photo-1500937386664-56d1dfef3854?q=80&w=1600&auto=format&fit=crop")
-  center/cover;
-
-  z-index:-2;
+content:"";
+position:absolute;
+inset:0;
+background:
+linear-gradient(
+rgba(0,0,0,.5),
+rgba(0,0,0,.7)
+),
+url("https://images.unsplash.com/photo-1500937386664-56d1dfef3854?q=80&w=1600&auto=format&fit=crop")
+center/cover;
+z-index:-2;
 }
 
 .hero-overlay{
-  position:absolute;
-  inset:0;
-
-  background:
-  radial-gradient(
-    circle at top right,
-    rgba(73,179,107,.25),
-    transparent 40%
-  );
-
-  z-index:-1;
+position:absolute;
+inset:0;
+background:
+radial-gradient(
+circle at top right,
+rgba(73,179,107,.25),
+transparent 40%
+);
+z-index:-1;
 }
 
 .hero-content{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:60px;
-  align-items:center;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+align-items:center;
 }
 
 .tag{
-  display:inline-block;
-
-  background:rgba(255,255,255,.08);
-
-  padding:10px 18px;
-
-  border-radius:999px;
-
-  margin-bottom:25px;
-
-  backdrop-filter:blur(10px);
+display:inline-block;
+background:rgba(255,255,255,.08);
+padding:10px 18px;
+border-radius:999px;
+margin-bottom:25px;
+backdrop-filter:blur(10px);
 }
 
 .hero-text h1{
-  font-size:clamp(2.5rem,6vw,5rem);
-  line-height:1.1;
-  margin-bottom:25px;
+font-size:clamp(2.5rem,6vw,5rem);
+line-height:1.1;
+margin-bottom:25px;
 }
 
 .hero-text p{
-  font-size:1.1rem;
-  color:#ddd;
-  margin-bottom:35px;
-  max-width:600px;
+font-size:1.1rem;
+color:#ddd;
+margin-bottom:35px;
+max-width:600px;
 }
 
 .hero-image img{
-  border-radius:30px;
-  box-shadow:var(--shadow);
+border-radius:30px;
+box-shadow:var(--shadow);
 }
 
-/* =========================
-CARDS
-========================= */
-
 .content-grid{
-  display:grid;
-  grid-template-columns:2fr 1fr;
-  gap:40px;
+display:grid;
+grid-template-columns:2fr 1fr;
+gap:40px;
 }
 
 .card,
 .form-card,
 .benefit-card,
 .comment-box{
-  background:rgba(255,255,255,.05);
-
-  backdrop-filter:blur(10px);
-
-  border:1px solid rgba(255,255,255,.08);
-
-  border-radius:var(--radius);
-
-  padding:30px;
-
-  box-shadow:var(--shadow);
-
-  transition:.3s;
+background:rgba(255,255,255,.05);
+backdrop-filter:blur(10px);
+border:1px solid rgba(255,255,255,.08);
+border-radius:var(--radius);
+padding:30px;
+box-shadow:var(--shadow);
+transition:.3s;
 }
 
 .card:hover,
 .benefit-card:hover{
-  transform:translateY(-5px);
+transform:translateY(-5px);
 }
 
 .card{
-  margin-bottom:30px;
+margin-bottom:30px;
 }
 
 .card h3{
-  margin-bottom:15px;
-  font-size:1.5rem;
+margin-bottom:15px;
+font-size:1.5rem;
 }
 
 .card p{
-  color:#d5d5d5;
-  margin-bottom:15px;
-}
-
-.card span{
-  color:var(--green-2);
-  font-weight:600;
+color:#d5d5d5;
+margin-bottom:15px;
 }
 
 .imagem{
-  margin:30px 0;
+margin:30px 0;
 }
 
 .imagem img{
-  border-radius:20px;
+border-radius:20px;
 }
-
-/* =========================
-ACCORDION
-========================= */
-
-.accordion-item{
-  margin-bottom:15px;
-}
-
-.accordion-header{
-  width:100%;
-
-  background:#1d2a35;
-
-  color:white;
-
-  border:none;
-
-  padding:20px;
-
-  border-radius:14px;
-
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-
-  cursor:pointer;
-
-  font-size:1rem;
-  font-weight:600;
-}
-
-.accordion-content{
-  background:#17212b;
-
-  border-radius:14px;
-
-  margin-top:10px;
-
-  padding:0 20px;
-
-  max-height:0;
-  overflow:hidden;
-
-  transition:.4s ease;
-}
-
-.accordion-content.active{
-  padding:20px;
-  max-height:200px;
-}
-
-/* =========================
-FORM
-========================= */
-
-.form-card{
-  position:sticky;
-  top:120px;
-}
-
-.form-card h3{
-  margin-bottom:15px;
-}
-
-.form-card p{
-  color:#ccc;
-  margin-bottom:25px;
-}
-
-.input-group{
-  margin-bottom:20px;
-}
-
-.input-group input{
-  width:100%;
-
-  padding:16px;
-
-  border:none;
-
-  border-radius:14px;
-
-  background:#fff;
-
-  font-size:1rem;
-}
-
-.input-group input:focus{
-  outline:none;
-  box-shadow:0 0 0 4px rgba(73,179,107,.25);
-}
-
-/* =========================
-BENEFITS
-========================= */
 
 .benefits-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:25px;
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:25px;
 }
 
 .benefit-card h3{
-  margin-bottom:15px;
+margin-bottom:15px;
 }
-
-/* =========================
-COMMENTS
-========================= */
-
-.comment-box textarea{
-  width:100%;
-  height:150px;
-
-  resize:none;
-
-  border:none;
-
-  border-radius:15px;
-
-  padding:20px;
-
-  margin-bottom:20px;
-
-  font-family:inherit;
-}
-
-.comments-list{
-  margin-top:30px;
-}
-
-.comment{
-  background:#17212b;
-  padding:20px;
-  border-radius:15px;
-  margin-bottom:20px;
-}
-
-/* =========================
-FOOTER
-========================= */
 
 .footer{
-  background:#081018;
-  padding:70px 0;
+background:#081018;
+padding:70px 0;
 }
 
 .footer-grid{
-  width:min(1200px,90%);
-  margin:auto;
-
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:40px;
+width:min(1200px,90%);
+margin:auto;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
 }
-
-.footer-box h3{
-  margin-bottom:15px;
-}
-
-/* =========================
-SIDEBAR
-========================= */
-
-.sidebar{
-  position:fixed;
-  left:20px;
-  top:50%;
-  transform:translateY(-50%);
-
-  z-index:1000;
-}
-
-.sidebar-toggle{
-  width:60px;
-  height:60px;
-
-  border:none;
-
-  border-radius:50%;
-
-  background:var(--green-1);
-
-  color:white;
-
-  font-size:1.5rem;
-
-  cursor:pointer;
-
-  box-shadow:var(--shadow);
-}
-
-.sidebar-content{
-  margin-top:15px;
-
-  display:flex;
-  flex-direction:column;
-  gap:10px;
-
-  background:#17212b;
-
-  padding:20px;
-
-  border-radius:20px;
-
-  display:none;
-}
-
-.sidebar-content.active{
-  display:flex;
-}
-
-.sidebar-content button{
-  padding:12px;
-  border:none;
-  border-radius:10px;
-  cursor:pointer;
-}
-
-/* =========================
-ANIMATION
-========================= */
-
-.fade-up{
-  animation:fadeUp .8s ease;
-}
-
-@keyframes fadeUp{
-  from{
-    opacity:0;
-    transform:translateY(40px);
-  }
-
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-}
-
-/* =========================
-RESPONSIVE
-========================= */
 
 @media(max-width:900px){
 
-  .hero-content,
-  .content-grid,
-  .benefits-grid,
-  .footer-grid{
-    grid-template-columns:1fr;
-  }
+.hero-content,
+.content-grid,
+.benefits-grid,
+.footer-grid{
+grid-template-columns:1fr;
+}
 
-  .menu{
-    display:none;
-  }
+.menu{
+display:none;
+}
 
-  .hero{
-    padding-top:120px;
-  }
+.hero{
+padding-top:120px;
+}
 
 }
 
@@ -581,46 +300,6 @@ RESPONSIVE
 </head>
 
 <body>
-
-<!-- =========================
-SIDEBAR
-========================= -->
-
-<aside class="sidebar">
-
-<button class="sidebar-toggle" id="sidebarToggle">
-☰
-</button>
-
-<div class="sidebar-content" id="sidebarContent">
-
-<button id="increaseFont">
-A+
-</button>
-
-<button id="decreaseFont">
-A-
-</button>
-
-<button id="toggleTheme">
-🌙
-</button>
-
-<button id="startReading">
-🔊
-</button>
-
-<button id="stopReading">
-⛔
-</button>
-
-</div>
-
-</aside>
-
-<!-- =========================
-NAVBAR
-========================= -->
 
 <nav class="navbar">
 
@@ -634,22 +313,17 @@ Agro<span>Futuro</span>
 <li><a href="#conteudo">Conteúdo</a></li>
 <li><a href="#beneficios">Benefícios</a></li>
 <li><a href="#seminario">Seminário</a></li>
-<li><a href="#comentarios">Comentários</a></li>
 </ul>
 
 </div>
 
 </nav>
 
-<!-- =========================
-HERO
-========================= -->
-
 <header class="hero">
 
 <div class="hero-overlay"></div>
 
-<div class="container hero-content fade-up">
+<div class="container hero-content">
 
 <div class="hero-text">
 
@@ -677,7 +351,7 @@ Participar do Seminário
 <img
 src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?q=80&w=1200&auto=format&fit=crop"
 alt="Agricultura moderna"
-/>
+>
 
 </div>
 
@@ -685,15 +359,7 @@ alt="Agricultura moderna"
 
 </header>
 
-<!-- =========================
-MAIN
-========================= -->
-
 <main>
-
-<!-- =========================
-CONTENT
-========================= -->
 
 <section id="conteudo">
 
@@ -715,7 +381,7 @@ O agro moderno une ciência, automação e sustentabilidade.
 
 <div>
 
-<div class="card fade-up">
+<div class="card">
 
 <h3>
 Brasil em destaque mundial
@@ -734,13 +400,15 @@ ciência e tecnologia aplicada ao campo.
 </div>
 
 <div class="imagem">
+
 <img
 src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200&auto=format&fit=crop"
 alt=""
 >
+
 </div>
 
-<div class="card fade-up">
+<div class="card">
 
 <h3>
 Microrganismos e sustentabilidade
@@ -753,67 +421,11 @@ agrícola com redução de fertilizantes químicos.
 
 </div>
 
-<!-- ACCORDION -->
-
-<div class="accordion-container">
-
-<div class="accordion-item">
-
-<button class="accordion-header">
-Inteligência Artificial no Campo
-<span>+</span>
-</button>
-
-<div class="accordion-content">
-<p>
-A IA automatiza processos agrícolas,
-reduz desperdícios e amplia a eficiência.
-</p>
 </div>
-
-</div>
-
-<div class="accordion-item">
-
-<button class="accordion-header">
-Monitoramento Inteligente
-<span>+</span>
-</button>
-
-<div class="accordion-content">
-<p>
-Sensores e drones ajudam no controle
-das culturas e prevenção de doenças.
-</p>
-</div>
-
-</div>
-
-<div class="accordion-item">
-
-<button class="accordion-header">
-Sustentabilidade no Agro
-<span>+</span>
-</button>
-
-<div class="accordion-content">
-<p>
-Tecnologias inteligentes promovem produção
-agrícola sustentável e eficiente.
-</p>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- FORM -->
 
 <aside id="seminario">
 
-<div class="form-card fade-up">
+<div class="form-card">
 
 <h3>
 Participe do seminário online
@@ -823,7 +435,7 @@ Participe do seminário online
 Descubra como a IA pode revolucionar o agro.
 </p>
 
-<form id="seminarioForm">
+<form>
 
 <div class="input-group">
 <input type="text" placeholder="Nome" required>
@@ -851,8 +463,6 @@ Fazer Inscrição
 
 </form>
 
-<div id="formMessage"></div>
-
 </div>
 
 </aside>
@@ -862,10 +472,6 @@ Fazer Inscrição
 </div>
 
 </section>
-
-<!-- =========================
-BENEFITS
-========================= -->
 
 <section id="beneficios">
 
@@ -911,56 +517,13 @@ Mais produtividade, eficiência e sustentabilidade.
 
 </section>
 
-<!-- =========================
-COMMENTS
-========================= -->
-
-<section id="comentarios">
-
-<div class="container">
-
-<div class="section-title">
-
-<h2>
-Comentários
-</h2>
-
-<p>
-Compartilhe sua opinião sobre inovação agrícola.
-</p>
-
-</div>
-
-<div class="comment-box">
-
-<textarea
-id="commentInput"
-placeholder="Digite seu comentário..."
-></textarea>
-
-<button id="commentBtn" class="btn-primary">
-Enviar Comentário
-</button>
-
-</div>
-
-<div class="comments-list" id="commentsList"></div>
-
-</div>
-
-</section>
-
 </main>
-
-<!-- =========================
-FOOTER
-========================= -->
 
 <footer class="footer">
 
 <div class="footer-grid">
 
-<div class="footer-box">
+<div>
 
 <h3>
 Referências
@@ -971,7 +534,7 @@ Referências
 
 </div>
 
-<div class="footer-box">
+<div>
 
 <h3>
 AgroFuturo 2026
@@ -986,203 +549,6 @@ Conectando tecnologia e sustentabilidade ao campo.
 </div>
 
 </footer>
-
-<!-- =========================
-SCRIPT
-========================= -->
-
-<script>
-
-/* =========================
-SIDEBAR
-========================= */
-
-const sidebarToggle =
-document.getElementById("sidebarToggle");
-
-const sidebarContent =
-document.getElementById("sidebarContent");
-
-sidebarToggle.addEventListener("click",()=>{
-
-sidebarContent.classList.toggle("active");
-
-});
-
-/* =========================
-FONT SIZE
-========================= */
-
-let fontSize = 100;
-
-document
-.getElementById("increaseFont")
-.addEventListener("click",()=>{
-
-fontSize += 10;
-
-document.body.style.fontSize =
-fontSize + "%";
-
-});
-
-document
-.getElementById("decreaseFont")
-.addEventListener("click",()=>{
-
-fontSize -= 10;
-
-document.body.style.fontSize =
-fontSize + "%";
-
-});
-
-/* =========================
-DARK MODE
-========================= */
-
-let dark = true;
-
-document
-.getElementById("toggleTheme")
-.addEventListener("click",()=>{
-
-dark = !dark;
-
-if(dark){
-
-document.body.style.background =
-"#0f1720";
-
-document.body.style.color =
-"#fff";
-
-}else{
-
-document.body.style.background =
-"#f5f5f5";
-
-document.body.style.color =
-"#111";
-
-}
-
-});
-
-/* =========================
-TEXT TO SPEECH
-========================= */
-
-let speech;
-
-document
-.getElementById("startReading")
-.addEventListener("click",()=>{
-
-speech = new SpeechSynthesisUtterance(
-document.body.innerText
-);
-
-speech.lang = "pt-BR";
-
-window.speechSynthesis.speak(speech);
-
-});
-
-document
-.getElementById("stopReading")
-.addEventListener("click",()=>{
-
-window.speechSynthesis.cancel();
-
-});
-
-/* =========================
-ACCORDION
-========================= */
-
-const accordionHeaders =
-document.querySelectorAll(".accordion-header");
-
-accordionHeaders.forEach(header=>{
-
-header.addEventListener("click",()=>{
-
-const content =
-header.nextElementSibling;
-
-content.classList.toggle("active");
-
-});
-
-});
-
-/* =========================
-FORM
-========================= */
-
-const form =
-document.getElementById("seminarioForm");
-
-const formMessage =
-document.getElementById("formMessage");
-
-form.addEventListener("submit",(e)=>{
-
-e.preventDefault();
-
-formMessage.innerHTML = `
-<p style="
-margin-top:20px;
-color:#49b36b;
-font-weight:600;
-">
-Inscrição realizada com sucesso!
-</p>
-`;
-
-form.reset();
-
-});
-
-/* =========================
-COMMENTS
-========================= */
-
-const commentBtn =
-document.getElementById("commentBtn");
-
-const commentInput =
-document.getElementById("commentInput");
-
-const commentsList =
-document.getElementById("commentsList");
-
-commentBtn.addEventListener("click",()=>{
-
-const text =
-commentInput.value.trim();
-
-if(text !== ""){
-
-const comment =
-document.createElement("div");
-
-comment.classList.add("comment");
-
-comment.innerHTML = `
-<p>${text}</p>
-`;
-
-commentsList.prepend(comment);
-
-commentInput.value = "";
-
-}
-
-});
-
-</script>
 
 </body>
 </html>
