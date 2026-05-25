@@ -32,10 +32,10 @@ window.speechSynthesis.cancel();
 function region(name){
 
 const data = {
-"Norte":"Alta produção agrícola e tecnologia.",
+"Norte":"Alta produção agrícola e inovação tecnológica.",
 "Oeste":"Cooperativas fortes e exportação.",
 "Sul":"Agricultura familiar sustentável.",
-"Centro":"Integração tecnológica e rural."
+"Centro":"Integração entre tecnologia e campo."
 };
 
 document.getElementById("mapInfo").innerHTML =
