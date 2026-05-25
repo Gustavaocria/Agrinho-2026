@@ -32,10 +32,10 @@ window.speechSynthesis.cancel();
 function region(name){
 
 const data = {
-"Norte":"Região agrícola em expansão tecnológica.",
+"Norte":"Alta produção agrícola e tecnologia.",
 "Oeste":"Cooperativas fortes e exportação.",
 "Sul":"Agricultura familiar sustentável.",
-"Centro":"Integração entre tecnologia e produção."
+"Centro":"Integração tecnológica e rural."
 };
 
 document.getElementById("mapInfo").innerHTML =
