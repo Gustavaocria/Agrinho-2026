@@ -12,15 +12,13 @@
 
 <body>
 
-<!-- ⚙️ ACESSIBILIDADE FIXA -->
-<div class="accessibility">
-
+<!-- ⚙️ PAINEL ACESSIBILIDADE -->
+<div class="tools">
 <button onclick="fontUp()">A+</button>
 <button onclick="fontDown()">A-</button>
 <button onclick="toggleTheme()">🌗</button>
-<button onclick="readAll()">🔊 Ler</button>
+<button onclick="readAll()">🔊</button>
 <button onclick="stopRead()">⛔</button>
-
 </div>
 
 <!-- 🏛️ HEADER -->
@@ -30,8 +28,8 @@
 <div class="logo">Agro<span>Forte</span> Paraná</div>
 
 <div class="menu">
-<a href="#conteudo">Conteúdo</a>
-<a href="#beneficios">IA</a>
+<a href="#conteudo">Contexto</a>
+<a href="#beneficios">IA no Campo</a>
 <a href="#mapa">Mapa</a>
 <a href="#comentarios">Comunidade</a>
 </div>
@@ -39,13 +37,14 @@
 
 <div class="hero">
 
-<h1>Futuro sustentável do agronegócio no Paraná</h1>
+<h1>Tecnologia e Inteligência Artificial transformando o agro</h1>
 
 <p>
-Tecnologia, inteligência artificial e sustentabilidade transformando o campo brasileiro.
+O Paraná se destaca como referência em inovação agrícola sustentável,
+unindo ciência, biotecnologia e automação no campo.
 </p>
 
-<a class="btn" href="#conteudo">Explorar projeto</a>
+<a href="#conteudo" class="btn">Explorar relatório</a>
 
 </div>
 
@@ -56,29 +55,28 @@ Tecnologia, inteligência artificial e sustentabilidade transformando o campo br
 <!-- 📊 CONTEÚDO -->
 <section id="conteudo" class="section">
 
-<h2>Transformação da agricultura brasileira</h2>
+<h2>Panorama da agricultura moderna</h2>
 
 <div class="grid">
 
 <div class="card">
 <h3>Cenário global</h3>
-<p>A agricultura enfrenta mudanças climáticas e alta demanda por inovação.</p>
+<p>O mundo enfrenta desafios de produção alimentar, clima e energia. O agro brasileiro cresce em destaque.</p>
 </div>
 
 <div class="card">
 <h3>Biotecnologia</h3>
-<p>Microrganismos reduzem fertilizantes químicos e aumentam produtividade.</p>
+<p>Microrganismos reduzem fertilizantes e aumentam produtividade com sustentabilidade.</p>
 </div>
 
 <div class="card">
-<h3>Reconhecimento</h3>
-<p>O Brasil é referência mundial em agricultura sustentável.</p>
+<h3>Impacto científico</h3>
+<p>Pesquisas brasileiras ganham reconhecimento internacional em inovação agrícola.</p>
 </div>
 
 </div>
 
-<!-- 🖼️ IMAGEM -->
-<div class="image-box">
+<div class="image-block">
 <img src="Foto1.png" alt="Agricultura moderna no Paraná">
 </div>
 
@@ -87,19 +85,21 @@ Tecnologia, inteligência artificial e sustentabilidade transformando o campo br
 <!-- 🌱 BENEFÍCIOS -->
 <section id="beneficios" class="section dark">
 
-<h2>Benefícios da Inteligência Artificial</h2>
+<h2>Inteligência Artificial no Campo</h2>
 
 <div class="grid">
 
-<div class="card">✔ Otimização de recursos</div>
-<div class="card">✔ Monitoramento com drones</div>
+<div class="card">✔ Otimização de recursos naturais</div>
+<div class="card">✔ Monitoramento por drones</div>
 <div class="card">✔ Previsão climática</div>
 <div class="card">✔ Automação agrícola</div>
+<div class="card">✔ Redução de custos</div>
+<div class="card">✔ Sustentabilidade ambiental</div>
 
 </div>
 
-<div class="image-box">
-<img src="Foto2.png" alt="Tecnologia agrícola com drones">
+<div class="image-block">
+<img src="Foto2.png" alt="Tecnologia no campo">
 </div>
 
 </section>
@@ -107,7 +107,7 @@ Tecnologia, inteligência artificial e sustentabilidade transformando o campo br
 <!-- 🗺️ MAPA -->
 <section id="mapa" class="section">
 
-<h2>Mapa do Paraná</h2>
+<h2>Mapa estratégico do Paraná</h2>
 
 <div class="map">
 
@@ -118,8 +118,8 @@ Tecnologia, inteligência artificial e sustentabilidade transformando o campo br
 
 </div>
 
-<div id="mapInfo" class="card">
-Clique em uma região
+<div id="mapInfo" class="card info">
+Selecione uma região para visualizar dados.
 </div>
 
 </section>
@@ -127,13 +127,13 @@ Clique em uma região
 <!-- 💬 COMENTÁRIOS -->
 <section id="comentarios" class="section">
 
-<h2>Comunidade</h2>
+<h2>Comunidade rural</h2>
 
-<div class="card">
+<div class="card form">
 
 <textarea id="commentInput" placeholder="Escreva sua opinião..."></textarea>
 
-<button onclick="addComment()">Enviar</button>
+<button onclick="addComment()">Enviar comentário</button>
 
 <div id="comments"></div>
 
@@ -143,7 +143,7 @@ Clique em uma região
 
 </main>
 
-<footer class="footer">
+<footer>
 
 <p>AgroForte Paraná 2026 • Conectando tecnologia e campo</p>
 
