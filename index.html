@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Agro Paraná • Tecnologia e Campo Sustentável</title>
+<title>Agro Paraná • Sistema Oficial do Campo</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
@@ -18,40 +18,35 @@ box-sizing:border-box;
 }
 
 :root{
---bg:#f3f6f4;
---text:#1f2a1f;
---muted:#5c6b5f;
+--bg:#f5f7f6;
+--text:#1a2a1d;
+--muted:#5a6a5f;
 --card:#ffffff;
 --green:#2e6b3f;
---green-soft:#e6f2ea;
---shadow:0 8px 20px rgba(0,0,0,.08);
+--green-soft:#e8f3eb;
+--blue:#1e6fb8;
+--shadow:0 10px 25px rgba(0,0,0,.08);
 --radius:14px;
---font:16px;
+--font-size:16px;
 }
 
 body{
 font-family:'Poppins',sans-serif;
 background:var(--bg);
 color:var(--text);
-font-size:var(--font);
-line-height:1.7;
+font-size:var(--font-size);
+line-height:1.6;
 transition:.3s;
 }
 
 body.dark{
-background:#121a14;
-color:#e8efe9;
+background:#0e1511;
+color:#e8f2ea;
 }
 
 .container{
-width:min(1100px,92%);
+width:min(1150px,92%);
 margin:auto;
-}
-
-img{
-width:100%;
-display:block;
-border-radius:12px;
 }
 
 /* SIDEBAR */
@@ -59,20 +54,21 @@ border-radius:12px;
 position:fixed;
 right:0;
 top:0;
+width:260px;
 height:100vh;
-width:250px;
-background:#ffffff;
+background:white;
 box-shadow:var(--shadow);
 padding:20px;
+z-index:999;
 transition:.3s;
 }
 
 body.dark .sidebar{
-background:#1b241d;
+background:#18231b;
 }
 
 .sidebar.hidden{
-transform:translateX(220px);
+transform:translateX(230px);
 }
 
 .sidebar button{
@@ -86,7 +82,7 @@ cursor:pointer;
 }
 
 body.dark .sidebar button{
-background:#243126;
+background:#223126;
 color:white;
 }
 
@@ -112,7 +108,7 @@ z-index:10;
 }
 
 body.dark nav{
-background:#1b241d;
+background:#18231b;
 }
 
 .nav-inner{
@@ -135,16 +131,8 @@ list-style:none;
 
 .menu a{
 text-decoration:none;
-color:var(--text);
+color:inherit;
 font-size:14px;
-}
-
-body.dark .menu a{
-color:#e8efe9;
-}
-
-.menu a:hover{
-color:var(--green);
 }
 
 /* HERO */
@@ -155,12 +143,11 @@ padding:80px 0 40px;
 .hero h1{
 font-size:clamp(1.8rem,4vw,2.6rem);
 margin-bottom:10px;
-font-weight:600;
 }
 
 .hero p{
 color:var(--muted);
-max-width:600px;
+max-width:650px;
 }
 
 .btn{
@@ -170,11 +157,11 @@ background:var(--green);
 color:white;
 padding:10px 18px;
 border-radius:10px;
-text-decoration:none;
-font-size:14px;
+border:none;
+cursor:pointer;
 }
 
-/* SECTIONS */
+/* SEÇÕES */
 section{
 padding:60px 0;
 }
@@ -182,9 +169,9 @@ padding:60px 0;
 h2{
 margin-bottom:20px;
 font-size:22px;
-font-weight:600;
 }
 
+/* CARDS */
 .card{
 background:var(--card);
 padding:18px;
@@ -194,7 +181,7 @@ margin-bottom:15px;
 }
 
 body.dark .card{
-background:#1b241d;
+background:#18231b;
 }
 
 /* GRID */
@@ -205,22 +192,97 @@ gap:20px;
 }
 
 @media(max-width:900px){
-.grid{
-grid-template-columns:1fr;
-}
-.menu{
-display:none;
-}
+.grid{grid-template-columns:1fr;}
+.menu{display:none;}
 }
 
-/* FORM */
-input, textarea{
+/* INDICADORES */
+.kpi-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:15px;
+}
+
+.kpi{
+background:white;
+padding:15px;
+border-radius:12px;
+box-shadow:var(--shadow);
+text-align:center;
+}
+
+body.dark .kpi{
+background:#18231b;
+}
+
+.kpi h3{
+color:var(--green);
+font-size:20px;
+}
+
+/* MAPA */
+.map{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:10px;
+}
+
+.region{
+background:var(--green-soft);
+padding:15px;
+border-radius:10px;
+text-align:center;
+cursor:pointer;
+transition:.2s;
+}
+
+.region:hover{
+transform:scale(1.03);
+}
+
+body.dark .region{
+background:#223126;
+}
+
+/* NOTÍCIAS */
+.news-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:15px;
+}
+
+.news{
+background:white;
+padding:15px;
+border-radius:12px;
+box-shadow:var(--shadow);
+}
+
+body.dark .news{
+background:#18231b;
+}
+
+/* GRAFICO SIMPLES */
+.bar{
+height:12px;
+background:#ddd;
+border-radius:10px;
+overflow:hidden;
+margin-bottom:10px;
+}
+
+.bar span{
+display:block;
+height:100%;
+background:var(--green);
+}
+
+/* COMENTÁRIOS */
+textarea{
 width:100%;
 padding:10px;
-margin-top:8px;
 border-radius:10px;
 border:1px solid #ddd;
-outline:none;
 }
 
 .comment{
@@ -231,7 +293,7 @@ margin-top:10px;
 }
 
 body.dark .comment{
-background:#243126;
+background:#223126;
 }
 
 </style>
@@ -240,96 +302,130 @@ background:#243126;
 
 <body>
 
-<!-- SIDEBAR -->
 <div class="sidebar" id="sidebar">
 
 <button class="toggle" id="toggle">☰</button>
 
-<h3 style="margin-bottom:10px;">Acessibilidade</h3>
+<h3>Acessibilidade</h3>
 
-<button id="fontUp">Aumentar fonte</button>
-<button id="fontDown">Diminuir fonte</button>
-<button id="theme">Modo claro/escuro</button>
-<button id="read">Leitura em voz</button>
-<button id="stop">Parar leitura</button>
+<button id="fontUp">A+</button>
+<button id="fontDown">A-</button>
+<button id="theme">Tema</button>
+<button id="read">Leitura</button>
+<button id="stop">Parar</button>
 
 </div>
 
-<!-- NAV -->
 <nav>
 <div class="container nav-inner">
 
 <div class="logo">Agro Paraná</div>
 
 <ul class="menu">
-<li><a href="#sobre">Sobre</a></li>
-<li><a href="#beneficios">Benefícios</a></li>
-<li><a href="#comentarios">Comentários</a></li>
+<li><a href="#kpi">Indicadores</a></li>
+<li><a href="#mapa">Regiões</a></li>
+<li><a href="#noticias">Notícias</a></li>
+<li><a href="#produtores">Produtores</a></li>
 </ul>
 
 </div>
 </nav>
 
-<!-- HERO -->
-<header class="hero container" id="main">
+<header class="hero container">
 
-<h1>O campo paranaense mais forte e mais inteligente</h1>
+<h1>Portal Oficial do Agro Paranaense</h1>
 
-<p>
-A tecnologia chegou ao campo para ajudar quem produz alimento,
-com mais eficiência, cuidado com a terra e melhores resultados para o produtor.
-</p>
+<p>Monitoramento, tecnologia e apoio ao produtor rural.</p>
 
-<a class="btn" href="#sobre">Conhecer mais</a>
+<a class="btn" href="#kpi">Acessar dados</a>
 
 </header>
 
-<!-- SOBRE -->
-<section id="sobre" class="container">
+<section id="kpi" class="container">
 
-<h2>Sobre o Agro</h2>
+<h2>Indicadores do Agro</h2>
 
-<div class="grid">
+<div class="kpi-grid">
 
-<div>
-
-<div class="card">
-O agro no Paraná evolui com tecnologia simples e útil,
-ajudando produtores no dia a dia.
+<div class="kpi">
+<h3>+38%</h3>
+<p>Produção de soja</p>
 </div>
 
-<div class="card">
-O uso de sensores, clima e dados ajuda a tomar decisões mais seguras
-sem perder o cuidado com a terra.
+<div class="kpi">
+<h3>+22%</h3>
+<p>Exportações</p>
 </div>
 
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854" alt="">
+<div class="kpi">
+<h3>1.2M</h3>
+<p>Produtores ativos</p>
 </div>
 
 </div>
 
 </section>
 
-<!-- BENEFICIOS -->
-<section id="beneficios" class="container">
+<section id="mapa" class="container">
 
-<h2>Benefícios reais no campo</h2>
+<h2>Regiões do Paraná</h2>
 
-<div class="card">🌱 Produção mais sustentável</div>
-<div class="card">🚜 Mais eficiência no trabalho rural</div>
-<div class="card">📊 Decisões mais seguras com dados</div>
+<div class="map">
+
+<div class="region">Norte</div>
+<div class="region">Oeste</div>
+<div class="region">Sul</div>
+<div class="region">Centro</div>
+<div class="region">Leste</div>
+<div class="region">Sudoeste</div>
+
+</div>
 
 </section>
 
-<!-- COMENTARIOS -->
-<section id="comentarios" class="container">
+<section id="noticias" class="container">
 
-<h2>O que as pessoas acham</h2>
+<h2>Boletim do Campo</h2>
 
-<textarea id="input" placeholder="Deixe seu comentário..."></textarea>
+<div class="news-grid">
+
+<div class="news">Clima favorece safra de verão.</div>
+<div class="news">Tecnologia reduz custos no campo.</div>
+<div class="news">Cooperativas ampliam produção.</div>
+
+</div>
+
+</section>
+
+<section id="produtores" class="container">
+
+<h2>Produtor Rural</h2>
+
+<div class="card">Cadastro de assistência técnica disponível em todo o estado.</div>
+<div class="card">Programas de incentivo à agricultura familiar.</div>
+
+<div class="card">
+
+<h3>Produção de referência</h3>
+
+<p>Soja</p>
+<div class="bar"><span style="width:85%"></span></div>
+
+<p>Milho</p>
+<div class="bar"><span style="width:70%"></span></div>
+
+<p>Café</p>
+<div class="bar"><span style="width:55%"></span></div>
+
+</div>
+
+</section>
+
+<section class="container">
+
+<h2>Comunidade</h2>
+
+<textarea id="input"></textarea>
 <button class="btn" id="send">Enviar</button>
 
 <div id="list"></div>
@@ -338,8 +434,7 @@ sem perder o cuidado com a terra.
 
 <script>
 
-const sidebar =
-document.getElementById("sidebar");
+const sidebar=document.getElementById("sidebar");
 
 document.getElementById("toggle")
 .addEventListener("click",()=>{
@@ -348,21 +443,23 @@ sidebar.classList.toggle("hidden");
 
 });
 
-let font = 16;
+let font=16;
 
 document.getElementById("fontUp")
 .addEventListener("click",()=>{
 
 font++;
-document.body.style.fontSize = font+"px";
+
+document.documentElement.style.setProperty("--font-size",font+"px");
 
 });
 
 document.getElementById("fontDown")
 .addEventListener("click",()=>{
 
-font = Math.max(12,font-1);
-document.body.style.fontSize = font+"px";
+font=Math.max(12,font-1);
+
+document.documentElement.style.setProperty("--font-size",font+"px");
 
 });
 
@@ -376,12 +473,9 @@ document.body.classList.toggle("dark");
 document.getElementById("read")
 .addEventListener("click",()=>{
 
-const text =
-document.getElementById("main").innerText;
+const text=document.body.innerText;
 
-const speech =
-new SpeechSynthesisUtterance(text);
-
+const speech=new SpeechSynthesisUtterance(text);
 speech.lang="pt-BR";
 
 window.speechSynthesis.speak(speech);
@@ -398,22 +492,15 @@ window.speechSynthesis.cancel();
 document.getElementById("send")
 .addEventListener("click",()=>{
 
-const input =
-document.getElementById("input");
-
-const list =
-document.getElementById("list");
+const input=document.getElementById("input");
 
 if(input.value.trim()==="")return;
 
-const div =
-document.createElement("div");
-
+const div=document.createElement("div");
 div.classList.add("comment");
+div.innerText=input.value;
 
-div.innerText = input.value;
-
-list.prepend(div);
+document.getElementById("list").prepend(div);
 
 input.value="";
 
