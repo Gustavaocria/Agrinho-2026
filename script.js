@@ -1,173 +1,109 @@
-let fontSize = 16;
-let speechInstance = null;
-let isReading = false;
+const commentInput = document.getElementById("comentario");
+const commentList = document.getElementById("listaComentarios");
 
-function setFont(size){
-fontSize = Math.max(12, Math.min(22, size));
-document.body.style.fontSize = fontSize + "px";
+function addComment(){
+
+const value = commentInput.value.trim();
+
+if(!value){
+alert("Digite um comentário.");
+return;
 }
 
-function fontUp(){
-setFont(fontSize + 1);
+const item = document.createElement("div");
+item.className = "card";
+
+item.innerHTML = `
+<p>${escapeHtml(value)}</p>
+<small>${new Date().toLocaleString("pt-BR")}</small>
+`;
+
+commentList.prepend(item);
+
+saveComment(value);
+
+commentInput.value = "";
 }
 
-function fontDown(){
-setFont(fontSize - 1);
+function escapeHtml(text){
+return text
+.replaceAll("&","&amp;")
+.replaceAll("<","&lt;")
+.replaceAll(">","&gt;");
 }
+
+/* ===== LOCAL STORAGE (parece sistema real) ===== */
+
+function saveComment(text){
+let data = JSON.parse(localStorage.getItem("comments") || "[]");
+data.unshift({
+text,
+date:new Date().toISOString()
+});
+localStorage.setItem("comments", JSON.stringify(data));
+}
+
+function loadComments(){
+let data = JSON.parse(localStorage.getItem("comments") || "[]");
+
+data.forEach(c=>{
+const item = document.createElement("div");
+item.className = "card";
+
+item.innerHTML = `
+<p>${escapeHtml(c.text)}</p>
+<small>${new Date(c.date).toLocaleString("pt-BR")}</small>
+`;
+
+commentList.appendChild(item);
+});
+}
+
+loadComments();
+
+/* ===== ACESSIBILIDADE ===== */
+
+let font = 16;
+
+function setFont(v){
+font = Math.max(12, Math.min(24, v));
+document.documentElement.style.fontSize = font + "px";
+}
+
+function fontUp(){ setFont(font + 1); }
+function fontDown(){ setFont(font - 1); }
+
+/* ===== TEMA ===== */
 
 function toggleTheme(){
 document.body.classList.toggle("dark");
 }
 
+/* ===== LEITURA ===== */
+
+let speech;
+
 function readAll(){
-
-if(isReading){
 window.speechSynthesis.cancel();
-}
 
-const text = document.body.innerText;
+speech = new SpeechSynthesisUtterance(
+document.body.innerText
+);
 
-speechInstance = new SpeechSynthesisUtterance(text);
-speechInstance.lang = "pt-BR";
-speechInstance.rate = 1;
-speechInstance.pitch = 1;
+speech.lang = "pt-BR";
+speech.rate = 1;
 
-speechInstance.onend = () => {
-isReading = false;
-};
-
-window.speechSynthesis.speak(speechInstance);
-
-isReading = true;
+window.speechSynthesis.speak(speech);
 }
 
 function stopRead(){
 window.speechSynthesis.cancel();
-isReading = false;
 }
 
-function region(name){
-
-const box = document.getElementById("regionInfo");
-
-const data = {
-"Norte":"Região forte em grãos e tecnologia agrícola.",
-"Oeste":"Alta produção de soja e cooperativas.",
-"Sul":"Diversificação agrícola e agricultura familiar.",
-"Centro":"Equilíbrio entre produção e inovação."
-};
-
-box.innerHTML = `
-<strong>${name}</strong><br>
-${data[name] || "Dados não disponíveis."}
-`;
-}
-
-function addComment(){
-
-const input = document.getElementById("comment");
-const container = document.getElementById("comments");
-
-const text = input.value.trim();
-
-if(text === "") return;
-
-const now = new Date();
-
-const time = now.toLocaleString("pt-BR", {
-dateStyle:"short",
-timeStyle:"short"
-});
-
-const div = document.createElement("div");
-div.classList.add("card");
-
-div.innerHTML = `
-<p>${text}</p>
-<small style="opacity:.6">${time}</small>
-`;
-
-container.prepend(div);
-
-input.value = "";
-}
-
-let searchTimeout;
-
-const searchInput = document.getElementById("search");
-
-if(searchInput){
-
-searchInput.addEventListener("input", (e)=>{
-
-clearTimeout(searchTimeout);
-
-searchTimeout = setTimeout(()=>{
-
-const value = e.target.value.toLowerCase();
-
-document.querySelectorAll(".card").forEach(card=>{
-
-const text = card.innerText.toLowerCase();
-
-card.style.display =
-text.includes(value) ? "block" : "none";
-
-});
-
-}, 250);
-
-});
-
-}
-
-function initCharts(){
-
-const ctx1 = document.getElementById("chart1");
-const ctx2 = document.getElementById("chart2");
-
-if(!ctx1 || !ctx2) return;
-
-new Chart(ctx1, {
-type:"bar",
-data:{
-labels:["Soja","Milho","Trigo"],
-datasets:[{
-label:"Produção (mil toneladas)",
-data:[90,70,50],
-backgroundColor:"#1e7a4c"
-}]
-},
-options:{
-responsive:true
-}
-});
-
-new Chart(ctx2, {
-type:"line",
-data:{
-labels:["2021","2022","2023","2024"],
-datasets:[{
-label:"Crescimento (%)",
-data:[40,55,70,85],
-borderColor:"#1e7a4c",
-tension:0.3
-}]
-},
-options:{
-responsive:true
-}
-});
-
-}
-
-initCharts();
+/* ===== MICRO INTERAÇÃO ===== */
 
 document.addEventListener("keydown", (e)=>{
-
 if(e.key === "Escape"){
-window.speechSynthesis.cancel();
-isReading = false;
+stopRead();
 }
-
 });
