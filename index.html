@@ -12,97 +12,94 @@
 
 <body>
 
-<!-- ⚙️ PAINEL DE ACESSIBILIDADE -->
-<div class="access-panel">
+<!-- ⚙️ ACESSIBILIDADE FIXA -->
+<div class="accessibility">
+
 <button onclick="fontUp()">A+</button>
 <button onclick="fontDown()">A-</button>
 <button onclick="toggleTheme()">🌗</button>
-<button onclick="readAll()">🔊</button>
+<button onclick="readAll()">🔊 Ler</button>
 <button onclick="stopRead()">⛔</button>
+
 </div>
 
-<!-- 🏛️ HEADER OFICIAL -->
+<!-- 🏛️ HEADER -->
 <header class="header">
 
 <nav class="nav">
-
-<div class="logo">
-Agro<span>Forte</span> Paraná
-</div>
+<div class="logo">Agro<span>Forte</span> Paraná</div>
 
 <div class="menu">
-<a href="#conteudo">Contexto</a>
-<a href="#beneficios">IA no Campo</a>
+<a href="#conteudo">Conteúdo</a>
+<a href="#beneficios">IA</a>
 <a href="#mapa">Mapa</a>
-<a href="#comunidade">Comunidade</a>
+<a href="#comentarios">Comunidade</a>
 </div>
-
 </nav>
 
 <div class="hero">
 
-<h1>Futuro sustentável do agronegócio brasileiro</h1>
+<h1>Futuro sustentável do agronegócio no Paraná</h1>
 
 <p>
-Tecnologia, inteligência artificial e ciência transformando o campo em um sistema produtivo,
-sustentável e globalmente competitivo.
+Tecnologia, inteligência artificial e sustentabilidade transformando o campo brasileiro.
 </p>
 
-<a href="#conteudo" class="btn">Explorar análise</a>
+<a class="btn" href="#conteudo">Explorar projeto</a>
 
 </div>
 
 </header>
 
-<!-- 📊 CONTEÚDO PRINCIPAL -->
 <main>
 
+<!-- 📊 CONTEÚDO -->
 <section id="conteudo" class="section">
 
-<h2>Transformação da agricultura no Brasil</h2>
+<h2>Transformação da agricultura brasileira</h2>
 
 <div class="grid">
 
-<div class="card highlight">
+<div class="card">
 <h3>Cenário global</h3>
-<p>
-A agricultura mundial enfrenta desafios como mudanças climáticas, custo de produção e segurança alimentar.
-O Brasil se destaca como potência agrícola sustentável.
-</p>
+<p>A agricultura enfrenta mudanças climáticas e alta demanda por inovação.</p>
 </div>
 
 <div class="card">
-<h3>Biotecnologia avançada</h3>
-<p>
-Microrganismos desenvolvidos por cientistas brasileiros reduzem fertilizantes químicos e aumentam produtividade no campo.
-</p>
+<h3>Biotecnologia</h3>
+<p>Microrganismos reduzem fertilizantes químicos e aumentam produtividade.</p>
 </div>
 
 <div class="card">
-<h3>Reconhecimento internacional</h3>
-<p>
-Pesquisadores brasileiros recebem destaque global por soluções inovadoras na agricultura sustentável.
-</p>
+<h3>Reconhecimento</h3>
+<p>O Brasil é referência mundial em agricultura sustentável.</p>
 </div>
 
+</div>
+
+<!-- 🖼️ IMAGEM -->
+<div class="image-box">
+<img src="Foto1.png" alt="Agricultura moderna no Paraná">
 </div>
 
 </section>
 
-<!-- 🌱 BENEFÍCIOS IA -->
+<!-- 🌱 BENEFÍCIOS -->
 <section id="beneficios" class="section dark">
 
-<h2>Benefícios da Inteligência Artificial no Campo</h2>
+<h2>Benefícios da Inteligência Artificial</h2>
 
 <div class="grid">
 
-<div class="card">✔ Otimização de recursos naturais</div>
-<div class="card">✔ Monitoramento por sensores e drones</div>
-<div class="card">✔ Previsão climática avançada</div>
+<div class="card">✔ Otimização de recursos</div>
+<div class="card">✔ Monitoramento com drones</div>
+<div class="card">✔ Previsão climática</div>
 <div class="card">✔ Automação agrícola</div>
-<div class="card">✔ Redução de custos</div>
-<div class="card">✔ Sustentabilidade ambiental</div>
 
+</div>
+
+<div class="image-box">
+<img src="Foto2.png" alt="Tecnologia agrícola com drones">
 </div>
 
 </section>
@@ -110,7 +107,7 @@ Pesquisadores brasileiros recebem destaque global por soluções inovadoras na a
 <!-- 🗺️ MAPA -->
 <section id="mapa" class="section">
 
-<h2>Mapa estratégico do Paraná</h2>
+<h2>Mapa do Paraná</h2>
 
 <div class="map">
 
@@ -121,22 +118,22 @@ Pesquisadores brasileiros recebem destaque global por soluções inovadoras na a
 
 </div>
 
-<div id="mapInfo" class="card info">
-Clique em uma região para visualizar dados agrícolas estratégicos.
+<div id="mapInfo" class="card">
+Clique em uma região
 </div>
 
 </section>
 
-<!-- 💬 COMUNIDADE -->
-<section id="comunidade" class="section">
+<!-- 💬 COMENTÁRIOS -->
+<section id="comentarios" class="section">
 
-<h2>Comunidade rural e participação</h2>
+<h2>Comunidade</h2>
 
-<div class="card form">
+<div class="card">
 
-<textarea id="commentInput" placeholder="Compartilhe sua opinião sobre o agro sustentável..."></textarea>
+<textarea id="commentInput" placeholder="Escreva sua opinião..."></textarea>
 
-<button onclick="addComment()">Enviar comentário</button>
+<button onclick="addComment()">Enviar</button>
 
 <div id="comments"></div>
 
@@ -146,14 +143,9 @@ Clique em uma região para visualizar dados agrícolas estratégicos.
 
 </main>
 
-<!-- 🏁 RODAPÉ -->
 <footer class="footer">
 
-<p><strong>Referências:</strong> EMBRAPA, pesquisas agrícolas e inteligência artificial aplicada ao campo.</p>
-
-<p>
-AgroForte Paraná 2026 • Conectando tecnologia, ciência e sustentabilidade
-</p>
+<p>AgroForte Paraná 2026 • Conectando tecnologia e campo</p>
 
 </footer>
 
