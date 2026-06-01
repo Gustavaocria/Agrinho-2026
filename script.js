@@ -1,41 +1,45 @@
-/* =====================================
-   AGROFORTE FUTURO 2026
-===================================== */
+/* ===================================
+   AGROFORTE FUTURO SUSTENTÁVEL 2026
+=================================== */
 
 /* ACCORDION */
 
-const accordionButtons =
+const accordionHeaders =
 document.querySelectorAll(".accordion-header");
 
-accordionButtons.forEach(button => {
+accordionHeaders.forEach(header => {
 
-    button.addEventListener("click", () => {
+    header.addEventListener("click", () => {
 
         const content =
-        button.nextElementSibling;
+        header.nextElementSibling;
 
-        const isOpen =
+        const aberto =
         content.style.display === "block";
 
         document
         .querySelectorAll(".accordion-content")
         .forEach(item => {
+
             item.style.display = "none";
+
         });
 
-        if (!isOpen) {
+        if(!aberto){
+
             content.style.display = "block";
+
         }
 
     });
 
 });
 
-/* =====================================
+/* ===================================
    AUMENTAR E DIMINUIR FONTE
-===================================== */
+=================================== */
 
-let currentFontSize = 16;
+let tamanhoFonte = 16;
 
 const increaseFont =
 document.getElementById("increaseFont");
@@ -45,41 +49,42 @@ document.getElementById("decreaseFont");
 
 increaseFont.addEventListener("click", () => {
 
-    currentFontSize += 2;
+    tamanhoFonte += 2;
 
     document.body.style.fontSize =
-    currentFontSize + "px";
+    tamanhoFonte + "px";
 
 });
 
 decreaseFont.addEventListener("click", () => {
 
-    if(currentFontSize > 12){
+    if(tamanhoFonte > 12){
 
-        currentFontSize -= 2;
+        tamanhoFonte -= 2;
 
         document.body.style.fontSize =
-        currentFontSize + "px";
+        tamanhoFonte + "px";
+
     }
 
 });
 
-/* =====================================
+/* ===================================
    MODO ESCURO / CLARO
-===================================== */
+=================================== */
 
-const themeButton =
+const toggleTheme =
 document.getElementById("toggleTheme");
 
-themeButton.addEventListener("click", () => {
+toggleTheme.addEventListener("click", () => {
 
     document.body.classList.toggle("dark-mode");
 
 });
 
-/* =====================================
+/* ===================================
    LEITURA POR VOZ
-===================================== */
+=================================== */
 
 const readButton =
 document.getElementById("readPage");
@@ -93,25 +98,28 @@ readButton.addEventListener("click", () => {
 
     window.speechSynthesis.cancel();
 
-    const content =
-    document.getElementById("mainContent");
+    const texto =
+    document.getElementById("mainContent")
+    .innerText;
 
     speech =
-    new SpeechSynthesisUtterance(
-        content.innerText
-    );
+    new SpeechSynthesisUtterance(texto);
 
     speech.lang = "pt-BR";
+
     speech.rate = 1;
+
     speech.pitch = 1;
+
+    speech.volume = 1;
 
     window.speechSynthesis.speak(speech);
 
 });
 
-/* =====================================
+/* ===================================
    PARAR LEITURA
-===================================== */
+=================================== */
 
 stopButton.addEventListener("click", () => {
 
@@ -119,21 +127,62 @@ stopButton.addEventListener("click", () => {
 
 });
 
-/* =====================================
+/* ===================================
    FORMULÁRIO
-===================================== */
+=================================== */
 
 const form =
 document.querySelector(".registration-form");
 
-form.addEventListener("submit", (event) => {
+form.addEventListener("submit", (e) => {
 
-    event.preventDefault();
+    e.preventDefault();
 
     alert(
-        "Inscrição realizada com sucesso!"
+        "✅ Inscrição realizada com sucesso no Seminário AgroForte 2026!"
     );
 
     form.reset();
+
+});
+
+/* ===================================
+   EFEITO SUAVE AO ROLAR
+=================================== */
+
+const cards =
+document.querySelectorAll(
+".card, .stat-card, .timeline-item"
+);
+
+const observer =
+new IntersectionObserver(entries => {
+
+    entries.forEach(entry => {
+
+        if(entry.isIntersecting){
+
+            entry.target.style.opacity = "1";
+
+            entry.target.style.transform =
+            "translateY(0px)";
+
+        }
+
+    });
+
+});
+
+cards.forEach(card => {
+
+    card.style.opacity = "0";
+
+    card.style.transform =
+    "translateY(40px)";
+
+    card.style.transition =
+    ".7s ease";
+
+    observer.observe(card);
 
 });
