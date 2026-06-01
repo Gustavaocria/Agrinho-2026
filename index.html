@@ -1,262 +1,142 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AgroFuturo Sustentável 2026</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AgroFuturo 2026 - Futuro Tecnológico do Campo</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- ACESSIBILIDADE -->
-    <aside class="accessibility-box" aria-label="Ferramentas de acessibilidade">
+<!-- ACESSIBILIDADE -->
+<aside class="accessibility-box collapsed" aria-label="Ferramentas de acessibilidade">
+    <button id="toggleAccessibility">⚙️</button>
+    <div class="accessibility-controls">
         <h3>Acessibilidade</h3>
         <button id="increaseFont">A+</button>
         <button id="decreaseFont">A-</button>
         <button id="toggleTheme">🌙/☀️</button>
         <button id="startReading">🔊 Ler</button>
         <button id="stopReading">⏹ Parar</button>
-    </aside>
+    </div>
+</aside>
 
-    <!-- HERO -->
-    <header class="hero">
-        <div class="hero-content">
-            <h1>AgroFuturo Sustentável 2026</h1>
+<!-- HERO -->
+<header class="hero">
+    <div class="hero-content">
+        <h1>AgroFuturo Sustentável 2026</h1>
+        <p>Tecnologia agrícola, Inteligência Artificial e inovação sustentável transformando o campo brasileiro em referência mundial.</p>
+        <a href="#conteudo" class="btn-primary">Explorar Conteúdo</a>
+    </div>
+</header>
 
-            <p>
-                Tecnologia agrícola, Inteligência Artificial e inovação sustentável
-                transformando o campo brasileiro em referência mundial.
-            </p>
+<main id="main-content">
+<section class="page-layout">
 
-            <a href="#conteudo" class="btn-primary">
-                Explorar Conteúdo
-            </a>
-        </div>
-    </header>
+    <!-- CONTEÚDO -->
+    <div class="content-column">
 
-    <main id="main-content">
+        <section id="conteudo" class="section-title">
+            <h2>Tecnologia Agrícola Reforça o Papel do Brasil</h2>
+        </section>
 
-        <!-- GRID PRINCIPAL -->
-        <section class="page-layout">
+        <section class="intro-card card">
+            <p>A agricultura sustentável ganha espaço no debate global em um momento de pressão sobre custos, segurança alimentar, energia e mudanças climáticas. O Brasil se destaca por unir <strong>produtividade</strong>, <strong>inovação</strong> e <strong>capacidade de adaptação</strong>.</p>
+        </section>
 
-            <!-- CONTEÚDO -->
-            <div class="content-column">
+        <section class="image-grid">
+            <div class="imagem"><img src="Foto1.png" alt="Tecnologia agrícola"></div>
+            <div class="imagem"><img src="Foto2.png" alt="Inteligência artificial no campo"></div>
+            <div class="imagem"><img src="Foto3.png" alt="Agricultura sustentável"></div>
+        </section>
 
-                <section id="conteudo" class="section-title">
-                    <h2>Tecnologia Agrícola Reforça o Papel do Brasil</h2>
-                </section>
+        <section class="cards-grid">
+            <article class="card">
+                <h3>Inovação Brasileira</h3>
+                <p>Uso de microrganismos para reduzir fertilizantes químicos coloca o Brasil como protagonista da agricultura sustentável.</p>
+            </article>
+            <article class="card">
+                <h3>Segurança Alimentar</h3>
+                <p>Tecnologias modernas aumentam a produtividade e fortalecem a produção de alimentos.</p>
+            </article>
+            <article class="card">
+                <h3>Sustentabilidade</h3>
+                <p>Menor uso de insumos e melhor aproveitamento dos recursos naturais.</p>
+            </article>
+        </section>
 
-                <section class="intro-card card">
-                    <p>
-                        A agricultura sustentável ganha espaço no debate global em um momento
-                        de pressão sobre custos, segurança alimentar, energia e mudanças climáticas.
-                        O Brasil se destaca por unir <strong>produtividade</strong>,
-                        <strong>inovação</strong> e <strong>capacidade de adaptação</strong>.
-                    </p>
-                </section>
+        <section class="accordion-section">
+            <h2>Benefícios da Inteligência Artificial no Campo</h2>
 
-                <!-- IMAGENS -->
-                <section class="image-grid">
-
-                    <div class="imagem">
-                        <img src="Foto1.png" alt="Tecnologia agrícola">
-                    </div>
-
-                    <div class="imagem">
-                        <img src="Foto2.png" alt="Inteligência artificial no campo">
-                    </div>
-
-                    <div class="imagem">
-                        <img src="Foto3.png" alt="Agricultura sustentável">
-                    </div>
-
-                </section>
-
-                <!-- CARDS -->
-                <section class="cards-grid">
-
-                    <article class="card">
-                        <h3>Inovação Brasileira</h3>
-                        <p>
-                            O uso de microrganismos para reduzir fertilizantes químicos
-                            coloca o Brasil como protagonista da agricultura sustentável.
-                        </p>
-                    </article>
-
-                    <article class="card">
-                        <h3>Segurança Alimentar</h3>
-                        <p>
-                            Tecnologias agrícolas modernas aumentam a produtividade
-                            e fortalecem a produção de alimentos.
-                        </p>
-                    </article>
-
-                    <article class="card">
-                        <h3>Sustentabilidade</h3>
-                        <p>
-                            Menor uso de insumos e melhor aproveitamento dos recursos naturais.
-                        </p>
-                    </article>
-
-                </section>
-
-                <!-- ACCORDION -->
-                <section class="accordion-section">
-
-                    <h2>Benefícios da Inteligência Artificial no Campo</h2>
-
-                    <div class="accordion-item">
-                        <button class="accordion-btn">
-                            1. Otimização de Recursos
-                        </button>
-
-                        <div class="accordion-content">
-                            <p>
-                                Sistemas inteligentes ajustam irrigação,
-                                monitoram solo e reduzem desperdícios.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="accordion-item">
-                        <button class="accordion-btn">
-                            2. Monitoramento de Culturas
-                        </button>
-
-                        <div class="accordion-content">
-                            <p>
-                                Sensores, drones e algoritmos identificam doenças,
-                                falhas e padrões de crescimento.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="accordion-item">
-                        <button class="accordion-btn">
-                            3. Gestão de Riscos
-                        </button>
-
-                        <div class="accordion-content">
-                            <p>
-                                Previsões climáticas e análise de dados auxiliam
-                                decisões estratégicas.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="accordion-item">
-                        <button class="accordion-btn">
-                            4. Automação
-                        </button>
-
-                        <div class="accordion-content">
-                            <p>
-                                Máquinas autônomas aumentam eficiência
-                                e reduzem custos operacionais.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="accordion-item">
-                        <button class="accordion-btn">
-                            5. Qualidade dos Produtos
-                        </button>
-
-                        <div class="accordion-content">
-                            <p>
-                                Controle preciso garante alimentos mais seguros
-                                e rastreáveis.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="accordion-item">
-                        <button class="accordion-btn">
-                            6. Sustentabilidade
-                        </button>
-
-                        <div class="accordion-content">
-                            <p>
-                                Aplicações inteligentes reduzem desperdícios
-                                e impactos ambientais.
-                            </p>
-                        </div>
-                    </div>
-
-                </section>
-
+            <div class="accordion-item">
+                <button class="accordion-btn">1. Otimização de Recursos</button>
+                <div class="accordion-content"><p>Sistemas inteligentes ajustam irrigação, monitoram solo e reduzem desperdícios.</p></div>
             </div>
 
-            <!-- SIDEBAR -->
-            <aside class="sidebar">
+            <div class="accordion-item">
+                <button class="accordion-btn">2. Monitoramento de Culturas</button>
+                <div class="accordion-content"><p>Sensores, drones e algoritmos identificam doenças, falhas e padrões de crescimento.</p></div>
+            </div>
 
-                <div class="card form-card">
+            <div class="accordion-item">
+                <button class="accordion-btn">3. Gestão de Riscos</button>
+                <div class="accordion-content"><p>Previsões climáticas e análise de dados auxiliam decisões estratégicas.</p></div>
+            </div>
 
-                    <h2>
-                        Venha conhecer melhor como a IA pode ser uma aliada do Campo.
-                    </h2>
+            <div class="accordion-item">
+                <button class="accordion-btn">4. Automação</button>
+                <div class="accordion-content"><p>Máquinas autônomas aumentam eficiência e reduzem custos operacionais.</p></div>
+            </div>
 
-                    <p>
-                        Inscreva-se no nosso seminário on-line.
-                    </p>
+            <div class="accordion-item">
+                <button class="accordion-btn">5. Qualidade dos Produtos</button>
+                <div class="accordion-content"><p>Controle preciso garante alimentos mais seguros e rastreáveis.</p></div>
+            </div>
 
-                    <form>
-
-                        <input type="text" placeholder="Nome" required>
-
-                        <input type="email" placeholder="E-mail" required>
-
-                        <input type="text" placeholder="Cidade">
-
-                        <input type="text" placeholder="Estado">
-
-                        <input type="text" placeholder="País">
-
-                        <button type="submit" class="btn-primary">
-                            Inscrever-se
-                        </button>
-
-                    </form>
-
-                </div>
-
-                <div class="card comments-card">
-
-                    <h2>Comentários</h2>
-
-                    <textarea
-                        placeholder="Compartilhe sua opinião..."
-                    ></textarea>
-
-                    <button class="btn-primary">
-                        Enviar Comentário
-                    </button>
-
-                </div>
-
-            </aside>
+            <div class="accordion-item">
+                <button class="accordion-btn">6. Sustentabilidade</button>
+                <div class="accordion-content"><p>Aplicações inteligentes reduzem desperdícios e impactos ambientais.</p></div>
+            </div>
 
         </section>
 
-    </main>
+    </div>
 
-    <footer>
-        <h3>Referências Utilizadas</h3>
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="card form-card">
+            <h2>Venha conhecer melhor como a IA pode ser uma aliada do Campo.</h2>
+            <p>Inscreva-se no nosso seminário on-line.</p>
+            <form>
+                <input type="text" placeholder="Nome" required>
+                <input type="email" placeholder="E-mail" required>
+                <input type="text" placeholder="Cidade">
+                <input type="text" placeholder="Estado">
+                <input type="text" placeholder="País">
+                <button type="submit" class="btn-primary">Inscrever-se</button>
+            </form>
+        </div>
 
-        <ul>
-            <li>Conteúdo fornecido pelo solicitante.</li>
-            <li>Tecnologias Web: HTML5, CSS3 e JavaScript ES6.</li>
-            <li>SpeechSynthesis API para leitura por voz.</li>
-            <li>Princípios de acessibilidade WCAG.</li>
-            <li>Design responsivo com CSS Grid e Flexbox.</li>
-        </ul>
+        <div class="card comments-card">
+            <h2>Comentários</h2>
+            <textarea placeholder="Compartilhe sua opinião..."></textarea>
+            <button class="btn-primary">Enviar Comentário</button>
+        </div>
+    </aside>
 
-        <p>
-            AgroFuturo 2026 ° Conectando a inteligência tecnologia à terra de forma sustentável
-        </p>
-    </footer>
+</section>
+</main>
 
-    <script src="script.js"></script>
+<footer>
+    <h3>Referências Utilizadas</h3>
+    <ul>
+        <li>Conteúdo fornecido pelo solicitante</li>
+        <li>HTML5, CSS3, JS ES6, WCAG e SpeechSynthesis API</li>
+        <li>Design responsivo e futurista com Grid e Flexbox</li>
+    </ul>
+    <p>AgroFuturo 2026 ° Conectando a inteligência tecnologia à terra de forma sustentável</p>
+</footer>
 
+<script src="script.js"></script>
 </body>
 </html>
