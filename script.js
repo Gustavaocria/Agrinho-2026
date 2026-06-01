@@ -1,215 +1,119 @@
-const accordionButtons = document.querySelectorAll(".accordion-btn");
-
-accordionButtons.forEach(button => {
-    button.addEventListener("click", () => {
-
-        const content = button.nextElementSibling;
-        const isOpen = content.classList.contains("active");
-
-        document.querySelectorAll(".accordion-content").forEach(item => {
-            item.classList.remove("active");
-            item.style.maxHeight = null;
-        });
-
-        if (!isOpen) {
-            content.classList.add("active");
-            content.style.maxHeight = content.scrollHeight + "px";
-        }
-    });
+window.addEventListener("load", () => {
+document.querySelector(".loader").style.display = "none";
 });
 
-const toggleTheme = document.getElementById("toggleTheme");
-
-toggleTheme.addEventListener("click", () => {
-    document.body.classList.toggle("dark-mode");
-
-    createNotification(
-        document.body.classList.contains("dark-mode")
-        ? "Modo escuro ativado"
-        : "Modo claro ativado"
-    );
-});
-
-let currentSize = 16;
-
-document.getElementById("increaseFont").addEventListener("click", () => {
-
-    currentSize += 2;
-
-    document.documentElement.style.setProperty(
-        "--font-size",
-        currentSize + "px"
-    );
-
-    createNotification("Fonte aumentada");
-});
-
-document.getElementById("decreaseFont").addEventListener("click", () => {
-
-    currentSize -= 2;
-
-    if(currentSize < 12){
-        currentSize = 12;
-    }
-
-    document.documentElement.style.setProperty(
-        "--font-size",
-        currentSize + "px"
-    );
-
-    createNotification("Fonte reduzida");
-});
-
-let speech;
-
-const startReading = document.getElementById("startReading");
-const stopReading = document.getElementById("stopReading");
-
-startReading.addEventListener("click", () => {
-
-    window.speechSynthesis.cancel();
-
-    const content =
-    document.getElementById("main-content").innerText;
-
-    speech = new SpeechSynthesisUtterance(content);
-
-    speech.lang = "pt-BR";
-    speech.rate = 1;
-    speech.pitch = 1;
-
-    window.speechSynthesis.speak(speech);
-
-    createNotification("Leitura iniciada");
-});
-
-stopReading.addEventListener("click", () => {
-
-    window.speechSynthesis.cancel();
-
-    createNotification("Leitura interrompida");
-});
-
-const toggleAccessibility =
-document.getElementById("toggleAccessibility");
-
-const accessibilityBox =
-document.querySelector(".accessibility-box");
-
-toggleAccessibility.addEventListener("click", () => {
-
-    accessibilityBox.classList.toggle("collapsed");
-});
-
-document.querySelector("form")
-.addEventListener("submit", (e) => {
-
-    e.preventDefault();
-
-    createNotification(
-        "Inscrição enviada com sucesso!"
-    );
-
-    e.target.reset();
-});
-
-const commentButton =
-document.querySelector(".comments-card button");
-
-commentButton.addEventListener("click", () => {
-
-    const textarea =
-    document.querySelector(".comments-card textarea");
-
-    const text = textarea.value.trim();
-
-    if(text === ""){
-
-        createNotification(
-            "Digite um comentário."
-        );
-
-        return;
-    }
-
-    const commentArea =
-    document.createElement("div");
-
-    commentArea.classList.add("new-comment");
-
-    commentArea.innerHTML = `
-        <p>${text}</p>
-    `;
-
-    document
-    .querySelector(".comments-card")
-    .appendChild(commentArea);
-
-    textarea.value = "";
-
-    createNotification(
-        "Comentário enviado!"
-    );
-});
-
-function createNotification(message){
-
-    const notification =
-    document.createElement("div");
-
-    notification.classList.add("notification");
-
-    notification.innerText = message;
-
-    document.body.appendChild(notification);
-
-    setTimeout(() => {
-        notification.classList.add("show");
-    }, 100);
-
-    setTimeout(() => {
-
-        notification.classList.remove("show");
-
-        setTimeout(() => {
-            notification.remove();
-        }, 500);
-
-    }, 2500);
-}
+const progressBar = document.querySelector(".progress-bar");
 
 window.addEventListener("scroll", () => {
+const scrollTop = window.scrollY;
+const docHeight = document.body.scrollHeight - window.innerHeight;
+const progress = (scrollTop / docHeight) * 100;
+progressBar.style.width = progress + "%";
 
-    const cards =
-    document.querySelectorAll(".card");
-
-    cards.forEach(card => {
-
-        const position =
-        card.getBoundingClientRect().top;
-
-        const screenPosition =
-        window.innerHeight / 1.2;
-
-        if(position < screenPosition){
-            card.classList.add("visible");
-        }
-
-    });
-
+document.getElementById("backToTop").style.display =
+scrollTop > 300 ? "block" : "none";
 });
 
-document.addEventListener("mousemove", (e) => {
+document.getElementById("backToTop").onclick = () => {
+window.scrollTo({ top: 0, behavior: "smooth" });
+};
 
-    const hero =
-    document.querySelector(".hero");
+const accessibilityPanel = document.querySelector(".accessibility-panel");
 
-    const x =
-    (window.innerWidth / 2 - e.pageX) / 40;
+document.getElementById("toggleAccessibility").onclick = () => {
+accessibilityPanel.classList.toggle("closed");
+};
 
-    const y =
-    (window.innerHeight / 2 - e.pageY) / 40;
+let fontSize = 16;
 
-    hero.style.backgroundPosition =
-    `${x}px ${y}px`;
+document.getElementById("increaseFont").onclick = () => {
+fontSize += 2;
+document.body.style.fontSize = fontSize + "px";
+};
+
+document.getElementById("decreaseFont").onclick = () => {
+fontSize -= 2;
+document.body.style.fontSize = fontSize + "px";
+};
+
+document.getElementById("toggleTheme").onclick = () => {
+document.body.classList.toggle("light");
+};
+
+const counters = document.querySelectorAll(".counter");
+
+const animateCounters = () => {
+counters.forEach(counter => {
+const update = () => {
+const target = +counter.getAttribute("data-target");
+const current = +counter.innerText;
+const increment = target / 100;
+
+if (current < target) {
+counter.innerText = Math.ceil(current + increment);
+setTimeout(update, 20);
+} else {
+counter.innerText = target;
+}
+};
+update();
+});
+};
+
+animateCounters();
+
+document.querySelectorAll(".accordion-btn").forEach(btn => {
+btn.onclick = () => {
+const content = btn.nextElementSibling;
+content.style.display =
+content.style.display === "block" ? "none" : "block";
+};
+});
+
+document.getElementById("calculateBtn").onclick = () => {
+const area = +document.getElementById("areaInput").value;
+const result = document.getElementById("simulationResult");
+
+if (!area) {
+result.innerText = "Digite uma área válida.";
+return;
+}
+
+const production = area * 3.5;
+result.innerText = `Produção estimada: ${production.toFixed(2)} toneladas`;
+};
+
+document.getElementById("registrationForm").onsubmit = (e) => {
+e.preventDefault();
+alert("Inscrição realizada com sucesso!");
+e.target.reset();
+};
+
+document.getElementById("commentBtn").onclick = () => {
+const input = document.getElementById("commentInput");
+const container = document.getElementById("commentsContainer");
+
+if (!input.value.trim()) return;
+
+const div = document.createElement("div");
+div.className = "comment";
+div.innerText = input.value;
+
+container.prepend(div);
+input.value = "";
+};
+
+document.querySelectorAll(".assistant-options button").forEach(btn => {
+btn.onclick = () => {
+const response = document.getElementById("assistantResponse");
+
+const map = {
+"IA no Campo": "IA ajuda na previsão de safra e automação agrícola.",
+"Drones": "Drones monitoram plantações em tempo real.",
+"Sustentabilidade": "Redução de água e fertilizantes com IA.",
+"Fertilizantes": "IA otimiza uso de fertilizantes no solo."
+};
+
+response.innerText = map[btn.innerText] || "";
+};
 });
