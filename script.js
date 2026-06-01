@@ -1,119 +1,139 @@
-window.addEventListener("load", () => {
-document.querySelector(".loader").style.display = "none";
+/* =====================================
+   AGROFORTE FUTURO 2026
+===================================== */
+
+/* ACCORDION */
+
+const accordionButtons =
+document.querySelectorAll(".accordion-header");
+
+accordionButtons.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        const content =
+        button.nextElementSibling;
+
+        const isOpen =
+        content.style.display === "block";
+
+        document
+        .querySelectorAll(".accordion-content")
+        .forEach(item => {
+            item.style.display = "none";
+        });
+
+        if (!isOpen) {
+            content.style.display = "block";
+        }
+
+    });
+
 });
 
-const progressBar = document.querySelector(".progress-bar");
+/* =====================================
+   AUMENTAR E DIMINUIR FONTE
+===================================== */
 
-window.addEventListener("scroll", () => {
-const scrollTop = window.scrollY;
-const docHeight = document.body.scrollHeight - window.innerHeight;
-const progress = (scrollTop / docHeight) * 100;
-progressBar.style.width = progress + "%";
+let currentFontSize = 16;
 
-document.getElementById("backToTop").style.display =
-scrollTop > 300 ? "block" : "none";
+const increaseFont =
+document.getElementById("increaseFont");
+
+const decreaseFont =
+document.getElementById("decreaseFont");
+
+increaseFont.addEventListener("click", () => {
+
+    currentFontSize += 2;
+
+    document.body.style.fontSize =
+    currentFontSize + "px";
+
 });
 
-document.getElementById("backToTop").onclick = () => {
-window.scrollTo({ top: 0, behavior: "smooth" });
-};
+decreaseFont.addEventListener("click", () => {
 
-const accessibilityPanel = document.querySelector(".accessibility-panel");
+    if(currentFontSize > 12){
 
-document.getElementById("toggleAccessibility").onclick = () => {
-accessibilityPanel.classList.toggle("closed");
-};
+        currentFontSize -= 2;
 
-let fontSize = 16;
+        document.body.style.fontSize =
+        currentFontSize + "px";
+    }
 
-document.getElementById("increaseFont").onclick = () => {
-fontSize += 2;
-document.body.style.fontSize = fontSize + "px";
-};
-
-document.getElementById("decreaseFont").onclick = () => {
-fontSize -= 2;
-document.body.style.fontSize = fontSize + "px";
-};
-
-document.getElementById("toggleTheme").onclick = () => {
-document.body.classList.toggle("light");
-};
-
-const counters = document.querySelectorAll(".counter");
-
-const animateCounters = () => {
-counters.forEach(counter => {
-const update = () => {
-const target = +counter.getAttribute("data-target");
-const current = +counter.innerText;
-const increment = target / 100;
-
-if (current < target) {
-counter.innerText = Math.ceil(current + increment);
-setTimeout(update, 20);
-} else {
-counter.innerText = target;
-}
-};
-update();
-});
-};
-
-animateCounters();
-
-document.querySelectorAll(".accordion-btn").forEach(btn => {
-btn.onclick = () => {
-const content = btn.nextElementSibling;
-content.style.display =
-content.style.display === "block" ? "none" : "block";
-};
 });
 
-document.getElementById("calculateBtn").onclick = () => {
-const area = +document.getElementById("areaInput").value;
-const result = document.getElementById("simulationResult");
+/* =====================================
+   MODO ESCURO / CLARO
+===================================== */
 
-if (!area) {
-result.innerText = "Digite uma área válida.";
-return;
-}
+const themeButton =
+document.getElementById("toggleTheme");
 
-const production = area * 3.5;
-result.innerText = `Produção estimada: ${production.toFixed(2)} toneladas`;
-};
+themeButton.addEventListener("click", () => {
 
-document.getElementById("registrationForm").onsubmit = (e) => {
-e.preventDefault();
-alert("Inscrição realizada com sucesso!");
-e.target.reset();
-};
+    document.body.classList.toggle("dark-mode");
 
-document.getElementById("commentBtn").onclick = () => {
-const input = document.getElementById("commentInput");
-const container = document.getElementById("commentsContainer");
+});
 
-if (!input.value.trim()) return;
+/* =====================================
+   LEITURA POR VOZ
+===================================== */
 
-const div = document.createElement("div");
-div.className = "comment";
-div.innerText = input.value;
+const readButton =
+document.getElementById("readPage");
 
-container.prepend(div);
-input.value = "";
-};
+const stopButton =
+document.getElementById("stopReading");
 
-document.querySelectorAll(".assistant-options button").forEach(btn => {
-btn.onclick = () => {
-const response = document.getElementById("assistantResponse");
+let speech = null;
 
-const map = {
-"IA no Campo": "IA ajuda na previsão de safra e automação agrícola.",
-"Drones": "Drones monitoram plantações em tempo real.",
-"Sustentabilidade": "Redução de água e fertilizantes com IA.",
-"Fertilizantes": "IA otimiza uso de fertilizantes no solo."
-};
+readButton.addEventListener("click", () => {
 
-response.innerText = map[btn.innerText] || "";
-};
+    window.speechSynthesis.cancel();
+
+    const content =
+    document.getElementById("mainContent");
+
+    speech =
+    new SpeechSynthesisUtterance(
+        content.innerText
+    );
+
+    speech.lang = "pt-BR";
+    speech.rate = 1;
+    speech.pitch = 1;
+
+    window.speechSynthesis.speak(speech);
+
+});
+
+/* =====================================
+   PARAR LEITURA
+===================================== */
+
+stopButton.addEventListener("click", () => {
+
+    window.speechSynthesis.cancel();
+
+});
+
+/* =====================================
+   FORMULÁRIO
+===================================== */
+
+const form =
+document.querySelector(".registration-form");
+
+form.addEventListener("submit", (event) => {
+
+    event.preventDefault();
+
+    alert(
+        "Inscrição realizada com sucesso!"
+    );
+
+    form.reset();
+
 });
