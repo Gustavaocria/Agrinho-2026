@@ -2,189 +2,118 @@
 <html lang="pt-BR">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>AGROFORTE AI 2035</title>
-
-<link rel="stylesheet" href="style.css">
-
+<title>Conexão Campo e Cidade | Agrinho 2026</title>
+<link rel="stylesheet" href="css/style.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
 </head>
 
 <body>
 
-<!-- FUNDO ANIMADO -->
-<div class="background-grid"></div>
-
-<!-- ACESSIBILIDADE -->
-
-<div class="accessibility-panel">
-
-<h4>♿ Acessibilidade</h4>
-
-<button id="increaseFont">A+</button>
-<button id="decreaseFont">A-</button>
-
-<button id="toggleTheme">🌙/☀️</button>
-
-<button id="readPage">🔊 Ler</button>
-<button id="stopReading">⏹ Parar</button>
-
-</div>
-
-<!-- HEADER -->
-
-<header class="hero">
+<header class="header">
 
 <nav class="navbar">
 
 <div class="logo">
-🌱 AGROFORTE AI 2035
+<h1>🌾 Agrinho 2026</h1>
 </div>
 
-<ul>
-
+<ul class="menu">
+<li><a href="#inicio">Início</a></li>
 <li><a href="#sobre">Sobre</a></li>
-
-<li><a href="#tecnologias">Tecnologias</a></li>
-
-<li><a href="#timeline">Evolução</a></li>
-
-<li><a href="#seminario">Seminário</a></li>
-
+<li><a href="#tecnologia">Tecnologia</a></li>
+<li><a href="#sustentabilidade">Sustentabilidade</a></li>
+<li><a href="#estatisticas">Estatísticas</a></li>
+<li><a href="#quiz">Quiz</a></li>
+<li><a href="#contato">Contato</a></li>
 </ul>
+
+<div class="botoes-nav">
+<button id="darkMode">Modo Escuro</button>
+</div>
 
 </nav>
 
+</header>
+
+<main>
+
+<section id="inicio" class="hero">
+
 <div class="hero-content">
 
-<span class="hero-tag">
-🚀 AGRICULTURA INTELIGENTE
-</span>
-
-<h1>
-
-A Inteligência Artificial
-que Alimenta o Mundo
-
-</h1>
+<h2>Conexão Campo e Cidade</h2>
 
 <p>
-
-Conectando Inteligência Artificial,
-Biotecnologia, Sensoriamento e Sustentabilidade
-para transformar o futuro da agricultura brasileira.
-
+O campo produz, a cidade consome e a tecnologia conecta
+esses dois mundos. Juntos, eles constroem um futuro mais
+sustentável para toda a sociedade.
 </p>
 
-<a href="#sobre" class="hero-button">
+<div class="hero-buttons">
 
-Explorar o Futuro
+<a href="#sobre" class="btn">
+Saiba Mais
+</a>
 
+<a href="#quiz" class="btn-secundario">
+Fazer Quiz
 </a>
 
 </div>
 
-</header>
-
-<main id="mainContent">
-
-<!-- DASHBOARD -->
-
-<section class="dashboard">
-
-<div class="dashboard-card">
-
-<h3 class="counter" data-target="72">0</h3>
-
-<p>Eficiência Operacional</p>
-
-</div>
-
-<div class="dashboard-card">
-
-<h3 class="counter" data-target="43">0</h3>
-
-<p>Economia de Água</p>
-
-</div>
-
-<div class="dashboard-card">
-
-<h3 class="counter" data-target="31">0</h3>
-
-<p>Aumento de Produtividade</p>
-
-</div>
-
-<div class="dashboard-card">
-
-<h3>24/7</h3>
-
-<p>Monitoramento Inteligente</p>
-
 </div>
 
 </section>
-
-<!-- SOBRE -->
 
 <section id="sobre" class="section">
 
-<div class="section-title">
+<div class="container">
 
-<h2>
-Brasil: Potência Global em Agricultura Inteligente
-</h2>
+<h2>O Campo Está Presente em Tudo</h2>
 
-</div>
+<p>
+Muitas vezes não percebemos, mas grande parte do que utilizamos
+todos os dias vem direta ou indiretamente do campo.
+</p>
 
-<div class="cards-grid">
+<div class="cards">
 
 <div class="card">
 
-<h3>🌎 Agricultura Sustentável</h3>
+<h3>🍞 Alimentação</h3>
 
 <p>
-
-O Brasil destaca-se por unir produtividade,
-inovação tecnológica e sustentabilidade
-em escala global.
-
+Frutas, verduras, carnes, leite, ovos e diversos outros alimentos
+são produzidos por agricultores e pecuaristas.
 </p>
 
 </div>
 
 <div class="card">
 
-<h3>🧬 Biotecnologia</h3>
+<h3>👕 Vestuário</h3>
 
 <p>
-
-Microrganismos desenvolvidos por pesquisadores
-brasileiros reduzem custos e aumentam
-a eficiência agrícola.
-
+O algodão utilizado na fabricação de roupas é produzido no campo
+e movimenta uma importante cadeia econômica.
 </p>
 
 </div>
 
 <div class="card">
 
-<h3>🏆 Reconhecimento Mundial</h3>
+<h3>🏠 Matéria-Prima</h3>
 
 <p>
-
-O World Food Prize fortaleceu o reconhecimento
-da ciência brasileira no setor agrícola.
-
+Madeira, fibras naturais e diversos materiais utilizados na construção
+civil possuem origem rural.
 </p>
+
+</div>
 
 </div>
 
@@ -192,155 +121,674 @@ da ciência brasileira no setor agrícola.
 
 </section>
 
-<!-- GALERIA -->
+<section class="section destaque">
 
-<section id="tecnologias" class="section">
+<div class="container">
 
-<div class="section-title">
+<h2>Por Que o Campo é Importante?</h2>
 
-<h2>Tecnologias do Agro do Futuro</h2>
+<div class="grid-2">
+
+<div>
+
+<p>
+O agronegócio é responsável por grande parte da produção de alimentos,
+geração de empregos e movimentação da economia brasileira.
+</p>
+
+<p>
+Além disso, novas tecnologias vêm tornando a produção mais eficiente,
+econômica e sustentável.
+</p>
+
+<p>
+Com o uso de máquinas modernas, sensores, drones e inteligência
+de dados, o produtor consegue produzir mais utilizando menos recursos.
+</p>
 
 </div>
 
-<div class="gallery">
+<div>
 
-<div class="imagem">
-<img src="Foto1.png" alt="Drone agrícola">
+<img src="img/campo.jpg" alt="Campo Brasileiro">
+
 </div>
 
-<div class="imagem">
-<img src="Foto2.png" alt="Monitoramento inteligente">
-</div>
-
-<div class="imagem">
-<img src="Foto3.png" alt="Tecnologia agrícola">
 </div>
 
 </div>
 
 </section>
 
-<!-- IA -->
+<section id="tecnologia" class="section">
+
+<div class="container">
+
+<h2>Tecnologia no Campo</h2>
+
+<p>
+A inovação tem transformado a agricultura moderna.
+</p>
+
+<div class="cards">
+
+<div class="card tech-card">
+
+<h3>🚜 Tratores Inteligentes</h3>
+
+<p>
+Equipamentos modernos realizam tarefas com alta precisão,
+reduzindo desperdícios e aumentando a produtividade.
+</p>
+
+<button class="info-btn">
+Saiba Mais
+</button>
+
+</div>
+
+<div class="card tech-card">
+
+<h3>🚁 Drones</h3>
+
+<p>
+Monitoram lavouras, detectam pragas e ajudam na tomada
+de decisões do produtor rural.
+</p>
+
+<button class="info-btn">
+Saiba Mais
+</button>
+
+</div>
+
+<div class="card tech-card">
+
+<h3>🛰️ Satélites</h3>
+
+<p>
+Permitem acompanhar mudanças climáticas e condições das
+plantações em tempo real.
+</p>
+
+<button class="info-btn">
+Saiba Mais
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
 
 <section class="section">
 
-<div class="section-title">
+<div class="container">
 
-<h2>Inteligência Artificial no Campo</h2>
+<h2>Inovações Que Estão Mudando o Mundo</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>💧 Irrigação Inteligente</h3>
+
+<p>
+Economiza água através de sensores que identificam a necessidade
+real das plantas.
+</p>
 
 </div>
 
-<div class="cards-grid">
-
 <div class="card">
-<h3>🤖 Agricultura Preditiva</h3>
-<p>Previsão de produtividade e riscos.</p>
+
+<h3>🌱 Agricultura de Precisão</h3>
+
+<p>
+Utiliza dados para aumentar a eficiência da produção e reduzir
+impactos ambientais.
+</p>
+
 </div>
 
 <div class="card">
-<h3>🚁 Drones Inteligentes</h3>
-<p>Mapeamento e monitoramento aéreo.</p>
+
+<h3>📱 Aplicativos Agrícolas</h3>
+
+<p>
+Facilitam o gerenciamento de propriedades rurais e auxiliam
+na tomada de decisões.
+</p>
+
 </div>
 
-<div class="card">
-<h3>💧 Irrigação Automatizada</h3>
-<p>Uso eficiente dos recursos hídricos.</p>
-</div>
-
-<div class="card">
-<h3>🌦️ Previsão Climática</h3>
-<p>Tomada de decisões baseada em dados.</p>
 </div>
 
 </div>
 
 </section>
 
-<!-- TIMELINE -->
+<section id="sustentabilidade" class="section verde">
 
-<section id="timeline" class="section">
+<div class="container">
 
-<div class="section-title">
+<h2>Sustentabilidade</h2>
 
-<h2>Evolução da Agricultura</h2>
+<p>
+Produzir alimentos e preservar o meio ambiente devem caminhar juntos.
+</p>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>🌳 Reflorestamento</h3>
+
+<p>
+Áreas degradadas podem ser recuperadas através do plantio
+de árvores nativas.
+</p>
 
 </div>
 
-<div class="timeline">
+<div class="card">
+
+<h3>☀️ Energia Solar</h3>
+
+<p>
+Uma alternativa limpa e renovável para propriedades rurais.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>💦 Economia de Água</h3>
+
+<p>
+Tecnologias modernas ajudam a reduzir desperdícios e preservar
+os recursos hídricos.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="estatisticas" class="section">
+
+<div class="container">
+
+<h2>Números do Campo</h2>
+
+<div class="stats">
+
+<div class="stat-box">
+
+<h3 id="contador1">0</h3>
+
+<p>Toneladas Produzidas</p>
+
+</div>
+
+<div class="stat-box">
+
+<h3 id="contador2">0</h3>
+
+<p>Produtores Beneficiados</p>
+
+</div>
+
+<div class="stat-box">
+
+<h3 id="contador3">0</h3>
+
+<p>Árvores Preservadas</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section simulador">
+
+<div class="container">
+
+<h2>Simulador de Produção Rural</h2>
+
+<p>
+Escolha uma cultura e descubra uma estimativa de produção.
+</p>
+
+<select id="cultura">
+
+<option value="3">Milho</option>
+
+<option value="4">Soja</option>
+
+<option value="2">Feijão</option>
+
+<option value="5">Trigo</option>
+
+</select>
+
+<input
+type="number"
+id="hectares"
+placeholder="Quantidade de hectares">
+
+<button id="calcular">
+Calcular Produção
+</button>
+
+<div id="resultado"></div>
+
+</div>
+
+</section>
+<section class="section galeria">
+
+<div class="container">
+
+<h2>Galeria do Campo Brasileiro</h2>
+
+<p>
+A diversidade do campo brasileiro mostra a força da agricultura,
+da pecuária e das novas tecnologias.
+</p>
+
+<div class="galeria-grid">
+
+<div class="galeria-item">
+<img src="img/galeria1.jpg" alt="Plantação">
+<h3>Produção Agrícola</h3>
+</div>
+
+<div class="galeria-item">
+<img src="img/galeria2.jpg" alt="Colheita">
+<h3>Colheita Moderna</h3>
+</div>
+
+<div class="galeria-item">
+<img src="img/galeria3.jpg" alt="Drone">
+<h3>Monitoramento por Drone</h3>
+</div>
+
+<div class="galeria-item">
+<img src="img/galeria4.jpg" alt="Gado">
+<h3>Pecuária Sustentável</h3>
+</div>
+
+<div class="galeria-item">
+<img src="img/galeria5.jpg" alt="Trator">
+<h3>Máquinas Modernas</h3>
+</div>
+
+<div class="galeria-item">
+<img src="img/galeria6.jpg" alt="Campo">
+<h3>Preservação Ambiental</h3>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section timeline">
+
+<div class="container">
+
+<h2>Evolução da Agricultura</h2>
+
+<div class="timeline-container">
+
+<div class="timeline-item">
+<h3>1900</h3>
+<p>
+Grande parte do trabalho era realizado manualmente.
+</p>
+</div>
 
 <div class="timeline-item">
 <h3>1950</h3>
-<p>Agricultura Tradicional</p>
+<p>
+A mecanização começou a ganhar força.
+</p>
 </div>
 
 <div class="timeline-item">
 <h3>1980</h3>
-<p>Mecanização</p>
+<p>
+Novas técnicas aumentaram a produtividade.
+</p>
 </div>
 
 <div class="timeline-item">
 <h3>2000</h3>
-<p>Agricultura de Precisão</p>
+<p>
+A informática passou a fazer parte das propriedades.
+</p>
 </div>
 
 <div class="timeline-item">
-<h3>2025</h3>
-<p>Inteligência Artificial</p>
+<h3>2026</h3>
+<p>
+Drones, sensores e inteligência de dados transformam o campo.
+</p>
 </div>
 
-<div class="timeline-item">
-<h3>2035</h3>
-<p>AgroForte AI</p>
 </div>
 
 </div>
 
 </section>
 
-<!-- FORMULÁRIO -->
+<section class="section">
 
-<section id="seminario" class="section">
+<div class="container">
 
-<div class="seminario-container">
+<h2>Campo e Cidade Trabalhando Juntos</h2>
 
-<div class="seminario-info">
+<div class="cards">
 
-<h2>
+<div class="card">
 
-Venha conhecer melhor como a IA
-pode ser uma aliada do Campo
-
-</h2>
+<h3>🚚 Transporte</h3>
 
 <p>
-
-Participe do Seminário AgroForte AI 2035
-e descubra como a tecnologia está
-transformando a agricultura.
-
+Os alimentos produzidos no campo chegam às cidades através
+de uma ampla rede logística.
 </p>
 
 </div>
 
-<form class="registration-form">
+<div class="card">
 
-<input type="text" placeholder="Nome" required>
+<h3>🏪 Comércio</h3>
 
-<input type="email" placeholder="E-mail" required>
+<p>
+Mercados, feiras e restaurantes dependem diretamente da
+produção agrícola.
+</p>
 
-<input type="text" placeholder="Cidade">
+</div>
 
-<input type="text" placeholder="Estado">
+<div class="card">
 
-<input type="text" placeholder="País">
+<h3>👨‍👩‍👧‍👦 Sociedade</h3>
+
+<p>
+A população urbana é beneficiada diariamente pelos produtos
+oriundos do meio rural.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section depoimentos">
+
+<div class="container">
+
+<h2>Depoimentos</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>Produtor Rural</h3>
+
+<p>
+"A tecnologia me ajudou a produzir mais e reduzir desperdícios."
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Consumidor</h3>
+
+<p>
+"Ter alimentos de qualidade na mesa depende do trabalho de milhares de produtores."
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Estudante</h3>
+
+<p>
+"Aprender sobre a importância do campo mudou minha visão sobre o agronegócio."
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="quiz" class="section quiz-section">
+
+<div class="container">
+
+<h2>Quiz Agrinho</h2>
+
+<p>
+Teste seus conhecimentos.
+</p>
+
+<div class="quiz-box">
+
+<h3>
+1. Qual tecnologia é utilizada para monitorar lavouras?
+</h3>
+
+<label>
+<input type="radio" name="q1" value="certo">
+Drone
+</label>
+
+<label>
+<input type="radio" name="q1" value="errado">
+Televisão
+</label>
+
+<label>
+<input type="radio" name="q1" value="errado">
+Micro-ondas
+</label>
+
+<h3>
+2. O campo é responsável por:
+</h3>
+
+<label>
+<input type="radio" name="q2" value="certo">
+Produção de alimentos
+</label>
+
+<label>
+<input type="radio" name="q2" value="errado">
+Produção de satélites
+</label>
+
+<label>
+<input type="radio" name="q2" value="errado">
+Construção de aviões
+</label>
+
+<h3>
+3. Qual energia é considerada renovável?
+</h3>
+
+<label>
+<input type="radio" name="q3" value="certo">
+Solar
+</label>
+
+<label>
+<input type="radio" name="q3" value="errado">
+Carvão
+</label>
+
+<label>
+<input type="radio" name="q3" value="errado">
+Diesel
+</label>
+
+<h3>
+4. O que significa sustentabilidade?
+</h3>
+
+<label>
+<input type="radio" name="q4" value="certo">
+Produzir preservando recursos
+</label>
+
+<label>
+<input type="radio" name="q4" value="errado">
+Desmatar sem controle
+</label>
+
+<label>
+<input type="radio" name="q4" value="errado">
+Desperdiçar água
+</label>
+
+<h3>
+5. Qual equipamento auxilia na agricultura moderna?
+</h3>
+
+<label>
+<input type="radio" name="q5" value="certo">
+Trator inteligente
+</label>
+
+<label>
+<input type="radio" name="q5" value="errado">
+Videogame
+</label>
+
+<label>
+<input type="radio" name="q5" value="errado">
+Televisão analógica
+</label>
+
+<button id="corrigirQuiz">
+Ver Resultado
+</button>
+
+<div id="resultadoQuiz"></div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section faq">
+
+<div class="container">
+
+<h2>Perguntas Frequentes</h2>
+
+<div class="faq-item">
+<h3>O que é o Agrinho?</h3>
+<p>
+É um programa educacional que promove cidadania,
+sustentabilidade e valorização do campo.
+</p>
+</div>
+
+<div class="faq-item">
+<h3>Por que o campo é importante?</h3>
+<p>
+Porque produz alimentos, gera empregos e movimenta a economia.
+</p>
+</div>
+
+<div class="faq-item">
+<h3>Como a tecnologia ajuda?</h3>
+<p>
+Aumentando a produtividade e reduzindo desperdícios.
+</p>
+</div>
+
+<div class="faq-item">
+<h3>O que é agricultura sustentável?</h3>
+<p>
+É produzir respeitando os recursos naturais.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="contato" class="section contato">
+
+<div class="container">
+
+<h2>Deixe sua Opinião</h2>
+
+<form id="formComentario">
+
+<input
+type="text"
+id="nome"
+placeholder="Seu nome"
+required>
+
+<textarea
+id="comentario"
+placeholder="Escreva sua mensagem"
+required>
+</textarea>
 
 <button type="submit">
-
-INSCREVER-SE AGORA
-
+Enviar Comentário
 </button>
 
 </form>
+
+<div id="listaComentarios"></div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="container">
+
+<h2>Mensagem Final</h2>
+
+<p>
+O campo e a cidade dependem um do outro.
+Com tecnologia, sustentabilidade e cooperação,
+é possível construir um futuro melhor para todos.
+</p>
+
+<p>
+Valorizar o produtor rural é reconhecer a importância
+de quem trabalha diariamente para alimentar milhões de pessoas.
+</p>
 
 </div>
 
@@ -348,30 +796,30 @@ INSCREVER-SE AGORA
 
 </main>
 
-<footer>
+<footer class="footer">
 
-<h3>Referências Utilizadas</h3>
+<div class="container">
 
-<ul>
-
-<li>EMBRAPA</li>
-<li>World Food Prize</li>
-<li>Pesquisas sobre Inteligência Artificial na Agricultura</li>
-<li>Conteúdo fornecido para elaboração do projeto</li>
-
-</ul>
+<h2>Agrinho 2026</h2>
 
 <p>
-
-AGROFORTE AI 2035 •
-Conectando a inteligência tecnológica
-à terra de forma sustentável.
-
+Projeto desenvolvido para demonstrar a importância da conexão
+entre campo e cidade através da tecnologia e da sustentabilidade.
 </p>
+
+<p>
+Desenvolvido por Gustavo Quirino
+</p>
+
+<p>
+© 2026 - Todos os direitos reservados
+</p>
+
+</div>
 
 </footer>
 
-<script src="script.js"></script>
+<script src="js/script.js"></script>
 
 </body>
 </html>
