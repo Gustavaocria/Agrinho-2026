@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Agrinho 2026 - Simples</title>
+<title>Agrinho 2026 - Atualizado</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -18,6 +18,7 @@
         <li><a href="#sobre">Sobre</a></li>
         <li><a href="#tecnologia">Tecnologia</a></li>
         <li><a href="#sustentabilidade">Sustentabilidade</a></li>
+        <li><a href="#estatisticas">Estatísticas</a></li>
         <li><a href="#quiz">Quiz</a></li>
         <li><a href="#contato">Contato</a></li>
       </ul>
@@ -29,8 +30,8 @@
 <!-- Seção Inicial -->
 <section id="inicio" class="hero">
   <div class="container">
-    <h2>Conexão Campo e Cidade</h2>
-    <p>O campo produz, a cidade consome e a tecnologia conecta os dois mundos.</p>
+    <h2>Campo e Cidade: Uma Conexão que Alimenta o Futuro</h2>
+    <p>Todos os dias, milhares de produtores rurais trabalham para levar alimentos, matérias-primas e desenvolvimento para a sociedade.</p>
     <a href="#quiz" class="btn">Fazer Quiz</a>
   </div>
 </section>
@@ -39,7 +40,7 @@
 <section id="sobre" class="section">
   <div class="container">
     <h2>Sobre o Agrinho</h2>
-    <p>O Agrinho promove cidadania, sustentabilidade e valoriza o trabalho no campo.</p>
+    <p>O Agrinho promove cidadania, sustentabilidade e valoriza o trabalho no campo, conectando tecnologia e educação.</p>
   </div>
 </section>
 
@@ -81,6 +82,42 @@
   </div>
 </section>
 
+<!-- Estatísticas -->
+<section id="estatisticas" class="section">
+  <div class="container">
+    <h2>Números do Campo</h2>
+    <div class="cards">
+      <div class="card">
+        <h3 id="contador1">0</h3>
+        <p>Produtores Beneficiados</p>
+      </div>
+      <div class="card">
+        <h3 id="contador2">0</h3>
+        <p>Hectares Cultivados</p>
+      </div>
+      <div class="card">
+        <h3 id="contador3">0</h3>
+        <p>Toneladas Produzidas</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Galeria -->
+<section id="galeria" class="section">
+  <div class="container">
+    <h2>Minha Galeria Rural</h2>
+    <div class="galeria">
+      <div class="foto"><img src="img/foto1.jpg" alt="Foto 1"></div>
+      <div class="foto"><img src="img/foto2.jpg" alt="Foto 2"></div>
+      <div class="foto"><img src="img/foto3.jpg" alt="Foto 3"></div>
+      <div class="foto"><img src="img/foto4.jpg" alt="Foto 4"></div>
+      <div class="foto"><img src="img/foto5.jpg" alt="Foto 5"></div>
+      <div class="foto"><img src="img/foto6.jpg" alt="Foto 6"></div>
+    </div>
+  </div>
+</section>
+
 <!-- Quiz -->
 <section id="quiz" class="section">
   <div class="container">
@@ -95,6 +132,11 @@
       <label><input type="radio" name="q2" value="certo"> Produz alimentos</label>
       <label><input type="radio" name="q2" value="errado"> Produz eletrônicos</label>
       <label><input type="radio" name="q2" value="errado"> Produz carros</label>
+
+      <h3>3. Qual energia é renovável?</h3>
+      <label><input type="radio" name="q3" value="certo"> Solar</label>
+      <label><input type="radio" name="q3" value="errado"> Carvão</label>
+      <label><input type="radio" name="q3" value="errado"> Diesel</label>
 
       <button id="corrigirQuiz">Ver Resultado</button>
       <div id="resultadoQuiz"></div>
