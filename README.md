@@ -1,18 +1,18 @@
-# 🌾 Conexão Campo e Cidade
+# 🌾 Projeto Agrinho 2026 - Simples e Funcional
 
 ## 📖 Sobre o Projeto
 
 Este projeto foi desenvolvido para o Concurso Agrinho 2026 com o objetivo de demonstrar a importância da conexão entre o campo e a cidade.
 
-O campo é responsável pela produção de alimentos, matérias-primas e recursos essenciais para a sociedade. Já a cidade contribui com tecnologia, inovação, comércio e desenvolvimento econômico. A união desses dois ambientes é fundamental para o crescimento sustentável do país.
+O campo produz alimentos, matérias-primas e recursos essenciais. A cidade contribui com tecnologia, inovação e comércio. A tecnologia conecta esses dois mundos, garantindo um futuro sustentável.
 
-Este site apresenta informações sobre tecnologia no campo, sustentabilidade, produção agrícola e a importância dos produtores rurais para a vida das pessoas.
+O site apresenta informações sobre tecnologia no campo, sustentabilidade, estatísticas, quiz interativo e permite comentários do usuário.
 
 ---
 
 ## 🎯 Objetivo
 
-Mostrar como o campo e a cidade dependem um do outro e como a tecnologia pode ajudar a construir um futuro mais sustentável.
+Mostrar como o campo e a cidade dependem um do outro e como a tecnologia e a educação fortalecem essa relação.
 
 ---
 
@@ -27,87 +27,30 @@ Mostrar como o campo e a cidade dependem um do outro e como a tecnologia pode aj
 ## ⚙️ Funcionalidades
 
 - Navegação entre seções
-- Design responsivo para celulares e tablets
+- Design responsivo para computadores, tablets e smartphones
 - Modo escuro
-- Simulador de produção agrícola
-- Quiz interativo
+- Quiz interativo com pontuação e medalhas
 - Contadores animados
-- Sistema de comentários utilizando LocalStorage
-- Efeitos visuais e animações
-- Galeria de imagens
+- Sistema de comentários usando LocalStorage
+- Galeria para 6 fotos autorais
+- Efeitos visuais suaves em botões e cartões
 
 ---
 
 ## 📂 Estrutura do Projeto
 
 ```text
-agrinho/
+AGRINHO/
 │
 ├── index.html
+├── style.css
+├── script.js
 ├── README.md
-│
-├── css/
-│   └── style.css
-│
-├── js/
-│   └── script.js
-│
 └── img/
-    ├── campo.jpg
-    ├── galeria1.jpg
-    ├── galeria2.jpg
-    ├── galeria3.jpg
-    ├── galeria4.jpg
-    ├── galeria5.jpg
-    └── galeria6.jpg
-```
-
----
-
-## 🚜 Tema Agrinho
-
-O tema deste projeto aborda a relação entre o campo e a cidade, destacando:
-
-- Produção de alimentos
-- Sustentabilidade
-- Tecnologia agrícola
-- Desenvolvimento econômico
-- Qualidade de vida da população
-
----
-
-## 📸 Imagens
-
-As imagens utilizadas no projeto podem ser substituídas por fotografias autorais para valorizar a originalidade do trabalho.
-
----
-
-## 📱 Responsividade
-
-O site foi desenvolvido para funcionar corretamente em:
-
-- Computadores
-- Tablets
-- Smartphones
-
----
-
-## 🌱 Sustentabilidade
-
-O projeto incentiva práticas sustentáveis no meio rural e a utilização consciente dos recursos naturais para garantir a produção de alimentos para as futuras gerações.
-
----
-
-## 👨‍💻 Autor
-
-**Gustavo Quirino**
-
-Projeto desenvolvido para fins educacionais no Concurso Agrinho 2026.
-
----
-
-## ✅ Observações
-
-Todo o código foi organizado em arquivos separados (HTML, CSS e JavaScript) para facilitar a manutenção e a compreensão do projeto.
-
-O site utiliza recursos de interatividade para melhorar a experiência do usuário e demonstrar a aplicação prática das tecnologias estudadas.
+    ├─ campo.jpg
+    ├─ foto1.jpg
+    ├─ foto2.jpg
+    ├─ foto3.jpg
+    ├─ foto4.jpg
+    ├─ foto5.jpg
+    └─ foto6.jpg
