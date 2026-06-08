@@ -1,4 +1,6 @@
-/* Configurações gerais */
+/* ==========================
+   CONFIGURAÇÕES GERAIS
+========================== */
 
 *{
     margin:0;
@@ -17,15 +19,28 @@ body{
     transition:0.3s;
 }
 
-/* Container principal */
-
 .container{
     width:90%;
     max-width:1100px;
     margin:auto;
 }
 
-/* Cabeçalho */
+.section{
+    padding:60px 20px;
+}
+
+h2{
+    margin-bottom:20px;
+    color:#2e7d32;
+}
+
+p{
+    margin-bottom:15px;
+}
+
+/* ==========================
+   CABEÇALHO
+========================== */
 
 .header{
     background:#2e7d32;
@@ -33,6 +48,7 @@ body{
     padding:15px 0;
     position:sticky;
     top:0;
+    z-index:1000;
 }
 
 .header .container{
@@ -41,8 +57,6 @@ body{
     align-items:center;
     flex-wrap:wrap;
 }
-
-/* Menu */
 
 .menu{
     display:flex;
@@ -60,8 +74,6 @@ body{
     color:#c8e6c9;
 }
 
-/* Botão modo escuro */
-
 #darkMode{
     padding:8px 15px;
     border:none;
@@ -70,13 +82,13 @@ body{
     font-weight:bold;
 }
 
-/* Tela inicial */
+/* ==========================
+   HERO
+========================== */
 
 .hero{
-    background:linear-gradient(
-        rgba(0,0,0,0.5),
-        rgba(0,0,0,0.5)
-    );
+    background:linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+    url("../img/campo.jpg") center/cover no-repeat;
     color:white;
     text-align:center;
     padding:100px 20px;
@@ -92,33 +104,23 @@ body{
     margin-bottom:20px;
 }
 
-/* Botões */
-
-.btn{
+.hero .btn{
     display:inline-block;
     background:#4caf50;
     color:white;
     padding:12px 20px;
     border-radius:5px;
     text-decoration:none;
+    transition:.3s;
 }
 
-.btn:hover{
+.hero .btn:hover{
     background:#388e3c;
 }
 
-/* Seções */
-
-.section{
-    padding:60px 20px;
-}
-
-.section h2{
-    margin-bottom:20px;
-    color:#2e7d32;
-}
-
-/* Cartões */
+/* ==========================
+   CARTÕES
+========================== */
 
 .cards{
     display:flex;
@@ -133,13 +135,47 @@ body{
     padding:20px;
     border-radius:10px;
     box-shadow:0 2px 8px rgba(0,0,0,0.1);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
 }
 
 .card h3{
     margin-bottom:10px;
 }
 
-/* Quiz */
+/* ==========================
+   GALERIA
+========================== */
+
+.galeria{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));
+    gap:15px;
+    margin-top:20px;
+}
+
+.galeria .foto{
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+    transition:.3s;
+}
+
+.galeria .foto:hover{
+    transform:translateY(-5px);
+}
+
+.galeria img{
+    width:100%;
+    display:block;
+}
+
+/* ==========================
+   QUIZ
+========================== */
 
 .quiz-box{
     background:white;
@@ -163,12 +199,18 @@ body{
     cursor:pointer;
 }
 
+#corrigirQuiz:hover{
+    background:#1b5e20;
+}
+
 #resultadoQuiz{
     margin-top:15px;
     font-weight:bold;
 }
 
-/* Formulário */
+/* ==========================
+   FORMULÁRIO / CONTATO
+========================== */
 
 form{
     background:white;
@@ -177,8 +219,7 @@ form{
     box-shadow:0 2px 8px rgba(0,0,0,0.1);
 }
 
-input,
-textarea{
+input, textarea{
     width:100%;
     padding:10px;
     margin:8px 0 15px;
@@ -187,7 +228,8 @@ textarea{
 }
 
 textarea{
-    height:100px;
+    min-height:100px;
+    resize:vertical;
 }
 
 form button{
@@ -199,11 +241,13 @@ form button{
     cursor:pointer;
 }
 
-/* Comentários */
-
-#listaComentarios{
-    margin-top:20px;
+form button:hover{
+    background:#1b5e20;
 }
+
+/* ==========================
+   COMENTÁRIOS
+========================== */
 
 .comentario{
     background:white;
@@ -213,7 +257,14 @@ form button{
     box-shadow:0 2px 5px rgba(0,0,0,0.1);
 }
 
-/* Rodapé */
+.comentario h4{
+    color:#2e7d32;
+    margin-bottom:5px;
+}
+
+/* ==========================
+   RODAPÉ
+========================== */
 
 .footer{
     background:#2e7d32;
@@ -222,7 +273,9 @@ form button{
     padding:20px;
 }
 
-/* Modo escuro */
+/* ==========================
+   MODO ESCURO
+========================== */
 
 .dark{
     background:#121212;
@@ -232,19 +285,24 @@ form button{
 .dark .card,
 .dark .quiz-box,
 .dark form,
-.dark .comentario{
+.dark .comentario,
+.dark .galeria .foto{
     background:#1f1f1f;
     color:white;
 }
 
-.dark .section h2{
-    color:#81c784;
+.dark input,
+.dark textarea{
+    background:#2a2a2a;
+    color:white;
+    border:1px solid #444;
 }
 
-/* Responsividade */
+/* ==========================
+   RESPONSIVIDADE
+========================== */
 
 @media(max-width:768px){
-
     .header .container{
         flex-direction:column;
         gap:15px;
@@ -263,4 +321,13 @@ form button{
         flex-direction:column;
     }
 
+    .galeria{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+@media(max-width:480px){
+    .galeria{
+        grid-template-columns:1fr;
+    }
 }
