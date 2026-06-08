@@ -1,233 +1,246 @@
-const accordionHeaders = document.querySelectorAll(".accordion-header");
+// Botão para ativar o modo escuro
 
-accordionHeaders.forEach(header => {
-    header.addEventListener("click", () => {
-        const content = header.nextElementSibling;
+const darkMode = document.getElementById("darkMode");
 
-        document.querySelectorAll(".accordion-content").forEach(item => {
-            if (item !== content) {
-                item.style.display = "none";
-            }
-        });
+darkMode.addEventListener("click", () => {
 
-        if (content.style.display === "block") {
-            content.style.display = "none";
-        } else {
-            content.style.display = "block";
-        }
-    });
+    document.body.classList.toggle("dark");
+
+    if(document.body.classList.contains("dark")){
+        darkMode.textContent = "Modo Claro";
+    }else{
+        darkMode.textContent = "Modo Escuro";
+    }
+
 });
 
-let fontSize = 16;
 
-const increaseFont = document.getElementById("increaseFont");
-const decreaseFont = document.getElementById("decreaseFont");
+// Função dos contadores animados
 
-if (increaseFont) {
-    increaseFont.addEventListener("click", () => {
-        fontSize += 2;
-        document.body.style.fontSize = fontSize + "px";
-    });
-}
+function animarContador(id, valorFinal){
 
-if (decreaseFont) {
-    decreaseFont.addEventListener("click", () => {
-        if (fontSize > 12) {
-            fontSize -= 2;
-            document.body.style.fontSize = fontSize + "px";
+    let contador = 0;
+
+    const elemento =
+    document.getElementById(id);
+
+    const incremento =
+    Math.ceil(valorFinal / 100);
+
+    const intervalo =
+    setInterval(() => {
+
+        contador += incremento;
+
+        if(contador >= valorFinal){
+
+            contador = valorFinal;
+
+            clearInterval(intervalo);
+
         }
-    });
+
+        elemento.textContent =
+        contador.toLocaleString("pt-BR");
+
+    },20);
+
 }
 
-const toggleTheme = document.getElementById("toggleTheme");
 
-if (toggleTheme) {
-    toggleTheme.addEventListener("click", () => {
-        document.body.classList.toggle("dark-mode");
+// Inicia os contadores
+
+animarContador("contador1",15000);
+animarContador("contador2",3200);
+animarContador("contador3",80000);
+
+
+// Calcula a produção rural
+
+const calcular =
+document.getElementById("calcular");
+
+calcular.addEventListener("click", () => {
+
+    const cultura =
+    Number(document.getElementById("cultura").value);
+
+    const hectares =
+    Number(document.getElementById("hectares").value);
+
+    const resultado =
+    document.getElementById("resultado");
+
+    if(hectares <= 0 || isNaN(hectares)){
+
+        resultado.innerHTML =
+        "Digite uma quantidade válida de hectares.";
+
+        return;
+    }
+
+    const producao =
+    cultura * hectares;
+
+    resultado.innerHTML =
+    `Produção estimada: <strong>${producao} toneladas</strong>.`;
+
+});
+
+
+// Corrige as respostas do quiz
+
+const corrigirQuiz =
+document.getElementById("corrigirQuiz");
+
+corrigirQuiz.addEventListener("click", () => {
+
+    let pontos = 0;
+
+    const respostas =
+    document.querySelectorAll(
+    'input[type="radio"]:checked'
+    );
+
+    respostas.forEach((resposta) => {
+
+        if(resposta.value === "certo"){
+
+            pontos++;
+
+        }
+
     });
+
+    let medalha = "";
+
+    if(pontos <= 2){
+
+        medalha = "🥉 Medalha de Bronze";
+
+    }else if(pontos <= 4){
+
+        medalha = "🥈 Medalha de Prata";
+
+    }else{
+
+        medalha = "🥇 Medalha de Ouro";
+
+    }
+
+    document.getElementById(
+    "resultadoQuiz"
+    ).innerHTML =
+
+    `
+    Você acertou ${pontos} de 5 perguntas.<br><br>
+    ${medalha}
+    `;
+
+});
+
+
+// Área de comentários
+
+const formComentario =
+document.getElementById("formComentario");
+
+const listaComentarios =
+document.getElementById("listaComentarios");
+
+
+// Mostra os comentários salvos
+
+function carregarComentarios(){
+
+    const comentarios =
+    JSON.parse(
+    localStorage.getItem("comentarios")
+    ) || [];
+
+    listaComentarios.innerHTML = "";
+
+    comentarios.forEach((comentario) => {
+
+        const div =
+        document.createElement("div");
+
+        div.classList.add("comentario");
+
+        div.innerHTML = `
+        <h4>${comentario.nome}</h4>
+        <p>${comentario.texto}</p>
+        `;
+
+        listaComentarios.appendChild(div);
+
+    });
+
 }
 
-const readButton = document.getElementById("readPage");
-const stopButton = document.getElementById("stopReading");
+carregarComentarios();
 
-let utterance;
 
-if (readButton) {
-    readButton.addEventListener("click", () => {
+// Salva comentários novos
 
-        window.speechSynthesis.cancel();
+formComentario.addEventListener("submit",(e)=>{
 
-        const content = document.getElementById("mainContent");
+    e.preventDefault();
 
-        if (!content) return;
+    const nome =
+    document.getElementById("nome").value;
 
-        utterance = new SpeechSynthesisUtterance(
-            content.innerText
+    const comentario =
+    document.getElementById("comentario").value;
+
+    const comentarios =
+    JSON.parse(
+    localStorage.getItem("comentarios")
+    ) || [];
+
+    comentarios.push({
+
+        nome:nome,
+        texto:comentario
+
+    });
+
+    localStorage.setItem(
+        "comentarios",
+        JSON.stringify(comentarios)
+    );
+
+    formComentario.reset();
+
+    carregarComentarios();
+
+});
+
+
+// Informações extras sobre tecnologia
+
+const botoes =
+document.querySelectorAll(".info-btn");
+
+botoes.forEach((botao) => {
+
+    botao.addEventListener("click", () => {
+
+        alert(
+        "A tecnologia ajuda o produtor rural a aumentar a produtividade, economizar recursos e produzir de forma mais sustentável."
         );
 
-        utterance.lang = "pt-BR";
-        utterance.rate = 1;
-        utterance.pitch = 1;
-        utterance.volume = 1;
-
-        window.speechSynthesis.speak(utterance);
-    });
-}
-
-if (stopButton) {
-    stopButton.addEventListener("click", () => {
-        window.speechSynthesis.cancel();
-    });
-}
-
-const form = document.querySelector(".registration-form");
-
-if (form) {
-    form.addEventListener("submit", (e) => {
-        e.preventDefault();
-
-        const nome = form.querySelector('input[type="text"]');
-
-        let mensagem = "Inscrição realizada com sucesso!";
-
-        if (nome && nome.value.trim() !== "") {
-            mensagem =
-                "Obrigado, " +
-                nome.value +
-                "! Sua inscrição foi enviada com sucesso.";
-        }
-
-        alert(mensagem);
-
-        form.reset();
-    });
-}
-
-const counters = document.querySelectorAll(".counter");
-
-const animateCounter = counter => {
-
-    const target = +counter.dataset.target;
-
-    let current = 0;
-
-    const increment = target / 80;
-
-    const update = () => {
-
-        current += increment;
-
-        if (current < target) {
-
-            counter.innerText =
-                Math.floor(current) + "%";
-
-            requestAnimationFrame(update);
-
-        } else {
-
-            counter.innerText =
-                target + "%";
-
-        }
-    };
-
-    update();
-};
-
-const counterObserver = new IntersectionObserver(entries => {
-
-    entries.forEach(entry => {
-
-        if (entry.isIntersecting) {
-
-            animateCounter(entry.target);
-
-            counterObserver.unobserve(entry.target);
-
-        }
-
-    });
-
-}, {
-    threshold: 0.5
-});
-
-counters.forEach(counter => {
-    counterObserver.observe(counter);
-});
-
-const animatedElements = document.querySelectorAll(
-    ".card, .dashboard-card, .timeline-item, .imagem"
-);
-
-animatedElements.forEach(element => {
-
-    element.style.opacity = "0";
-    element.style.transform = "translateY(40px)";
-    element.style.transition =
-        "all 0.8s ease";
-
-});
-
-const revealObserver = new IntersectionObserver(entries => {
-
-    entries.forEach(entry => {
-
-        if (entry.isIntersecting) {
-
-            entry.target.style.opacity = "1";
-            entry.target.style.transform =
-                "translateY(0px)";
-
-        }
-
-    });
-
-}, {
-    threshold: 0.15
-});
-
-animatedElements.forEach(element => {
-    revealObserver.observe(element);
-});
-
-const navbarLinks = document.querySelectorAll("a[href^='#']");
-
-navbarLinks.forEach(link => {
-
-    link.addEventListener("click", e => {
-
-        const targetId =
-            link.getAttribute("href");
-
-        const target =
-            document.querySelector(targetId);
-
-        if (target) {
-
-            e.preventDefault();
-
-            target.scrollIntoView({
-                behavior: "smooth",
-                block: "start"
-            });
-
-        }
-
     });
 
 });
+
+
+// Mensagem de boas-vindas
 
 window.addEventListener("load", () => {
 
-    document.body.style.opacity = "0";
-
-    document.body.style.transition =
-        "opacity 1s ease";
-
-    setTimeout(() => {
-        document.body.style.opacity = "1";
-    }, 100);
+    console.log(
+    "Projeto Agrinho carregado com sucesso."
+    );
 
 });
