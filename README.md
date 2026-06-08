@@ -1,39 +1,113 @@
+# 🌾 Conexão Campo e Cidade
 
-Action: file_editor create /app/site/README.md --file-text "# Agro Forte — Futuro Sustentável
+## 📖 Sobre o Projeto
 
-Site estático sobre agronegócio sustentável, com tema claro/escuro alternativo e interações em JavaScript que manipulam o DOM.
+Este projeto foi desenvolvido para o Concurso Agrinho 2026 com o objetivo de demonstrar a importância da conexão entre o campo e a cidade.
 
-## 📁 Arquivos
+O campo é responsável pela produção de alimentos, matérias-primas e recursos essenciais para a sociedade. Já a cidade contribui com tecnologia, inovação, comércio e desenvolvimento econômico. A união desses dois ambientes é fundamental para o crescimento sustentável do país.
 
+Este site apresenta informações sobre tecnologia no campo, sustentabilidade, produção agrícola e a importância dos produtores rurais para a vida das pessoas.
+
+---
+
+## 🎯 Objetivo
+
+Mostrar como o campo e a cidade dependem um do outro e como a tecnologia pode ajudar a construir um futuro mais sustentável.
+
+---
+
+## 💻 Tecnologias Utilizadas
+
+- HTML5
+- CSS3
+- JavaScript
+
+---
+
+## ⚙️ Funcionalidades
+
+- Navegação entre seções
+- Design responsivo para celulares e tablets
+- Modo escuro
+- Simulador de produção agrícola
+- Quiz interativo
+- Contadores animados
+- Sistema de comentários utilizando LocalStorage
+- Efeitos visuais e animações
+- Galeria de imagens
+
+---
+
+## 📂 Estrutura do Projeto
+
+```text
+agrinho/
+│
+├── index.html
+├── README.md
+│
+├── css/
+│   └── style.css
+│
+├── js/
+│   └── script.js
+│
+└── img/
+    ├── campo.jpg
+    ├── galeria1.jpg
+    ├── galeria2.jpg
+    ├── galeria3.jpg
+    ├── galeria4.jpg
+    ├── galeria5.jpg
+    └── galeria6.jpg
 ```
-site/
-├── index.html   ← estrutura
-├── style.css    ← estilo (tema claro/escuro via CSS variables)
-└── script.js    ← interações (DOM)
-```
 
-## 🚀 Como publicar no GitHub Pages
+---
 
-1. Crie um repositório novo no GitHub (ex: `agro-forte`).
-2. Copie os 3 arquivos (`index.html`, `style.css`, `script.js`) para o repositório.
-3. Vá em **Settings → Pages → Source → Deploy from a branch → main / root**.
-4. Aguarde 1–2 minutos. O site ficará disponível em `https://seu-usuario.github.io/agro-forte/`.
+## 🚜 Tema Agrinho
 
-## ✨ Funcionalidades JS (manipulação de DOM)
+O tema deste projeto aborda a relação entre o campo e a cidade, destacando:
 
-- **Alternar tema claro/escuro** — botão no topo, com preferência salva no `localStorage`.
-- **Contador animado** — números das estatísticas sobem de 0 ao valor final, com easing.
-- **FAQ acordeão** — clica na pergunta, mostra/esconde a resposta.
-- **Formulário de contato** — feedback visual ao enviar (atualiza texto do status).
-- **Scroll suave** entre seções.
-- **Ano dinâmico** no rodapé.
+- Produção de alimentos
+- Sustentabilidade
+- Tecnologia agrícola
+- Desenvolvimento econômico
+- Qualidade de vida da população
 
-## 🎨 Tema
+---
 
-- **Escuro (padrão):** fundo verde-preto profundo + verde neon (`#4ade80`).
-- **Claro:** off-white esverdeado + verde forte (`#16a34a`).
-- Tipografia: **Space Grotesk** (texto) + **JetBrains Mono** (rótulos/código).
+## 📸 Imagens
 
-Pronto para colar e publicar. 🌱
-"
-Observation: Create successful: /app/site/README.md
+As imagens utilizadas no projeto podem ser substituídas por fotografias autorais para valorizar a originalidade do trabalho.
+
+---
+
+## 📱 Responsividade
+
+O site foi desenvolvido para funcionar corretamente em:
+
+- Computadores
+- Tablets
+- Smartphones
+
+---
+
+## 🌱 Sustentabilidade
+
+O projeto incentiva práticas sustentáveis no meio rural e a utilização consciente dos recursos naturais para garantir a produção de alimentos para as futuras gerações.
+
+---
+
+## 👨‍💻 Autor
+
+**Gustavo Quirino**
+
+Projeto desenvolvido para fins educacionais no Concurso Agrinho 2026.
+
+---
+
+## ✅ Observações
+
+Todo o código foi organizado em arquivos separados (HTML, CSS e JavaScript) para facilitar a manutenção e a compreensão do projeto.
+
+O site utiliza recursos de interatividade para melhorar a experiência do usuário e demonstrar a aplicação prática das tecnologias estudadas.
