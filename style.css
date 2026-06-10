@@ -1,339 +1,492 @@
-:root{
-    --azul:#0057b8;
-    --celeste:#00c8ff;
-    --verde:#1f9b4c;
-    --ouro:#ffd700;
-    --preto:#111;
-    --branco:#ffffff;
-    --raio:20px;
-}
+/* =========================
+   RESET
+========================= */
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
 }
 
-html{
-    scroll-behavior:smooth;
+:root{
+
+--azul:#0f4c81;
+--azul-claro:#4fc3f7;
+--azul-metal:#1976d2;
+--verde:#2e7d32;
+--amarelo:#ffd54f;
+--ouro:#ffb300;
+--preto:#111;
+--branco:#fff;
+
+--radius:18px;
+
+--shadow:
+0 10px 30px rgba(0,0,0,.15);
+
+--transition:.3s;
 }
 
 body{
-    font-family:Segoe UI, Arial, sans-serif;
-    background:#f5faff;
-    color:#111;
-    line-height:1.7;
-    transition:.3s;
+font-family:Arial, Helvetica, sans-serif;
+background:#f8fafc;
+color:#222;
+line-height:1.7;
+transition:.4s;
 }
 
-/* HERO */
+/* =========================
+HEADER
+========================= */
+
+header{
+position:sticky;
+top:0;
+z-index:999;
+background:white;
+box-shadow:var(--shadow);
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+padding:20px 8%;
+}
+
+.logo{
+font-size:1.7rem;
+font-weight:bold;
+color:var(--verde);
+}
+
+nav{
+display:flex;
+gap:25px;
+flex-wrap:wrap;
+}
+
+nav a{
+text-decoration:none;
+color:#222;
+font-weight:600;
+transition:var(--transition);
+}
+
+nav a:hover{
+color:var(--verde);
+}
+
+/* =========================
+HERO
+========================= */
 
 .hero{
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    padding:2rem;
+min-height:90vh;
 
-    background:
-    linear-gradient(
-    135deg,
-    #003366,
-    #0057b8,
-    #00c8ff,
-    #1f9b4c
-    );
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
 
-    color:white;
-}
+padding:50px 20px;
 
-.hero-content{
-    max-width:900px;
+background:
+linear-gradient(
+135deg,
+#0f4c81,
+#1976d2,
+#4fc3f7
+);
+
+color:white;
 }
 
 .hero h1{
-    font-size:clamp(2.5rem,8vw,5.5rem);
-    margin-bottom:1rem;
+font-size:clamp(2.5rem,6vw,5rem);
+margin-bottom:20px;
 }
 
 .hero p{
-    font-size:1.2rem;
-    margin-bottom:2rem;
+max-width:800px;
+margin:auto;
+font-size:1.2rem;
 }
-
-.badge{
-    display:inline-block;
-    padding:.8rem 1.2rem;
-    margin-bottom:1rem;
-
-    border-radius:999px;
-
-    background:
-    rgba(255,255,255,.2);
-
-    backdrop-filter:blur(10px);
-}
-
-/* BOTÃO */
 
 .btn{
-    display:inline-block;
+display:inline-block;
+margin-top:30px;
 
-    background:var(--ouro);
+background:var(--ouro);
+color:black;
 
-    color:black;
+padding:15px 35px;
+border-radius:50px;
 
-    padding:1rem 1.5rem;
+text-decoration:none;
+font-weight:bold;
 
-    border:none;
-
-    border-radius:14px;
-
-    cursor:pointer;
-
-    font-weight:bold;
-
-    text-decoration:none;
-
-    transition:.3s;
+transition:.3s;
 }
 
 .btn:hover{
-    transform:translateY(-3px);
+transform:translateY(-5px);
 }
 
-/* LAYOUT */
-
-.layout{
-    display:grid;
-
-    grid-template-columns:
-    2fr 1fr;
-
-    gap:2rem;
-
-    padding:3rem;
-}
-
-/* CARDS */
-
-.card{
-    background:white;
-
-    padding:1.5rem;
-
-    border-radius:var(--raio);
-
-    box-shadow:
-    0 10px 25px rgba(0,0,0,.12);
-
-    margin-bottom:1.5rem;
-}
-
-.destaque{
-    border-left:
-    6px solid var(--verde);
-}
-
-/* GALERIA */
-
-.gallery{
-    display:grid;
-
-    grid-template-columns:
-    repeat(
-    auto-fit,
-    minmax(220px,1fr)
-    );
-
-    gap:1rem;
-
-    margin:2rem 0;
-}
-
-.gallery img{
-
-    width:100%;
-
-    height:250px;
-
-    object-fit:cover;
-
-    border-radius:20px;
-
-    box-shadow:
-    0 10px 20px rgba(0,0,0,.15);
-
-    transition:.3s;
-}
-
-.gallery img:hover{
-    transform:
-    translateY(-6px);
-}
-
-/* ACCORDION */
-
-.accordion button{
-
-    width:100%;
-
-    padding:1rem;
-
-    margin-top:.8rem;
-
-    border:none;
-
-    border-radius:12px;
-
-    background:var(--azul);
-
-    color:white;
-
-    cursor:pointer;
-
-    font-size:1rem;
-}
-
-.accordion div{
-
-    display:none;
-
-    padding:1rem;
-
-    margin-top:.3rem;
-
-    background:white;
-
-    border-radius:12px;
-
-    box-shadow:
-    0 5px 15px rgba(0,0,0,.08);
-}
-
-/* ESTATÍSTICAS */
+/* =========================
+STATS
+========================= */
 
 .stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 
-    display:grid;
+gap:25px;
 
-    grid-template-columns:
-    repeat(3,1fr);
-
-    gap:1rem;
-
-    margin:2rem 0;
+padding:70px 8%;
 }
 
-.stat{
-
-    text-align:center;
-
-    color:white;
-
-    padding:1.5rem;
-
-    border-radius:20px;
-
-    background:
-    linear-gradient(
-    135deg,
-    var(--azul),
-    var(--celeste)
-    );
+.stat-card{
+background:white;
+padding:30px;
+border-radius:var(--radius);
+box-shadow:var(--shadow);
+text-align:center;
 }
 
-.stat h3{
-    font-size:2rem;
+.stat-card h3{
+font-size:2rem;
+color:var(--verde);
+margin-bottom:10px;
 }
 
-/* FORM */
+/* =========================
+SECTIONS
+========================= */
 
-input,
-textarea{
-
-    width:100%;
-
-    padding:1rem;
-
-    margin:.5rem 0;
-
-    border-radius:12px;
-
-    border:1px solid #ccc;
+section{
+padding:80px 8%;
 }
 
-textarea{
-    min-height:120px;
+section h2{
+font-size:clamp(2rem,4vw,3rem);
+margin-bottom:30px;
+text-align:center;
 }
 
-/* SIDEBAR */
-
-.sidebar{
-    position:sticky;
-    top:20px;
-    height:max-content;
+.content-card{
+background:white;
+padding:35px;
+border-radius:var(--radius);
+box-shadow:var(--shadow);
 }
 
-/* ACESSIBILIDADE */
+/* =========================
+BENEFITS
+========================= */
 
-.acessibilidade{
-
-    position:fixed;
-
-    right:15px;
-
-    bottom:15px;
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:.5rem;
+.benefits-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
 }
 
-.acessibilidade button{
+.benefit-card{
+background:white;
+padding:25px;
+border-radius:var(--radius);
+box-shadow:var(--shadow);
 
-    padding:.8rem;
-
-    border:none;
-
-    border-radius:10px;
-
-    cursor:pointer;
-
-    box-shadow:
-    0 5px 15px rgba(0,0,0,.15);
+transition:.3s;
 }
 
-/* MODO ESCURO */
-
-.dark{
-    background:#111;
-    color:#eee;
+.benefit-card:hover{
+transform:translateY(-8px);
 }
 
-.dark .card,
-.dark .accordion div{
-    background:#222;
-    color:#eee;
+.benefit-card h3{
+color:var(--verde);
+margin-bottom:15px;
 }
 
-/* RESPONSIVO */
+/* =========================
+GALERIA
+========================= */
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+.image-card{
+overflow:hidden;
+border-radius:20px;
+box-shadow:var(--shadow);
+background:white;
+}
+
+.image-card img{
+width:100%;
+height:280px;
+object-fit:cover;
+display:block;
+
+transition:.4s;
+}
+
+.image-card:hover img{
+transform:scale(1.08);
+}
+
+/* =========================
+ACCORDION
+========================= */
+
+.accordion-btn{
+width:100%;
+padding:20px;
+
+border:none;
+cursor:pointer;
+
+font-size:1rem;
+font-weight:bold;
+
+margin-top:10px;
+
+background:var(--azul-metal);
+color:white;
+
+border-radius:12px;
+}
+
+.accordion-content{
+display:none;
+background:white;
+padding:20px;
+margin-top:5px;
+border-radius:12px;
+box-shadow:var(--shadow);
+}
+
+/* =========================
+SEMINÁRIO
+========================= */
+
+.seminario-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+align-items:center;
+}
+
+.form-box{
+background:white;
+padding:35px;
+border-radius:var(--radius);
+box-shadow:var(--shadow);
+}
+
+.form-box form{
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+.form-box input{
+padding:15px;
+border:1px solid #ddd;
+border-radius:10px;
+}
+
+.form-box button{
+padding:15px;
+border:none;
+
+background:var(--verde);
+color:white;
+
+font-size:1rem;
+font-weight:bold;
+
+border-radius:10px;
+cursor:pointer;
+}
+
+/* =========================
+COMENTÁRIOS
+========================= */
+
+.comment-box{
+background:white;
+padding:30px;
+border-radius:var(--radius);
+box-shadow:var(--shadow);
+}
+
+.comment-box textarea{
+width:100%;
+height:180px;
+
+padding:15px;
+
+border-radius:10px;
+border:1px solid #ccc;
+
+resize:none;
+}
+
+.comment-box button{
+margin-top:15px;
+
+padding:15px 30px;
+
+border:none;
+border-radius:10px;
+
+background:var(--verde);
+color:white;
+
+cursor:pointer;
+}
+
+/* =========================
+REFERÊNCIAS
+========================= */
+
+.references ul{
+max-width:900px;
+margin:auto;
+}
+
+.references li{
+margin-bottom:10px;
+}
+
+/* =========================
+RODAPÉ
+========================= */
+
+footer{
+background:#111;
+color:white;
+text-align:center;
+padding:50px 20px;
+}
+
+/* =========================
+ACESSIBILIDADE
+========================= */
+
+.accessibility-box{
+position:fixed;
+right:20px;
+bottom:20px;
+
+display:flex;
+flex-direction:column;
+gap:10px;
+
+z-index:999;
+}
+
+.accessibility-box button{
+width:55px;
+height:55px;
+
+border:none;
+border-radius:50%;
+
+background:var(--verde);
+color:white;
+
+font-weight:bold;
+cursor:pointer;
+
+box-shadow:var(--shadow);
+}
+
+/* =========================
+TOPO
+========================= */
+
+#topBtn{
+position:fixed;
+
+left:20px;
+bottom:20px;
+
+width:60px;
+height:60px;
+
+border:none;
+border-radius:50%;
+
+background:var(--azul);
+color:white;
+
+font-size:22px;
+cursor:pointer;
+
+box-shadow:var(--shadow);
+}
+
+/* =========================
+MODO ESCURO
+========================= */
+
+.dark-mode{
+background:#0d1117;
+color:white;
+}
+
+.dark-mode header,
+.dark-mode .content-card,
+.dark-mode .benefit-card,
+.dark-mode .stat-card,
+.dark-mode .accordion-content,
+.dark-mode .form-box,
+.dark-mode .comment-box{
+background:#161b22;
+color:white;
+}
+
+.dark-mode nav a{
+color:white;
+}
+
+/* =========================
+RESPONSIVO
+========================= */
 
 @media(max-width:900px){
 
-    .layout{
-        grid-template-columns:1fr;
-    }
+.seminario-grid{
+grid-template-columns:1fr;
+}
 
-    .stats{
-        grid-template-columns:1fr;
-    }
+header{
+flex-direction:column;
+gap:15px;
+}
 
-    .sidebar{
-        position:static;
-    }
+nav{
+justify-content:center;
+}
+
+}
+
+@media(max-width:600px){
+
+.hero h1{
+font-size:2.4rem;
+}
+
+.stats,
+.gallery,
+.benefits-grid{
+grid-template-columns:1fr;
+}
 
 }
