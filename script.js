@@ -1,55 +1,195 @@
+// ======================
+// ACCORDION
+// ======================
+
 document.querySelectorAll(".accordion button").forEach(btn => {
+
     btn.addEventListener("click", () => {
-        const c = btn.nextElementSibling;
-        c.style.display = c.style.display === "block" ? "none" : "block";
+
+        const conteudo = btn.nextElementSibling;
+
+        if (conteudo.style.display === "block") {
+
+            conteudo.style.display = "none";
+
+        } else {
+
+            conteudo.style.display = "block";
+
+        }
+
     });
+
 });
 
-let fonte = 16;
+// ======================
+// TAMANHO DA FONTE
+// ======================
+
+let tamanhoFonte = 16;
+
+const maisFonte = document.getElementById("maisFonte");
+const menosFonte = document.getElementById("menosFonte");
 
 maisFonte.addEventListener("click", () => {
-    document.body.style.fontSize = (++fonte) + "px";
+
+    tamanhoFonte++;
+
+    document.body.style.fontSize =
+    tamanhoFonte + "px";
+
 });
 
 menosFonte.addEventListener("click", () => {
-    document.body.style.fontSize = (--fonte) + "px";
+
+    if (tamanhoFonte > 12) {
+
+        tamanhoFonte--;
+
+        document.body.style.fontSize =
+        tamanhoFonte + "px";
+
+    }
+
 });
+
+// ======================
+// MODO ESCURO
+// ======================
+
+const tema =
+document.getElementById("tema");
 
 tema.addEventListener("click", () => {
+
     document.body.classList.toggle("dark");
+
 });
 
+// ======================
+// LEITURA POR VOZ
+// ======================
+
+const ler =
+document.getElementById("ler");
+
+const parar =
+document.getElementById("parar");
+
 ler.addEventListener("click", () => {
+
     speechSynthesis.cancel();
 
-    const texto = document.getElementById("main-content").innerText;
+    const texto =
+    document.getElementById("main-content")
+    .innerText;
 
-    const fala = new SpeechSynthesisUtterance(texto);
+    const fala =
+    new SpeechSynthesisUtterance(texto);
+
     fala.lang = "pt-BR";
 
+    fala.rate = 1;
+
+    fala.pitch = 1;
+
     speechSynthesis.speak(fala);
+
 });
 
 parar.addEventListener("click", () => {
+
     speechSynthesis.cancel();
+
 });
 
-const lista = document.getElementById("listaComentarios");
+// ======================
+// COMENTÁRIOS
+// ======================
+
+const comentario =
+document.getElementById("comentario");
+
+const enviarComentario =
+document.getElementById("enviarComentario");
+
+const listaComentarios =
+document.getElementById("listaComentarios");
 
 enviarComentario.addEventListener("click", () => {
-    const txt = document.getElementById("comentario").value.trim();
 
-    if (!txt) return;
+    const texto =
+    comentario.value.trim();
 
-    const p = document.createElement("p");
-    p.textContent = txt;
+    if (texto === "") return;
 
-    p.style.padding = "10px";
-    p.style.marginTop = "10px";
-    p.style.background = "#f0f0f0";
-    p.style.borderRadius = "10px";
+    const novoComentario =
+    document.createElement("div");
 
-    lista.prepend(p);
+    novoComentario.style.background =
+    "#f5f5f5";
 
-    document.getElementById("comentario").value = "";
+    novoComentario.style.padding =
+    "12px";
+
+    novoComentario.style.marginTop =
+    "10px";
+
+    novoComentario.style.borderRadius =
+    "12px";
+
+    novoComentario.style.borderLeft =
+    "4px solid #1f9b4c";
+
+    novoComentario.textContent =
+    texto;
+
+    listaComentarios.prepend(
+    novoComentario
+    );
+
+    comentario.value = "";
+
+});
+
+// ======================
+// ANIMAÇÃO AO ROLAR
+// ======================
+
+const cards =
+document.querySelectorAll(
+".card, .stat"
+);
+
+const observar =
+new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+
+            entry.target.style.opacity =
+            "1";
+
+            entry.target.style.transform =
+            "translateY(0)";
+
+        }
+
+    });
+
+});
+
+cards.forEach(card => {
+
+    card.style.opacity = "0";
+
+    card.style.transform =
+    "translateY(40px)";
+
+    card.style.transition =
+    "all 0.8s ease";
+
+    observar.observe(card);
+
 });
