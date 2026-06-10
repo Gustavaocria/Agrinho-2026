@@ -3,168 +3,79 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Agrinho 2026 - Atualizado</title>
+<title>AgroForte - Futuro Sustentável</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<!-- Cabeçalho e Navegação -->
-<header class="header">
-  <div class="container">
-    <h1>🌾 Agrinho 2026</h1>
-    <nav>
-      <ul class="menu">
-        <li><a href="#inicio">Início</a></li>
-        <li><a href="#sobre">Sobre</a></li>
-        <li><a href="#tecnologia">Tecnologia</a></li>
-        <li><a href="#sustentabilidade">Sustentabilidade</a></li>
-        <li><a href="#estatisticas">Estatísticas</a></li>
-        <li><a href="#quiz">Quiz</a></li>
-        <li><a href="#contato">Contato</a></li>
-      </ul>
-    </nav>
-    <button id="darkMode">Modo Escuro</button>
+<header class="hero">
+  <div class="hero-content">
+    <h1>AgroForte: Futuro Sustentável</h1>
+    <p>Tecnologia agrícola, Inteligência Artificial e inovação impulsionando o campo brasileiro.</p>
+    <a href="#conteudo" class="btn">Explorar Conteúdo</a>
   </div>
 </header>
 
-<!-- Seção Inicial -->
-<section id="inicio" class="hero">
-  <div class="container">
-    <h2>Campo e Cidade: Uma Conexão que Alimenta o Futuro</h2>
-    <p>Todos os dias, milhares de produtores rurais trabalham para levar alimentos, matérias-primas e desenvolvimento para a sociedade.</p>
-    <a href="#quiz" class="btn">Fazer Quiz</a>
-  </div>
+<main id="main-content">
+<section id="conteudo" class="grid">
+<div>
+<h2>Tecnologia agrícola reforça papel do Brasil</h2>
+<div class="card">
+<p>O Brasil se destaca ao unir produtividade, sustentabilidade, IA, biotecnologia e inovação agrícola.</p>
+</div>
+
+<div class="accordion">
+<button class="acc-btn">Benefícios da IA no Campo</button>
+<div class="acc-content">
+<ul>
+<li>Otimização de recursos</li>
+<li>Monitoramento de culturas</li>
+<li>Previsibilidade e gestão de riscos</li>
+<li>Automação agrícola</li>
+<li>Melhoria da qualidade</li>
+<li>Sustentabilidade</li>
+</ul>
+</div>
+</div>
+
+<div class="images">
+<div class="img-placeholder">[Imagem 1]</div>
+<div class="img-placeholder">[Imagem 2]</div>
+<div class="img-placeholder">[Imagem 3]</div>
+</div>
+
+<div class="card">
+<h3>Comentários</h3>
+<textarea placeholder="Deixe seu comentário"></textarea>
+<button class="btn">Enviar</button>
+</div>
+
+<div class="card">
+<h3>Referências</h3>
+<p>https://www.bemagro.com/beneficios-inteligencia-artificial-no-campo/</p>
+<p>https://www.agrolink.com.br/noticias/o-campo-conectado--como-a-ia-vem-transformando-o-agro_514351.html</p>
+</div>
+</div>
+
+<aside class="form-card">
+<h3>Venha conhecer melhor como a IA pode ser uma aliada do Campo</h3>
+<p>Inscreva-se no nosso seminário on-line.</p>
+<input placeholder="Nome">
+<input placeholder="E-mail">
+<input placeholder="Cidade">
+<input placeholder="Estado">
+<input placeholder="País">
+<button class="btn">Inscrever-se</button>
+</aside>
 </section>
+</main>
 
-<!-- Sobre -->
-<section id="sobre" class="section">
-  <div class="container">
-    <h2>Sobre o Agrinho</h2>
-    <p>O Agrinho promove cidadania, sustentabilidade e valoriza o trabalho no campo, conectando tecnologia e educação.</p>
-  </div>
-</section>
-
-<!-- Tecnologia -->
-<section id="tecnologia" class="section">
-  <div class="container">
-    <h2>Tecnologia no Campo</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>🚜 Tratores Inteligentes</h3>
-        <p>Ajudam o produtor a trabalhar de forma mais eficiente.</p>
-      </div>
-      <div class="card">
-        <h3>🚁 Drones</h3>
-        <p>Monitoram plantações e detectam problemas rapidamente.</p>
-      </div>
-      <div class="card">
-        <h3>📱 Aplicativos</h3>
-        <p>Auxiliam no planejamento e controle da produção agrícola.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Sustentabilidade -->
-<section id="sustentabilidade" class="section">
-  <div class="container">
-    <h2>Sustentabilidade</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>💧 Economia de Água</h3>
-        <p>Reduz desperdício e preserva os recursos naturais.</p>
-      </div>
-      <div class="card">
-        <h3>🌱 Reflorestamento</h3>
-        <p>Recupera áreas degradadas e preserva o meio ambiente.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Estatísticas -->
-<section id="estatisticas" class="section">
-  <div class="container">
-    <h2>Números do Campo</h2>
-    <div class="cards">
-      <div class="card">
-        <h3 id="contador1">0</h3>
-        <p>Produtores Beneficiados</p>
-      </div>
-      <div class="card">
-        <h3 id="contador2">0</h3>
-        <p>Hectares Cultivados</p>
-      </div>
-      <div class="card">
-        <h3 id="contador3">0</h3>
-        <p>Toneladas Produzidas</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Galeria -->
-<section id="galeria" class="section">
-  <div class="container">
-    <h2>Minha Galeria Rural</h2>
-    <div class="galeria">
-      <div class="foto"><img src="img/foto1.jpg" alt="Foto 1"></div>
-      <div class="foto"><img src="img/foto2.jpg" alt="Foto 2"></div>
-      <div class="foto"><img src="img/foto3.jpg" alt="Foto 3"></div>
-      <div class="foto"><img src="img/foto4.jpg" alt="Foto 4"></div>
-      <div class="foto"><img src="img/foto5.jpg" alt="Foto 5"></div>
-      <div class="foto"><img src="img/foto6.jpg" alt="Foto 6"></div>
-    </div>
-  </div>
-</section>
-
-<!-- Quiz -->
-<section id="quiz" class="section">
-  <div class="container">
-    <h2>Quiz Agrinho</h2>
-    <div class="quiz-box">
-      <h3>1. Qual tecnologia ajuda a monitorar plantações?</h3>
-      <label><input type="radio" name="q1" value="certo"> Drone</label>
-      <label><input type="radio" name="q1" value="errado"> Televisão</label>
-      <label><input type="radio" name="q1" value="errado"> Rádio</label>
-
-      <h3>2. O campo é importante porque:</h3>
-      <label><input type="radio" name="q2" value="certo"> Produz alimentos</label>
-      <label><input type="radio" name="q2" value="errado"> Produz eletrônicos</label>
-      <label><input type="radio" name="q2" value="errado"> Produz carros</label>
-
-      <h3>3. Qual energia é renovável?</h3>
-      <label><input type="radio" name="q3" value="certo"> Solar</label>
-      <label><input type="radio" name="q3" value="errado"> Carvão</label>
-      <label><input type="radio" name="q3" value="errado"> Diesel</label>
-
-      <button id="corrigirQuiz">Ver Resultado</button>
-      <div id="resultadoQuiz"></div>
-    </div>
-  </div>
-</section>
-
-<!-- Contato -->
-<section id="contato" class="section">
-  <div class="container">
-    <h2>Deixe seu comentário</h2>
-    <form id="formComentario">
-      <label for="nome">Nome:</label>
-      <input type="text" id="nome" placeholder="Seu nome" required>
-      <label for="comentario">Comentário:</label>
-      <textarea id="comentario" placeholder="Escreva sua mensagem" required></textarea>
-      <button type="submit">Enviar</button>
-    </form>
-    <div id="listaComentarios"></div>
-  </div>
-</section>
-
-<!-- Rodapé -->
-<footer class="footer">
-  <div class="container">
-    <p>Projeto Agrinho 2026 - Gustavo Quirino</p>
-  </div>
-</footer>
+<div class="accessibility">
+<button id="increase">A+</button>
+<button id="decrease">A-</button>
+<button id="theme">🌙</button>
+<button id="read">🔊</button>
+<button id="stop">⏹</button>
+</div>
 
 <script src="script.js"></script>
 </body>
