@@ -1,151 +1,110 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Agro Forte Futuro Sustentável</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AgroForte AI - Startup Dashboard</title>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header class="header">
-  <div class="logo">🌱 AgroForte 2026</div>
-  <nav>
-    <a href="#conteudo">Conteúdo</a>
-    <a href="#ia">IA no Campo</a>
-    <a href="#inscricao">Inscrição</a>
-    <a href="#comentarios">Comentários</a>
-  </nav>
+<!-- LOGIN SCREEN -->
+<div id="loginScreen" class="login">
+  <div class="login-box">
+    <h2>🌱 AgroForte AI</h2>
+    <p>Entre no sistema inteligente do campo</p>
+
+    <input id="user" placeholder="Usuário">
+    <input id="pass" type="password" placeholder="Senha">
+
+    <button id="loginBtn">Entrar</button>
+  </div>
+</div>
+
+<!-- APP -->
+<div id="app" class="app hidden">
+
+<header class="topbar">
+  <h1>AgroForte AI Dashboard</h1>
+  <div class="status">🟢 Sistema online</div>
 </header>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-content">
-    <h1>Agro Forte, Futuro Sustentável</h1>
-    <p>IA, tecnologia e sustentabilidade transformando o agronegócio brasileiro em potência global.</p>
+<!-- SIDEBAR -->
+<aside class="sidebar">
+  <button onclick="show('dash')">📊 Dashboard</button>
+  <button onclick="show('data')">🌾 Dados</button>
+  <button onclick="show('ai')">🧠 IA</button>
+  <button onclick="show('chat')">💬 Comunidade</button>
+  <button id="theme">🌙 Tema</button>
+</aside>
 
-    <button id="btnLer">🔊 Ouvir página</button>
-  </div>
-</section>
+<main>
 
-<main id="mainContent">
-
-<!-- CONTEÚDO -->
-<section id="conteudo" class="section">
-  <h2>Tecnologia agrícola reforça papel do Brasil</h2>
+<!-- DASHBOARD -->
+<section id="dash" class="section active">
 
   <div class="cards">
 
     <div class="card">
-      <h3>🌍 Cenário global</h3>
-      <p>A agricultura sustentável ganha espaço no debate mundial sobre alimentos, energia e clima.</p>
+      <h3>🌱 Produtividade</h3>
+      <canvas id="c1"></canvas>
     </div>
 
     <div class="card">
-      <h3>🧬 Biotecnologia</h3>
-      <p>Microrganismos substituem fertilizantes químicos e reduzem custos da produção agrícola.</p>
+      <h3>💧 Água</h3>
+      <canvas id="c2"></canvas>
     </div>
 
     <div class="card">
-      <h3>🏆 Reconhecimento</h3>
-      <p>O Brasil se destaca globalmente como potência em inovação agrícola sustentável.</p>
+      <h3>🌎 Carbono</h3>
+      <canvas id="c3"></canvas>
     </div>
 
   </div>
+
 </section>
 
-<!-- IMAGENS -->
-<section class="section">
-  <h2>Agro do Futuro</h2>
+<!-- DATA -->
+<section id="data" class="section">
 
-  <div class="grid">
+<h2>📡 Dados Agrícolas em Tempo Real</h2>
 
-    <div class="imagem">
-      <img src="Foto1.png" alt="Agro tecnologia 1">
-    </div>
+<div id="apiBox" class="api"></div>
 
-    <div class="imagem">
-      <img src="Foto2.png" alt="Agro tecnologia 2">
-    </div>
-
-    <div class="imagem">
-      <img src="Foto3.png" alt="Agro tecnologia 3">
-    </div>
-
-  </div>
 </section>
 
 <!-- IA -->
-<section id="ia" class="section">
-  <h2>Inteligência Artificial no Campo</h2>
+<section id="ai" class="section">
 
-  <div class="accordion">
+<h2>🧠 Inteligência Artificial</h2>
 
-    <button class="acc-btn">🌱 Otimização de recursos</button>
-    <div class="panel">IA reduz água, fertilizantes e aumenta eficiência produtiva.</div>
+<div class="grid">
 
-    <button class="acc-btn">🚜 Automação agrícola</button>
-    <div class="panel">Máquinas autônomas realizam plantio e colheita com precisão.</div>
+<div class="box">Monitoramento de lavouras</div>
+<div class="box">Previsão climática IA</div>
+<div class="box">Detecção de pragas</div>
+<div class="box">Automação agrícola</div>
 
-    <button class="acc-btn">📡 Monitoramento inteligente</button>
-    <div class="panel">Drones e sensores analisam plantações em tempo real.</div>
-
-  </div>
-</section>
-
-<!-- INSCRIÇÃO -->
-<section id="inscricao" class="section form-area">
-
-  <div class="form-box">
-    <h2>Seminário IA no Agro</h2>
-
-    <p>Venha conhecer como a IA está revolucionando o campo.</p>
-
-    <input id="nome" placeholder="Nome">
-    <input id="email" placeholder="E-mail">
-    <input id="cidade" placeholder="Cidade">
-    <input id="estado" placeholder="Estado">
-    <input id="pais" placeholder="País">
-
-    <button id="enviar">Inscrever-se</button>
-    <p id="msg"></p>
-  </div>
+</div>
 
 </section>
 
-<!-- COMENTÁRIOS -->
-<section id="comentarios" class="section">
-  <h2>Comentários</h2>
+<!-- CHAT -->
+<section id="chat" class="section">
 
-  <div class="comment-box">
-    <textarea id="comentario" placeholder="Escreva seu comentário..."></textarea>
-    <button id="addComment">Enviar</button>
+<h2>💬 Comunidade Agro</h2>
 
-    <div id="listaComentarios"></div>
-  </div>
+<textarea id="msg"></textarea>
+<button id="send">Enviar</button>
+
+<div id="list"></div>
+
 </section>
 
 </main>
 
-<!-- ACESSIBILIDADE -->
-<div class="access">
-  <button id="aMais">A+</button>
-  <button id="aMenos">A-</button>
-  <button id="dark">🌙</button>
-  <button id="ler">🔊 Ler</button>
-  <button id="parar">⏹</button>
 </div>
-
-<footer>
-  <p>Referências:</p>
-  <p>https://www.bemagro.com/beneficios-inteligencia-artificial-no-campo/</p>
-  <p>https://www.agrolink.com.br/noticias/o-campo-conectado--como-a-ia-vem-transformando-o-agro_514351.html</p>
-
-  <p class="footer-final">
-    AgroFuturo 2026 ° Conectando a inteligência tecnologia à terra de forma sustentável
-  </p>
-</footer>
 
 <script src="script.js"></script>
 </body>
