@@ -455,3 +455,49 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
+const darkBtn =
+document.getElementById("darkModeBtn");
+
+darkBtn.addEventListener("click",()=>{
+
+document.body.classList.toggle("dark-mode");
+
+}); 
+let zoom = 100;
+
+document
+.getElementById("zoomMais")
+.addEventListener("click",()=>{
+
+zoom += 10;
+
+document.body.style.fontSize =
+zoom + "%";
+
+});
+
+document
+.getElementById("zoomMenos")
+.addEventListener("click",()=>{
+
+zoom -= 10;
+
+document.body.style.fontSize =
+zoom + "%";
+
+}); 
+document
+.getElementById("lerPagina")
+.addEventListener("click",()=>{
+
+const texto =
+document.body.innerText;
+
+const fala =
+new SpeechSynthesisUtterance(texto);
+
+fala.lang = "pt-BR";
+
+speechSynthesis.speak(fala);
+
+});
