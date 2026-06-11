@@ -2,153 +2,378 @@
 <html lang="pt-BR">
 
 <head>
-
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+<title>AgroForte 2026 | Inteligência que Cultiva o Futuro</title>
 
-<title>
-AGROFORTE 2026 | Futuro Sustentável
-</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-<link rel="stylesheet"
-href="style.css">
+<style>
 
-<link rel="preconnect"
-href="https://fonts.googleapis.com">
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+}
 
-<link rel="preconnect"
-href="https://fonts.gstatic.com"
-crossorigin>
+html{
+scroll-behavior:smooth;
+}
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
-rel="stylesheet">
+body{
+background:#050816;
+color:white;
+overflow-x:hidden;
+}
+
+/* HERO */
+
+.hero{
+
+height:100vh;
+position:relative;
+display:flex;
+justify-content:center;
+align-items:center;
+overflow:hidden;
+
+}
+
+.hero img{
+
+position:absolute;
+width:100%;
+height:100%;
+object-fit:cover;
+
+}
+
+.overlay{
+
+position:absolute;
+inset:0;
+
+background:
+linear-gradient(
+180deg,
+rgba(0,0,0,.55),
+rgba(0,0,0,.75)
+);
+
+}
+
+header{
+
+position:fixed;
+width:100%;
+top:0;
+left:0;
+
+padding:20px 8%;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+backdrop-filter:blur(12px);
+
+z-index:1000;
+
+}
+
+.logo{
+
+font-size:2rem;
+font-weight:900;
+
+}
+
+.logo span{
+
+color:#22c55e;
+
+}
+
+nav{
+
+display:flex;
+gap:30px;
+
+}
+
+nav a{
+
+color:white;
+text-decoration:none;
+font-weight:600;
+
+transition:.3s;
+
+}
+
+nav a:hover{
+
+color:#22c55e;
+
+}
+
+.hero-content{
+
+position:relative;
+z-index:5;
+
+text-align:center;
+
+max-width:900px;
+
+padding:20px;
+
+}
+
+.badge{
+
+display:inline-block;
+
+padding:10px 20px;
+
+background:
+rgba(255,255,255,.08);
+
+border:
+1px solid rgba(255,255,255,.1);
+
+border-radius:999px;
+
+margin-bottom:25px;
+
+backdrop-filter:blur(15px);
+
+}
+
+.hero h1{
+
+font-size:
+clamp(3rem,7vw,7rem);
+
+font-weight:900;
+
+line-height:1.1;
+
+}
+
+.hero h1 span{
+
+display:block;
+
+background:
+linear-gradient(
+90deg,
+#22c55e,
+#06b6d4
+);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+
+}
+
+.hero p{
+
+font-size:1.2rem;
+
+margin-top:25px;
+
+line-height:1.8;
+
+color:#dbeafe;
+
+}
+
+.buttons{
+
+display:flex;
+gap:20px;
+
+justify-content:center;
+
+margin-top:40px;
+
+flex-wrap:wrap;
+
+}
+
+.btn{
+
+padding:18px 40px;
+
+border-radius:50px;
+
+text-decoration:none;
+
+font-weight:700;
+
+transition:.4s;
+
+}
+
+.primary{
+
+background:
+linear-gradient(
+90deg,
+#22c55e,
+#06b6d4
+);
+
+color:white;
+
+}
+
+.primary:hover{
+
+transform:translateY(-5px);
+
+}
+
+.secondary{
+
+border:
+1px solid rgba(255,255,255,.2);
+
+color:white;
+
+}
+
+/* DASHBOARD */
+
+.dashboard{
+
+padding:120px 8%;
+
+background:#081120;
+
+}
+
+.dashboard-title{
+
+text-align:center;
+
+margin-bottom:60px;
+
+}
+
+.dashboard-title h2{
+
+font-size:3rem;
+
+}
+
+.cards{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(250px,1fr));
+
+gap:25px;
+
+}
+
+.card{
+
+background:
+rgba(255,255,255,.05);
+
+border:
+1px solid rgba(255,255,255,.08);
+
+border-radius:25px;
+
+padding:40px;
+
+text-align:center;
+
+backdrop-filter:blur(15px);
+
+transition:.4s;
+
+}
+
+.card:hover{
+
+transform:translateY(-10px);
+
+}
+
+.card h3{
+
+font-size:4rem;
+
+color:#06b6d4;
+
+margin-bottom:10px;
+
+}
+
+.card p{
+
+font-size:1.1rem;
+
+color:#cbd5e1;
+
+}
+
+/* RESPONSIVO */
+
+@media(max-width:900px){
+
+nav{
+display:none;
+}
+
+.hero h1{
+font-size:3rem;
+}
+
+}
+
+</style>
 
 </head>
 
 <body>
 
-<!-- LOADER -->
-
-<div id="loader">
-
-<div class="loader-logo">
-
-<span class="logo-green">
-AGRO
-</span>
-
-<span class="logo-blue">
-FORTE
-</span>
-
-</div>
-
-<div class="loader-bar">
-
-<div class="loader-progress">
-
-</div>
-
-</div>
-
-</div>
-
-<!-- BACKGROUND PARTICLES -->
-
-<div id="particles">
-
-</div>
-
-<!-- HEADER -->
-
-<header id="header">
-
-<div class="container">
+<header>
 
 <div class="logo">
 
-<span class="logo-green">
-AGRO
-</span>
-
-<span class="logo-blue">
-FORTE
-</span>
-
-<span class="logo-year">
-2026
-</span>
+AGRO<span>FORTE</span> 2026
 
 </div>
 
 <nav>
 
-<ul>
-
-<li>
-<a href="#inicio">
-Início
-</a>
-</li>
-
-<li>
-<a href="#sobre">
-Sobre
-</a>
-</li>
-
-<li>
-<a href="#tecnologia">
-Tecnologia
-</a>
-</li>
-
-<li>
-<a href="#ia">
-IA no Campo
-</a>
-</li>
-
-<li>
-<a href="#galeria">
-Galeria
-</a>
-</li>
-
-<li>
-<a href="#seminario">
-Seminário
-</a>
-</li>
-
-</ul>
+<a href="#">Início</a>
+<a href="#">Tecnologia</a>
+<a href="#">IA</a>
+<a href="#">Galeria</a>
+<a href="#">Contato</a>
 
 </nav>
 
-</div>
-
 </header>
 
-<!-- HERO -->
+<section class="hero">
 
-<section
-id="inicio"
-class="hero">
+<img src="Foto1.png" alt="Paisagem Rural">
 
-<div class="hero-overlay">
-
-</div>
-
-<img
-src="Foto1.png"
-class="hero-image"
-alt="Paisagem sustentável">
+<div class="overlay"></div>
 
 <div class="hero-content">
 
-<div class="hero-chip">
+<div class="badge">
 
 AGRINHO PARANÁ 2026
 
@@ -156,12 +381,11 @@ AGRINHO PARANÁ 2026
 
 <h1>
 
-AGROFORTE
+INTELIGÊNCIA QUE
 
 <span>
 
-FUTURO
-SUSTENTÁVEL
+CULTIVA O FUTURO
 
 </span>
 
@@ -169,25 +393,23 @@ SUSTENTÁVEL
 
 <p>
 
-A tecnologia agrícola reforça o papel
-do Brasil na construção de um futuro
-mais inteligente, produtivo e sustentável.
+A tecnologia agrícola reforça o papel do Brasil
+na construção de um futuro sustentável,
+produtivo e conectado através da Inteligência Artificial.
 
 </p>
 
-<div class="hero-buttons">
+<div class="buttons">
 
-<a href="#sobre"
-class="btn-primary">
+<a href="#dashboard" class="btn primary">
 
-EXPLORAR SITE
+EXPLORAR PROJETO
 
 </a>
 
-<a href="#seminario"
-class="btn-secondary">
+<a href="#" class="btn secondary">
 
-PARTICIPAR
+SAIBA MAIS
 
 </a>
 
@@ -195,451 +417,53 @@ PARTICIPAR
 
 </div>
 
-<div class="scroll-indicator">
-
-<span>
-
-Role para baixo
-
-</span>
-
-</div>
-
 </section>
 
-<!-- DASHBOARD -->
+<section id="dashboard" class="dashboard">
 
-<section
-class="dashboard">
+<div class="dashboard-title">
 
-<div class="container">
-
-<div class="dashboard-card">
-
-<h2
-class="counter"
-data-target="95">
-
-0
-
-</h2>
-
-<p>
-
-Eficiência Agrícola
-
-</p>
+<h2>Painel do Futuro</h2>
 
 </div>
 
-<div class="dashboard-card">
+<div class="cards">
 
-<h2
-class="counter"
-data-target="80">
+<div class="card">
 
-0
+<h3>95%</h3>
 
-</h2>
-
-<p>
-
-Economia de Água
-
-</p>
+<p>Eficiência Agrícola</p>
 
 </div>
 
-<div class="dashboard-card">
+<div class="card">
 
-<h2
-class="counter"
-data-target="70">
+<h3>80%</h3>
 
-0
-
-</h2>
-
-<p>
-
-Redução de Custos
-
-</p>
+<p>Economia de Água</p>
 
 </div>
 
-<div class="dashboard-card">
+<div class="card">
 
-<h2
-class="counter"
-data-target="60">
+<h3>70%</h3>
 
-0
+<p>Redução de Custos</p>
 
-</h2>
+</div>
 
-<p>
+<div class="card">
 
-Menos Desperdício
+<h3>60%</h3>
 
-</p>
+<p>Menos Desperdício</p>
 
 </div>
 
 </div>
 
 </section>
-
-<!-- SOBRE -->
-
-<section
-id="sobre"
-class="section">
-
-<div class="container">
-
-<div class="section-title">
-
-<span>
-
-INOVAÇÃO
-
-</span>
-
-<h2>
-
-Brasil:
-Potência Agrícola Inteligente
-
-</h2>
-
-</div>
-
-<div class="about-grid">
-
-<div class="about-text">
-
-<p>
-
-A agricultura sustentável ganha espaço
-no debate global em um momento de pressão
-sobre custos, segurança alimentar,
-energia e mudanças climáticas.
-
-</p>
-
-<p>
-
-O Brasil se destaca por unir produtividade,
-tecnologia, pesquisa científica e
-capacidade de adaptação no campo.
-
-</p>
-
-<p>
-
-Enquanto temas como Inteligência Artificial,
-guerras comerciais e a nova corrida energética
-dominam discussões internacionais,
-uma revolução silenciosa acontece
-nas lavouras brasileiras.
-
-</p>
-
-</div>
-
-<div class="about-card">
-
-<h3>
-
-🌎 Impacto Global
-
-</h3>
-
-<p>
-
-O país assume papel estratégico
-na produção sustentável de alimentos
-para o mundo.
-
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- MARIANGELA -->
-
-<section
-class="mariangela">
-
-<div class="container">
-
-<div class="mariangela-box">
-
-<div class="mariangela-content">
-
-<span>
-
-WORLD FOOD PRIZE
-
-</span>
-
-<h2>
-
-Mariangela Hungria
-
-</h2>
-
-<p>
-
-Reconhecida internacionalmente
-por suas pesquisas envolvendo
-microrganismos capazes de reduzir
-a dependência de fertilizantes químicos.
-
-</p>
-
-<p>
-
-Sua contribuição coloca o Brasil
-como referência mundial em inovação
-agrícola sustentável.
-
-</p>
-
-</div>
-
-<div class="mariangela-image">
-
-<img
-src="Foto2.png"
-alt="Tecnologia agrícola">
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- IA -->
-
-<section
-id="ia"
-class="ia-section">
-
-<div class="container">
-
-<div class="section-title">
-
-<span>
-
-INTELIGÊNCIA ARTIFICIAL
-
-</span>
-
-<h2>
-
-Como a IA está transformando o campo
-
-</h2>
-
-</div>
-
-<div class="ia-grid">
-
-<div class="ia-card">
-
-<div class="ia-icon">
-
-🚁
-
-</div>
-
-<h3>
-
-Monitoramento por Drones
-
-</h3>
-
-<p>
-
-Identificação rápida de problemas
-e análise precisa das lavouras.
-
-</p>
-
-</div>
-
-<div class="ia-card">
-
-<div class="ia-icon">
-
-🌱
-
-</div>
-
-<h3>
-
-Sensores Inteligentes
-
-</h3>
-
-<p>
-
-Coleta de dados em tempo real
-sobre solo e plantações.
-
-</p>
-
-</div>
-
-<div class="ia-card">
-
-<div class="ia-icon">
-
-📊
-
-</div>
-
-<h3>
-
-Big Data
-
-</h3>
-
-<p>
-
-Processamento de grandes volumes
-de informações agrícolas.
-
-</p>
-
-</div>
-
-<div class="ia-card">
-
-<div class="ia-icon">
-
-🤖
-
-</div>
-
-<h3>
-
-Automação
-
-</h3>
-
-<p>
-
-Máquinas autônomas
-e agricultura de precisão.
-
-</p>
-
-</div>
-
-<div class="ia-card">
-
-<div class="ia-icon">
-
-🌦
-
-</div>
-
-<h3>
-
-Previsão Climática
-
-</h3>
-
-<p>
-
-Antecipação de eventos
-meteorológicos extremos.
-
-</p>
-
-</div>
-
-<div class="ia-card">
-
-<div class="ia-icon">
-
-🌍
-
-</div>
-
-<h3>
-
-Sustentabilidade
-
-</h3>
-
-<p>
-
-Menor desperdício
-e maior eficiência.
-
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- GALERIA -->
-
-<section
-id="galeria"
-class="gallery">
-
-<div class="container">
-
-<div class="section-title">
-
-<span>
-
-GALERIA
-
-</span>
-
-<h2>
-
-Paisagens do Agro Brasileiro
-
-</h2>
-
-</div>
-
-<div class="gallery-grid">
-
-<img src="Foto1.png" alt="">
-<img src="Foto2.png" alt="">
-<img src="Foto3.png" alt="">
-<img src="Foto4.png" alt="">
-<img src="Foto5.png" alt="">
-<img src="Foto6.png" alt="">
-
-</div>
-
-</div>
-
-</section>
-
-<!-- CONTINUA -->
-
-<script src="script.js"></script>
 
 </body>
 </html>
