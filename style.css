@@ -955,3 +955,28 @@ font-size:3rem;
     }
 
 }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    line-height:1.7;
+    overflow-x:hidden;
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+h1,h2,h3{
+    line-height:1.2;
+}
+
+p{
+    margin-bottom:15px;
+}
