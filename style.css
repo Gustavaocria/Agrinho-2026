@@ -784,3 +784,66 @@ font-size:3rem;
     display:block;
     margin:auto;
 }
+.seminario-section{
+    padding: 100px 0;
+    background: #f5f5f5;
+}
+
+.seminario-grid{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    align-items: flex-start;
+}
+
+.seminario-info{
+    flex: 1;
+    min-width: 300px;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333;
+}
+
+.seminario-form{
+    flex: 1;
+    min-width: 300px;
+}
+
+.seminario-form form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.seminario-form input,
+.seminario-form textarea{
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.seminario-form button{
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    background: #2a7a2a;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.seminario-form button:hover{
+    background: #1f5c1f;
+}
+
+/* Responsivo para telas pequenas */
+@media(max-width: 900px){
+    .seminario-grid{
+        flex-direction: column;
+        gap: 30px;
+    }
+}
