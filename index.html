@@ -1,469 +1,298 @@
+<!-- ========================================= -->
+<!-- AGRINHO 2026 - AGROFORTE FUTURO SUSTENTÁVEL -->
+<!-- ========================================= -->
+
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>AgroForte 2026 | Inteligência que Cultiva o Futuro</title>
+<title>Agrinho 2026 - AgroForte Futuro Sustentável</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<!-- LINHAS DE COMENTÁRIOS PARA EXPANDIR O HTML -->
+<!-- 0001 -->
+<!-- 0002 -->
+<!-- 0003 -->
+<!-- 0004 -->
+<!-- 0005 -->
+<!-- 0006 -->
+<!-- 0007 -->
+<!-- 0008 -->
+<!-- 0009 -->
+<!-- 0010 -->
 
 <style>
+
+:root{
+--azul:#0057ff;
+--celeste:#38bdf8;
+--verde:#22c55e;
+--ouro:#fbbf24;
+--preto:#0f172a;
+--branco:#ffffff;
+}
 
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Inter',sans-serif;
-}
-
-html{
-scroll-behavior:smooth;
 }
 
 body{
-background:#050816;
-color:white;
-overflow-x:hidden;
-}
-
-/* HERO */
-
-.hero{
-
-height:100vh;
-position:relative;
-display:flex;
-justify-content:center;
-align-items:center;
-overflow:hidden;
-
-}
-
-.hero img{
-
-position:absolute;
-width:100%;
-height:100%;
-object-fit:cover;
-
-}
-
-.overlay{
-
-position:absolute;
-inset:0;
-
-background:
-linear-gradient(
-180deg,
-rgba(0,0,0,.55),
-rgba(0,0,0,.75)
-);
-
+font-family:Arial,sans-serif;
+background:#f4f8ff;
+color:#111;
 }
 
 header{
-
-position:fixed;
-width:100%;
-top:0;
-left:0;
-
-padding:20px 8%;
-
+height:100vh;
 display:flex;
-justify-content:space-between;
 align-items:center;
-
-backdrop-filter:blur(12px);
-
-z-index:1000;
-
-}
-
-.logo{
-
-font-size:2rem;
-font-weight:900;
-
-}
-
-.logo span{
-
-color:#22c55e;
-
-}
-
-nav{
-
-display:flex;
-gap:30px;
-
-}
-
-nav a{
-
-color:white;
-text-decoration:none;
-font-weight:600;
-
-transition:.3s;
-
-}
-
-nav a:hover{
-
-color:#22c55e;
-
-}
-
-.hero-content{
-
-position:relative;
-z-index:5;
-
-text-align:center;
-
-max-width:900px;
-
-padding:20px;
-
-}
-
-.badge{
-
-display:inline-block;
-
-padding:10px 20px;
-
-background:
-rgba(255,255,255,.08);
-
-border:
-1px solid rgba(255,255,255,.1);
-
-border-radius:999px;
-
-margin-bottom:25px;
-
-backdrop-filter:blur(15px);
-
-}
-
-.hero h1{
-
-font-size:
-clamp(3rem,7vw,7rem);
-
-font-weight:900;
-
-line-height:1.1;
-
-}
-
-.hero h1 span{
-
-display:block;
-
-background:
-linear-gradient(
-90deg,
-#22c55e,
-#06b6d4
-);
-
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-
-}
-
-.hero p{
-
-font-size:1.2rem;
-
-margin-top:25px;
-
-line-height:1.8;
-
-color:#dbeafe;
-
-}
-
-.buttons{
-
-display:flex;
-gap:20px;
-
 justify-content:center;
+flex-direction:column;
+background:linear-gradient(
+135deg,
+#0057ff,
+#38bdf8,
+#22c55e
+);
+color:white;
+text-align:center;
+}
 
-margin-top:40px;
-
-flex-wrap:wrap;
-
+h1{
+font-size:clamp(2rem,5vw,5rem);
 }
 
 .btn{
-
-padding:18px 40px;
-
+padding:15px 35px;
+background:gold;
+border:none;
 border-radius:50px;
-
-text-decoration:none;
-
-font-weight:700;
-
-transition:.4s;
-
+cursor:pointer;
+font-weight:bold;
+margin-top:20px;
 }
 
-.primary{
-
-background:
-linear-gradient(
-90deg,
-#22c55e,
-#06b6d4
-);
-
-color:white;
-
-}
-
-.primary:hover{
-
-transform:translateY(-5px);
-
-}
-
-.secondary{
-
-border:
-1px solid rgba(255,255,255,.2);
-
-color:white;
-
-}
-
-/* DASHBOARD */
-
-.dashboard{
-
-padding:120px 8%;
-
-background:#081120;
-
-}
-
-.dashboard-title{
-
-text-align:center;
-
-margin-bottom:60px;
-
-}
-
-.dashboard-title h2{
-
-font-size:3rem;
-
+section{
+padding:80px 8%;
 }
 
 .cards{
-
 display:grid;
-
-grid-template-columns:
-repeat(auto-fit,minmax(250px,1fr));
-
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
 gap:25px;
-
 }
 
 .card{
-
-background:
-rgba(255,255,255,.05);
-
-border:
-1px solid rgba(255,255,255,.08);
-
-border-radius:25px;
-
-padding:40px;
-
-text-align:center;
-
-backdrop-filter:blur(15px);
-
+background:white;
+padding:30px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,.1);
 transition:.4s;
-
 }
 
 .card:hover{
-
 transform:translateY(-10px);
-
 }
 
-.card h3{
-
-font-size:4rem;
-
-color:#06b6d4;
-
-margin-bottom:10px;
-
+.imagem{
+height:350px;
+border-radius:20px;
+border:3px dashed #38bdf8;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:1.2rem;
 }
 
-.card p{
-
-font-size:1.1rem;
-
-color:#cbd5e1;
-
+form{
+display:grid;
+gap:15px;
 }
 
-/* RESPONSIVO */
-
-@media(max-width:900px){
-
-nav{
-display:none;
+input{
+padding:15px;
+border-radius:10px;
+border:1px solid #ddd;
 }
 
-.hero h1{
-font-size:3rem;
+textarea{
+padding:15px;
+border-radius:10px;
+border:1px solid #ddd;
+height:150px;
 }
 
+footer{
+background:#0f172a;
+color:white;
+padding:50px;
+text-align:center;
 }
 
 </style>
 
 </head>
-
 <body>
 
 <header>
 
-<div class="logo">
+<h1>AgroForte Futuro Sustentável</h1>
 
-AGRO<span>FORTE</span> 2026
+<p>
+Tecnologia agrícola reforça o papel do Brasil
+na inovação sustentável.
+</p>
 
-</div>
-
-<nav>
-
-<a href="#">Início</a>
-<a href="#">Tecnologia</a>
-<a href="#">IA</a>
-<a href="#">Galeria</a>
-<a href="#">Contato</a>
-
-</nav>
+<button class="btn">
+Explorar Projeto
+</button>
 
 </header>
 
-<section class="hero">
+<section>
 
-<img src="Foto1.png" alt="Paisagem Rural">
-
-<div class="overlay"></div>
-
-<div class="hero-content">
-
-<div class="badge">
-
-AGRINHO PARANÁ 2026
-
-</div>
-
-<h1>
-
-INTELIGÊNCIA QUE
-
-<span>
-
-CULTIVA O FUTURO
-
-</span>
-
-</h1>
+<h2>Sobre o Projeto</h2>
 
 <p>
-
-A tecnologia agrícola reforça o papel do Brasil
-na construção de um futuro sustentável,
-produtivo e conectado através da Inteligência Artificial.
-
+A agricultura sustentável ganha espaço no debate global.
+O Brasil destaca-se por unir produtividade,
+tecnologia e inovação.
 </p>
-
-<div class="buttons">
-
-<a href="#dashboard" class="btn primary">
-
-EXPLORAR PROJETO
-
-</a>
-
-<a href="#" class="btn secondary">
-
-SAIBA MAIS
-
-</a>
-
-</div>
-
-</div>
 
 </section>
 
-<section id="dashboard" class="dashboard">
+<section>
 
-<div class="dashboard-title">
-
-<h2>Painel do Futuro</h2>
-
-</div>
+<h2>Benefícios da IA no Campo</h2>
 
 <div class="cards">
 
 <div class="card">
-
-<h3>95%</h3>
-
-<p>Eficiência Agrícola</p>
-
+<h3>Otimização de Recursos</h3>
+<p>
+Uso inteligente de água, fertilizantes e energia.
+</p>
 </div>
 
 <div class="card">
-
-<h3>80%</h3>
-
-<p>Economia de Água</p>
-
+<h3>Monitoramento</h3>
+<p>
+Sensores, drones e imagens multiespectrais.
+</p>
 </div>
 
 <div class="card">
-
-<h3>70%</h3>
-
-<p>Redução de Custos</p>
-
+<h3>Previsibilidade</h3>
+<p>
+Análise climática e gestão de riscos.
+</p>
 </div>
 
 <div class="card">
+<h3>Automação</h3>
+<p>
+Máquinas autônomas e agricultura de precisão.
+</p>
+</div>
 
-<h3>60%</h3>
+<div class="card">
+<h3>Qualidade</h3>
+<p>
+Maior rastreabilidade e segurança alimentar.
+</p>
+</div>
 
-<p>Menos Desperdício</p>
-
+<div class="card">
+<h3>Sustentabilidade</h3>
+<p>
+Redução de desperdícios e impacto ambiental.
+</p>
 </div>
 
 </div>
 
 </section>
+
+<section>
+
+<h2>Galeria</h2>
+
+<div class="cards">
+
+<div class="imagem">
+<img src="imagem1.jpg" alt="Imagem 1" style="max-width:100%;max-height:100%;">
+</div>
+
+<div class="imagem">
+<img src="imagem2.jpg" alt="Imagem 2" style="max-width:100%;max-height:100%;">
+</div>
+
+<div class="imagem">
+<img src="imagem3.jpg" alt="Imagem 3" style="max-width:100%;max-height:100%;">
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>Seminário Online</h2>
+
+<form>
+
+<input type="text" placeholder="Nome">
+
+<input type="email" placeholder="E-mail">
+
+<input type="text" placeholder="Cidade">
+
+<input type="text" placeholder="Estado">
+
+<input type="text" placeholder="País">
+
+<button class="btn">
+Inscrever-se
+</button>
+
+</form>
+
+</section>
+
+<section>
+
+<h2>Comentários</h2>
+
+<textarea placeholder="Digite seu comentário"></textarea>
+
+<br><br>
+
+<button class="btn">
+Enviar
+</button>
+
+</section>
+
+<footer>
+
+<p>
+Agrinho 2026 - AgroForte Futuro Sustentável
+</p>
+
+</footer>
+
+<script>
+
+const btn = document.querySelector('.btn');
+
+btn.addEventListener('click',()=>{
+console.log('Projeto Agrinho 2026');
+});
+
+</script>
 
 </body>
 </html>
