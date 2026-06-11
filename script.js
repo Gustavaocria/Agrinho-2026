@@ -1,7 +1,6 @@
-/* ==========================================
+/* 
    AGROFORTE 2026
-   SCRIPT PREMIUM
-========================================== */
+ */
 
 document.addEventListener("DOMContentLoaded", () => {
 
