@@ -1,250 +1,226 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NVIDIA NEURAL OPS // CORE SYSTEM</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroFuturo 2026 - Tecnologia e Sustentabilidade no Campo</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<canvas id="bg"></canvas>
-
-<!-- LOGIN LAYER -->
-<div id="login" class="login">
-  <div class="login-box">
-    <h1>🧠 NEURAL OPS CORE</h1>
-    <p>Restricted Access — Authorized Personnel Only</p>
-
-    <input id="user" placeholder="Operator ID">
-    <input id="pass" type="password" placeholder="Neural Authentication Key">
-
-    <button id="enter">Initialize System</button>
-
-    <small>Status: SECURE ENCRYPTION ACTIVE</small>
-  </div>
-</div>
-
-<!-- MAIN APP -->
-<div id="app" class="app hidden">
-
-<!-- TOP BAR -->
-<header class="topbar">
-  <div class="brand">
-    🟢 NVIDIA NEURAL OPERATIONS CENTER
-  </div>
-
-  <div class="status">
-    SYSTEM ONLINE • LATENCY 1.2ms • SYNC OK
-  </div>
-</header>
-
-<!-- SIDEBAR NAV -->
-<aside class="sidebar">
-
-  <h3>CONTROL PANEL</h3>
-
-  <button onclick="route('dashboard')">📊 Overview</button>
-  <button onclick="route('analytics')">📈 Analytics</button>
-  <button onclick="route('compute')">⚙️ Compute Grid</button>
-  <button onclick="route('ai')">🧠 AI Systems</button>
-  <button onclick="route('datacenter')">🏢 Data Centers</button>
-  <button onclick="route('alerts')">🚨 Alerts</button>
-  <button onclick="route('logs')">📁 Logs</button>
-  <button onclick="route('research')">🔬 Research Lab</button>
-
-  <div class="divider"></div>
-
-  <button id="theme">🌙 Theme Toggle</button>
-
-</aside>
-
-<!-- MAIN CONTENT -->
-<main>
-
-<!-- DASHBOARD -->
-<section id="dashboard" class="view active">
-
-<h2>System Overview Dashboard</h2>
-
-<div class="grid">
-
-  <div class="card">
-    <h3>GPU Utilization Cluster A</h3>
-    <canvas id="g1"></canvas>
-    <p>High-performance compute nodes active</p>
-  </div>
-
-  <div class="card">
-    <h3>AI Model Throughput</h3>
-    <canvas id="g2"></canvas>
-    <p>Neural network processing pipeline stable</p>
-  </div>
-
-  <div class="card">
-    <h3>Energy Efficiency Index</h3>
-    <canvas id="g3"></canvas>
-    <p>Optimized power distribution system</p>
-  </div>
-
-  <div class="card big">
-    <h3>Live System Stream</h3>
-    <div id="stream"></div>
-  </div>
-
-</div>
-
-</section>
-
-<!-- ANALYTICS -->
-<section id="analytics" class="view">
-
-<h2>Advanced Analytics Engine</h2>
-
-<div class="grid">
-
-  <div class="panel">
-    <h3>Performance Index</h3>
-    <p>Real-time computation efficiency tracking across global nodes.</p>
-  </div>
-
-  <div class="panel">
-    <h3>AI Learning Curve</h3>
-    <p>Deep learning convergence monitoring system active.</p>
-  </div>
-
-  <div class="panel">
-    <h3>Prediction Accuracy</h3>
-    <p>Model output validation and reinforcement feedback loop.</p>
-  </div>
-
-  <div class="panel">
-    <h3>System Bottlenecks</h3>
-    <p>Automatic detection of latency spikes and GPU overload.</p>
-  </div>
-
-</div>
-
-</section>
-
-<!-- COMPUTE GRID -->
-<section id="compute" class="view">
-
-<h2>Compute Infrastructure Grid</h2>
-
-<div class="grid">
-
-  <div class="box">H100 Tensor Cluster — ACTIVE</div>
-  <div class="box">A100 Legacy Grid — STABLE</div>
-  <div class="box">Blackwell Architecture Nodes — BOOSTED</div>
-  <div class="box">RTX AI Edge Nodes — ONLINE</div>
-  <div class="box">Quantum Simulation Unit — TESTING</div>
-  <div class="box">Distributed Training Network — ACTIVE</div>
-
-</div>
-
-</section>
-
-<!-- AI SYSTEMS -->
-<section id="ai" class="view">
-
-<h2>Neural AI Ecosystem</h2>
-
-<div class="grid">
-
-  <div class="box">LLM Core Engine v4.1</div>
-  <div class="box">Vision Recognition AI</div>
-  <div class="box">Autonomous Robotics Controller</div>
-  <div class="box">Simulation & Physics AI</div>
-  <div class="box">Predictive Market AI</div>
-  <div class="box">Neural Optimization Engine</div>
-  <div class="box">Self-learning Feedback System</div>
-  <div class="box">Multi-Agent Coordination Layer</div>
-
-</div>
-
-</section>
-
-<!-- DATACENTERS -->
-<section id="datacenter" class="view">
-
-<h2>Global Data Center Network</h2>
-
-<div class="grid">
-
-  <div class="box">USA WEST COAST NODE — 98% LOAD</div>
-  <div class="box">EUROPE CENTRAL NODE — 91% LOAD</div>
-  <div class="box">ASIA PACIFIC NODE — 94% LOAD</div>
-  <div class="box">SOUTH AMERICA NODE — 88% LOAD</div>
-  <div class="box">AFRICA EDGE NODE — 72% LOAD</div>
-  <div class="box">OCEANIA NODE — 79% LOAD</div>
-
-</div>
-
-</section>
-
-<!-- ALERTS -->
-<section id="alerts" class="view">
-
-<h2>System Alerts & Security Layer</h2>
-
-<div class="alerts">
-
-  <div class="alert">✔ GPU temperature stable</div>
-  <div class="alert">✔ AI training cycles optimized</div>
-  <div class="alert">⚠ Minor latency spike detected (resolved)</div>
-  <div class="alert">✔ Network encryption active</div>
-  <div class="alert">✔ All clusters synchronized</div>
-
-</div>
-
-</section>
-
-<!-- LOGS -->
-<section id="logs" class="view">
-
-<h2>System Logs</h2>
-
-<div id="logsBox"></div>
-
-</section>
-
-<!-- RESEARCH -->
-<section id="research" class="view">
-
-<h2>AI Research Laboratory</h2>
-
-<div class="grid">
-
-  <div class="panel">
-    <h3>Neural Scaling Laws</h3>
-    <p>Study of performance scaling across large GPU clusters.</p>
-  </div>
-
-  <div class="panel">
-    <h3>Autonomous Intelligence</h3>
-    <p>Multi-agent reasoning and self-improving architectures.</p>
-  </div>
-
-  <div class="panel">
-    <h3>Quantum AI Simulation</h3>
-    <p>Experimental hybrid quantum-classical computation models.</p>
-  </div>
-
-  <div class="panel">
-    <h3>Energy-Aware AI Systems</h3>
-    <p>Optimization of compute cost vs intelligence output.</p>
-  </div>
-
-</div>
-
-</section>
-
-</main>
-
-</div>
-
-<script src="script.js"></script>
+    <div class="accessibility-panel" role="region" aria-label="Painel de Acessibilidade">
+        <button id="btn-increase-font" aria-label="Aumentar tamanho do texto">A+</button>
+        <button id="btn-decrease-font" aria-label="Diminuir tamanho do texto">A-</button>
+        <button id="btn-toggle-theme" aria-label="Alternar modo escuro e claro">
+            <span class="theme-icon">🌓</span>
+        </button>
+        <button id="btn-tts-start" aria-label="Iniciar leitura de voz do conteúdo">🔊 Ouvir</button>
+        <button id="btn-tts-stop" aria-label="Parar leitura de voz">🛑 Parar</button>
+    </div>
+
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo">
+                <span class="logo-tech">Agro</span><span class="logo-eco">Futuro</span> <span class="logo-year">2026</span>
+            </div>
+            <nav class="nav-menu" aria-label="Navegação Principal">
+                <a href="#transformacao">Transformação</a>
+                <a href="#beneficios">Benefícios da IA</a>
+                <a href="#seminario">Seminário</a>
+                <a href="#comunidade">Comunidade</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-container">
+            <h1 class="hero-title">Tecnologia agrícola reforça papel do Brasil</h1>
+            <p class="hero-subtitle">A união definitiva entre inteligência artificial, microbiologia avançada e sustentabilidade para liderar a produção global de alimentos.</p>
+            <a href="#seminario" class="btn-hero">Participar do Seminário</a>
+        </div>
+    </section>
+
+    <main class="main-layout" id="main-content">
+        
+        <div class="content-column">
+            
+            <article id="transformacao" class="content-block text-article">
+                <h2>O Protagonismo do Brasil no Cenário Global</h2>
+                <p>A <strong>agricultura sustentável</strong> ganha espaço no debate global em um momento de pressão sobre custos, segurança alimentar, energia e mudanças climáticas. Segundo Luciana Gorab, especialista em Planejamento Estratégico de Vendas, esse cenário coloca o Brasil em posição de destaque por unir <em>produtividade, inovação e capacidade de adaptação</em> no campo.</p>
+                
+                <p>Enquanto temas como inteligência artificial, guerras comerciais e a nova corrida energética dominam parte das discussões internacionais, uma transformação menos ruidosa vem fortalecendo o papel brasileiro na inovação agrícola. O avanço de tecnologias baseadas no uso de <strong>microrganismos</strong> nas lavouras mostra como o país pode contribuir para reduzir a dependência de fertilizantes químicos, um dos insumos mais caros e sensíveis da produção de alimentos.</p>
+
+                <div class="imagem"> <img src="Foto1.png" alt="Sensores tecnológicos monitorando folhas de uma plantação sustentável em alta precisão."> </div>
+
+                <p>O trabalho da microbiologista brasileira <strong>Mariangela Hungria</strong> ganhou projeção internacional após décadas dedicadas ao desenvolvimento de bactérias capazes de substituir parte dos fertilizantes industriais. Na prática, esses microrganismos capturam nitrogênio diretamente do ar e o transferem para as plantas, ampliando a eficiência produtiva e reduzindo a necessidade de insumos nitrogenados.</p>
+                
+                <p>Esse ponto tem peso estratégico. Fertilizantes nitrogenados dependem fortemente de gás natural, recurso sujeito a oscilações de preço, tensões geopolíticas e aumento dos custos energéticos. Nesse contexto, a tecnologia brasileira passa a ser vista como uma alternativa que combina <strong>ganhos de produtividade, sustentabilidade, redução de custos e aplicação tropical</strong> em escala global.</p>
+
+                <blockquote>
+                    “Num planeta preocupado com segurança alimentar, inflação e mudanças climáticas, talvez uma das soluções mais sofisticadas do século esteja justamente onde o Brasil sempre foi forte: no campo. Porque, às vezes, o verdadeiro ouro não está no solo. Está na inteligência de quem aprende a trabalhar com ele”, conclui Luciana Gorab.
+                </blockquote>
+            </article>
+
+            <section id="beneficios" class="content-block ia-section">
+                <h2>Quais os principais benefícios da Inteligência Artificial no campo?</h2>
+                <p class="section-intro">A agricultura está passando por diversas transformações à medida que vai se modernizando e adotando inovações tecnológicas. A Inteligência Artificial (IA) faz parte desse movimento e promete revolucionar o setor. Ela permite a otimização do uso de recursos no campo, além de permitir a automatização de processos complexos, contribuindo para o aumento da eficiência, produtividade e sustentabilidade das operações.</p>
+                
+                <p>Sabemos que atualmente, a agricultura enfrenta inúmeros desafios e entre eles estão lidar com recursos naturais finitos, mudanças climáticas e a necessidade de aumentar a capacidade produtiva. Devido a isso, contar com inovações como a Inteligência Artificial é uma peça-chave para se destacar nesse mercado e continuar expandindo os negócios. Diante desses desafios, a necessidade de inovações tecnológicas na agricultura nunca foi tão urgente.</p>
+
+                <div class="imagem"> <img src="Foto2.png" alt="Visão aérea de um drone mapeando linhas de plantio e coletando dados bioteconológicos com IA."> </div>
+
+                <div class="accordion-container">
+                    
+                    <div class="accordion-item">
+                        <button class="accordion-header" aria-expanded="false" aria-controls="acc-1">
+                            <span class="acc-number">01</span>
+                            <span class="acc-title">Otimização de recursos</span>
+                            <span class="acc-icon">▼</span>
+                        </button>
+                        <div id="acc-1" class="accordion-content" hidden>
+                            <p>Um dos principais benefícios da IA no campo é a possibilidade de economizar a utilização de recursos naturais. É possível contar com sistemas de irrigação inteligentes, sensores e sistemas que monitoram constantemente as condições do solo e das plantas, ajustando a irrigação de acordo com a necessidade real das culturas, o que reduz o desperdício de água e melhora a saúde das plantas.</p>
+                            <p>Além disso, é possível realizar análises de dados capturados por sistemas de IA para verificar a composição do solo, as necessidades específicas da cultura, entre outras características que ajudam na otimização de recursos.</p>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <button class="accordion-header" aria-expanded="false" aria-controls="acc-2">
+                            <span class="acc-number">02</span>
+                            <span class="acc-title">Monitoramento de culturas</span>
+                            <span class="acc-icon">▼</span>
+                        </button>
+                        <div id="acc-2" class="accordion-content" hidden>
+                            <p>A tecnologia de sensores e drone também tem contribuído para a evolução digital do campo. Por meio de equipamentos, como drones equipados com câmeras dotadas de sensores RGB e multiespectrais, é possível capturar imagens detalhadas das culturas que podem ser processadas por sistemas IA. Através disso, é viável captar imagens para detectar prontamente indícios de infestação por ervas daninhas, incidência de doenças e outros contratempos agrícolas.</p>
+                            <p>Além disso, permite-se o planejamento preciso do sentido de plantio, utilizando curvas em nível e implementando bordaduras estratégicas. Do mesmo modo, facilita-se o replantio com mapeamento preciso de linhas e falhas, assegurando paralelismo e ajustes na aplicação em taxa variável. Essas abordagens estratégicas possibilitam interventions ágeis e focalizadas, impedindo a propagação de problemas e promovendo a saúde geral da lavoura.</p>
+                            <p>O uso de algoritmos de IA permite ainda gerar imagens que podem ser analisadas para identificar padrões de crescimento, detectar áreas com problemas e monitorar a saúde das culturas em grandes áreas. Isso facilita a tomada de decisões estratégicas e o planejamento a longo prazo.</p>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <button class="accordion-header" aria-expanded="false" aria-controls="acc-3">
+                            <span class="acc-number">03</span>
+                            <span class="acc-title">Previsibilidade e gestão de riscos</span>
+                            <span class="acc-icon">▼</span>
+                        </button>
+                        <div id="acc-3" class="accordion-content" hidden>
+                            <p>Como a IA possibilita a análise de dados climáticos, históricos de produção e outras variáveis para prever o rendimento das colheitas. Isso ajuda os agricultores a planejar melhor suas atividades, otimizar a logística de colheita e minimizar perdas.</p>
+                            <p>Além disso, previsões mais precisas permitem que os agricultores ajustem suas práticas agrícolas para maximizar a produtividade e reduzir seus custos. Desse modo, os agricultores podem usar os sistemas IA para prever eventos climáticos extremos e se preparar para condições adversas.</p>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <button class="accordion-header" aria-expanded="false" aria-controls="acc-4">
+                            <span class="acc-number">04</span>
+                            <span class="acc-title">Automação</span>
+                            <span class="acc-icon">▼</span>
+                        </button>
+                        <div id="acc-4" class="accordion-content" hidden>
+                            <p>Contar com tratores, pilotos automáticos e outras máquinas agrícolas autônomas tem sido uma grande vantagem no campo, pois elas podem realizar tarefas como plantio, colheita e pulverização com alta precisão.</p>
+                            <p>Com o avanço da digitalização do campo, esses maquinários podem ser equipados com sistemas de navegação por GPS e sensores avançados para, assim, reduzir a necessidade de mão de obra intensiva e aumentar a eficiência operacional.</p>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <button class="accordion-header" aria-expanded="false" aria-controls="acc-5">
+                            <span class="acc-number">05</span>
+                            <span class="acc-title">Melhoria da qualidade dos produtos</span>
+                            <span class="acc-icon">▼</span>
+                        </button>
+                        <div id="acc-5" class="accordion-content" hidden>
+                            <p>A implementação de sistemas de inteligência artificial representa um avanço significativo na agricultura contemporânea, permitindo monitorar a qualidade dos produtos agrícolas desde o campo até a mesa do consumidor. A aplicação seletiva em taxa variável reduz o estresse das plantas ao otimizar o uso de insumos agrícolas, assegurando que alimentos de alta qualidade alcancem o consumidor final.</p>
+                            <p>Esse controle preciso não só eleva os padrões de qualidade, mas também promove uma produção mais sustentável e eficiente, alinhada às demandas do mercado moderno. A Inteligência Artificial possibilita a rastreabilidade de cada etapa da cadeia de suprimentos, desde a fazenda até a casa do consumidor, o que possibilita um enorme avanço na transparência com os clientes e na resposta rápida a problemas de segurança alimentar.</p>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <button class="accordion-header" aria-expanded="false" aria-controls="acc-6">
+                            <span class="acc-number">06</span>
+                            <span class="acc-title">Sustentabilidade</span>
+                            <span class="acc-icon">▼</span>
+                        </button>
+                        <div id="acc-6" class="accordion-content" hidden>
+                            <p>Outro ponto importante na agricultura é a capacidade de minimizar os desperdícios de recursos naturais e insumos agrícolas. Nesta questão, a IA também age como peça-chave para a sustentabilidade, pois torna possível realizar uma aplicação mais precisa de água, fertilizantes e defensivos agrícolas para reduzir significativamente o uso desses recursos, diminuindo o impacto ambiental.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <div class="imagem"> <img src="Foto3.png" alt="Painel digital holográfico exibindo dados de produtividade e análise molecular do campo moderno."> </div>
+
+            <section id="comunidade" class="content-block comments-section">
+                <h3>Interação com o Leitor</h3>
+                <p>Deixe sua opinião ou dúvida sobre como a Inteligência Artificial e a Biotecnologia estão mudando as dinâmicas do campo sustentável.</p>
+                
+                <form id="comment-form" class="comment-form">
+                    <div class="form-group">
+                        <label for="txt-comment">Seu Comentário:</label>
+                        <textarea id="txt-comment" placeholder="Escreva aqui sua percepção ou contribuição sobre a transformação tecnológica do Agro..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Enviar Comentário</button>
+                </form>
+
+                <div class="comments-list" id="comments-list">
+                    <div class="comment-item">
+                        <p class="comment-meta"><strong>Carlos M.</strong> — Agroecologista</p>
+                        <p class="comment-body">Incrível notar a força da pesquisa nacional com a Mariangela Hungria. A microbiologia aliada aos dados digitais vai ditar o ritmo global.</p>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <aside id="seminario" class="sidebar-column">
+            <div class="sticky-card-form">
+                <div class="form-badge">Seminário Online</div>
+                <h3>Venha conhecer melhor como a IA pode ser uma aliada do Campo.</h3>
+                <p class="form-highlight-text">Inscreva-se no nosso seminário on-line.</p>
+                
+                <form id="register-form">
+                    <div class="form-group">
+                        <label for="inp-name">Nome</label>
+                        <input type="text" id="inp-name" required placeholder="Ex: João Silva">
+                    </div>
+                    <div class="form-group">
+                        <label for="inp-email">E-mail</label>
+                        <input type="email" id="inp-email" required placeholder="Ex: joao@empresa.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="inp-city">Cidade</label>
+                        <input type="text" id="inp-city" required placeholder="Ex: Ribeirão Preto">
+                    </div>
+                    <div class="form-group">
+                        <label for="inp-state">Estado</label>
+                        <input type="text" id="inp-state" required placeholder="Ex: SP">
+                    </div>
+                    <div class="form-group">
+                        <label for="inp-country">País</label>
+                        <input type="text" id="inp-country" required placeholder="Ex: Brasil">
+                    </div>
+                    <button type="submit" class="btn-submit-form">Inscrever-se</button>
+                </form>
+                <div id="form-success-msg" class="success-message" hidden>Inscrição realizada com sucesso!</div>
+            </div>
+        </aside>
+
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <p class="footer-slogan">AgroFuturo 2026 ° Conectando a inteligência tecnologia à terra de forma sustentável</p>
+            </div>
+            <div class="footer-references">
+                <h4>Referências Utilizadas:</h4>
+                <ul>
+                    <li><a href="https://www.bemagro.com/beneficios-inteligencia-artificial-no-campo/" target="_blank" rel="noopener">https://www.bemagro.com/beneficios-inteligencia-artificial-no-campo/</a></li>
+                    <li><a href="https://www.agrolink.com.br/noticias/o-campo-conectado--como-a-ia-vem-transformando-o-agro_514351.html" target="_blank" rel="noopener">https://www.agrolink.com.br/noticias/o-campo-conectado--como-a-ia-vem-transformando-o-agro_514351.html</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
