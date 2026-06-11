@@ -980,3 +980,42 @@ h1,h2,h3{
 p{
     margin-bottom:15px;
 }
+.acessibilidade{
+    position:fixed;
+    right:20px;
+    top:120px;
+    z-index:9999;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.acessibilidade button{
+    width:55px;
+    height:55px;
+    border:none;
+    border-radius:50%;
+    cursor:pointer;
+    font-size:20px;
+    background:#27ae60;
+    color:white;
+    box-shadow:0 5px 15px rgba(0,0,0,.3);
+} 
+.dark-mode{
+    background:#111;
+    color:white;
+}
+
+.dark-mode section{
+    background:#111 !important;
+    color:white !important;
+}
+
+.dark-mode .dashboard-card,
+.dark-mode .ia-card,
+.dark-mode .about-card,
+.dark-mode .fact-card,
+.dark-mode .timeline-card{
+    background:#1e1e1e;
+    color:white;
+}
