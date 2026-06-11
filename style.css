@@ -847,3 +847,111 @@ font-size:3rem;
         gap: 30px;
     }
 }
+.seminario-section{
+    padding:120px 0;
+    background:linear-gradient(
+    135deg,
+    #071a10,
+    #0d2c1d);
+}
+
+.seminario-wrapper{
+    display:flex;
+    gap:60px;
+    align-items:center;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.seminario-info{
+    flex:1;
+    min-width:320px;
+    color:white;
+}
+
+.seminario-info h3{
+    font-size:2rem;
+    margin-bottom:20px;
+}
+
+.seminario-info p{
+    line-height:1.8;
+    opacity:.9;
+}
+
+.beneficios{
+    margin-top:30px;
+    display:grid;
+    gap:15px;
+}
+
+.beneficios div{
+    background:rgba(255,255,255,.08);
+    padding:15px;
+    border-radius:12px;
+}
+
+.seminario-form{
+    flex:1;
+    min-width:350px;
+}
+
+.seminario-form form{
+    background:white;
+    padding:40px;
+    border-radius:25px;
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+    box-shadow:0 25px 60px rgba(0,0,0,.25);
+}
+
+.seminario-form input,
+.seminario-form textarea,
+.seminario-form select{
+
+    width:100%;
+    padding:16px;
+    border:none;
+    background:#f5f7fa;
+    border-radius:12px;
+    font-size:16px;
+    outline:none;
+
+}
+
+.seminario-form textarea{
+    resize:none;
+    height:120px;
+}
+
+.seminario-form button{
+
+    padding:18px;
+    border:none;
+    border-radius:12px;
+    background:linear-gradient(
+    135deg,
+    #2ecc71,
+    #27ae60);
+
+    color:white;
+    font-weight:700;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.seminario-form button:hover{
+
+    transform:translateY(-3px);
+    box-shadow:0 10px 25px rgba(46,204,113,.4);
+
+}
+
+@media(max-width:900px){
+
+    .seminario-wrapper{
+        flex-direction:column;
+    }
+
+}
