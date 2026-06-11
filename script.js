@@ -1,154 +1,155 @@
-// ================= LOGIN =================
-document.getElementById("enter").onclick = () => {
-const u = document.getElementById("user").value;
-const p = document.getElementById("pass").value;
+document.addEventListener('DOMContentLoaded', () => {
 
-if(u && p){
-document.getElementById("login").style.display="none";
-document.getElementById("app").classList.remove("hidden");
-startSystem();
-}
-};
+    // ==========================================
+    // 1. COMPONENTE EXPANSÍVEL (ACCORDION DE BENEFÍCIOS)
+    // ==========================================
+    const accordionHeaders = document.querySelectorAll('.accordion-header');
 
-// ================= NAVIGATION =================
-document.querySelectorAll(".sidebar button").forEach(btn=>{
-btn.addEventListener("click",()=>{
-if(btn.id==="theme") return;
+    accordionHeaders.forEach(header => {
+        header.addEventListener('click', () => {
+            const item = header.parentElement;
+            const content = header.nextElementSibling;
+            const isExpanded = header.getAttribute('aria-expanded') === 'true';
 
-let id = btn.textContent.toLowerCase()
-.replace(/[^a-z]/g,"")
-.replace("overview","dashboard")
-.replace("analytics","analytics")
-.replace("computegird","compute")
-.replace("aisystems","ai")
-.replace("datacenters","datacenter")
-.replace("alerts","alerts")
-.replace("logs","logs")
-.replace("researchlab","research");
+            // Alterna o estado de visibilidade ARIA e atributo hidden
+            header.setAttribute('aria-expanded', !isExpanded);
+            if (!isExpanded) {
+                content.removeAttribute('hidden');
+                item.classList.add('active');
+            } else {
+                content.setAttribute('hidden', '');
+                item.classList.remove('active');
+            }
+        });
+    });
 
-document.querySelectorAll(".view").forEach(v=>v.classList.remove("active"));
-document.getElementById(id).classList.add("active");
+    // ==========================================
+    // 2. FORMULÁRIO DE INSCRIÇÃO NO SEMINÁRIO
+    // ==========================================
+    const registerForm = document.getElementById('register-form');
+    const successMsg = document.getElementById('form-success-msg');
+
+    registerForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        // Estrutura de captação de dados
+        const formData = {
+            name: document.getElementById('inp-name').value,
+            email: document.getElementById('inp-email').value,
+            city: document.getElementById('inp-city').value,
+            state: document.getElementById('inp-state').value,
+            country: document.getElementById('inp-country').value
+        };
+
+        console.log('Inscrição interceptada com sucesso:', formData);
+
+        // Feedback visual imediato e higienização do form
+        successMsg.removeAttribute('hidden');
+        registerForm.reset();
+
+        setTimeout(() => {
+            successMsg.setAttribute('hidden', '');
+        }, 5000);
+    });
+
+    // ==========================================
+    // 3. ÁREA DE COMENTÁRIOS DA COMUNIDADE
+    // ==========================================
+    const commentForm = document.getElementById('comment-form');
+    const txtComment = document.getElementById('txt-comment');
+    const commentsList = document.getElementById('comments-list');
+
+    commentForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const commentText = txtComment.value.trim();
+
+        if (commentText) {
+            const commentItem = document.createElement('div');
+            commentItem.classList.add('comment-item');
+            
+            // Segurança básica contra ataques XSS injetados na caixa de texto
+            commentItem.innerHTML = `
+                <p class="comment-meta"><strong>Leitor da Plataforma</strong> — Agora mesmo</p>
+                <p class="comment-body">${escapeHTML(commentText)}</p>
+            `;
+
+            commentsList.prepend(commentItem);
+            txtComment.value = '';
+        }
+    });
+
+    function escapeHTML(str) {
+        return str.replace(/[&<>'"]/g, 
+            tag => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[tag] || tag)
+        );
+    }
+
+    // ==========================================
+    // 4. PAINEL DE ACESSIBILIDADE FLUTUANTE
+    // ==========================================
+    
+    // Controle Gradual do Tamanho da Fonte
+    let currentFontSize = 100; // Porcentagem padrão base
+    const btnIncreaseFont = document.getElementById('btn-increase-font');
+    const btnDecreaseFont = document.getElementById('btn-decrease-font');
+
+    btnIncreaseFont.addEventListener('click', () => {
+        if (currentFontSize < 135) {
+            currentFontSize += 5;
+            document.documentElement.style.fontSize = `${currentFontSize}%`;
+        }
+    });
+
+    btnDecreaseFont.addEventListener('click', () => {
+        if (currentFontSize > 85) {
+            currentFontSize -= 5;
+            document.documentElement.style.fontSize = `${currentFontSize}%`;
+        }
+    });
+
+    // Alternador de Cores (Tema Claro / Escuro)
+    const btnToggleTheme = document.getElementById('btn-toggle-theme');
+    btnToggleTheme.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        const isDark = document.body.classList.contains('dark-mode');
+        localStorage.setItem('agro-theme-pref', isDark ? 'dark' : 'light');
+    });
+
+    // Carregamento de preferência de persistência do leitor
+    if (localStorage.getItem('agro-theme-pref') === 'dark') {
+        document.body.classList.add('dark-mode');
+    }
+
+    // ==========================================
+    // 5. LEITURA POR VOZ (SpeechSynthesis API NATIVA)
+    // ==========================================
+    const btnTtsStart = document.getElementById('btn-tts-start');
+    const btnTtsStop = document.getElementById('btn-tts-stop');
+    let utteranceInstance = null;
+
+    btnTtsStart.addEventListener('click', () => {
+        window.speechSynthesis.cancel(); // Previne enfileiramento infinito de vozes
+
+        const mainContent = document.getElementById('main-content');
+        
+        // Seleciona cirurgicamente elementos de texto editorial para não ler botões, labels e inputs do formulário
+        const validTextNodes = mainContent.querySelectorAll('.text-article p, .text-article blockquote, .ia-section h2, .ia-section .section-intro, .accordion-content p');
+        let consolidatedText = "";
+
+        validTextNodes.forEach(node => {
+            consolidatedText += node.textContent + " ";
+        });
+
+        if (consolidatedText.trim() === "") return;
+
+        utteranceInstance = new SpeechSynthesisUtterance(consolidatedText);
+        utteranceInstance.lang = 'pt-BR';
+        utteranceInstance.rate = 1.0; 
+
+        window.speechSynthesis.speak(utteranceInstance);
+    });
+
+    btnTtsStop.addEventListener('click', () => {
+        window.speechSynthesis.cancel();
+    });
 });
-});
-
-// ================= SYSTEM CORE =================
-function startSystem(){
-
-// STREAM LIVE
-const stream = document.getElementById("stream");
-
-setInterval(()=>{
-const msgs = [
-"GPU MATRIX OPTIMIZED",
-"NEURAL THREAD SYNC OK",
-"GLOBAL NODE STABLE",
-"AI LOAD BALANCED",
-"ENERGY ROUTING ACTIVE"
-];
-
-stream.innerHTML += msgs[Math.floor(Math.random()*msgs.length)]+"<br>";
-stream.scrollTop = stream.scrollHeight;
-},500);
-
-// LOG SYSTEM
-const logs = document.getElementById("logsBox");
-
-setInterval(()=>{
-logs.innerHTML += `[CORE] heartbeat OK :: ${Date.now()}<br>`;
-logs.scrollTop = logs.scrollHeight;
-},800);
-
-// ALERT ENGINE
-setInterval(()=>{
-const alerts = document.querySelector(".alerts");
-if(alerts){
-const a = document.createElement("div");
-a.className="alert";
-a.textContent = Math.random()>0.5
-? "✔ System stable"
-: "⚠ Minor fluctuation detected";
-alerts.appendChild(a);
-
-if(alerts.children.length>8){
-alerts.removeChild(alerts.firstChild);
-}
-}
-},2500);
-
-// AI SIMULATION (fake "thinking")
-setInterval(()=>{
-const titles = document.querySelectorAll("h3");
-titles.forEach(t=>{
-if(Math.random()>0.7){
-t.style.color="#fff";
-setTimeout(()=>t.style.color="#00ff9d",300);
-}
-});
-},1200);
-
-// ENERGY PULSE BACKGROUND
-setInterval(()=>{
-document.body.style.filter =
-`hue-rotate(${Math.random()*10}deg)`;
-},2000);
-
-// FAKE CHARTS
-draw("g1");
-draw("g2");
-draw("g3");
-}
-
-// ================= CHART ENGINE =================
-function draw(id){
-const c = document.getElementById(id);
-if(!c) return;
-
-const ctx = c.getContext("2d");
-
-function render(){
-ctx.clearRect(0,0,c.width,c.height);
-
-let bars = Array.from({length:6},()=>Math.random()*100);
-
-bars.forEach((v,i)=>{
-ctx.fillStyle="#00ff9d";
-ctx.fillRect(i*20,100-v,10,v);
-});
-
-requestAnimationFrame(render);
-}
-
-render();
-}
-
-// ================= BACKGROUND LIVING SYSTEM =================
-const canvas = document.getElementById("bg");
-const ctx = canvas.getContext("2d");
-
-canvas.width = innerWidth;
-canvas.height = innerHeight;
-
-let particles = [];
-
-for(let i=0;i<220;i++){
-particles.push({
-x:Math.random()*canvas.width,
-y:Math.random()*canvas.height
-});
-}
-
-function animate(){
-ctx.clearRect(0,0,canvas.width,canvas.height);
-
-particles.forEach(p=>{
-ctx.fillStyle="rgba(0,255,157,0.4)";
-ctx.fillRect(p.x,p.y,2,2);
-
-p.y += 0.6;
-if(p.y>canvas.height) p.y=0;
-});
-
-requestAnimationFrame(animate);
-}
-
-animate();
