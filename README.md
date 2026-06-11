@@ -1,98 +1,229 @@
-# Portal AgroFuturo 2026 — Hub de Inovação e Sustentabilidade Agrícola
+# 🌱 AgroForte 2026 — Futuro Sustentável
 
-## Tema da Página
-**Futuro Sustentável com Integração Tecnológica.** O projeto aborda como a digitalização do campo — impulsionada por algoritmos avançados de Inteligência Artificial e avanços científicos na microbiologia tropical — solidifica o papel estratégico do Brasil na cadeia agroalimentar global.
-
-## Objetivo da Página
-O objetivo desta interface premium é servir como um portal informativo de alto impacto visual e técnico, demonstrando aplicações reais de inovação no agronegócio. A plataforma atua na conscientização e captação de leads interessados por meio do formulário para o Seminário Online e promove a interatividade por meio da área dinâmica de comentários da comunidade.
-
-## Instruções de Uso e Execução do Projeto
-
-1. **Instalação**: 
-   - Baixe ou copie os três arquivos (`index.html`, `style.css` e `script.js`) para um mesmo diretório local.
-   
-2. **Execução**:
-   - Dê um duplo clique ou abra o arquivo `index.html` em qualquer navegador web de última geração (Chrome, Edge, Safari ou
-# AGRINHO 2026
-## AgroFuturo 2026 — Liderança, Inovação e Sustentabilidade Global
-
-### Objetivo
-
-Apresentar como a Inteligência Artificial, a biotecnologia e a agricultura sustentável estão transformando o campo brasileiro e fortalecendo o papel do Brasil na segurança alimentar global.
+![Status](https://img.shields.io/badge/Status-Concluído-success)
+![Agrinho](https://img.shields.io/badge/Agrinho-2026-blue)
+![Tecnologia](https://img.shields.io/badge/Tema-Tecnologia%20Agrícola-green)
 
 ---
 
-## Tecnologias Utilizadas
+# 📖 Sobre o Projeto
+
+O projeto **AgroForte 2026 — Futuro Sustentável** foi desenvolvido para o Programa Agrinho Paraná 2026 com o objetivo de apresentar como a tecnologia, a Inteligência Artificial, a biotecnologia e a sustentabilidade estão transformando a agricultura brasileira.
+
+O site demonstra como o Brasil vem se tornando referência mundial na produção agrícola sustentável através do uso de:
+
+- Inteligência Artificial
+- Agricultura de Precisão
+- Sensores Inteligentes
+- Drones Agrícolas
+- Biotecnologia
+- Monitoramento Climático
+- Sustentabilidade Ambiental
+
+---
+
+# 🎯 Objetivo
+
+Mostrar de forma moderna, tecnológica e interativa como a inovação está revolucionando o campo e fortalecendo o papel do Brasil na segurança alimentar mundial.
+
+---
+
+# 💡 Tema
+
+## AgroForte Futuro Sustentável
+
+A tecnologia agrícola reforça o papel do Brasil na construção de um futuro mais inteligente, produtivo e sustentável.
+
+---
+
+# 🚀 Funcionalidades
+
+### Interface Moderna
+
+- Design futurista
+- Glassmorphism
+- Efeitos visuais modernos
+- Gradientes tecnológicos
+- Animações suaves
+
+### Acessibilidade
+
+- Aumentar fonte
+- Diminuir fonte
+- Modo claro/escuro
+- Leitura por voz
+- Parar leitura
+
+### Inteligência Artificial
+
+- Monitoramento de culturas
+- Sensores inteligentes
+- Agricultura de precisão
+- Big Data agrícola
+- Automação rural
+
+### Galeria
+
+Espaço para 6 imagens:
+
+- Foto1.png
+- Foto2.png
+- Foto3.png
+- Foto4.png
+- Foto5.png
+- Foto6.png
+
+### Dashboard
+
+Indicadores animados:
+
+- 95% Eficiência Agrícola
+- 80% Economia de Água
+- 70% Redução de Custos
+- 60% Menos Desperdício
+
+### Formulário
+
+Inscrição para seminário online.
+
+### Comentários
+
+Área para interação com visitantes.
+
+### Responsividade
+
+Compatível com:
+
+- Smartphones
+- Tablets
+- Notebooks
+- Computadores
+- Monitores Ultrawide
+
+---
+
+# 🧠 Tecnologias Utilizadas
+
+## Front-End
 
 - HTML5
 - CSS3
 - JavaScript ES6
-- SpeechSynthesis API
+
+## Recursos
+
 - Flexbox
 - CSS Grid
-- Responsividade Mobile First
+- Media Queries
+- SpeechSynthesis API
+- DOM Manipulation
+- Scroll Animations
 
 ---
 
-## Funcionalidades
+# 📁 Estrutura do Projeto
 
-✔ Hero futurista com imagem de fundo
-
-✔ Galeria com 6 imagens
-
-✔ FAQ interativo
-
-✔ Dashboard com estatísticas animadas
-
-✔ Timeline tecnológica
-
-✔ Formulário de inscrição
-
-✔ Sistema de comentários
-
-✔ Modo claro e escuro
-
-✔ Leitura por voz
-
-✔ Acessibilidade
-
-✔ Design responsivo
+```text
+AgroForte2026/
+│
+├── index.html
+├── style.css
+├── script.js
+├── README.md
+│
+├── Foto1.png
+├── Foto2.png
+├── Foto3.png
+├── Foto4.png
+├── Foto5.png
+└── Foto6.png
+```
 
 ---
 
-## Estrutura
+# 🖼️ Imagens
 
-index.html
+As imagens devem ser adicionadas na mesma pasta do projeto:
 
-style.css
-
-script.js
-
-README.md
-
-Foto1.png
-
-Foto2.png
-
-Foto3.png
-
-Foto4.png
-
-Foto5.png
-
-Foto6.png
+```html
+<img src="Foto1.png">
+<img src="Foto2.png">
+<img src="Foto3.png">
+<img src="Foto4.png">
+<img src="Foto5.png">
+<img src="Foto6.png">
+```
 
 ---
 
-## Referências
+# 🔊 Sistema de Leitura por Voz
 
-- Bem Agro
-- Agrolink
+O projeto utiliza a API nativa do navegador:
+
+```javascript
+SpeechSynthesis
+```
+
+Permitindo que o conteúdo principal seja lido automaticamente para o usuário.
 
 ---
 
-## Tema
+# 🌍 Sustentabilidade
 
-AgroForte Futuro Sustentável
+O projeto destaca práticas agrícolas sustentáveis como:
 
-Agrinho Paraná 2026
+- Uso racional da água
+- Redução de fertilizantes químicos
+- Agricultura regenerativa
+- Controle inteligente de recursos
+- Menor impacto ambiental
+
+---
+
+# 🇧🇷 Brasil e a Inovação Agrícola
+
+O Brasil é referência mundial em:
+
+- Produção agrícola
+- Pesquisa agropecuária
+- Agricultura tropical
+- Desenvolvimento de bioinsumos
+- Sustentabilidade no campo
+
+---
+
+# 🏆 Destaque Científico
+
+## Mariangela Hungria
+
+Microbiologista brasileira reconhecida internacionalmente por suas pesquisas envolvendo bactérias fixadoras de nitrogênio.
+
+Recebeu reconhecimento mundial por contribuir para uma agricultura mais sustentável e eficiente.
+
+---
+
+# 📚 Referências
+
+### Bem Agro
+
+https://www.bemagro.com/beneficios-inteligencia-artificial-no-campo/
+
+### Agrolink
+
+https://www.agrolink.com.br/noticias/o-campo-conectado--como-a-ia-vem-transformando-o-agro_514351.html
+
+---
+
+# 📜 Licença
+
+Projeto desenvolvido exclusivamente para fins educacionais e participação no Programa Agrinho Paraná 2026.
+
+---
+
+# 👨‍🌾 AgroForte 2026
+
+### Tecnologia • Inovação • Sustentabilidade
+
+"O verdadeiro ouro não está no solo. Está na inteligência de quem aprende a trabalhar com ele."
+
+---
