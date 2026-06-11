@@ -1,156 +1,458 @@
-document.addEventListener('DOMContentLoaded', () => {
+/* ==========================================
+   AGROFORTE 2026
+   SCRIPT PREMIUM
+========================================== */
 
-    // ==========================================
-    // 1. SISTEMA COMPLETO DE ACCORDION (EXPANSÍVEL)
-    // ==========================================
-    const accordionHeaders = document.querySelectorAll('.accordion-header');
+document.addEventListener("DOMContentLoaded", () => {
 
-    accordionHeaders.forEach(header => {
-        header.addEventListener('click', () => {
-            const item = header.parentElement;
-            const content = header.nextElementSibling;
-            const isExpanded = header.getAttribute('aria-expanded') === 'true';
+    /* ==========================
+       LOADER
+    ========================== */
 
-            // Comportamento focado na acessibilidade: inverte o estado ARIA
-            header.setAttribute('aria-expanded', !isExpanded);
-            
-            if (!isExpanded) {
-                content.removeAttribute('hidden');
-                item.classList.add('active');
-            } else {
-                content.setAttribute('hidden', '');
-                item.classList.remove('active');
-            }
-        });
+    const loader = document.getElementById("loader");
+
+    setTimeout(() => {
+
+        if(loader){
+
+            loader.style.opacity = "0";
+
+            setTimeout(() => {
+
+                loader.style.display = "none";
+
+            },800);
+
+        }
+
+    },3000);
+
+    /* ==========================
+       HEADER SCROLL
+    ========================== */
+
+    const header = document.getElementById("header");
+
+    window.addEventListener("scroll",()=>{
+
+        if(window.scrollY > 80){
+
+            header.style.background =
+            "rgba(0,0,0,.65)";
+
+        }
+
+        else{
+
+            header.style.background =
+            "rgba(0,0,0,.15)";
+
+        }
+
     });
 
+    /* ==========================
+       CONTADORES
+    ========================== */
 
-    // ==========================================
-    // 2. VALIDAÇÃO AVANÇADA DO FORMULÁRIO DE INSCRIÇÃO
-    // ==========================================
-    const registerForm = document.getElementById('register-form');
-    const emailInput = document.getElementById('inp-email');
-    const successMsgBox = document.getElementById('form-success-msg');
+    const counters =
+    document.querySelectorAll(".counter");
 
-    // Validação de E-mail em tempo real com expressão regular robusta
-    const validateEmail = (email) => {
-        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return regex.test(email);
+    counters.forEach(counter=>{
+
+        const target =
+        parseInt(counter.dataset.target);
+
+        let current = 0;
+
+        const increment =
+        target / 100;
+
+        const update = () => {
+
+            current += increment;
+
+            if(current < target){
+
+                counter.innerText =
+                Math.ceil(current) + "%";
+
+                requestAnimationFrame(update);
+
+            }
+
+            else{
+
+                counter.innerText =
+                target + "%";
+
+            }
+
+        };
+
+        update();
+
+    });
+
+    /* ==========================
+       SCROLL REVEAL
+    ========================== */
+
+    const revealElements =
+    document.querySelectorAll(
+    ".section,.dashboard-card,.ia-card,.gallery img,.about-card,.about-text"
+    );
+
+    const reveal = () => {
+
+        revealElements.forEach(el=>{
+
+            const top =
+            el.getBoundingClientRect().top;
+
+            const windowHeight =
+            window.innerHeight;
+
+            if(top < windowHeight - 100){
+
+                el.classList.add("show");
+
+            }
+
+        });
+
     };
 
-    emailInput.addEventListener('input', () => {
-        if (emailInput.value.trim() === "" || validateEmail(emailInput.value)) {
-            emailInput.classList.remove('invalid');
-        }
+    reveal();
+
+    window.addEventListener(
+    "scroll",
+    reveal
+    );
+
+    /* ==========================
+       GALERIA LIGHTBOX
+    ========================== */
+
+    const images =
+    document.querySelectorAll(
+    ".gallery-grid img"
+    );
+
+    images.forEach(img=>{
+
+        img.addEventListener(
+        "click",
+        ()=>{
+
+            const overlay =
+            document.createElement("div");
+
+            overlay.classList.add(
+            "lightbox"
+            );
+
+            overlay.innerHTML = `
+            <img src="${img.src}">
+            `;
+
+            document.body.appendChild(
+            overlay
+            );
+
+            overlay.addEventListener(
+            "click",
+            ()=>{
+
+                overlay.remove();
+
+            });
+
+        });
+
     });
 
-    registerForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        
-        let isFormValid = true;
-        const inputs = registerForm.querySelectorAll('input[required]');
+    /* ==========================
+       ACESSIBILIDADE
+    ========================== */
 
-        // Varre todos os inputs obrigatórios verificando preenchimento
-        inputs.forEach(input => {
-            if (input.value.trim
-document.addEventListener("DOMContentLoaded",()=>{
+    let fontSize = 100;
 
-const counters=document.querySelectorAll(".counter");
+    const increase =
+    document.getElementById(
+    "btn-increase-font"
+    );
 
-counters.forEach(counter=>{
+    const decrease =
+    document.getElementById(
+    "btn-decrease-font"
+    );
 
-const update=()=>{
+    if(increase){
 
-const target=+counter.dataset.target;
-const current=+counter.innerText;
+        increase.addEventListener(
+        "click",
+        ()=>{
 
-const increment=target/80;
+            if(fontSize < 135){
 
-if(current<target){
+                fontSize += 5;
 
-counter.innerText=Math.ceil(current+increment);
+                document.documentElement.style.fontSize =
+                fontSize + "%";
 
-setTimeout(update,25);
+            }
 
-}else{
+        });
 
-counter.innerText=target;
+    }
 
-}
+    if(decrease){
 
-};
+        decrease.addEventListener(
+        "click",
+        ()=>{
 
-update();
+            if(fontSize > 85){
 
-});
+                fontSize -= 5;
 
-const btnTheme=document.getElementById("btn-toggle-theme");
+                document.documentElement.style.fontSize =
+                fontSize + "%";
 
-if(btnTheme){
+            }
 
-btnTheme.addEventListener("click",()=>{
+        });
 
-document.body.classList.toggle("dark-mode");
+    }
 
-});
+    /* ==========================
+       DARK MODE
+    ========================== */
 
-}
+    const themeButton =
+    document.getElementById(
+    "btn-toggle-theme"
+    );
 
-const accordions=document.querySelectorAll(".accordion-header");
+    if(themeButton){
 
-accordions.forEach(btn=>{
+        themeButton.addEventListener(
+        "click",
+        ()=>{
 
-btn.addEventListener("click",()=>{
+            document.body.classList.toggle(
+            "dark-mode"
+            );
 
-const expanded=
-btn.getAttribute("aria-expanded")==="true";
+        });
 
-btn.setAttribute(
-"aria-expanded",
-!expanded
-);
+    }
 
-const panel=
-document.getElementById(
-btn.getAttribute("aria-controls")
-);
+    /* ==========================
+       LEITURA POR VOZ
+    ========================== */
 
-panel.hidden=expanded;
+    const startSpeech =
+    document.getElementById(
+    "btn-tts-start"
+    );
 
-});
+    const stopSpeech =
+    document.getElementById(
+    "btn-tts-stop"
+    );
 
-});
+    let speech;
 
-const start=document.getElementById("btn-tts-start");
-const stop=document.getElementById("btn-tts-stop");
+    if(startSpeech){
 
-if(start){
+        startSpeech.addEventListener(
+        "click",
+        ()=>{
 
-start.addEventListener("click",()=>{
+            const content =
+            document.getElementById(
+            "main-content"
+            );
 
-const text=
-document.getElementById("main-content")
-.innerText;
+            speech =
+            new SpeechSynthesisUtterance(
+            content.innerText
+            );
 
-const speech=
-new SpeechSynthesisUtterance(text);
+            speech.lang = "pt-BR";
 
-speech.lang="pt-BR";
+            speech.rate = 1;
 
-window.speechSynthesis.speak(speech);
+            speech.pitch = 1;
 
-});
+            window.speechSynthesis.speak(
+            speech
+            );
 
-}
+        });
 
-if(stop){
+    }
 
-stop.addEventListener("click",()=>{
+    if(stopSpeech){
 
-window.speechSynthesis.cancel();
+        stopSpeech.addEventListener(
+        "click",
+        ()=>{
 
-});
+            window.speechSynthesis.cancel();
 
-}
+        });
+
+    }
+
+    /* ==========================
+       COMENTÁRIOS
+    ========================== */
+
+    const commentForm =
+    document.getElementById(
+    "comment-form"
+    );
+
+    const commentsList =
+    document.getElementById(
+    "comments-list"
+    );
+
+    if(commentForm){
+
+        commentForm.addEventListener(
+        "submit",
+        e=>{
+
+            e.preventDefault();
+
+            const textarea =
+            document.getElementById(
+            "txt-comment"
+            );
+
+            const value =
+            textarea.value.trim();
+
+            if(value === "") return;
+
+            const comment =
+            document.createElement("div");
+
+            comment.className =
+            "comment-item";
+
+            comment.innerHTML = `
+
+            <p class="comment-meta">
+            <strong>Visitante</strong>
+            </p>
+
+            <p class="comment-body">
+            ${value}
+            </p>
+
+            `;
+
+            commentsList.prepend(
+            comment
+            );
+
+            textarea.value = "";
+
+        });
+
+    }
+
+    /* ==========================
+       FORMULÁRIO
+    ========================== */
+
+    const registerForm =
+    document.getElementById(
+    "register-form"
+    );
+
+    const successMsg =
+    document.getElementById(
+    "form-success-msg"
+    );
+
+    if(registerForm){
+
+        registerForm.addEventListener(
+        "submit",
+        e=>{
+
+            e.preventDefault();
+
+            successMsg.hidden = false;
+
+            registerForm.reset();
+
+            setTimeout(()=>{
+
+                successMsg.hidden = true;
+
+            },5000);
+
+        });
+
+    }
+
+    /* ==========================
+       BOTÃO VOLTAR TOPO
+    ========================== */
+
+    const topButton =
+    document.createElement("button");
+
+    topButton.innerHTML = "↑";
+
+    topButton.id =
+    "backToTop";
+
+    document.body.appendChild(
+    topButton
+    );
+
+    window.addEventListener(
+    "scroll",
+    ()=>{
+
+        if(window.scrollY > 500){
+
+            topButton.classList.add(
+            "active"
+            );
+
+        }
+
+        else{
+
+            topButton.classList.remove(
+            "active"
+            );
+
+        }
+
+    });
+
+    topButton.addEventListener(
+    "click",
+    ()=>{
+
+        window.scrollTo({
+
+            top:0,
+
+            behavior:"smooth"
+
+        });
+
+    });
 
 });
