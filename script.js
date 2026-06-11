@@ -53,3 +53,104 @@ document.addEventListener('DOMContentLoaded', () => {
         // Varre todos os inputs obrigatórios verificando preenchimento
         inputs.forEach(input => {
             if (input.value.trim
+document.addEventListener("DOMContentLoaded",()=>{
+
+const counters=document.querySelectorAll(".counter");
+
+counters.forEach(counter=>{
+
+const update=()=>{
+
+const target=+counter.dataset.target;
+const current=+counter.innerText;
+
+const increment=target/80;
+
+if(current<target){
+
+counter.innerText=Math.ceil(current+increment);
+
+setTimeout(update,25);
+
+}else{
+
+counter.innerText=target;
+
+}
+
+};
+
+update();
+
+});
+
+const btnTheme=document.getElementById("btn-toggle-theme");
+
+if(btnTheme){
+
+btnTheme.addEventListener("click",()=>{
+
+document.body.classList.toggle("dark-mode");
+
+});
+
+}
+
+const accordions=document.querySelectorAll(".accordion-header");
+
+accordions.forEach(btn=>{
+
+btn.addEventListener("click",()=>{
+
+const expanded=
+btn.getAttribute("aria-expanded")==="true";
+
+btn.setAttribute(
+"aria-expanded",
+!expanded
+);
+
+const panel=
+document.getElementById(
+btn.getAttribute("aria-controls")
+);
+
+panel.hidden=expanded;
+
+});
+
+});
+
+const start=document.getElementById("btn-tts-start");
+const stop=document.getElementById("btn-tts-stop");
+
+if(start){
+
+start.addEventListener("click",()=>{
+
+const text=
+document.getElementById("main-content")
+.innerText;
+
+const speech=
+new SpeechSynthesisUtterance(text);
+
+speech.lang="pt-BR";
+
+window.speechSynthesis.speak(speech);
+
+});
+
+}
+
+if(stop){
+
+stop.addEventListener("click",()=>{
+
+window.speechSynthesis.cancel();
+
+});
+
+}
+
+});
