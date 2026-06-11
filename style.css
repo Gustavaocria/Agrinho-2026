@@ -741,3 +741,24 @@ font-size:3rem;
 }
 
 }
+
+.mariangela-image{
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+}
+
+.mariangela-image img{
+
+    width:80%;
+    max-width:350px;
+
+    height:auto;
+
+    border-radius:20px;
+
+    box-shadow:0 20px 40px rgba(0,0,0,.3);
+
+}
