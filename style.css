@@ -778,3 +778,9 @@ font-size:3rem;
     border:none;
     border-radius:20px;
 }
+.mapa-img{
+    width:100%;
+    max-width:700px;
+    display:block;
+    margin:auto;
+}
