@@ -528,3 +528,18 @@ if(contatoForm){
     });
 
 }
+const contatoForm = document.getElementById("contato-form");
+
+if(contatoForm){
+
+    contatoForm.addEventListener("submit", function(e){
+
+        e.preventDefault();
+
+        alert("Mensagem enviada com sucesso!");
+
+        contatoForm.reset();
+
+    });
+
+}
