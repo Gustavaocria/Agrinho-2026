@@ -455,14 +455,19 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
+
 const darkBtn =
 document.getElementById("darkModeBtn");
 
-darkBtn.addEventListener("click",()=>{
+if(darkBtn){
 
-document.body.classList.toggle("dark-mode");
+    darkBtn.addEventListener("click",()=>{
 
-}); 
+        document.body.classList.toggle("dark-mode");
+
+    });
+
+}
 let zoom = 100;
 
 document
