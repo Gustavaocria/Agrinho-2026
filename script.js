@@ -501,3 +501,30 @@ fala.lang = "pt-BR";
 speechSynthesis.speak(fala);
 
 });
+const contatoForm =
+document.getElementById("contato-form");
+
+const mensagem =
+document.getElementById("mensagem-enviada");
+
+if(contatoForm){
+
+    contatoForm.addEventListener(
+    "submit",
+    e=>{
+
+        e.preventDefault();
+
+        mensagem.hidden = false;
+
+        contatoForm.reset();
+
+        setTimeout(()=>{
+
+            mensagem.hidden = true;
+
+        },5000);
+
+    });
+
+}
