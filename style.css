@@ -313,18 +313,18 @@ object-fit:cover;
 
 .hero-overlay{
 
-position:absolute;
+    position:absolute;
 
-inset:0;
+    inset:0;
 
-background:
+    background:
 
-linear-gradient(
-180deg,
-rgba(0,0,0,.7),
-rgba(0,0,0,.6),
-rgba(0,0,0,.85)
-);
+    linear-gradient(
+    180deg,
+    rgba(0,0,0,.7),
+    rgba(0,0,0,.75),
+    rgba(0,0,0,.95)
+    );
 
 }
 
