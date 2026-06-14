@@ -1,229 +1,129 @@
-# 🌱 AgroForte 2026 — Futuro Sustentável
+# 🌱 AGROFORTE 2026 – Futuro Sustentável
 
-![Status](https://img.shields.io/badge/Status-Concluído-success)
-![Agrinho](https://img.shields.io/badge/Agrinho-2026-blue)
-![Tecnologia](https://img.shields.io/badge/Tema-Tecnologia%20Agrícola-green)
+## 📖 Sobre o Projeto
 
----
+O **AGROFORTE 2026** é um site desenvolvido para o Programa **Agrinho Paraná 2026**, com o objetivo de apresentar a importância da agricultura sustentável, da inovação tecnológica e da inteligência artificial no campo.
 
-# 📖 Sobre o Projeto
-
-O projeto **AgroForte 2026 — Futuro Sustentável** foi desenvolvido para o Programa Agrinho Paraná 2026 com o objetivo de apresentar como a tecnologia, a Inteligência Artificial, a biotecnologia e a sustentabilidade estão transformando a agricultura brasileira.
-
-O site demonstra como o Brasil vem se tornando referência mundial na produção agrícola sustentável através do uso de:
-
-- Inteligência Artificial
-- Agricultura de Precisão
-- Sensores Inteligentes
-- Drones Agrícolas
-- Biotecnologia
-- Monitoramento Climático
-- Sustentabilidade Ambiental
+O projeto destaca como o Brasil se posiciona como uma potência agrícola mundial, utilizando tecnologias modernas para aumentar a produtividade, reduzir desperdícios e promover a sustentabilidade.
 
 ---
 
-# 🎯 Objetivo
+## 🎯 Objetivo do Tema Agrinho 2026
 
-Mostrar de forma moderna, tecnológica e interativa como a inovação está revolucionando o campo e fortalecendo o papel do Brasil na segurança alimentar mundial.
+O tema Agrinho 2026 busca incentivar a reflexão sobre a relação entre:
 
----
+* Agricultura sustentável;
+* Tecnologia e inovação;
+* Inteligência Artificial;
+* Preservação ambiental;
+* Segurança alimentar;
+* Desenvolvimento social e econômico.
 
-# 💡 Tema
-
-## AgroForte Futuro Sustentável
-
-A tecnologia agrícola reforça o papel do Brasil na construção de um futuro mais inteligente, produtivo e sustentável.
-
----
-
-# 🚀 Funcionalidades
-
-### Interface Moderna
-
-- Design futurista
-- Glassmorphism
-- Efeitos visuais modernos
-- Gradientes tecnológicos
-- Animações suaves
-
-### Acessibilidade
-
-- Aumentar fonte
-- Diminuir fonte
-- Modo claro/escuro
-- Leitura por voz
-- Parar leitura
-
-### Inteligência Artificial
-
-- Monitoramento de culturas
-- Sensores inteligentes
-- Agricultura de precisão
-- Big Data agrícola
-- Automação rural
-
-### Galeria
-
-Espaço para 6 imagens:
-
-- Foto1.png
-- Foto2.png
-- Foto3.png
-- Foto4.png
-- Foto5.png
-- Foto6.png
-
-### Dashboard
-
-Indicadores animados:
-
-- 95% Eficiência Agrícola
-- 80% Economia de Água
-- 70% Redução de Custos
-- 60% Menos Desperdício
-
-### Formulário
-
-Inscrição para seminário online.
-
-### Comentários
-
-Área para interação com visitantes.
-
-### Responsividade
-
-Compatível com:
-
-- Smartphones
-- Tablets
-- Notebooks
-- Computadores
-- Monitores Ultrawide
+O projeto demonstra como essas áreas trabalham juntas para construir um futuro mais inteligente, produtivo e sustentável para o campo e para a sociedade.
 
 ---
 
-# 🧠 Tecnologias Utilizadas
+## 🚀 Funcionalidades do Site
 
-## Front-End
+* Tela de carregamento animada (Loader);
+* Página inicial com imagem de destaque;
+* Estatísticas animadas;
+* Informações sobre agricultura sustentável;
+* Seção sobre Inteligência Artificial no campo;
+* Galeria de imagens;
+* Linha do tempo da evolução agrícola;
+* Curiosidades sobre o agronegócio;
+* Área de contato;
+* Botão de retorno ao topo;
+* Recursos de acessibilidade:
 
-- HTML5
-- CSS3
-- JavaScript ES6
-
-## Recursos
-
-- Flexbox
-- CSS Grid
-- Media Queries
-- SpeechSynthesis API
-- DOM Manipulation
-- Scroll Animations
+  * Modo escuro;
+  * Aumento de fonte;
+  * Redução de fonte;
+  * Leitura por voz.
 
 ---
 
-# 📁 Estrutura do Projeto
+## 🛠️ Tecnologias Utilizadas
+
+### Front-end
+
+* HTML5
+* CSS3
+* JavaScript (ES6)
+
+### Recursos Utilizados
+
+* Google Fonts
+* Speech Synthesis API (Leitura por Voz)
+* GitHub Pages (Hospedagem)
+
+---
+
+## 📂 Estrutura do Projeto
 
 ```text
-AgroForte2026/
+Agrinho-2026/
 │
-├── index.html
-├── style.css
-├── script.js
+└── Imagens/
+    ├── paisagem.jpg
+    ├── arvore.jpg
+    ├── agua.jpg
+    ├── arvores1.jpg
+    ├── grama.jpg
+    ├── piquiri.jpg
+    └── mapa-brasil.png
+├── LICENSE
 ├── README.md
+├── index.html
+├── script.js
+├── style.css
 │
-├── Foto1.png
-├── Foto2.png
-├── Foto3.png
-├── Foto4.png
-├── Foto5.png
-└── Foto6.png
+
 ```
 
 ---
 
-# 🖼️ Imagens
+## 💻 Como Executar
 
-As imagens devem ser adicionadas na mesma pasta do projeto:
+### Localmente
 
-```html
-<img src="Foto1.png">
-<img src="Foto2.png">
-<img src="Foto3.png">
-<img src="Foto4.png">
-<img src="Foto5.png">
-<img src="Foto6.png">
+1. Baixe ou clone o repositório:
+
+```bash
+git clone https://github.com/gustavaocria/Agrinho-2026.git
 ```
 
----
+2. Abra o arquivo:
 
-# 🔊 Sistema de Leitura por Voz
-
-O projeto utiliza a API nativa do navegador:
-
-```javascript
-SpeechSynthesis
+```text
+index.html
 ```
 
-Permitindo que o conteúdo principal seja lido automaticamente para o usuário.
+em qualquer navegador moderno.
 
 ---
 
-# 🌍 Sustentabilidade
+## 🌐 Publicação
 
-O projeto destaca práticas agrícolas sustentáveis como:
+O projeto está hospedado utilizando o GitHub Pages.
 
-- Uso racional da água
-- Redução de fertilizantes químicos
-- Agricultura regenerativa
-- Controle inteligente de recursos
-- Menor impacto ambiental
+Acesso:
+
+https://gustavaocria.github.io/Agrinho-2026/
 
 ---
 
-# 🇧🇷 Brasil e a Inovação Agrícola
+## Referências
 
-O Brasil é referência mundial em:
+As imagens contidas no site foram registradas pelo próprio autor. Além disso, o conteúdo textual da página foi escrito pelo autor com base ns informações dos sites oficiais: EMBRAPA; Secretaria da Agricultura e do Abastecimento do estado do Paraná; Ministério da Agricultura e Pecuária (MAPA).
 
-- Produção agrícola
-- Pesquisa agropecuária
-- Agricultura tropical
-- Desenvolvimento de bioinsumos
-- Sustentabilidade no campo
+## 👨‍🎓 Autor
 
----
+**Gustavo Quirino dos Santos**
 
-# 🏆 Destaque Científico
+Colégio Estadual do Campo de São Manoel – EFM
 
-## Mariangela Hungria
-
-Microbiologista brasileira reconhecida internacionalmente por suas pesquisas envolvendo bactérias fixadoras de nitrogênio.
-
-Recebeu reconhecimento mundial por contribuir para uma agricultura mais sustentável e eficiente.
-
----
-
-# 📚 Referências
-
-### Bem Agro
-
-https://www.bemagro.com/beneficios-inteligencia-artificial-no-campo/
-
-### Agrolink
-
-https://www.agrolink.com.br/noticias/o-campo-conectado--como-a-ia-vem-transformando-o-agro_514351.html
-
----
-
-# 📜 Licença
-
-Projeto desenvolvido exclusivamente para fins educacionais e participação no Programa Agrinho Paraná 2026.
-
----
-
-# 👨‍🌾 AgroForte 2026
-
-### Tecnologia • Inovação • Sustentabilidade
-
-"O verdadeiro ouro não está no solo. Está na inteligência de quem aprende a trabalhar com ele."
+Programação Agrinho Paraná 2026
 
 ---
