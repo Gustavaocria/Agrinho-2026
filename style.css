@@ -1028,3 +1028,8 @@ p{
     background:#1e1e1e;
     color:white;
 }
+.hero-content{
+    position: relative;
+    z-index: 10;
+    text-align: center;
+}
